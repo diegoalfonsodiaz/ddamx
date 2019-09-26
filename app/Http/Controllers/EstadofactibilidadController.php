@@ -68,7 +68,10 @@ class EstadofactibilidadController extends Controller
      */
     public function edit($id)
     {
-        //
+        $ef = Estadofactibilidad::find($id);
+        return view('estadofactibilidad.actualizar', [
+            'estadofacti' => $ef
+        ]);
     }
 
     /**
@@ -80,7 +83,19 @@ class EstadofactibilidadController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,
+            [
+                'nombre'=>'required'
+            ]
+        );
+
+        $data = array(
+            'nombre' => $request->input('nombre'),
+            'estado' => $request->input('estado')
+        );
+
+        Estadofactibilidad::where('id', $id)->update($data);
+        return redirect('estadofactibilidad')->with('info', 'Se Actualizaron los datos correctamente');
     }
 
     /**

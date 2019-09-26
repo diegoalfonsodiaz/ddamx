@@ -44,10 +44,8 @@ Route::get('/agregarForm', function () {
 });
 Route::get('/estadofactibilidad', 'EstadofactibilidadController@index');
 Route::post('/insertar', 'EstadofactibilidadController@create');
-
-
-
-
+Route::get('/actualizar/{id}', 'EstadofactibilidadController@edit');
+Route::post('/update/{id}', 'EstadofactibilidadController@update');
 
 
 

@@ -31,7 +31,9 @@
           @endif
           </td>
 
-         
+          <td>
+            <a class="badge badge-warning" href='{{ url("/actualizar/{$ef->id}") }}'> Editar </a> 
+          </td>
           
         </tr>
       @endforeach
