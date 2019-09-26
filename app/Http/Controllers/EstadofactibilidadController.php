@@ -104,8 +104,18 @@ class EstadofactibilidadController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    public function eliminar($id)
+    {
+        $ef = Estadofactibilidad::find($id);
+        return view('estadofactibilidad.eliminar', [
+            'estadofacti' => $ef
+        ]);
+    }
+
     public function destroy($id)
     {
-        //
+        Estadofactibilidad::find($id)->delete();
+        return redirect('estadofactibilidad')->with('info','Registro eliminado satisfactoriamente');
     }
 }

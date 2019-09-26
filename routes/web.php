@@ -46,8 +46,8 @@ Route::get('/estadofactibilidad', 'EstadofactibilidadController@index');
 Route::post('/insertar', 'EstadofactibilidadController@create');
 Route::get('/actualizar/{id}', 'EstadofactibilidadController@edit');
 Route::post('/update/{id}', 'EstadofactibilidadController@update');
-
-
+Route::get('/eliminar/{id}', 'EstadofactibilidadController@eliminar');
+Route::post('/delete/{id}', 'EstadofactibilidadController@destroy');
 
 
 
