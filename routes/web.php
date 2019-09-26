@@ -43,7 +43,7 @@ Route::get('/agregarForm', function () {
     return view('estadofactibilidad.agregar');
 });
 Route::get('/estadofactibilidad', 'EstadofactibilidadController@index');
-
+Route::post('/insertar', 'EstadofactibilidadController@create');
 
 
 

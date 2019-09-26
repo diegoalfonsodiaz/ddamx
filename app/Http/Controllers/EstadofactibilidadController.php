@@ -23,9 +23,19 @@ class EstadofactibilidadController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $this->validate($request,
+            [
+                'nombre'=>'required'
+            ]
+        );
+
+        $estadofacti = new Estadofactibilidad;
+        $estadofacti->nombre = $request->input('nombre');
+        $estadofacti->estado = '1';
+        $estadofacti->save();
+        return redirect('estadofactibilidad')->with('info', 'Se registro Corectamente el Estado de Factibilidad');
     }
 
     /**
