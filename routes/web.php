@@ -5,6 +5,7 @@ Route::get('/', function () {
 Route::get('/', function () {
     return view('admin.dashboard');
 });
+//DonJorjais
 
 /* RUTAS CARGO EJECUTORES -----------------------------------------------------------------------*/
 
