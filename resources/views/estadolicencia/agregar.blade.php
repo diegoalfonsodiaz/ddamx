@@ -23,7 +23,7 @@
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Salvar</button>
+                <button type="submit" class="btn btn-primary">Guardar</button>
                 <a class="btn btn-danger" href="{{ url('/estadolicencia') }}"> Regresar </a>
               </div>
             </form>

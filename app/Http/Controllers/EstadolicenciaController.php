@@ -106,8 +106,18 @@ class EstadolicenciaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    public function eliminar($id)
+    {
+        $el = Estadolicencia::find($id);
+        return view('estadolicencia.eliminar', [
+            'estadolicen' => $el
+        ]);
+    }
+     
     public function destroy($id)
     {
-        //
+        Estadolicencia::find($id)->delete();
+        return redirect('estadolicencia')->with('info','Registro eliminado satisfactoriamente');
     }
 }
