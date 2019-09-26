@@ -14,7 +14,8 @@ class EstadofactibilidadController extends Controller
      */
     public function index()
     {
-        //
+        $ef = Estadofactibilidad::all();
+        return view('estadofactibilidad.index', ['estadofactibilidads'=>$ef]);
     }
 
     /**

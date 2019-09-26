@@ -39,8 +39,10 @@ Route::get('/', function () {
 
 /* FIN  PERSONA  **************************************************************************/
 /* RUTAS ESTADO FACTIBILIDAD -----------------------------------------------------------------------*/
-
-
+Route::get('/agregarForm', function () {
+    return view('estadofactibilidad.agregar');
+});
+Route::get('/estadofactibilidad', 'EstadofactibilidadController@index');
 
 
 
