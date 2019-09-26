@@ -58,6 +58,8 @@ Route::get('/agregarForm', function () {
     return view('estadolicencia.agregar');
 });
 Route::get('/estadolicencia', 'EstadolicenciaController@index');
+Route::post('/insertar', 'EstadolicenciaController@create');
+
 
 
 

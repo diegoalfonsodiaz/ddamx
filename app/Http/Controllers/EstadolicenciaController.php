@@ -23,9 +23,20 @@ class EstadolicenciaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $this->validate($request,
+            [
+                'nombre'=>'required',
+                'descripcion'=>'required'
+            ]
+        );
+
+        $estadolicen = new Estadolicencia;
+        $estadolicen->nombre = $request->input('nombre');
+        $estadolicen->descripcion = $request->input('descripcion');
+        $estadolicen->save();
+        return redirect('estadolicencia')->with('info', 'Registro Completado estado Licencia');
     }
 
     /**

@@ -2,6 +2,7 @@
 @section('contenido')
 
     <h1>Listado Estado Licencia</h1>
+    <a class="btn btn-primary" href="{{ url('/agregarForm') }}" type="button">Nuevo</a>
     @if(session('info'))
     <div class="alert alert-success">
      {{ session('info') }}
