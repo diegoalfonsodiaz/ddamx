@@ -27,7 +27,9 @@
           <td>{{ $el->descripcion }}</td>
          
         
-
+          <td>
+            <a class="badge badge-warning" href='{{ url("/actualizar/{$el->id}") }}'> Editar </a> 
+          </td>
           
         </tr>
       @endforeach

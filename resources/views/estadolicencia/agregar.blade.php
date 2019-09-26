@@ -24,6 +24,7 @@
 
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Salvar</button>
+                <a class="btn btn-danger" href="{{ url('/estadolicencia') }}"> Regresar </a>
               </div>
             </form>
           </div>

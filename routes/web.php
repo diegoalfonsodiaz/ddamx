@@ -59,6 +59,8 @@ Route::get('/agregarForm', function () {
 });
 Route::get('/estadolicencia', 'EstadolicenciaController@index');
 Route::post('/insertar', 'EstadolicenciaController@create');
+Route::get('/actualizar/{id}', 'EstadolicenciaController@edit');
+Route::post('/update/{id}', 'EstadolicenciaController@update');
 
 
 

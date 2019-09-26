@@ -69,7 +69,10 @@ class EstadolicenciaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $el = Estadolicencia::find($id);
+        return view('estadolicencia.actualizar', [
+            'estadolicen' => $el
+        ]);
     }
 
     /**
@@ -81,7 +84,20 @@ class EstadolicenciaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,
+            [
+                'nombre'=>'required',
+                'descripcion'=>'required'
+            ]
+        );
+
+        $data = array(
+            'nombre' => $request->input('nombre'),
+            'descripcion' => $request->input('descripcion')
+        );
+
+        Estadolicencia::where('id', $id)->update($data);
+        return redirect('estadolicencia')->with('info', 'Actualización éxitosa');
     }
 
     /**
