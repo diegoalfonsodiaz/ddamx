@@ -5,7 +5,7 @@ Route::get('/', function () {
 Route::get('/', function () {
     return view('admin.dashboard');
 });
-//Robinson
+//Robinson C
 
 /* RUTAS CARGO EJECUTORES -----------------------------------------------------------------------*/
 
