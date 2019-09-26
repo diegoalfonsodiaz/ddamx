@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\EstadoLicencia;
 
 class EstadolicenciaController extends Controller
 {
@@ -13,7 +14,8 @@ class EstadolicenciaController extends Controller
      */
     public function index()
     {
-        //
+        $el = Estadolicencia::all();
+        return view('estadolicencia.index', ['estadolicencias'=>$el]);
     }
 
     /**

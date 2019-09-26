@@ -54,6 +54,10 @@ Route::get('/', function () {
 
 
 /* RUTAS  ESTADO LICENCIA -----------------------------------------------------------------------*/
+Route::get('/agregarForm', function () {
+    return view('estadolicencia.agregar');
+});
+Route::get('/estadolicencia', 'EstadolicenciaController@index');
 
 
 
