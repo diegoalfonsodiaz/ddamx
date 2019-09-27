@@ -15,6 +15,9 @@ class CreateAsuntosTable extends Migration
     {
         Schema::create('asuntos', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('nombre', 100);
+            $table->string('descripcion');
+            $table->boolean('estado')->default(1);
             $table->timestamps();
         });
     }

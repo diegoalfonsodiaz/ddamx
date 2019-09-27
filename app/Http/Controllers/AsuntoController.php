@@ -7,79 +7,71 @@ use Illuminate\Http\Request;
 
 class AsuntoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $asunto=Asunto::all()->where('estado','1');
+        return view ('asunto.index');
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $asunto = Asunto::where('estado',1)->get();
+        return view('asunto.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+   
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'descripcion' => 'required',
+        ]);
+  
+        Product::create($request->all());
+   
+        return redirect()->route('asunto.index')
+                        ->with('success','Asunto creado');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Asunto  $asunto
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Asunto $asunto)
+    
+    public function show($id)
     {
-        //
+        $asunto=Asunto::findOrFail($id);
+        return view('curso.show');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Asunto  $asunto
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Asunto $asunto)
+    
+    public function edit($id)
     {
-        //
+        $asunto=Asunto::findOrFail($id);
+        return view('asunto.edit');
+
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Asunto  $asunto
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Asunto $asunto)
+  
+    public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,
+            [
+                'nombre'=>'required',
+                'descripcion'=>'required'
+            ]
+        );
+        $data = array(
+            'nombre' => $request->input('nombre'),
+            'descripcion' => $request->input('descripcion'),
+            'estado' => "1",
+        );
+        Estadofactibilidad::where('id', $id)->update($data);
+        return redirect('asunto')->with('info', 'Se Actualizaron los datos correctamente');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Asunto  $asunto
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Asunto $asunto)
+   
+    public function destroy( $id)
     {
-        //
+        $asunto = Asunto::findOrFail($id);
+        $asunto->estado = '0';
+        $asunto->update();
+        return redirect()->route('asunto.index');
     }
+    
 }
