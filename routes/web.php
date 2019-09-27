@@ -56,9 +56,9 @@ Route::get('/', function () {
 /* FIN  LICENCIA   **************************************************************************/
 /* RUTAS  TIPO DE OBRA -----------------------------------------------------------------------*/
 //Route::get('/tipoobra','TipoobraController@index');
-//Route::get('/tipoobra/create','TipoobraController@create');
-
 Route::resource('tipoobra', 'TipoobraController');
-
-
+Route::get('/desactivar/{id}', 'TipoobraController@desactivar');
+Route::post('/deshabilitado/{id}', 'TipoobraController@deshabilitado');
+Route::get('/activar/{id}', 'TipoobraController@activar');
+Route::post('/habilitado/{id}', 'TipoobraController@habilitado');
 /* FIN  TIPO DE OBRA   **************************************************************************/

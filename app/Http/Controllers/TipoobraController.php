@@ -73,9 +73,14 @@ class TipoobraController extends Controller
      * @param  \App\Tipoobra  $tipoobra
      * @return \Illuminate\Http\Response
      */
-    public function edit(Tipoobra $tipoobra)
+    public function edit($id)
     {
+        //return view('tipoobra.edit',compact('tipoobra'));
         //
+        $ef = Tipoobra::find($id);
+        return view('tipoobra.edit', [
+            'tipoobra' => $ef
+        ]);
     }
 
     /**
@@ -85,8 +90,19 @@ class TipoobraController extends Controller
      * @param  \App\Tipoobra  $tipoobra
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tipoobra $tipoobra)
+    public function update(Request $request, $id)
     {
+        $this->validate($request,
+            [
+                'nombre'=>'required'
+            ]
+        );
+        $data = array(
+            'nombre' => $request->input('nombre'),
+            'estado' => $request->input('estado')
+        );
+        Tipoobra::where('id', $id)->update($data);
+        return redirect('tipoobra')->with('info', 'Se Actualizaron los datos correctamente');
         //
     }
 
@@ -99,5 +115,37 @@ class TipoobraController extends Controller
     public function destroy(Tipoobra $tipoobra)
     {
         //
+    }
+    public function activar($id)
+    {
+        $ef = Tipoobra::find($id);
+        return view('tipoobra.activar', [
+            'tipoobra' => $ef
+        ]);
+    }
+    public function habilitado($id, Request $request)
+    {
+        $data = array(
+            'nombre' => $request->input('nombre'),
+            'estado' => $request->input('estado')
+        );
+        Tipoobra::where('id', $id)->update($data);
+        return redirect('tipoobra')->with('info', 'Se Habilitó el estado');
+    }
+    public function desactivar($id)
+    {
+        $ef = Tipoobra::find($id);
+        return view('tipoobra.desactivar', [
+            'tipoobra' => $ef
+        ]);
+    }
+    public function deshabilitado($id, Request $request)
+    {
+        $data = array(
+            'nombre' => $request->input('nombre'),
+            'estado' => $request->input('estado')
+        );
+        Tipoobra::where('id', $id)->update($data);
+        return redirect('tipoobra')->with('info', 'Se Desabilito el estado');
     }
 }
