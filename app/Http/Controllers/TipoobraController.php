@@ -14,6 +14,13 @@ class TipoobraController extends Controller
      */
     public function index()
     {
+        $tipoobra = tipoobra::latest()->paginate(5);
+  
+        return view('tipoobra.index',compact('tipoobra'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
+        //$tipoobra = tipoobra::all()->where('estado','1');
+  
+        //return view('tipoobra.index');
         //
     }
 
@@ -24,6 +31,7 @@ class TipoobraController extends Controller
      */
     public function create()
     {
+        return view('tipoobra.create');
         //
     }
 

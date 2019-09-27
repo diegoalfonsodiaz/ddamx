@@ -54,3 +54,11 @@ Route::get('/', function () {
 
 
 /* FIN  LICENCIA   **************************************************************************/
+/* RUTAS  TIPO DE OBRA -----------------------------------------------------------------------*/
+//Route::get('/tipoobra','TipoobraController@index');
+//Route::get('/tipoobra/create','TipoobraController@create');
+
+Route::resource('tipoobra', 'TipoobraController');
+
+
+/* FIN  TIPO DE OBRA   **************************************************************************/

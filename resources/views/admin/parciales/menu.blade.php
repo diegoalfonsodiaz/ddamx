@@ -13,6 +13,7 @@
             <li><a href="#">Ejecutores</a></li>
             <li><a href="#">Cargo</a></li>
             <li><a href="#">Tipo de Obra</a></li>
+            <li><a href="{{ url('/tipoobra') }} ">Tipo</a></li>
             <li><a href="#">Solicitud</a></li>
             <li><a href="#">Personas</a></li>
             <li><a href="#">Estado licencia</a></li>

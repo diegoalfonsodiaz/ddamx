@@ -15,6 +15,8 @@ class CreateTipoobrasTable extends Migration
     {
         Schema::create('tipoobras', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('nombre');
+            $table->boolean('estado');
             $table->timestamps();
         });
     }
