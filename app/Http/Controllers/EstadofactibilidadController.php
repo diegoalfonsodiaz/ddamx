@@ -118,4 +118,42 @@ class EstadofactibilidadController extends Controller
         Estadofactibilidad::find($id)->delete();
         return redirect('estadofactibilidad')->with('info','Registro eliminado satisfactoriamente');
     }
+
+    public function activar($id)
+    {
+        $ef = Estadofactibilidad::find($id);
+        return view('estadofactibilidad.activar', [
+            'estadofacti' => $ef
+        ]);
+    }
+
+    public function habilitado($id, Request $request)
+    {
+        $data = array(
+            'nombre' => $request->input('nombre'),
+            'estado' => $request->input('estado')
+        );
+
+        Estadofactibilidad::where('id', $id)->update($data);
+        return redirect('estadofactibilidad')->with('info', 'Se Habilitó el estado');
+    }
+
+    public function desactivar($id)
+    {
+        $ef = Estadofactibilidad::find($id);
+        return view('estadofactibilidad.desactivar', [
+            'estadofacti' => $ef
+        ]);
+    }
+
+    public function deshabilitado($id, Request $request)
+    {
+        $data = array(
+            'nombre' => $request->input('nombre'),
+            'estado' => $request->input('estado')
+        );
+
+        Estadofactibilidad::where('id', $id)->update($data);
+        return redirect('estadofactibilidad')->with('info', 'Se Desabilito el estado');
+    }
 }

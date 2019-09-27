@@ -46,12 +46,12 @@ Route::get('/estadofactibilidad', 'EstadofactibilidadController@index');
 Route::post('/insertar', 'EstadofactibilidadController@create');
 Route::get('/actualizar/{id}', 'EstadofactibilidadController@edit');
 Route::post('/update/{id}', 'EstadofactibilidadController@update');
-Route::get('/eliminar/{id}', 'EstadofactibilidadController@eliminar');
-Route::post('/delete/{id}', 'EstadofactibilidadController@destroy');
-
-
-
-
+//Route::get('/eliminar/{id}', 'EstadofactibilidadController@eliminar');
+//Route::post('/delete/{id}', 'EstadofactibilidadController@destroy');
+Route::get('/desactivar/{id}', 'EstadofactibilidadController@desactivar');
+Route::post('/deshabilitado/{id}', 'EstadofactibilidadController@deshabilitado');
+Route::get('/activar/{id}', 'EstadofactibilidadController@activar');
+Route::post('/habilitado/{id}', 'EstadofactibilidadController@habilitado');
 /* FIN  ESTADO FACTIBILIDAD  **************************************************************************/
 /* RUTAS  ESTADO LICENCIA -----------------------------------------------------------------------*/
 

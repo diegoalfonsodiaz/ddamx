@@ -2,11 +2,16 @@
 @section('contenido')
     <h1>Listado Estado Factibilidad</h1>
     <a class="btn btn-primary" href="{{ url('/agregarForm') }}" type="button">Nuevo</a>
+    
     @if(session('info'))
-    <div class="alert alert-success">
+    <div class="alert alert-success" role="alert">
         {{ session('info') }}
+        <button type="button" class="close" data-dismiss="alert" alert-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
     </div>
     @endif
+
     <table class="table table-bordered table-hover ">
     <thead>
         <tr>
@@ -24,16 +29,34 @@
           <td>{{ $ef->nombre }}</td>
           <td> 
           @if($ef->estado == 1)
-          <a href="#" class="badge badge-primary">Activado</a>
+          <!--<a class="badge badge-danger">Activado</a>-->
+          <a class="label label-success">Activo</a>
           @endif
           @if($ef->estado == 0)
-          <a href="#" class="badge badge-danger">Desactivado</a>
+          <!--<a href="#" class="badge badge-danger">Desactivado</a>-->
+          <a class="label label-danger">Desactivado</a>
           @endif
           </td>
 
           <td>
-            <a class="badge badge-warning" href='{{ url("/actualizar/{$ef->id}") }}'> Editar </a> 
-            <a class="badge badge-warning" href='{{ url("/eliminar/{$ef->id}") }}'> Eliminar </a> 
+            <a class="btn btn-info" href="#" type="button" class="btn btn-default btn-sm">
+              <span class="glyphicon glyphicon-eye-open" ></span>
+            </a>
+
+            <a class="btn btn-warning" href='{{ url("/actualizar/{$ef->id}") }}' class="btn btn-default btn-sm">
+              <span class="glyphicon glyphicon-edit"></span>
+            </a>
+            @if($ef->estado == 1)
+            <a class="btn btn-danger" href='{{ url("/desactivar/{$ef->id}") }}' type="button" class="btn btn-default btn-sm">
+              <span class="glyphicon glyphicon-trash"></span>
+            </a>
+            @endif
+            @if($ef->estado == 0)
+            <a class="btn btn-primary" href='{{ url("/activar/{$ef->id}") }}' type="button" class="btn btn-default btn-sm">
+              <span class="glyphicon glyphicon-ok-circle"></span>
+            </a>
+            @endif
+
           </td>
           
         </tr>
