@@ -52,6 +52,7 @@ Route::get('/desactivar/{id}', 'EstadofactibilidadController@desactivar');
 Route::post('/deshabilitado/{id}', 'EstadofactibilidadController@deshabilitado');
 Route::get('/activar/{id}', 'EstadofactibilidadController@activar');
 Route::post('/habilitado/{id}', 'EstadofactibilidadController@habilitado');
+Route::get('/detalle/{id}', 'EstadofactibilidadController@show');
 /* FIN  ESTADO FACTIBILIDAD  **************************************************************************/
 /* RUTAS  ESTADO LICENCIA -----------------------------------------------------------------------*/
 

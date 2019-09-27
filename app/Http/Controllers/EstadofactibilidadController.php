@@ -57,7 +57,10 @@ class EstadofactibilidadController extends Controller
      */
     public function show($id)
     {
-        //
+        $ef = Estadofactibilidad::find($id);
+        return view('estadofactibilidad.detalle', [
+            'estadofacti' => $ef
+        ]);
     }
 
     /**
@@ -154,6 +157,6 @@ class EstadofactibilidadController extends Controller
         );
 
         Estadofactibilidad::where('id', $id)->update($data);
-        return redirect('estadofactibilidad')->with('info', 'Se Desabilito el estado');
+        return redirect('estadofactibilidad')->with('info', 'Se Desabilitó el estado');
     }
 }
