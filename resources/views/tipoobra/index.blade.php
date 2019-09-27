@@ -6,7 +6,7 @@
               <h3 class="box-title"> Tipo de obra</h3>
               <br><br>
               <div class="pull-left">
-                <a class="btn btn-success" href="{{ route('tipoobra.create') }}"> Create New Product </a>
+                <a class="btn btn-success" href="{{ route('tipoobra.create') }}"> Crear nuevo tipo de obra </a>
             </div>
               <br><br>
             <!-- /.box-header -->

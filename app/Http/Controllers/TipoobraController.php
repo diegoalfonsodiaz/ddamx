@@ -43,6 +43,16 @@ class TipoobraController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,
+            [
+                'nombre'=>'required'
+            ]
+        );
+        $tipoobra = new Tipoobra;
+        $tipoobra->nombre = $request->input('nombre');
+        $tipoobra->estado = '1';
+        $tipoobra->save();
+        return redirect('tipoobra')->with('info', 'Se registro Corectamente el Tipo de obra');
         //
     }
 
