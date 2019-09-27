@@ -27,18 +27,7 @@ class CargoejecutorController extends Controller
      */
     public function create(Request $request)
     {
-        $request->validate([
-            'nombre' => 'required',
-            'descripcion' => 'required',
-        ]);
-  
-        $cargoejecutor = new Cargoejecutor();
-        $cargoejecutor->nombre = $request->input('nombre');
-        $cargoejecutor->descipcion = $request->input('descripcion');
-        $cargoejecutor->estado = '1';
-        $cargoejecutor->save();
-   
-        return redirect('cargoejecutor')->with('info', 'Se registro Corectamente el cargo');
+        return view('cargoejecutor.create');
     }
 
     /**
@@ -51,7 +40,6 @@ class CargoejecutorController extends Controller
     {
         $request->validate([
             'nombre' => 'required',
-            'descripcion' => 'required',
         ]);
   
         Cargoejecutor::create($request->all());

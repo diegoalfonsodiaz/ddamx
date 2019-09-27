@@ -4,6 +4,11 @@
 <div class="box box-primary">
             <div class="box-header with-border">
               <h3 class="box-title"> Cargo ejecutor</h3>
+              <br><br>
+              <div class="pull-right">
+                <a class="btn btn-success" href="{{ route('cargoejecutor.create') }}"> Create New Product</a>
+                </div>
+              <br><br>
             <!-- /.box-header -->
             <!-- form start -->
             <table class="table table-bordered">
