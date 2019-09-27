@@ -5,9 +5,9 @@
             <div class="box-header with-border">
               <h3 class="box-title"> Cargo ejecutor</h3>
               <br><br>
-              <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('cargoejecutor.create') }}"> Create New Product</a>
-                </div>
+              <div class="pull-left">
+                <a class="btn btn-success" href="{{ route('cargoejecutor.create') }}"> Create New Product </a>
+            </div>
               <br><br>
             <!-- /.box-header -->
             <!-- form start -->
@@ -23,15 +23,11 @@
             <td>{{ $product->nombre }}</td>
             <td>
                 <form action="{{ route('cargoejecutor.destroy',$product->id) }}" method="POST">
-   
-                    <a class="btn btn-info" href="{{ route('cargoejecutor.show',$product->id) }}">Mostrar</a>
-    
                     <a class="btn btn-primary" href="{{ route('cargoejecutor.edit',$product->id) }}">Editar</a>
    
                     @csrf
                     @method('DELETE')
-      
-                    <button type="submit" class="btn btn-danger">Borrar</button>
+                    <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
             </td>
         </tr>
@@ -39,5 +35,5 @@
     </table>
             
             
-          </div>
+</div>
 @stop

@@ -38,14 +38,16 @@ class CargoejecutorController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'nombre' => 'required',
-        ]);
-  
-        Cargoejecutor::create($request->all());
-   
-        return redirect()->route('cargoejecutor.index')
-                        ->with('success','Cargo Creado');
+        $this->validate($request,
+            [
+                'nombre'=>'required'
+            ]
+        );
+        $cargoejecutor = new Cargoejecutor;
+        $cargoejecutor->nombre = $request->input('nombre');
+        $cargoejecutor->estado = '1';
+        $cargoejecutor->save();
+        return redirect('cargoejecutor')->with('info', 'Se registro Corectamente el Estado de Factibilidad');
     }
 
     /**
@@ -56,7 +58,7 @@ class CargoejecutorController extends Controller
      */
     public function show(Cargoejecutor $cargoejecutor)
     {
-        return view('cargoejecutor.show',compact('cargoejecutor'));
+        
     }
 
     /**
@@ -81,7 +83,6 @@ class CargoejecutorController extends Controller
     {
         $request->validate([
             'nombre' => 'required',
-            'descripcion' => 'required',
         ]);
   
         $cargoejecutor->update($request->all());
@@ -96,10 +97,9 @@ class CargoejecutorController extends Controller
      * @param  \App\Cargoejecutor  $cargoejecutor
      * @return \Illuminate\Http\Response
      */
-    public function destroy(equest $request, Cargoejecutor $cargoejecutor)
+    public function destroy( Cargoejecutor $cargoejecutor)
     {
         $cargoejecutor->delete();
-  
         return redirect()->route('cargoejecutor.index')
                         ->with('success','Cargo borrado');
     }
