@@ -43,7 +43,7 @@ Route::resource('cargoejecutor', 'CargoejecutorController');
 
 /* FIN  PERSONA  **************************************************************************/
 /* RUTAS ESTADO FACTIBILIDAD -----------------------------------------------------------------------*/
-Route::get('/agregarForm', function () {
+Route::get('/agregar', function () {
     return view('estadofactibilidad.agregar');
 });
 Route::get('/estadofactibilidad', 'EstadofactibilidadController@index');
