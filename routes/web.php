@@ -1,6 +1,9 @@
 <?php
+
+
+
 Route::get('/', function () {
-    return view('welcome');
+   return view('welcome');
 });
 Route::get('/', function () {
     return view('admin.dashboard');
@@ -8,10 +11,10 @@ Route::get('/', function () {
 //Robinson C
 
 /* RUTAS CARGO EJECUTORES -----------------------------------------------------------------------*/
-
-
-
-
+Route::resource('asunto', 'AsuntoController');
+//Route::get('/cargoejecutor', 'CargoejecutorController@index');
+//Route::get('/cargoejecutor/create', 'CargoejecutorController@create');
+Route::resource('cargoejecutor', 'CargoejecutorController');
 
 
 /* FIN CARGO EJECUTORES  **************************************************************************/
@@ -40,12 +43,20 @@ Route::get('/', function () {
 
 /* FIN  PERSONA  **************************************************************************/
 /* RUTAS ESTADO FACTIBILIDAD -----------------------------------------------------------------------*/
-
-
-
-
-
-
+Route::get('/agregarForm', function () {
+    return view('estadofactibilidad.agregar');
+});
+Route::get('/estadofactibilidad', 'EstadofactibilidadController@index');
+Route::post('/insertar', 'EstadofactibilidadController@create');
+Route::get('/actualizar/{id}', 'EstadofactibilidadController@edit');
+Route::post('/update/{id}', 'EstadofactibilidadController@update');
+//Route::get('/eliminar/{id}', 'EstadofactibilidadController@eliminar');
+//Route::post('/delete/{id}', 'EstadofactibilidadController@destroy');
+Route::get('/desactivar/{id}', 'EstadofactibilidadController@desactivar');
+Route::post('/deshabilitado/{id}', 'EstadofactibilidadController@deshabilitado');
+Route::get('/activar/{id}', 'EstadofactibilidadController@activar');
+Route::post('/habilitado/{id}', 'EstadofactibilidadController@habilitado');
+Route::get('/detalle/{id}', 'EstadofactibilidadController@show');
 /* FIN  ESTADO FACTIBILIDAD  **************************************************************************/
 
 
