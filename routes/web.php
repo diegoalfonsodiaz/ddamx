@@ -10,7 +10,7 @@ Route::get('/', function () {
 });
 
 /* RUTAS CARGO EJECUTORES -----------------------------------------------------------------------*/
-
+Route::resource('asunto', 'AsuntoController');
 //Route::get('/cargoejecutor', 'CargoejecutorController@index');
 //Route::get('/cargoejecutor/create', 'CargoejecutorController@create');
 Route::resource('cargoejecutor', 'CargoejecutorController');
