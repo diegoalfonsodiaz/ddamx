@@ -34,7 +34,7 @@ class PersonaController extends Controller
     public function create()
     {
         
-        return view('admin.personas.create');
+        return view('personas.create');
     }
 
     public function store(Request $request)
