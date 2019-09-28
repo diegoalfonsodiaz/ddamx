@@ -104,3 +104,10 @@ Route::post('/deshabilitado/{id}', 'TipoobraController@deshabilitado');
 Route::get('/activar/{id}', 'TipoobraController@activar');
 Route::post('/habilitado/{id}', 'TipoobraController@habilitado');
 /* FIN  TIPO DE OBRA   **************************************************************************/
+Route::get('/persona','PersonaController@index')->name('personas.index');
+Route::get('/persona/create','PersonaController@create')->name('personas.create');
+Route::post('/persona','PersonaController@store')->name('personas.store');
+Route::get('/persona/{persona}', 'PersonaController@edit')->name('personas.edit');
+Route::put('/persona/{persona}', 'PersonaController@update')->name('personas.update');
+Route::post('/persona/{persona}', 'PersonaController@desactivar')->name('personas.desactivar');
+Route::delete('/persona/{persona}', 'PersonaController@activar')->name('personas.activar');
