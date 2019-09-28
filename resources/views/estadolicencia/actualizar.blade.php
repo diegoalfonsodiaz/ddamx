@@ -14,11 +14,11 @@
                   <input type="text" name="nombre" value="{{ $estadolicen->nombre }}" class="form-control" placeholder="Estado Licencia">
                   <input type="hidden" name="estado" value="{{ $estadolicen->estado }}" class="form-control" placeholder="Estado Licencia">
                 </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Descripcion</label>
-                  <input type="text" name="descripcion" value="{{ $estadolicen->nombre }}" class="form-control" placeholder="Estado Licencia">
-                  <input type="hidden" name="estado" value="{{ $estadolicen->estado }}" class="form-control" placeholder="Estado Licencia">
-                </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Descripcion</label>
+              <input type="text" name="descripcion" value="{{ $estadolicen->descripcion }}" class="form-control" placeholder="Estado Licencia">
+              <input type="hidden" name="estado" value="{{ $estadolicen->estado }}" class="form-control" placeholder="Estado Licencia">
+            </div>
                 
               <!-- /.box-body -->
 

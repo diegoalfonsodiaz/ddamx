@@ -30,6 +30,8 @@
           <td>
             <a class="badge badge-warning" href='{{ url("/actualizar/{$el->id}") }}'> Editar </a> 
             <a class="badge badge-warning" href='{{ url("/eliminar/{$el->id}") }}'> Eliminar </a>
+            <a class="badge badge-warning" href='{{ url("/detalle/{$el->id}") }}'> Detalle </a>
+            
           </td>
           
         </tr>

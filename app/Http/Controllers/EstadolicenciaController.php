@@ -58,7 +58,10 @@ class EstadolicenciaController extends Controller
      */
     public function show($id)
     {
-        //
+        $el = Estadolicencia::find($id);
+        return view('estadolicencia.detalle', [
+            'estadolicen' => $el
+        ]);
     }
 
     /**

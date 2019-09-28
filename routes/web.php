@@ -63,6 +63,7 @@ Route::get('/actualizar/{id}', 'EstadolicenciaController@edit');
 Route::post('/update/{id}', 'EstadolicenciaController@update');
 Route::get('/eliminar/{id}', 'EstadolicenciaController@eliminar');
 Route::post('/delete/{id}', 'EstadolicenciaController@destroy');
+Route::get('/detalle/{id}', 'EstadolicenciaController@show');
 
 
 
