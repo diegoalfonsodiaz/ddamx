@@ -6,6 +6,7 @@ Route::get('/', function () {
     return view('admin.dashboard');
 });
 
+
 /* RUTAS CARGO EJECUTORES -----------------------------------------------------------------------*/
 
 
@@ -62,6 +63,11 @@ Route::get('/', function () {
 
 /* RUTAS  tipovia -----------------------------------------------------------------------*/
 //Pruebas tbl_tipovia
+Route::get('/agregartipovia', function () {
+    return view('tipovia.agregar');
+});
+Route::get('/tipovia', 'TipoviaController@index');
+Route::post('/insertartipovia', 'TipoviaController@create');
 
 
 
