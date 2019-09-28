@@ -1,5 +1,7 @@
 @extends('admin.principal')
 @section('contenido')
+<div class="box box-primary">
+            <div class="box-header with-border">
     <h1>Listado Tipo de obra</h1>
     <a class="btn btn-primary" href="{{ route('tipoobra.create') }}" type="button">Nuevo</a>
     
