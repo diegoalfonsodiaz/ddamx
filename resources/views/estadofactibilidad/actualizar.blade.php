@@ -6,7 +6,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form action='{{ url("/update/{$estadofacti->id}") }}' method="POST">
+            <form action='{{ url("/updatefacti/{$estadofacti->id}") }}' method="POST">
             {{ csrf_field() }}
               <div class="box-body">
                 <div class="form-group">

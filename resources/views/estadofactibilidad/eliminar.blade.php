@@ -3,7 +3,7 @@
 
     <div class="card" style="width: 22rem;">
         <div class="card-body">
-        <form action='{{ url("/delete/{$estadofacti->id}") }}' method="POST">
+        <form action='{{ url("/deletefacti/{$estadofacti->id}") }}' method="POST">
         {{ csrf_field() }}
             <h3>Eliminar Estado</h3>
             <label for="">Nombre: </label>

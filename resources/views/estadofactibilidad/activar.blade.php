@@ -4,7 +4,7 @@
     <div class="box box-primary">
         <div class="box-header with-border">
             <h3>Cambiar Estado</h3>
-            <form action='{{ url("/habilitado/{$estadofacti->id}") }}' method="POST">
+            <form action='{{ url("/habilitadofacti/{$estadofacti->id}") }}' method="POST">
             {{ csrf_field() }}
                 
                 <label for="#"><h4>Nombre: </h4></label>

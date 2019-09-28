@@ -15,9 +15,9 @@
             <li><a href="#">Tipo de Obra</a></li>
             <li><a href="#">Solicitud</a></li>
             <li><a href="#">Personas</a></li>
-            <li><a href="{{ url('/estadolicencia') }}">Estado Licencia</a></li>
+            <li><a href="">Estado Licencia</a></li>
             <li><a href="#">Estado factibilidad</a></li>
-            <li><a href="#">Estado licencia</a></li>
+            <li><a href="{{ url('/estadolicencia') }}">Estado licencia</a></li>
             <li><a href=" {{ url('/estadofactibilidad') }} ">Estado factibilidad</a></li>
           </ul>
         </li>

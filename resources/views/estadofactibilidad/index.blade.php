@@ -5,7 +5,7 @@
     <h2> Estado de Factibilidad</h2>
     <br>
     <div class="pull-left">
-    <a class="btn btn-primary" href="{{ url('/agregarForm') }}" type="button">Nuevo</a>
+    <a class="btn btn-primary" href="{{ url('/agregarfacti') }}" type="button">Nuevo</a>
 
     @if(session('info'))
       <div class="alert alert-success" role="alert">
@@ -43,20 +43,20 @@
           </td>
 
           <td>
-            <a class="btn btn-info" href='{{ url("/detalle/{$ef->id}") }}' type="button" class="btn btn-default btn-sm">
+            <a class="btn btn-info" href='{{ url("/detallefacti/{$ef->id}") }}' type="button" class="btn btn-default btn-sm">
               <span class="glyphicon glyphicon-eye-open" ></span>
             </a>
 
-            <a class="btn btn-warning" href='{{ url("/actualizar/{$ef->id}") }}' class="btn btn-default btn-sm">
+            <a class="btn btn-warning" href='{{ url("/actualizarfacti/{$ef->id}") }}' class="btn btn-default btn-sm">
               <span class="glyphicon glyphicon-edit"></span>
             </a>
             @if($ef->estado == 1)
-            <a class="btn btn-danger" href='{{ url("/desactivar/{$ef->id}") }}' type="button" class="btn btn-default btn-sm">
+            <a class="btn btn-danger" href='{{ url("/desactivarfacti/{$ef->id}") }}' type="button" class="btn btn-default btn-sm">
               <span class="glyphicon glyphicon-trash"></span>
             </a>
             @endif
             @if($ef->estado == 0)
-            <a class="btn btn-primary" href='{{ url("/activar/{$ef->id}") }}' type="button" class="btn btn-default btn-sm">
+            <a class="btn btn-primary" href='{{ url("/activarfacti/{$ef->id}") }}' type="button" class="btn btn-default btn-sm">
               <span class="glyphicon glyphicon-ok-circle"></span>
             </a>
             @endif
