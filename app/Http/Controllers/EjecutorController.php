@@ -45,7 +45,8 @@ class EjecutorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Ejecutor::create($request->all());
+        return redirect()->route('ejecutor.index');
     }
 
     /**
@@ -65,9 +66,11 @@ class EjecutorController extends Controller
      * @param  \App\Ejecutor  $ejecutor
      * @return \Illuminate\Http\Response
      */
-    public function edit(Ejecutor $ejecutor)
+    public function edit($id)
     {
-        //
+        $cargoejecutor=Cargoejecutor::all();
+        $ejecutor=Ejecutor::findOrFail($id);
+        return view('ejecutor.edit', compact('cargoejecutor'),compact('ejecutor'));
     }
 
     /**
@@ -77,9 +80,10 @@ class EjecutorController extends Controller
      * @param  \App\Ejecutor  $ejecutor
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Ejecutor $ejecutor)
+    public function update(Request $request, $id)
     {
-        //
+        Ejecutor::findOrFail($id)->update($request->all());
+         return redirect()->route('ejecutor.index');
     }
 
     /**
@@ -88,8 +92,9 @@ class EjecutorController extends Controller
      * @param  \App\Ejecutor  $ejecutor
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Ejecutor $ejecutor)
+    public function destroy($id)
     {
-        //
+        Ejecutor::findOrFail($id)->delete();
+         return redirect()->route('ejecutor.index');
     }
 }

@@ -10,7 +10,7 @@
               </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#">Ejecutores</a></li>
+            <li><a href=" {{ url('/ejecutor') }} ">Ejecutores</a></li>
             <li><a href="{{ url('/cargoejecutor') }} ">Cargo</a></li>
             <li><a href="#">Tipo de Obra</a></li>
             <li><a href="{{ url('/tipoobra') }} ">Tipo</a></li>

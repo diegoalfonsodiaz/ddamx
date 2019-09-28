@@ -2,7 +2,7 @@
 @section('contenido')
 <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title"> Cargo ejecutor</h3>
+              <h3 class="box-title"> Cargo Ejecutor</h3>
               <br><br>
               <div class="pull-left">
                 <a class="btn btn-success" href="{{ route('ejecutor.create') }}"> Crear </a>
@@ -14,9 +14,9 @@
         <tr>
             <th># </th>
             <th>Nombre</th>
-            <th>direccion</th>
-            <th>ornato</th>
-            <th>cargo</th>
+            <th>Direccion</th>
+            <th>Ornato</th>
+            <th>Cargo</th>
             <th width="280px">Acciones</th>
         </tr>
         @foreach ($ejecutor as $ejecutors)
