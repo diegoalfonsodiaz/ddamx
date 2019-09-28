@@ -13,7 +13,7 @@
             <li><a href="#">Cargo</a></li>
             <li><a href="#">Tipo de Obra</a></li>
             <li><a href="#">Solicitud</a></li>
-            <li><a href="#">Personas</a></li>
+            <li><a href="{{route('personas.index')}}">Personas</a></li>
             <li><a href="#">Estado licencia</a></li>
             <li><a href="#">Estado factibilidad</a></li>
           </ul>

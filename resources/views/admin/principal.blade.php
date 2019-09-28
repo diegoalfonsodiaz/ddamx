@@ -384,7 +384,42 @@ desired effect
 <script src="/plantilla/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="/plantilla/js/adminlte.min.js"></script>
+<script>
+ 
+  
+  $(document).ready(function() {
+    $('#persona-table').DataTable({
+      'paging'      : true,
+      'lengthChange': true,
+      'searching'   : true,
+      'ordering'    : false,
+      'info'        : true,
+      'autoWidth'   : false,
+      
+    });
+} );
 
+</script>
+
+<!--<script>
+ 
+  $(document).ready(function() {
+    $('#persona-table').DataTable({
+      "Serveside":true,
+      "ajax":"{{ url('api/personas')}}",
+      "columns":[
+         {data:'id'},
+         {data:'dpi'},
+         {data:'nombre'},
+         {data:'apellido'},
+         {data:'telefono'},
+         {data:'correo'},
+         {data:'estado'},
+
+      ]
+    });
+} );
+</script>-->
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. -->
