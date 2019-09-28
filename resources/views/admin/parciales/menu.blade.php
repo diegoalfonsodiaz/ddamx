@@ -41,7 +41,7 @@
               </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#">Denuncias </a></li>
+            <li><a href="{{ url('/denuncia') }}">Denuncias </a></li>
             <li><a href="#">Estado Denuncias</a></li>
           </ul>
         </li>
