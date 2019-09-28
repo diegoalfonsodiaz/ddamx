@@ -66,7 +66,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="#">Bitacora  </a></li>
-            <li><a href="#">Asunto de Bitacora</a></li>
+            <li><a href="{{ url('/asunto') }}">Asunto de Bitacora</a></li>
           </ul>
         </li>
 

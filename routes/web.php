@@ -7,7 +7,7 @@ Route::get('/', function () {
 });
 
 /* RUTAS CARGO EJECUTORES -----------------------------------------------------------------------*/
-
+Route::resource('asunto', 'AsuntoController');
 
 
 

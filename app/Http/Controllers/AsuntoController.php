@@ -9,8 +9,10 @@ class AsuntoController extends Controller
 {
     public function index()
     {
-        $asunto=Asunto::all()->where('estado','1');
-        return view ('asunto.index');
+        $asunto = Asunto::latest()->paginate(5);
+  
+        return view('asunto.index',compact('asunto'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
     public function create(Request $request)
     {
@@ -21,29 +23,31 @@ class AsuntoController extends Controller
    
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'descripcion' => 'required',
-        ]);
-  
-        Product::create($request->all());
-   
-        return redirect()->route('asunto.index')
-                        ->with('success','Asunto creado');
+        $this->validate($request,
+        [
+            'nombre'=>'required',
+            'descripcion'=>'required',
+        ]
+        );
+    $asunto = new Asunto();
+    $asunto->nombre = $request->input('nombre');
+    $asunto->descripcion = $request->input('descripcion');
+    $asunto->estado = '1';
+    $asunto->save();
+    return redirect('asunto')->with('info', 'Se registro Corectamente ');
     }
 
     
     public function show($id)
     {
         $asunto=Asunto::findOrFail($id);
-        return view('curso.show');
+        return view('asunto.index');
     }
 
     
-    public function edit($id)
+    public function edit(Asunto $asunto)
     {
-        $asunto=Asunto::findOrFail($id);
-        return view('asunto.edit');
+        return view('asunto.edit',compact('asunto'));
 
     }
 
@@ -52,26 +56,23 @@ class AsuntoController extends Controller
     {
         $this->validate($request,
             [
-                'nombre'=>'required',
-                'descripcion'=>'required'
+                'nombre'=>'required'
             ]
         );
         $data = array(
             'nombre' => $request->input('nombre'),
-            'descripcion' => $request->input('descripcion'),
-            'estado' => "1",
+            'descripcion' => $request->input('descripcion')
         );
-        Estadofactibilidad::where('id', $id)->update($data);
+        Asunto::where('id', $id)->update($data);
         return redirect('asunto')->with('info', 'Se Actualizaron los datos correctamente');
     }
 
    
-    public function destroy( $id)
+    public function destroy( Asunto $asunto)
     {
-        $asunto = Asunto::findOrFail($id);
-        $asunto->estado = '0';
-        $asunto->update();
-        return redirect()->route('asunto.index');
+        $asunto->delete();
+        return redirect()->route('asunto.index')
+                        ->with('success',' borrado');
     }
     
 }
