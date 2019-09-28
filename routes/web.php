@@ -69,7 +69,8 @@ Route::get('/agregartipovia', function () {
 Route::get('/tipovia', 'TipoviaController@index');
 Route::post('/insertartipovia', 'TipoviaController@create');
 
-
+Route::get('/actualizartipovia/{id}', 'TipoviaController@edit');
+Route::post('/updatetipovia/{id}', 'TipoviaController@update');
 
 
 

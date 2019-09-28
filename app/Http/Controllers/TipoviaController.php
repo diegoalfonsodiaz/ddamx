@@ -71,7 +71,10 @@ class TipoviaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $vt = Tipovia::find($id);
+        return view('tipovia.actualizar', [
+            'tpv' => $vt
+        ]);
     }
 
     /**
@@ -81,9 +84,21 @@ class TipoviaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,
+        [
+            'nombre'=>'required',
+            'descripcion'=>'required'
+        ]
+    );
+    $data = array(
+        'nombre' => $request->input('nombre'),
+        'descripcion' => $request->input('descripcion'),
+        'estado' => $request->input('estado')
+    );
+    Tipovia::where('id', $id)->update($data);
+    return redirect('tipovia')->with('info', 'Registros Actualizados correctamente');
     }
 
     public function desactivar(Request $request)

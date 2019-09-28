@@ -23,6 +23,7 @@
 
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Guardar</button>
+                <a class="btn btn-danger" href="{{ url('/tipovia') }}"> Regresar </a> 
               </div>
             </form>
           </div>

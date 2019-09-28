@@ -32,11 +32,9 @@
           @if($tpv->estado == 0)
           <a href="#" class="badge badge-danger">Desactivado</a>
           @endif
+          <td>
+            <a class="badge badge-warning" href='{{ url("/actualizartipovia/{$tpv->id}") }}'> Editar </a> 
           </td>
-
-
-
-        </tr>
       @endforeach
     @endif
 
