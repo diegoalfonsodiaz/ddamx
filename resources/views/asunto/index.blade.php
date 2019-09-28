@@ -14,7 +14,7 @@
                 <tr>
                     <th># </th>
                     <th>Nombre</th>
-                    <th>Descripcion Asunto</th>
+                    <th>Descripcion de Asunto</th>
                     <th width="280px">Acciones</th>
                 </tr>
                 @foreach ($asunto as $asuntos)
