@@ -34,6 +34,7 @@
           @endif
           <td>
             <a class="badge badge-warning" href='{{ url("/actualizartipovia/{$tpv->id}") }}'> Editar </a> 
+            <a class="badge badge-warning" href='{{ url("/eliminartipovia/{$tpv->id}") }}'> Eliminar </a> 
           </td>
       @endforeach
     @endif

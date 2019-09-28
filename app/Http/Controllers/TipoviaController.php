@@ -111,6 +111,14 @@ class TipoviaController extends Controller
         //
     }
 
+    public function eliminar($id)
+    {
+        $vt = Tipovia::find($id);
+        return view('tipovia.eliminar', [
+            'tpv' => $vt
+        ]);
+    }
+
     /**
      * Remove the specified resource from storage.
      *
@@ -119,6 +127,7 @@ class TipoviaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Tipovia::find($id)->delete();
+        return redirect('tipovia')->with('info','Registro eliminado con éxito');
     }
 }
