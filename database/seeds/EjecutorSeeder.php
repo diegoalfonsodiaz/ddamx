@@ -16,19 +16,19 @@ class EjecutorSeeder extends Seeder
             'cargoejecutor_id' => '1',
             'nombre' => 'Marvin Sosa',
             'direccion' => 'Colonia Valle de las Rosas',
-            'estado' => '1',
+            'ornato' => '31241234643',
         ]);
         DB::table('ejecutors')->insert([
             'cargoejecutor_id' => '2',
             'nombre' => 'Jose Leal',
             'direccion' => 'Colonia Vista Bella',
-            'estado' => '1',
+            'ornato' => '452389',
         ]);
         DB::table('ejecutors')->insert([
             'cargoejecutor_id' => '3',
             'nombre' => 'Edwin Luna',
             'direccion' => 'Colonia La union',
-            'estado' => '1',
+            'ornato' => '8054736',
         ]);
     }
 }
