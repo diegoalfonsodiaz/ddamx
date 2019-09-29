@@ -2,82 +2,73 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use App\Solicitud;
 use Illuminate\Http\Request;
+use App\Persona;
+use App\Estadofactibilidad;
+use App\Ejecutor;
+use App\Tipoobra;
 
 class SolicitudController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+ 
     public function index()
     {
+        $solicitud= DB::table('solicituds as s')
+        //persona
+        ->join('personas as p', 's.persona_id','=', 'p.id')
+        //ejecutor
+        ->join('ejecutors as e', 's.ejecutor_id','=', 'e.id')
+        //tipoobra
+        ->join('tipoobras as t', 's.tipoobra_id','=', 't.id')
+        //estado
+        ->join('estadofactibilidads as f', 's.estadofactibilidad_id','=', 'f.id')
         //
+        ->select('s.id','p.nombre as persona','s.direccionobra','s.codigoinmueble','s.expediente','s.expedienteinterno','s.fechasolicitud','e.nombre as ejecutor','f.nombre as estado')
+        ->get();
+        return view('solicitud.index', ["solicitud"=>$solicitud])->with('i');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
-        //
+        $ejecutor=Ejecutor::all();
+        $persona=Persona::all();
+        $estado=Estadofactibilidad::all();
+        $tipoobra=Tipoobra::all();
+        return view('solicitud.create',compact('ejecutor','persona','estado', 'tipoobra'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        Solicitud::create($request->all());
+        return redirect()->route('solicitud.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Solicitud  $solicitud
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(Solicitud $solicitud)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Solicitud  $solicitud
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Solicitud $solicitud)
+    public function edit($id)
     {
-        //
+        $solicitud=Solicitud::findOrFail($id);
+        $ejecutor=Ejecutor::all();
+        $persona=Persona::all();
+        $estado=Estadofactibilidad::all();;
+        $tipoobra=Tipoobra::all();
+        return view('solicitud.edit', compact('solicitud','ejecutor','persona','estado','persona','tipoobra'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Solicitud  $solicitud
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Solicitud $solicitud)
+
+    public function update(Request $request, $id)
     {
-        //
+        Solicitud::findOrFail($id)->update($request->all());
+        return redirect()->route('solicitud.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Solicitud  $solicitud
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Solicitud $solicitud)
     {
         //

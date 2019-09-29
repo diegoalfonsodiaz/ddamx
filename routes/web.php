@@ -16,7 +16,7 @@ Route::resource('asunto', 'AsuntoController');
 //Route::get('/cargoejecutor/create', 'CargoejecutorController@create');
 Route::resource('cargoejecutor', 'CargoejecutorController');
 Route::resource('ejecutor', 'EjecutorController');
-
+Route::resource('solicitud', 'SolicitudController');
 /* FIN CARGO EJECUTORES  **************************************************************************/
 /* RUTAS  EJECUTORES -----------------------------------------------------------------------*/
 
