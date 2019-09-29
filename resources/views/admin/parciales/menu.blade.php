@@ -17,8 +17,6 @@
             <li><a href="">Tipo</a></li>
             <li><a href="{{route('personas.index')}}">Personas</a></li>
             <li><a href="#">Estado licencia</a></li>
-            <li><a href="">Estado Licencia</a></li>
-            <li><a href="#">Estado factibilidad</a></li>
             <li><a href="{{ url('/estadolicencia') }}">Estado licencia</a></li>
             <li><a href=" {{ url('/estadofactibilidad') }} ">Estado factibilidad</a></li>
           </ul>
