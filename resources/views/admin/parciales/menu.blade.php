@@ -1,8 +1,8 @@
 <ul class="sidebar-menu" data-widget="tree">
         <li class="header">Navegacion</li>
-        <!-- Optionally, you can add icons to the links -->
         <li class="active"><a href="#"><i class="fa fa-dashboard"></i> <span>Inicio</span></a></li>
-
+        <li><a href="{{route('solicitud.index')}}"> <i class="fa fa-circle-o text-aqua"></i> <span>  Solicitud de factibilidad </span> </a></li>
+        
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Presolicitud</span>
             <span class="pull-right-container">
@@ -10,13 +10,12 @@
               </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#">Ejecutores</a></li>
-            <li><a href="#">Cargo</a></li>
-            <li><a href="#">Tipo de Obra</a></li>
-            <li><a href="#">Solicitud</a></li>
-            <li><a href="#">Personas</a></li>
-            <li><a href="#">Estado licencia</a></li>
-            <li><a href="#">Estado factibilidad</a></li>
+            <li><a href=" {{ url('/ejecutor') }} ">Ejecutores</a></li>
+            <li><a href="{{ url('/cargoejecutor') }} ">Cargo Ejecutor</a></li>
+            <li><a href="{{ url('/tipoobra') }} ">Tipo de Obra</a></li>
+            <li><a href="{{route('personas.index')}}">Personas</a></li>
+            <li><a href="{{ url('/estadolicencia') }}">Estado licencia</a></li>
+            <li><a href=" {{ url('/estadofactibilidad') }} ">Estado factibilidad</a></li>
           </ul>
         </li>
 
@@ -66,7 +65,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="#">Bitacora  </a></li>
-            <li><a href="#">Asunto de Bitacora</a></li>
+            <li><a href="{{ url('/asunto') }}">Asunto de Bitacora</a></li>
           </ul>
         </li>
 
