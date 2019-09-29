@@ -101,16 +101,6 @@ class TipoviaController extends Controller
     return redirect('tipovia')->with('info', 'Registros Actualizados correctamente');
     }
 
-    public function desactivar(Request $request)
-    {
-        //
-    }
-
-    public function activar(Request $request)
-    {
-        //
-    }
-
     public function eliminar($id)
     {
         $vt = Tipovia::find($id);
@@ -129,5 +119,40 @@ class TipoviaController extends Controller
     {
         Tipovia::find($id)->delete();
         return redirect('tipovia')->with('info','Registro eliminado con éxito');
+    }
+
+    public function activar($id)
+    {
+        $vt = Tipovia::find($id);
+        return view('tipovia.activar', [
+            'tpv' => $vt
+        ]);
+    }
+    public function habilitado($id, Request $request)
+    {
+        $data = array(
+            'nombre' => $request->input('nombre'),
+            'descripcion' => $request->input('descripcion'),
+            'estado' => $request->input('estado')
+        );
+        Tipovia::where('id', $id)->update($data);
+        return redirect('tipovia')->with('info', 'Estado habilitado');
+    }
+    public function desactivar($id)
+    {
+        $vt = Tipovia::find($id);
+        return view('tipovia.desactivar', [
+            'tpv' => $vt
+        ]);
+    }
+    public function deshabilitado($id, Request $request)
+    {
+        $data = array(
+            'nombre' => $request->input('nombre'),
+            'descripcion' => $request->input('descripcion'),
+            'estado' => $request->input('estado')
+        );
+        Tipovia::where('id', $id)->update($data);
+        return redirect('tipovia')->with('info', 'Estado deshabilitado');
     }
 }
