@@ -12,10 +12,9 @@
           </a>
           <ul class="treeview-menu">
             <li><a href=" {{ url('/ejecutor') }} ">Ejecutores</a></li>
-            <li><a href="{{ url('/cargoejecutor') }} ">Cargo</a></li>
+            <li><a href="{{ url('/cargoejecutor') }} ">Cargo Ejecutor</a></li>
             <li><a href="{{ url('/tipoobra') }} ">Tipo de Obra</a></li>
             <li><a href="">Tipo</a></li>
-            
             <li><a href="{{route('personas.index')}}">Personas</a></li>
             <li><a href="#">Estado licencia</a></li>
             <li><a href="#">Personas</a></li>
