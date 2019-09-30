@@ -143,3 +143,16 @@ Route::get('/persona/{persona}', 'PersonaController@edit')->name('personas.edit'
 Route::put('/persona/{persona}', 'PersonaController@update')->name('personas.update');
 Route::post('/persona/{persona}', 'PersonaController@desactivar')->name('personas.desactivar');
 Route::delete('/persona/{persona}', 'PersonaController@activar')->name('personas.activar');
+
+
+Route::get('/estadodenuncia','EstadodenunciaController@index')->name('estadodenuncias.index');
+Route::get('/estadodenuncia/create','EstadodenunciaController@create')->name('estadodenuncias.create');
+Route::post('/estadodenuncia','EstadodenunciaController@store')->name('estadodenuncias.store');
+Route::get('/estadodenuncia/{estadodenuncia}', 'EstadodenunciaController@edit')->name('estadodenuncias.edit');
+Route::put('/estadodenuncia/{estadodenuncia}', 'EstadodenunciaController@update')->name('estadodenuncias.update');
+Route::post('/estadodenuncia/{estadodenuncia}', 'EstadodenunciaController@desactivar')->name('estadodenuncias.desactivar');
+Route::delete('/estadodenuncia/{estadodenuncia}', 'EstadodenunciaController@activar')->name('estadodenuncias.activar');
+
+
+
+Route::resource('denuncia', 'DenunciaController');
