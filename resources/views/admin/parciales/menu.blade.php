@@ -47,7 +47,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="#">Denuncias </a></li>
-            <li><a href="#">Estado Denuncias</a></li>
+            <li><a href="{{route('estadodenuncias.index')}}">Estado Denuncias</a></li>
           </ul>
         </li>
 

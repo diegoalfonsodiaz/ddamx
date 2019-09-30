@@ -398,6 +398,20 @@ desired effect
       'autoWidth'   : false,
       
     });
+
+} );
+
+$(document).ready(function() {
+    $('#estadodenuncia-table').DataTable({
+      'paging'      : true,
+      'lengthChange': true,
+      'searching'   : true,
+      'ordering'    : false,
+      'info'        : true,
+      'autoWidth'   : false,
+      
+    });
+    
 } );
 
 </script>
