@@ -20,7 +20,7 @@ Route::resource('ejecutor', 'EjecutorController');
 Route::resource('solicitud', 'SolicitudController');
 /* FIN CARGO EJECUTORES  **************************************************************************/
 /* RUTAS  EJECUTORES -----------------------------------------------------------------------*/
-
+Route::resource('licencia', 'LicenciaController');
 
 
 

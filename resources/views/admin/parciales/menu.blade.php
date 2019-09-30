@@ -26,7 +26,7 @@
               </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#">Licencias</a></li>
+            <li><a href="{{ url('/licencia') }}">Licencias</a></li>
             <li><a href="#">Estado licencias</a></li>
             <li><a href="{{ url('/tipovia') }} ">Tipo de via </a></li>
           </ul>

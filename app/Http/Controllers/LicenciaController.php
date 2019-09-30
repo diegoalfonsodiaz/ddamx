@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Licencia;
 use Illuminate\Http\Request;
+use App\Solicitud;
+use App\Estadolicencia;
+use App\Tipovia;
+use DB;
 
 class LicenciaController extends Controller
 {
@@ -14,7 +18,18 @@ class LicenciaController extends Controller
      */
     public function index()
     {
+        $licencia= DB::table('licencias as l')
+        //persona
+        ->join('solicituds as ef', 'l.solicitudfactibilidad_id','=', 'ef.id')
+        //ejecutor
+        ->join('estadolicencias as el', 'l.estadolicencia_id','=', 'el.id')
+        //tipoobra
+        ->join('tipovias as tpv', 'l.tipovia_id','=', 'tpv.id')
+        
         //
+        ->select('l.id','l.numerolicencia', 'l.fechaautorizacion','l.recibo','l.monto','l.derecho','l.remocion','l.fechaconexion','ef.codigoinmueble as inmueble','el.nombre as estadolicencia','tpv.nombre as tipovia')
+        ->get();
+        return view('licencia.index', ["licencia"=>$licencia])->with('i');
     }
 
     /**
@@ -24,7 +39,10 @@ class LicenciaController extends Controller
      */
     public function create()
     {
-        //
+        $solicitud=Solicitud::all();
+        $estado=Estadolicencia::all();
+        $tipovia=Tipovia::all();
+        return view('licencia.create',compact('solicitud','estado','tipovia'));
     }
 
     /**
@@ -35,7 +53,8 @@ class LicenciaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Licencia::create($request->all());
+        return redirect()->route('licencia.index');
     }
 
     /**
@@ -55,9 +74,13 @@ class LicenciaController extends Controller
      * @param  \App\Licencia  $licencia
      * @return \Illuminate\Http\Response
      */
-    public function edit(Licencia $licencia)
+    public function edit(Licencia $licencia,$id)
     {
-        //
+        $solicitud =Solicitud::all();
+        $licencia=Licencia::findOrFail($id);
+        $estado=Estadolicencia::all();
+        $tipovia=Tipovia::all();
+        return view('licencia.edit', compact('solicitud','estado','tipovia','licencia'));
     }
 
     /**
@@ -67,9 +90,10 @@ class LicenciaController extends Controller
      * @param  \App\Licencia  $licencia
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Licencia $licencia)
+    public function update(Request $request, $id)
     {
-        //
+        Licencia::findOrFail($id)->update($request->all());
+        return redirect()->route('licencia.index');
     }
 
     /**
