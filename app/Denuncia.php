@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Denuncia extends Model
 {
-    //
+    protected $fillable = ['descripcion', 'fecha', 'foto', 'estadodenuncia_id'];
 }

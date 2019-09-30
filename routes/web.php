@@ -152,3 +152,7 @@ Route::get('/estadodenuncia/{estadodenuncia}', 'EstadodenunciaController@edit')-
 Route::put('/estadodenuncia/{estadodenuncia}', 'EstadodenunciaController@update')->name('estadodenuncias.update');
 Route::post('/estadodenuncia/{estadodenuncia}', 'EstadodenunciaController@desactivar')->name('estadodenuncias.desactivar');
 Route::delete('/estadodenuncia/{estadodenuncia}', 'EstadodenunciaController@activar')->name('estadodenuncias.activar');
+
+
+
+Route::resource('denuncia', 'DenunciaController');

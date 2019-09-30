@@ -14,12 +14,14 @@ class CreateDenunciasTable extends Migration
     public function up()
     {
         Schema::create('denuncias', function (Blueprint $table) {
-            $table->bigIncrements('id_denuncia');
+            $table->bigIncrements('id');
             $table->string('descripcion', 245);
-            $table->timestamp('fecha');
-            $table->string('foto');
-            $table->integer('id_estadodenuncia')->unsigned();
+            $table->date('fecha');
+            $table->string('foto', 200);
+            $table->unsignedBigInteger('estadodenuncia_id');
             $table->timestamps();
+
+            $table->foreign('estadodenuncia_id')->references('id')->on('estadodenuncias');
         });
     }
 
