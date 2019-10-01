@@ -26,20 +26,9 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="{{ url('/licencia') }}">Licencias</a></li>
-=======
-<<<<<<< HEAD
-            <li><a href="{{ url('/licencia') }}">Licencias</a></li>
             <li><a href="{{ url('/estadolicencia') }}">Estado licencias</a></li>
             <li><a href="{{ url('/tipovia') }}">Tipo de via </a></li>
-<<<<<<< HEAD
-=======
-=======
-            <li><a href="#">Licencias</a></li>
->>>>>>> 2db0c288e3caa515d5ab099126389f4b5d4b4151
-            <li><a href="#">Estado licencias</a></li>
-            <li><a href="{{ url('/tipovia') }} ">Tipo de via </a></li>
->>>>>>> 786ebe66085bb19274fe0cfe75a2f00374da298b
->>>>>>> licencia
+
           </ul>
         </li>
 
