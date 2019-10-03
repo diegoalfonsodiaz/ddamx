@@ -39,7 +39,13 @@ class PersonaController extends Controller
 
     public function store(Request $request)
     {
-        
+        $this->Validate($request, [
+            'dpi' => 'required',
+            'nombre' => 'required',
+            'apellido' => 'required',
+            'telefono' => 'required'
+            
+        ]);
        //return Persona::create($request->all());
 
        $persona=new Persona();
@@ -61,7 +67,13 @@ class PersonaController extends Controller
 
     public function update(Persona $persona,Request $request)
     {
-      
+        $this->Validate($request, [
+            'dpi' => 'required',
+            'nombre' => 'required',
+            'apellido' => 'required',
+            'telefono' => 'required'
+            
+        ]);
         //$persona=Persona::findOrFail($request->id);
         $persona->dpi=$request->dpi;
         $persona->nombre=$request->nombre;
