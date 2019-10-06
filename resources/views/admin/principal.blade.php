@@ -3,7 +3,7 @@
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
-
+@if (Auth::check())
 <html>
 <head>
   <meta charset="utf-8">
@@ -80,15 +80,7 @@ desired effect
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-          <!-- Messages: style can be found in dropdown.less-->
-          
-          <!-- /.messages-menu -->
 
-          <!-- Notifications Menu -->
-
-          <!-- Tasks Menu -->
-         
-          <!-- User Account Menu -->
           <li class="dropdown user user-menu">
             <!-- Menu Toggle Button -->
             
@@ -119,21 +111,7 @@ desired effect
                         @endguest
                     
             </a>
-            <!--<ul class="dropdown-menu">
-               The user image in the menu -->
-             
-              <!-- Menu Body -->
-              
-              <!-- Menu Footer
-              <li class="user-footer">
-                <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
-                </div>
-                <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Cerrar Sesion</a>
-                </div>
-              </li>
-            </ul>-->
+            
           </li>
           <!-- Control Sidebar Toggle Button -->
           
@@ -159,17 +137,6 @@ desired effect
         </div>
       </div>
 
-      <!-- search form (Optional) -->
-      <!--<form action="#" method="get" class="sidebar-form">
-        <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Search...">
-          <span class="input-group-btn">
-              <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-              </button>
-            </span>
-        </div>
-      </form>-->
-      <!-- /.search form -->
 
       <!-- Sidebar Menu -->
      @include('admin.parciales.menu')
@@ -187,6 +154,8 @@ desired effect
 
     <!-- Main content -->
     <section class="content container-fluid">
+
+
 
       <!--------------------------
         | Your Page Content Here |
@@ -252,28 +221,7 @@ $(document).ready(function() {
 } );
 
 </script>
-
-<!--<script>
- 
-  $(document).ready(function() {
-    $('#persona-table').DataTable({
-      "Serveside":true,
-      "ajax":"{{ url('api/personas')}}",
-      "columns":[
-         {data:'id'},
-         {data:'dpi'},
-         {data:'nombre'},
-         {data:'apellido'},
-         {data:'telefono'},
-         {data:'correo'},
-         {data:'estado'},
-
-      ]
-    });
-} );
-</script>-->
-<!-- Optionally, you can add Slimscroll and FastClick plugins.
-     Both of these plugins are recommended to enhance the
-     user experience. -->
 </body>
 </html>
+
+@endif
