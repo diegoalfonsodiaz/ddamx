@@ -22,11 +22,11 @@
             <td>{{ $product->nombre }}</td>
             <td>
                 <form action="{{ route('cargoejecutor.destroy',$product->id) }}" method="POST">
-                    <a class="btn btn-primary" href="{{ route('cargoejecutor.edit',$product->id) }}">Editar</a>
+                    <a class="btn btn-xs btn-info" href="{{ route('cargoejecutor.edit',$product->id) }}"><i class="fa fa-pencil"></i></a>
    
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="submit" class="btn btn-xs btn-danger"><i class="fa fa-remove"></i></button>
                 </form>
             </td>
         </tr>
