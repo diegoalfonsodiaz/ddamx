@@ -1,13 +1,7 @@
 @extends('admin.principal')
 @section('contenido')
 
-<?
-@if($errors->any()) 
-    <div class="alert alert-danger"></div>
-    @foreach($errors->all() as $error)
-    <li>{{ $error }}</li>
-@endif
->
+
 
 <div class="box box-primary">
             <div class="box-header with-border">

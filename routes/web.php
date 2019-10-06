@@ -2,8 +2,8 @@
 
 
 
-Route::get('/', function () {
-   return view('welcome');
+Route::get('/login', function () {
+    return view ('auth.login') ;
 });
 Route::get('/', function () {
     return view('admin.dashboard');
@@ -156,3 +156,6 @@ Route::delete('/estadodenuncia/{estadodenuncia}', 'EstadodenunciaController@acti
 
 
 Route::resource('denuncia', 'DenunciaController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
