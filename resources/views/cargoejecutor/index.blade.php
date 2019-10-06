@@ -3,10 +3,12 @@
 <div class="box box-primary">
             <div class="box-header with-border">
               <h3 class="box-title"> Cargo ejecutor</h3>
-              <br><br>
-              <div class="pull-left">
+              <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('cargoejecutor.create') }}"> Crear Nuevo Cargo Ejecutor </a>
+                
             </div>
+              <br><br>
+              
               <br><br>
             <!-- /.box-header -->
             <!-- form start -->
