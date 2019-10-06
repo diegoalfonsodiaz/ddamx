@@ -29,7 +29,10 @@ class EstadodenunciaController extends Controller
     {
         
       
-
+        $this->Validate($request, [
+            'descripcion' => 'required'
+            
+        ]);
        $estadodenuncias=new Estadodenuncia();
        $estadodenuncias->descripcion=$request->descripcion;
        $estadodenuncias->save();
@@ -46,6 +49,11 @@ class EstadodenunciaController extends Controller
 
     public function update(Estadodenuncia $estadodenuncia,Request $request)
     {
+        $this->Validate($request, [
+            'descripcion' => 'required'
+            
+        ]);
+
         $estadodenuncia->descripcion=$request->descripcion;
         $estadodenuncia->estado='1';
         $estadodenuncia->save();

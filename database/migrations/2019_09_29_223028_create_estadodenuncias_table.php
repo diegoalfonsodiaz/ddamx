@@ -19,6 +19,11 @@ class CreateEstadodenunciasTable extends Migration
             $table->boolean('estado')->default(1);
             $table->timestamps();
         });
+
+        DB::table('estadodenuncias')->insert(array('id'=>'1','descripcion'=>'Sin procesar','created_at'=>now(),'updated_at'=>now()));
+        DB::table('estadodenuncias')->insert(array('id'=>'2','descripcion'=>'En Proceso','created_at'=>now(),'updated_at'=>now()));
+        DB::table('estadodenuncias')->insert(array('id'=>'3','descripcion'=>'Finalizado','created_at'=>now(),'updated_at'=>now()));
+        DB::table('estadodenuncias')->insert(array('id'=>'4','descripcion'=>'Denegado','created_at'=>now(),'updated_at'=>now()));
     }
 
     /**
