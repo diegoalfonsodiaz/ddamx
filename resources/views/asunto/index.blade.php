@@ -3,9 +3,10 @@
 <div class="box box-primary">
             <div class="box-header with-border">
               <h3 class="box-title"> Asunto de denuncia</h3>
-              <br><br>
-              <div class="pull-left">
-                <a class="btn btn-success" href="{{ route('asunto.create') }}"> Crear </a>
+              <div class="pull-right">
+                <a class="btn btn-success" href="{{ route('asunto.create') }}"> Crear Asunto de Bitacora </a>
+                <br><br>
+              
             </div>
               <br><br>
             <!-- /.box-header -->
@@ -25,11 +26,11 @@
                     <td>
                     
                         <form action="{{ route('asunto.destroy',$asuntos->id) }}" method="POST">
-                            <a class="btn btn-primary" href="{{ route('asunto.edit',$asuntos->id) }}">Editar</a>
+                            <a class="btn btn btn-info" href="{{ route('asunto.edit',$asuntos->id) }}"><i class="fa fa-pencil"></i></a>
         
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Borrar</button>
+                            <button type="submit" class="btn btn btn-danger"><i class="fa fa-remove"></i></button>
                         </form>
                     </td>
                 </tr>

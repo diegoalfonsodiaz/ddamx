@@ -3,7 +3,7 @@
 @section('header')
 <h1>
         Crear Personas
-        <small>Optional description</small>
+       
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
@@ -13,7 +13,13 @@
 @section('contenido')
 <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Quick Example</h3>
+            @if(count($errors)>0)
+          @foreach($errors->all() as $error)
+            <div class="alert alert-danger"> 
+              {{ $error }}
+            </div>
+          @endforeach
+        @endif
             </div>
             <!-- /.box-header -->
             <!-- form start -->
