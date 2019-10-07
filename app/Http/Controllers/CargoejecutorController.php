@@ -40,7 +40,7 @@ class CargoejecutorController extends Controller
     {
         $this->validate($request,
             [
-                'nombre'=>'required'
+                'nombre'=>'required|max:190'
             ]
         );
         $cargoejecutor = new Cargoejecutor;

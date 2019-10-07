@@ -1,10 +1,14 @@
 @extends('admin.principal')
 @section('contenido')
+
+
 <div class="box box-primary">
             <div class="box-header with-border">
               <h3 class="box-title">Crear Cargo ejecutor</h3>
             <!-- /.box-header -->
             <!-- form start -->
+
+            
             <form action="{{ route('cargoejecutor.store') }}" method="POST">
     @csrf
   

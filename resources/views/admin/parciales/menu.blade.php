@@ -2,7 +2,7 @@
         <li class="header">Navegacion</li>
         <li class="active"><a href="#"><i class="fa fa-dashboard"></i> <span>Inicio</span></a></li>
         <li><a href="{{route('solicitud.index')}}"> <i class="fa fa-circle-o text-aqua"></i> <span>  Solicitud de factibilidad </span> </a></li>
-        
+        <li><a href="{{route('personas.index')}}"> <i class="fa fa-circle-o text-aqua"></i> <span>  Personas </span> </a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Presolicitud</span>
             <span class="pull-right-container">
@@ -13,7 +13,6 @@
             <li><a href=" {{ url('/ejecutor') }} ">Ejecutores</a></li>
             <li><a href="{{ url('/cargoejecutor') }} ">Cargo Ejecutor</a></li>
             <li><a href="{{ url('/tipoobra') }} ">Tipo de Obra</a></li>
-            <li><a href="{{route('personas.index')}}">Personas</a></li>
             <li><a href="{{ url('/estadolicencia') }}">Estado licencia</a></li>
             <li><a href=" {{ url('/estadofactibilidad') }} ">Estado factibilidad</a></li>
           </ul>
@@ -26,9 +25,10 @@
               </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#">Licencias</a></li>
-            <li><a href="#">Estado licencias</a></li>
-            <li><a href="{{ url('/tipovia') }} ">Tipo de via </a></li>
+            <li><a href="{{ url('/licencia') }}">Licencias</a></li>
+            <li><a href="{{ url('/estadolicencia') }}">Estado licencias</a></li>
+            <li><a href="{{ url('/tipovia') }}">Tipo de via </a></li>
+
           </ul>
         </li>
 
