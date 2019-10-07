@@ -133,6 +133,10 @@ desired effect
         <div class="pull-left info">
           <p> </p>
           <!-- Status -->
+          @Auth
+          <span class="hidden-xs">{{ Auth::user()->name }}</span>
+          <br>
+          @endAuth
           <a href="#"><i class="fa fa-circle text-success"></i> En Linea</a>
         </div>
       </div>

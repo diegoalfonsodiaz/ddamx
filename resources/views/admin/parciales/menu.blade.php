@@ -45,6 +45,8 @@
           </ul>
         </li>
 
+        @if (auth()->user()->hasRole(['admin']))
+
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Usuarios</span>
             <span class="pull-right-container">
@@ -56,6 +58,8 @@
             <li><a href="#">Rol</a></li>
           </ul>
         </li>
+        @endif
+
 
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Bitacora</span>

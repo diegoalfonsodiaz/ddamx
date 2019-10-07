@@ -39,7 +39,7 @@ class LicenciaController extends Controller
      */
     public function create(Request $request)
     {
-        $request->user()->autorizeRoles('secretaria');
+        $request->user()->autorizeRoles('admin');
         $solicitud=Solicitud::all();
         $estado=Estadolicencia::all();
         $tipovia=Tipovia::all();
