@@ -161,5 +161,3 @@ Route::delete('/estadodenuncia/{estadodenuncia}', 'EstadodenunciaController@acti
 
 Route::resource('denuncia', 'DenunciaController');
 Auth::routes(['register' => false]);
-
-//Route::get('/home', 'HomeController@index')->name('home');
