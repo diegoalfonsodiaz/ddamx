@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\EstadoLicencia;
+use App\Estadolicencia;
 
 class EstadolicenciaController extends Controller
 {
