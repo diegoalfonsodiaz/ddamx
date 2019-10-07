@@ -1,6 +1,7 @@
 @extends('admin.principal')
 @section('contenido')
-
+<div class="box box-primary">
+  <div class="box-header with-border">
     <div class="card" style="width: 40rem;">
         <div class="card-body">
         <form action='{{ url("/delete/{$estadolicen->id}") }}' method="POST">

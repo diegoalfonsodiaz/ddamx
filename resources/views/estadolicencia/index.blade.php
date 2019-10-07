@@ -1,6 +1,7 @@
 @extends('admin.principal')
 @section('contenido')
-
+<div class="box box-primary">
+  <div class="box-header with-border">
     <h1>Listado Estado Licencia</h1>
     <a class="btn btn-primary" href="{{ url('/agregarForm') }}" type="button">Nuevo</a>
     @if(session('info'))
@@ -40,6 +41,8 @@
 
         </tbody>
         </table>
+  </div>
+</div>
 
 
 
