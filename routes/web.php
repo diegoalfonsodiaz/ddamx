@@ -6,6 +6,10 @@ Route::get('/', function () {
     return view ('auth.login') ;
 });
 Route::get('/menu', function () {
+//Route::get('/', function () {
+//   return view('welcome');
+//});
+Route::get('/', function () {
     return view('admin.dashboard');
 });
 //Robinson C
@@ -26,7 +30,7 @@ Route::resource('licencia', 'LicenciaController');
 
 
 
-/* FIN  EJECUTORES  **************************************************************************/
+/* FIN  EJECUTORES  ***asdf***********************************************************************/
 /* RUTAS  OBRA -----------------------------------------------------------------------*/
 
 

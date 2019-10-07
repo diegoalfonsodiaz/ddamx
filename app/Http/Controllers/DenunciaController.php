@@ -18,9 +18,9 @@ class DenunciaController extends Controller
     {
         $denuncia= DB::table('denuncias as d')
         ->join('estadodenuncias as e', 'd.estadodenuncia_id','=', 'e.id')
-        ->select('d.id', 'd.descripcion', 'd.fecha', 'd.foto', 'e.descripcion as estado')
+        ->select('d.id', 'd.descripcion', 'd.fecha', 'd.foto', 'e.descripcion as estado', 'e.estado as es')
         ->get();
-        return view('denuncia.index', ["denuncia"=>$denuncia]);
+        return view('denuncia.index', ["denuncia"=>$denuncia])->with('i');
     }
 
     /**
@@ -42,10 +42,9 @@ class DenunciaController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,
+        $this->Validate($request,
 			[
-				'descripcion'=>'required',
-				'foto'=>'required'
+                'descripcion'=>'required'
 			]
 		);
 
@@ -56,20 +55,11 @@ class DenunciaController extends Controller
 			$file->move(public_path().'/images', $name);
 		}
         
-        
-        /*$data = array(
-            'descripcion' => $request->descripcion,
-            'fecha' => $request->fecha,
-            'foto' => $request->$name,
-            'estadodenuncia_id' => $request->estadodenuncia_id,
-        );*/
-        
-        //Denuncia::create($request->all());
         $denuncia = new Denuncia;
 		$denuncia->descripcion = $request->input('descripcion');
         $denuncia->fecha = $request->input('fecha');
         $denuncia->foto = $name;
-		$denuncia->estadodenuncia_id = $request->input('estadodenuncia_id');
+		$denuncia->estadodenuncia_id = '1';
 		$denuncia->save();
         return redirect()->route('denuncia.index')->with('info', 'Se registro Corectamente la Denuncia');
     }
@@ -108,17 +98,17 @@ class DenunciaController extends Controller
     public function update(Request $request, $id)
     {
 
-        if ($request->hasFile('foto')) {
+        /*if ($request->hasFile('foto')) {
 			# code...
 			$file = $request->file('foto');
 			$name = time().$file->getClientOriginalName();
 			$file->move(public_path().'/images', $name);
-        }
+        }*/
         
         $data = array(
-			'descripcion' => $request->input('descripcion'), 
-			'fecha' => $request->input('fecha'),
-			'foto' => $name,
+			//'descripcion' => $request->input('descripcion'), 
+			//'fecha' => $request->input('fecha'),
+			//'foto' => $name,
 			'estadodenuncia_id' => $request->input('estadodenuncia_id')
 		);
 
