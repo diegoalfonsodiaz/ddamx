@@ -10,7 +10,7 @@ Route::get('/', function (){
 //Route::get('/', function () {
 //   return view('welcome');
 //});
-Route::get('/', function () {
+Route::get('/menu', function () {
     return view('admin.dashboard');
 });
 //Robinson C
@@ -162,3 +162,5 @@ Route::delete('/estadodenuncia/{estadodenuncia}', 'EstadodenunciaController@acti
 
 Route::resource('denuncia', 'DenunciaController');
 Auth::routes(['register' => false]);
+
+Route::resource('bitacora', 'BitacoraController');

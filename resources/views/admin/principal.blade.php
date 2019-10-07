@@ -110,12 +110,7 @@ desired effect
                             </li>
                         @endguest
                     
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <!-- The user image in the navbar-->
-              <img src="/plantilla/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">Alexander Pierce 2</span>
-            </a>
+
             
           </li>
           <!-- Control Sidebar Toggle Button -->
