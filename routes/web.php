@@ -2,10 +2,11 @@
 
 
 
-Route::get('/', function () {
+Route::get('/', function (){
     return view ('auth.login') ;
 });
-Route::get('/menu', function () {
+
+//Route::get('/menu', function () {
 //Route::get('/', function () {
 //   return view('welcome');
 //});
