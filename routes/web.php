@@ -76,6 +76,8 @@ Route::post('/update/{id}', 'EstadolicenciaController@update');
 Route::get('/eliminar/{id}', 'EstadolicenciaController@eliminar');
 Route::post('/delete/{id}', 'EstadolicenciaController@destroy');
 Route::get('/detalle/{id}', 'EstadolicenciaController@show');
+Route::post('/estadolicencia/{estadolicencia}', 'EstadolicenciaController@desactivar')->name('estadolicencias.desactivar');
+Route::delete('/estadolicencia/{estadolicencia}', 'EstadolicenciaController@activar')->name('estadolicencias.activar');
 
 
 

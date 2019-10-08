@@ -123,4 +123,19 @@ class EstadolicenciaController extends Controller
         Estadolicencia::find($id)->delete();
         return redirect('estadolicencia')->with('info','Registro eliminado satisfactoriamente');
     }
+
+    public function activar(Estadolicencia $estadolicencia, Request $request)
+    {
+        $estadolicencia->estado='1';
+        $estadolicencia->save();
+        return redirect('estadolicencia')->with('info', 'Estado Activado correctamente');
+    }
+    
+
+    public function desactivar(Estadolicencia $estadolicencia, Request $request)
+    {
+        $estadolicencia->estado='0';
+        $estadolicencia->save();
+        return redirect('estadolicencia')->with('info', 'Estado desactivado correctamente');
+    }
 }
