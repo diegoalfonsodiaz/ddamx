@@ -54,7 +54,7 @@
               </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#">Usuarios </a></li>
+            <li><a href="{{ url('/usuario') }}">Usuarios </a></li>
             <li><a href="#">Rol</a></li>
           </ul>
         </li>
