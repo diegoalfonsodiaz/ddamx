@@ -44,20 +44,20 @@ Route::resource('licencia', 'LicenciaController');
 
 /* FIN  PERSONA  **************************************************************************/
 /* RUTAS ESTADO FACTIBILIDAD -----------------------------------------------------------------------*/
-Route::get('/agregarfacti', function () {
-    return view('estadofactibilidad.agregar');
-});
-Route::get('/estadofactibilidad', 'EstadofactibilidadController@index');
-Route::post('/insertarfacti', 'EstadofactibilidadController@create');
-Route::get('/actualizarfacti/{id}', 'EstadofactibilidadController@edit');
-Route::post('/updatefacti/{id}', 'EstadofactibilidadController@update');
-//Route::get('/eliminar/{id}', 'EstadofactibilidadController@eliminar');
-//Route::post('/delete/{id}', 'EstadofactibilidadController@destroy');
-Route::get('/desactivarfacti/{id}', 'EstadofactibilidadController@desactivar');
-Route::post('/deshabilitadofacti/{id}', 'EstadofactibilidadController@deshabilitado');
-Route::get('/activarfacti/{id}', 'EstadofactibilidadController@activar');
-Route::post('/habilitadofacti/{id}', 'EstadofactibilidadController@habilitado');
-Route::get('/detallefacti/{id}', 'EstadofactibilidadController@show');
+Route::resource('estadofactibilidad', 'EstadofactibilidadController');
+Route::post('/estadofactibilidad/{estadofactibilidad}', 'EstadofactibilidadController@desactivar')->name('estadofactibilidades.desactivar');
+Route::delete('/estadofactibilidad/{estadofactibilidad}', 'EstadofactibilidadController@activar')->name('estadofactibilidades.activar');
+
+
+
+
+
+
+
+
+
+
+
 /* FIN  ESTADO FACTIBILIDAD  **************************************************************************/
 
 

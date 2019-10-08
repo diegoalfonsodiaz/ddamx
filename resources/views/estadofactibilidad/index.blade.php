@@ -1,74 +1,85 @@
 @extends('admin.principal')
-@section('contenido')
-<div class="box box-primary">
-  <div class="box-header with-border">
-    <h2> Estado de Factibilidad</h2>
-    <br>
-    <div class="pull-left">
-    <a class="btn btn-primary" href="{{ url('/agregarfacti') }}" type="button">Nuevo</a>
 
+@section('header')
+  <h1>Estados Factibilidades</h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+        <li class="active">Estados</li>
+        
+      </ol>
+      
+@stop
+
+@section('contenido')
+<div class="box-header">
     @if(session('info'))
-      <div class="alert alert-success" role="alert">
-          {{ session('info') }}
-          <button type="button" class="close" data-dismiss="alert" alert-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+      <div class="col-md-6">
+        <div class="alert alert-success" role="alert">
+            {{ session('info') }}
+            <button type="button" class="close" data-dismiss="alert" alert-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
       </div>
     @endif
-
     </div>
-  <br><br>
-  <!-- /.box-header -->
-  <!-- form start -->
-  <table class="table table-bordered">
-    <tr>
-      <th scope="col">Nombre</th>
-      <th scope="col">Estado</th>
-      <th scope="col" width="280px">Acciones</th>
-    </tr>
-    @if(count($estadofactibilidads)>0)
-      @foreach($estadofactibilidads->all() as $ef)
-        <tr>
-          
-          <td>{{ $ef->nombre }}</td>
-          <td> 
-          @if($ef->estado == 1)
-            <!--<a class="badge badge-danger">Activado</a>-->
-            <a class="label label-success">Activo</a>
-          @endif
-          @if($ef->estado == 0)
-            <!--<a href="#" class="badge badge-danger">Desactivado</a>-->
-            <a class="label label-danger">Desactivado</a>
-          @endif
-          </td>
 
-          <td>
-            <a class="btn btn-info" href='{{ url("/detallefacti/{$ef->id}") }}' type="button" class="btn btn-default btn-sm">
-              <span class="glyphicon glyphicon-eye-open" ></span>
-            </a>
+<div class="box box-primary">
 
-            <a class="btn btn-warning" href='{{ url("/actualizarfacti/{$ef->id}") }}' class="btn btn-default btn-sm">
-              <span class="glyphicon glyphicon-edit"></span>
-            </a>
-            @if($ef->estado == 1)
-            <a class="btn btn-danger" href='{{ url("/desactivarfacti/{$ef->id}") }}' type="button" class="btn btn-default btn-sm">
-              <span class="glyphicon glyphicon-trash"></span>
-            </a>
-            @endif
-            @if($ef->estado == 0)
-            <a class="btn btn-primary" href='{{ url("/activarfacti/{$ef->id}") }}' type="button" class="btn btn-default btn-sm">
-              <span class="glyphicon glyphicon-ok-circle"></span>
-            </a>
-            @endif
+      <div class="box-header">
+        <a href="{{ route('estadofactibilidad.create') }}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear Estado</a> 
+        <h3 class="box-title">Listado de Estados</h3>
+      </div>
+        
 
-          </td>
-          
-        </tr>
-      @endforeach
-    @endif
-    </table>
-            
-            
-</div>
+        <div class="box-body">
+          <table id="persona-table" class="table table-striped table-bordered" style="width:100%">
+              <thead>
+                  <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col" width="280px">Acciones</th>
+                  </tr>
+              </thead>
+              <tbody>
+                @foreach($estadofactibilidades as $estadofactibilidad)
+                  <tr>
+                    <td>{{ $estadofactibilidad->nombre }}</td>
+                      
+                      @if($estadofactibilidad->estado == 1)
+                        <td ><p style="color:green;">Activo</p></td>
+                      @else
+                        <td ><p style="color:red;">Inactivo</p></td>
+                      @endif
+                    
+                      
+                      <td>
+                          <a href="{{route('estadofactibilidad.edit', $estadofactibilidad->id)}}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
+                          
+                          @if($estadofactibilidad->estado == 1)
+                            <form method="POST" 
+                              action="{{route('estadofactibilidades.desactivar', $estadofactibilidad)}}"
+                              style="display:inline">
+                              {{csrf_field()}} {{ method_field('POST')}}
+                              <button class="btn btn-xs btn-danger" ><i class="fa fa-remove"></i></button>
+                            </form>
+                        
+                          @else
+                            <form method="POST" 
+                              action="{{route('estadofactibilidades.activar', $estadofactibilidad)}}"
+                              style="display:inline">
+                              {{csrf_field()}} {{ method_field('DELETE')}}
+                              <button class="btn btn-xs btn-success" ><i class="fa fa-check"></i></button>
+                            </form>
+                        
+                          @endif
+                        
+                        </td>
+                  </tr>
+                @endforeach
+              </tbody>
+          </table>
+        </div>
+  </div>
 @stop
 
