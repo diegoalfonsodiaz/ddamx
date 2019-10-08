@@ -1,31 +1,43 @@
 @extends('admin.principal')
+@section('header')
+<h1>
+        Crear solicitud
+       
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+        <li class="active">Solicitudes</li>
+      </ol>
+@stop
 @section('contenido')
-<div class="box box-primary" >
-            <div class="box-header with-border">
-              <h1 class="box-title">Crear </h1>
-            <!-- /.box-header -->
-            <!-- form start -->
+
+<div class="row">
             <form action="{{ route('solicitud.store') }}" method="POST">
             {!! csrf_field() !!}
-        
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-
+    <div class="col-md-6">
+        <div class="box box-primary">
+        @if(count($errors)>0)
+          @foreach($errors->all() as $error)
+            <div class="alert alert-danger"> 
+              {{ $error }}
+            </div>
+          @endforeach
+        @endif
+                <div class="box-body">
                         <!-- personas -->
-                        <div class="form-group">
-                            <label for="select" class="">Persona</label>
-                            <select name="persona_id" class="form-control" id="persona">}
-                                <option value="0" disabled selected>=== Selecciona Persona ===</option>
-                                @foreach($persona as $carac)
-                                <option value="{{$carac->id}}">{{$carac->nombre}}</option>
-                                @endforeach
-                            </select>
-                        </div>
+                            <div class="form-group">
+                                <label for="select" class="">Persona</label>
+                                <select name="persona_id" class="form-control" id="persona" >}
+                                    <option value="0" disabled selected >=== Selecciona Persona ===</option>
+                                    @foreach($persona as $carac)
+                                    <option value="{{$carac->id}}">{{$carac->dpi}},  {{$carac->nombre}}  {{$carac->apellido}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
 
-
-                        <div class="form-group">
+                            <div class="form-group">
                             <strong>Direccion Obra</strong>
-                            <input type="text" name="direccionobra" class="form-control" placeholder="Direccion Obra">
+                            <input type="text" name="direccionobra" class="form-control" placeholder="Direccion Obra" required>
                         </div>
 
                         <div class="form-group">
@@ -67,15 +79,23 @@
                             <strong>Catastral</strong>
                             <input type="text" name="catastral" class="form-control" placeholder="Catastral">
                         </div>
-
-                        <div class="form-group">
+                </div>
+           
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="box box-primary">
+        
+            <div class="box-body">
+            <div class="form-group">
                             <strong>Solvencia Municipal</strong>
                             <input type="text" name="solvenciamunicipal" class="form-control" placeholder="Solvencia Municipal">
                         </div>
 
                         <div class="form-group">
                             <strong>Observación</strong>
-                            <input type="text" name="observacion" class="form-control" placeholder="Observación">
+                            <!--<input type="text" name="observacion" class="form-control" placeholder="Observación">-->
+                            <textarea type="text" name="observacion" class="form-control" rows="3" placeholder="Observación"></textarea>
                         </div>
 
                         <div class="form-group">
@@ -131,14 +151,19 @@
                             </select>
                         </div>
 
-                    </div>
-                    
-                    <div class="col-xs-12 col-sm-12 col-md-12 ">
-                            <button type="submit" class="btn btn-primary">Guardar</button>
-                    </div>
-                </div>
+                        <div class="form-group">
+                                <button class="btn btn-primary ">Guardar </button>
+                                <a href="{{route('solicitud.index')}}" class="btn btn-danger pull-right"> Regresar</a> 
+
+                         </div>
+
+            </div>
+            
+        </div>
+        
+    </div>
    
-            </form>
+    </form>
 </div>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>

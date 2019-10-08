@@ -15,7 +15,7 @@
 <div class="box box-primary">
             <div class="box-header">
             
-            <a href="{{route('solicitud.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear Nueva Solicitud De Factibilidad</a> 
+            <a href="{{route('solicitud.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear solicitud de factibilidad</a> 
               <h3 class="box-title">Solicitudes</h3>
             </div>
             <!-- /.box-header -->
@@ -51,13 +51,14 @@
                                 <td>{{$solicitudes->estado}}</td>
                                 
                                 <td>
-                                <form action="{{ route('solicitud.destroy',$solicitudes->id) }}" method="POST">
-                                    <a class="btn btn-primary" href="{{ route('solicitud.edit',$solicitudes->id) }}">Editar</a>
+                                <form action="{{ route('solicitud.destroy',$solicitudes->id) }}" method="POST" style="display:inline">
+                                    <a class="btn btn-xs btn-primary" href="{{ route('solicitud.edit',$solicitudes->id) }}">Editar</a>
                 
                                     @csrf
                                     @method('DELETE')
                                     
                                 </form>
+                                <a class="btn btn-xs btn-danger" href="{{ route('solicitudes.show',$solicitudes->id) }}">Ver</a>
                                 </td>
                             </tr>
                             @endforeach

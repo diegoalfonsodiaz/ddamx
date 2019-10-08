@@ -22,8 +22,9 @@ Route::resource('solicitud', 'SolicitudController');
 /* RUTAS  EJECUTORES -----------------------------------------------------------------------*/
 Route::resource('licencia', 'LicenciaController');
 
-
-
+Route::post('/solicitud/{id}', 'SolicitudController@show')->name('solicitudes.show');
+Route::get('/solicitud/{id}', 'PersonaController@edit')->name('solicitudes.edit');
+Route::put('/solicitud/{id}', 'PersonaController@update')->name('solicitudes.update');
 
 
 /* FIN  EJECUTORES  ***asdf***********************************************************************/
