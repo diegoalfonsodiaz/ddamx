@@ -50,14 +50,14 @@
                             <input type="text" name="expediente" class="form-control" placeholder="Expediente">
                         </div>
 
-                        <div class="">
+                        <div class="form-group">
                             <strong>Expediente Interno</strong>
                             <input type="text" name="expedienteinterno" class="form-control" placeholder="Expediente Interno">
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group" style="display: none">
                             <label for="direccion_fab">Fecha</label>
-                            <input type="date" name="fechasolicitud" class="form-control" >
+                            <input type="date" name="fechasolicitud" value="<?php echo date("Y-m-d");?>" class="form-control"  >
                         </div>
 
                         <div class="form-group">
@@ -79,6 +79,11 @@
                             <strong>Catastral</strong>
                             <input type="text" name="catastral" class="form-control" placeholder="Catastral">
                         </div>
+
+                        <div class="form-group">
+                            <strong>Solvencia Municipal</strong>
+                            <input type="text" name="solvenciamunicipal" class="form-control" placeholder="Solvencia Municipal">
+                        </div>
                 </div>
            
         </div>
@@ -87,10 +92,7 @@
         <div class="box box-primary">
         
             <div class="box-body">
-            <div class="form-group">
-                            <strong>Solvencia Municipal</strong>
-                            <input type="text" name="solvenciamunicipal" class="form-control" placeholder="Solvencia Municipal">
-                        </div>
+            
 
                         <div class="form-group">
                             <strong>Observación</strong>

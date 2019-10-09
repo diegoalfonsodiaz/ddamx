@@ -61,7 +61,7 @@
 
                         <div class="form-group">
                             <label for="direccion_fab">Fecha</label>
-                            <input type="date" name="fechasolicitud" value="{{ $solicitud->fechasolicitud }}"  class="form-control" >
+                            <input type="date" name="fechasolicitud" value="{{ $solicitud->fechasolicitud }}"  class="form-control" disabled>
                         </div>
 
                         <div class="form-group">

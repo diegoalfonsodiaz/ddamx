@@ -39,7 +39,7 @@ class LicenciaController extends Controller
      */
     public function create()
     {
-        $solicitud=Solicitud::where('estadofactibilidad_id','=','1')->get();
+        $solicitud=Solicitud::where('estadofactibilidad_id','=','2')->get();
         $estado=Estadolicencia::where('estado','=','1')->get();
         $tipovia=Tipovia::where('estado','=','1')->get();
         return view('licencia.create',compact('solicitud','estado','tipovia'));

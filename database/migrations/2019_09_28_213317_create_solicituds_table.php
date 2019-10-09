@@ -20,7 +20,7 @@ class CreateSolicitudsTable extends Migration
             $table->string('codigoinmueble')->nullable();
             $table->string('expediente')->nullable();
             $table->string('expedienteinterno')->nullable();
-            $table->date('fechasolicitud')->nullable();
+            $table->date('fechasolicitud')->default(now());
             $table->string('numerofinca')->nullable();
             $table->string('numerofolio')->nullable();
             $table->string('libro')->nullable();
@@ -33,7 +33,7 @@ class CreateSolicitudsTable extends Migration
             $table->string('diametrotubo')->nullable();
             $table->string('diametrocolector')->nullable();
             $table->unsignedBigInteger('ejecutor_id')->nullable();
-            $table->unsignedBigInteger('estadofactibilidad_id')->nullable();
+            $table->unsignedBigInteger('estadofactibilidad_id')->default(1);
             $table->unsignedBigInteger('tipoobra_id')->nullable();
             $table->timestamps();
             $table->foreign('ejecutor_id')->references('id')->on('ejecutors');
