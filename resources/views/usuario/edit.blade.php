@@ -29,21 +29,21 @@
             <div class="box-body">
                 <div class="form-group">
                     <label>Usuario:</label>
-                    <input type="text" name="name" value="{{ $usuario->name }}" class="form-control" placeholder="Nombre">
+                    <input type="text" name="name" value="{{ $usuario->name }}" class="form-control" placeholder="Nombre" required>
                 </div>
             </div>
 
             <div class="box-body">
                 <div class="form-group">
                     <label>Correo Electrónico:</label>
-                    <input type="text" name="email" value="{{ $usuario->email }}" class="form-control" placeholder="Nombre">
+                    <input type="text" name="email" value="{{ $usuario->email }}" class="form-control" placeholder="Nombre" required>
                 </div>
             </div>
 
             <div class="box-body">
                 <div class="form-group">
                     <label>Contraseña:</label>
-                    <input type="password" name="password" value="{{ $usuario->password }}" class="form-control" placeholder="Nombre">
+                    <input type="password" name="password" value="{{ $usuario->password }}" class="form-control" placeholder="Nombre" required>
                 </div>
             </div>
             

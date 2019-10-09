@@ -168,3 +168,7 @@ Route::resource('bitacora', 'BitacoraController');
 Route::resource('usuario', 'UserController');
 Route::post('/usuario/{usuario}', 'UserController@desactivar')->name('usuarios.desactivar');
 Route::delete('/usuario/{usuario}', 'UserController@activar')->name('usuarios.activar');
+
+
+Route::resource('asignacion', 'AsignacionController');
+Route::post('/asignacion/{id}', 'AsignacionController@destroy')->name('asignaciones.destroy');

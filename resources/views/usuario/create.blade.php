@@ -30,17 +30,17 @@
         <div class="box-body">
             <div class="form-group">
                 <label for="exampleInputEmail1">Usuario</label>
-                <input type="text" name="name" class="form-control" placeholder="Ingresar Usuario">
+                <input type="text" class="form-control input-lg" name="name" placeholder="Ingrese Usuario" required>
             </div>
 
             <div class="form-group">
                 <label for="exampleInputEmail1">Correo Electrónico</label>
-                <input type="text" name="email" class="form-control" placeholder="Ingresar Correo Electrónico">
+                <input type="text" class="form-control input-lg" name="email" placeholder="Ingresar Correo Electrónico" required>
             </div>
 
             <div class="form-group">
                 <label for="exampleInputEmail1">Contraseña</label>
-                <input type="password" name="password" class="form-control" placeholder="Ingresar Contraseña">
+                <input type="password" class="form-control input-lg" name="password" placeholder="Ingresar Contraseña" required>
             </div>
             
             

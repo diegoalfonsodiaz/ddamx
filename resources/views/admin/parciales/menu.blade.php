@@ -56,6 +56,7 @@
           <ul class="treeview-menu">
             <li><a href="{{ url('/usuario') }}">Usuarios </a></li>
             <li><a href="#">Rol</a></li>
+            <li><a href="{{ url('/asignacion') }}">Asignación de Roles</a></li>
           </ul>
         </li>
         @endif

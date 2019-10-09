@@ -27,7 +27,7 @@
 <div class="box box-primary">
 
       <div class="box-header">
-        <a href="{{ route('usuario.create') }}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear Estado</a> 
+        <a href="{{ route('usuario.create') }}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear Usuario</a> 
         <h3 class="box-title">Listado de Usuarios</h3>
       </div>
         
@@ -37,7 +37,7 @@
               <thead>
                   <tr>
                     <th scope="col">Usuario</th>
-                    <th scope="col">Correo</th>
+                    <th scope="col">Correo Electrónico</th>
                     <th scope="col" width="200px">Estado</th>
                     <th scope="col" width="150px">Acciones</th>
                   </tr>
