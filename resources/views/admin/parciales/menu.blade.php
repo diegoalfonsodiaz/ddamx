@@ -18,6 +18,7 @@
           </ul>
         </li>
 
+        @if (auth()->user()->hasRole(['admin']))
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Licencias</span>
             <span class="pull-right-container">
@@ -31,7 +32,7 @@
 
           </ul>
         </li>
-
+        @endif
 
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Denuncias</span>
@@ -61,7 +62,7 @@
         </li>
         @endif
 
-
+        @if (auth()->user()->hasRole(['admin']))
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Bitacora</span>
             <span class="pull-right-container">
@@ -73,6 +74,6 @@
             <li><a href="{{ url('/asunto') }}">Asunto de Bitacora</a></li>
           </ul>
         </li>
-
+        @endif
         
       </ul>

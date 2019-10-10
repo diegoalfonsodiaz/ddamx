@@ -14,6 +14,7 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Role');
     }
 
+    //quien va a desencadenar todo el proceso
     public function autorizeRoles($roles){
         if($this->hasAnyRole($roles)){
             return true;
@@ -22,11 +23,12 @@ class User extends Authenticatable
         abort(401, 'No estas autorizado');
     }
     
+    //validar si un usuario tiene varios roles (arreglo)
     public function hasAnyRole($roles){
         if(is_array($roles)){
-            foreach ($roles as $roles) {
+            foreach ($roles as $role) {
                 # code...
-                if($this->hasRole($roles)){
+                if($this->hasRole($role)){
                     return true;
                 }
             }
@@ -39,6 +41,7 @@ class User extends Authenticatable
         return false;
     }
 
+    //validar si un usuario contiene un rol
     public function hasRole($role){
         if($this->roles()->where('nombre',$role)->first()){
             return true;

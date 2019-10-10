@@ -19,6 +19,8 @@ class AsignacionController extends Controller
         ->join('roles as r', 'a.role_id','=', 'r.id')
         
         ->select('a.id','u.name as usuario','u.email as correo','u.estado as estado','r.nombre as rol')
+        ->where('estado','=', 1)
+        //->orderBy('idtecnico_externo','desc')
         ->get();
         return view('asignacion.index', ["asignaciones"=>$asignaciones])->with('i');
 

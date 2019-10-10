@@ -36,6 +36,7 @@
           <table id="persona-table" class="table table-striped table-bordered" style="width:100%">
               <thead>
                   <tr>
+                    <th scope="col" width="30px">#</th>
                     <th scope="col">Usuario</th>
                     <th scope="col">Correo Electrónico</th>
                     <th scope="col" width="200px">Estado</th>
@@ -45,6 +46,7 @@
               <tbody>
                 @foreach($usuarios as $usuario)
                   <tr>
+                    <td>{{ ++$i }}</td>
                     <td>{{ $usuario->name }}</td>
                     <td>{{ $usuario->email }}</td>
                       

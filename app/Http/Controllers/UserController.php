@@ -9,15 +9,18 @@ use App\User;
 class UserController extends Controller
 {
   
-    public function index()
+    public function index(Request $request)
     {
+        //$request->user()->autorizeRoles('admin');
+
         $usuarios = User::all();
-        return view('usuario.index',compact('usuarios'));
+        return view('usuario.index',compact('usuarios'))->with('i');
     }
 
   
     public function create(Request $request)
     {
+        //$request->user()->autorizeRoles('operaciones');
         return view('usuario.create');
     }
 
