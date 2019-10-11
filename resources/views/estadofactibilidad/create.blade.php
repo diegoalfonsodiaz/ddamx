@@ -30,7 +30,7 @@
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Nombre</label>
-                  <input type="text" name="nombre" class="form-control" placeholder="Ingresar Estado Factibilidad">
+                  <input type="text" name="nombre" class="form-control" placeholder="Ingresar Estado Factibilidad" required>
                 </div>
                 
                 

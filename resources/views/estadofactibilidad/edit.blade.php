@@ -29,7 +29,7 @@
           <div class="box-body">
             <div class="form-group">
                 <label>Nombre:</label>
-                <input type="text" name="nombre" value="{{ $estadofactibilidad->nombre }}" class="form-control" placeholder="Nombre">
+                <input type="text" name="nombre" value="{{ $estadofactibilidad->nombre }}" class="form-control" placeholder="Nombre" required>
             </div>
           </div>
             
