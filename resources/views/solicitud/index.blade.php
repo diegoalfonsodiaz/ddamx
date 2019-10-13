@@ -64,6 +64,15 @@
                                     
                                 </form>
                                 <a class="btn btn-xs btn-warning" href="{{ route('solicitudes.show',$solicitudes->id) }}"><i class="fa fa-eye"></i></a>
+
+                                @if($solicitudes->estadofactibilidad_id==2)
+                                <form method="POST" 
+                                    action="#"
+                                    style="display:inline">
+                                    {{csrf_field()}} {{ method_field('DELETE')}}
+                                    <button class="btn btn-xs btn-success" ><i class="fa fa-print"></i></button>
+                                    </form>
+                                  @endif
                                 </td>
                             </tr>
                             @endforeach
