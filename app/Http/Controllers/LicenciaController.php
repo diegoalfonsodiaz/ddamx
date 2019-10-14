@@ -37,11 +37,11 @@ class LicenciaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        $solicitud=Solicitud::all();
-        $estado=Estadolicencia::all();
-        $tipovia=Tipovia::all();
+        $solicitud=Solicitud::where('estadofactibilidad_id','=','2')->get();
+        $estado=Estadolicencia::where('estado','=','1')->get();
+        $tipovia=Tipovia::where('estado','=','1')->get();
         return view('licencia.create',compact('solicitud','estado','tipovia'));
     }
 
@@ -76,10 +76,10 @@ class LicenciaController extends Controller
      */
     public function edit(Licencia $licencia,$id)
     {
-        $solicitud =Solicitud::all();
+        $solicitud =Solicitud::where('estadofactibilidad_id','=','1')->get();
         $licencia=Licencia::findOrFail($id);
-        $estado=Estadolicencia::all();
-        $tipovia=Tipovia::all();
+        $estado=Estadolicencia::where('estado','=','1')->get();
+        $tipovia=Tipovia::where('estado','=','1')->get();
         return view('licencia.edit', compact('solicitud','estado','tipovia','licencia'));
     }
 

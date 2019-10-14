@@ -25,18 +25,20 @@
 
                 <div class="form-group">
                     <strong>Descripción</strong>
-                    <textarea type="text" name="descripcion" class="form-control" rows="3" placeholder="Descripción"></textarea>
+                    <textarea type="text" name="descripcion" class="form-control" rows="3" placeholder="Descripción" required></textarea>
                     <!-- <input type="text" name="descripcion" class="form-control" placeholder="Descripción"> -->
                 </div>
 
+                
+
                 <div class="form-group">
                     <label for="direccion_fab">Fecha</label>
-                    <input type="date" name="fecha" class="form-control" >
+                    <input type="date" name="fecha" value="<?php echo date("Y-m-d");?>" class="form-control" required>
                 </div>
 
                 <div class="form-group">
                     <label for="exampleInputPassword1">Seleccione Imagen</label>
-                    <input name="foto" type="file" class="form-control" id="exampleInputPassword1" placeholder="Seleccione una imagen">
+                    <input name="foto" type="file" class="form-control" id="exampleInputPassword1" placeholder="Seleccione una imagen" required>
                 </div>
             
             

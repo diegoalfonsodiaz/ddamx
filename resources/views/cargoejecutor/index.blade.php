@@ -4,7 +4,7 @@
             <div class="box-header with-border">
               <h3 class="box-title"> Cargo ejecutor</h3>
               <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('cargoejecutor.create') }}"> Crear Nuevo Cargo Ejecutor </a>
+                <a  href="{{ route('cargoejecutor.create') }}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear Cargo Ejecutor</a>
                 
             </div>
               <br><br>

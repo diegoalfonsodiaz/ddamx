@@ -1,6 +1,10 @@
 @extends('admin.principal')
 @section('contenido')
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> d0feaa091efc1768a3365264780088e28e46f0a7
 
 <div class="box box-primary">
             <div class="box-header with-border">

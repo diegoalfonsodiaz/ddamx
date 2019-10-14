@@ -53,8 +53,7 @@
 
 
                       <td>
-                        <a class="btn btn-primary" href="{{ route('denuncia.edit',$den->id) }}">Editar</a>
-                         
+                        <a href="{{ route('denuncia.edit',$den->id) }}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
                       </td>
 
                     </tr>
