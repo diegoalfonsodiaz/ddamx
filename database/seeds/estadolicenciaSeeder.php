@@ -15,11 +15,13 @@ class estadolicenciaSeeder extends Seeder
         DB::table('estadolicencias')->insert([
             'nombre' => 'Activo',
             'descripcion' => 'Mantenimiento secuencial',
+            'estado' => '1',
         ]);
 
         DB::table('estadolicencias')->insert([
             'nombre' => 'Desactivado',
             'descripcion' => 'Mora de 3 meses',
+            'estado' => '1',
         ]);
     }
 }

@@ -24,19 +24,6 @@
               
               <div class="box-body">
 
-                  <!-- <div class="form-group"> 
-                    <strong>Descripción:</strong>
-                    <input type="text" name="descripcion" value="{{ $denuncia->descripcion }}" class="form-control" placeholder="Descripcion">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="direccion_fab">Fecha</label>
-                    <input type="date" name="fecha" value="{{ $denuncia->fecha }}"  class="form-control" >
-                  </div>-->
-                  
-                  
-
-
                   <div class="form-group">
                     <label for="estadodenuncia_id">Estado Denuncia:</label>
                     <select class="form-control input-lg" name="estadodenuncia_id" id="estadodenuncia_id" class="form-control selectpicker" data-live-search="true">
@@ -49,10 +36,6 @@
                       @endforeach
                     </select>
                   </div>
-
-                  
-
-
                   
                 
               </div>

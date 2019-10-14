@@ -1,8 +1,18 @@
 @extends('admin.principal')
+@section('header')
+<h1>
+        Editar Licencia
+       
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+        <li class="active">Licencias</li>
+      </ol>
+@stop
 @section('contenido')
 <div class="box box-primary" >
             <div class="box-header with-border">
-              <h1 class="box-title">Editar Licencia </h1>
+             
             <!-- /.box-header -->
             <!-- form start -->
             <form action="{{ route('licencia.update', $licencia->id) }}" method="POST">

@@ -2,10 +2,15 @@
 
 
 
+Route::get('/', function (){
+    return view ('auth.login') ;
+});
+
+//Route::get('/menu', function () {
 //Route::get('/', function () {
 //   return view('welcome');
 //});
-Route::get('/', function () {
+Route::get('/menu', function () {
     return view('admin.dashboard');
 });
 //Robinson C
@@ -22,8 +27,9 @@ Route::resource('solicitud', 'SolicitudController');
 /* RUTAS  EJECUTORES -----------------------------------------------------------------------*/
 Route::resource('licencia', 'LicenciaController');
 
-
-
+Route::post('/solicitud/{id}', 'SolicitudController@show')->name('solicitudes.show');
+Route::get('/solicitud/{id}', 'PersonaController@edit')->name('solicitudes.edit');
+Route::put('/solicitud/{id}', 'PersonaController@update')->name('solicitudes.update');
 
 
 /* FIN  EJECUTORES  ***asdf***********************************************************************/
@@ -76,6 +82,8 @@ Route::post('/update/{id}', 'EstadolicenciaController@update');
 Route::get('/eliminar/{id}', 'EstadolicenciaController@eliminar');
 Route::post('/delete/{id}', 'EstadolicenciaController@destroy');
 Route::get('/detalle/{id}', 'EstadolicenciaController@show');
+Route::post('/estadolicencia/{estadolicencia}', 'EstadolicenciaController@desactivar')->name('estadolicencias.desactivar');
+Route::delete('/estadolicencia/{estadolicencia}', 'EstadolicenciaController@activar')->name('estadolicencias.activar');
 
 
 
@@ -156,3 +164,17 @@ Route::delete('/estadodenuncia/{estadodenuncia}', 'EstadodenunciaController@acti
 
 
 Route::resource('denuncia', 'DenunciaController');
+Auth::routes(['register' => false]);
+
+Route::resource('bitacora', 'BitacoraController');
+
+Route::resource('usuario', 'UserController');
+Route::post('/usuario/{usuario}', 'UserController@desactivar')->name('usuarios.desactivar');
+Route::delete('/usuario/{usuario}', 'UserController@activar')->name('usuarios.activar');
+
+
+Route::resource('asignacion', 'AsignacionController');
+Route::post('/asignacion/{id}', 'AsignacionController@destroy')->name('asignaciones.destroy');
+
+
+Route::resource('rol', 'RolController');

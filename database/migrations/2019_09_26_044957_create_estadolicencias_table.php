@@ -17,6 +17,7 @@ class CreateEstadolicenciasTable extends Migration
             $table->bigIncrements('id');
             $table->string('nombre', 100);
             $table->string('descripcion', 240)->nullable();
+            $table->boolean('estado')->default(1);
             $table->timestamps();
         });
     }

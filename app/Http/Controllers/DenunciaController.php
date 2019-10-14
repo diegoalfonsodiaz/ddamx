@@ -83,7 +83,7 @@ class DenunciaController extends Controller
      */
     public function edit($id)
     {
-        $estado=Estadodenuncia::all();
+        $estado=Estadodenuncia::where('estado','=','1')->get();
         $denuncia=Denuncia::findOrFail($id);
         return view('denuncia.edit', compact('estado'),compact('denuncia'));
     }
