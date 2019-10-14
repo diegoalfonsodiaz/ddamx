@@ -37,7 +37,7 @@ class LicenciaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
         $solicitud=Solicitud::where('estadofactibilidad_id','=','2')->get();
         $estado=Estadolicencia::where('estado','=','1')->get();
