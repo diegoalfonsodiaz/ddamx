@@ -19,6 +19,11 @@ class CreateEstadofactibilidadsTable extends Migration
             $table->boolean('estado')->default(1);
             $table->timestamps();
         });
+
+        DB::table('estadofactibilidads')->insert(array('id'=>'1','nombre'=>'Sin procesar','created_at'=>now(),'updated_at'=>now()));
+        DB::table('estadofactibilidads')->insert(array('id'=>'2','nombre'=>'Factible','created_at'=>now(),'updated_at'=>now()));
+        DB::table('estadofactibilidads')->insert(array('id'=>'3','nombre'=>'No Factible','created_at'=>now(),'updated_at'=>now()));
+        
     }
 
     /**

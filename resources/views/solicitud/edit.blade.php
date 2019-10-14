@@ -1,26 +1,38 @@
 @extends('admin.principal')
+@section('header')
+<h1>
+        Editar solicitud
+       
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+        <li class="active">Solicitudes</li>
+      </ol>
+@stop
 @section('contenido')
-<div class="box box-primary" >
-            <div class="box-header with-border">
-              <h1 class="box-title">Editar Solicitud Factibilidad </h1>
-            <!-- /.box-header -->
-            <!-- form start -->
-            <form action="{{ route('solicitud.update', $solicitud->id) }}" method="POST">
-            @csrf
-            @method('PUT')
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-
-                        <!-- personas -->
-                        <div class="form-group">
+<div class="row">
+<form action="{{ route('solicitud.update', $solicitud->id) }}" method="POST">
+            {!! csrf_field() !!} {{ method_field('PUT')}}
+    <div class="col-md-6">
+        <div class="box box-primary">
+        @if(count($errors)>0)
+          @foreach($errors->all() as $error)
+            <div class="alert alert-danger"> 
+              {{ $error }}
+            </div>
+          @endforeach
+        @endif
+                <div class="box-body">
+                       <!-- personas -->
+                       <div class="form-group">
                             <label for="select" class="">Persona</label>
                             <select name="persona_id" class="form-control" id="persona">}
                                 
                                 @foreach($persona as $carac)
                                 @if ($carac->id==$solicitud->persona_id)
-                                <option value="{{$carac->id}}">{{$carac->nombre}}</option>
+                                <option value="{{$carac->id}}">{{$carac->dpi}},  {{$carac->nombre}}  {{$carac->apellido}}</option>
                                 @else
-                                <option value="{{$carac->id}}">{{$carac->nombre}}</option>
+                                <option value="{{$carac->id}}">{{$carac->dpi}},  {{$carac->nombre}}  {{$carac->apellido}}</option>
                                 @endif
                                 @endforeach
                             </select>
@@ -49,7 +61,7 @@
 
                         <div class="form-group">
                             <label for="direccion_fab">Fecha</label>
-                            <input type="date" name="fechasolicitud" value="{{ $solicitud->fechasolicitud }}"  class="form-control" >
+                            <input type="date" name="fechasolicitud" value="{{ $solicitud->fechasolicitud }}"  class="form-control" disabled>
                         </div>
 
                         <div class="form-group">
@@ -71,15 +83,22 @@
                             <strong>Catastral</strong>
                             <input type="text" name="catastral" value="{{ $solicitud->catastral }}"  class="form-control" placeholder="Catastral">
                         </div>
-
-                        <div class="form-group">
+                </div>
+           
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="box box-primary">
+        
+            <div class="box-body">
+            <div class="form-group">
                             <strong>Solvencia Municipal</strong>
                             <input type="text" name="solvenciamunicipal" value="{{ $solicitud->solvenciamunicipal }}"  class="form-control" placeholder="Solvencia Municipal">
                         </div>
 
                         <div class="form-group">
                             <strong>Observación</strong>
-                            <input type="text" name="observacion" value="{{ $solicitud->observacion }}"  class="form-control" placeholder="Observación">
+                            <textarea type="text" name="observacion" value="{{ $solicitud->observacion }}" class="form-control" rows="3" placeholder="Observación"></textarea>
                         </div>
 
                         <div class="form-group">
@@ -146,17 +165,19 @@
                                       @endforeach
                             </select>
                         </div>
+        
+                        <div class="form-group">
+                                <button class="btn btn-primary ">Guardar </button>
+                                <a href="{{route('solicitud.index')}}" class="btn btn-danger pull-right"> Regresar</a> 
 
-                    </div>
-                    
-                    <div class="col-xs-12 col-sm-12 col-md-12 ">
-                            <button type="submit" class="btn btn-primary">Guardar</button>
-                    </div>
-                </div>
-   
-            </form>
+                         </div>
+
+            </div>
+        </div>
+    </div>
+    
+    </form>
 </div>
-
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 

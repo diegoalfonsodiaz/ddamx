@@ -2,7 +2,7 @@
 @section('header')
 <h1>
         Solicitud factibilidad
-        <small>Acontinuacion se presentan todas las solicitudes de factibilidad para ser verificadas por la entidad</small>
+        <small>A continuación se presentan todas las solicitudes de factibilidad para ser verificadas por la entidad</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
@@ -12,10 +12,17 @@
       
 @stop
 @section('contenido')
+<div class="box-header">
+            @if(session()->has('flash'))
+              <div class="col-md-6">
+                <div class="alert alert-success">{{session('flash')}}
+                </div>
+              </div>
+              @endif</div>
 <div class="box box-primary">
             <div class="box-header">
             
-            <a href="{{route('solicitud.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear Nueva Solicitud De Factibilidad</a> 
+            <a href="{{route('solicitud.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear solicitud de factibilidad</a> 
               <h3 class="box-title">Solicitudes</h3>
             </div>
             <!-- /.box-header -->
@@ -25,14 +32,13 @@
                         <thead>
                             <tr>
                             
-                                <th>#</th>
+                               
                                 <th>Nombre</th>
-                                <th>Dirección</th>
+                                <th>Apellidos</th>
+                                <th>DPI</th>
+                                <th>Dirección de la obra</th>
+                                <th>Fecha de solicitud</th>
                                 <th>Inmueble</th>
-                                <th>Expediente</th>
-                                <th>E Interno</th>
-                                <th>Fecha S</th>
-                                <th>Ejecutor</th>
                                 <th>Estado</th>
                                 <th>Acciones</th>
                             </tr>
@@ -40,24 +46,33 @@
                         <tbody>
                             @foreach($solicitud as $solicitudes)
                             <tr>
-                                <td>{{ ++$i }}</td>
-                                <td>{{$solicitudes->persona}}</td>
+                              <!--  <td>{{ ++$i }}</td>-->
+                                <td>{{$solicitudes->nombre_persona}}</td>
+                                <td>{{$solicitudes->apellido}}</td>
+                                <td>{{$solicitudes->dpi}}</td>
                                 <td>{{$solicitudes->direccionobra}}</td>
-                                <td>{{$solicitudes->codigoinmueble}}</td>
-                                <td>{{$solicitudes->expediente}}</td>
-                                <td>{{$solicitudes->expedienteinterno}}</td>
                                 <td>{{$solicitudes->fechasolicitud}}</td>
-                                <td>{{$solicitudes->ejecutor}}</td>
-                                <td>{{$solicitudes->estado}}</td>
+                                <td>{{$solicitudes->codigoinmueble}}</td>
+                                <td>{{$solicitudes->nombre_estadofactibilidad}}</td>
                                 
                                 <td>
-                                <form action="{{ route('solicitud.destroy',$solicitudes->id) }}" method="POST">
-                                    <a class="btn btn-primary" href="{{ route('solicitud.edit',$solicitudes->id) }}">Editar</a>
+                                <form action="{{ route('solicitud.destroy',$solicitudes->id) }}" method="POST" style="display:inline">
+                                    <a class="btn btn-xs btn-info" href="{{ route('solicitud.edit',$solicitudes->id) }}"><i class="fa fa-pencil"></i></a>
                 
                                     @csrf
                                     @method('DELETE')
                                     
                                 </form>
+                                <a class="btn btn-xs btn-warning" href="{{ route('solicitudes.show',$solicitudes->id) }}"><i class="fa fa-eye"></i></a>
+
+                                @if($solicitudes->estadofactibilidad_id==2)
+                                <form method="POST" 
+                                    action="#"
+                                    style="display:inline">
+                                    {{csrf_field()}} {{ method_field('DELETE')}}
+                                    <button class="btn btn-xs btn-success" ><i class="fa fa-print"></i></button>
+                                    </form>
+                                  @endif
                                 </td>
                             </tr>
                             @endforeach
