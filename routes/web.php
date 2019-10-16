@@ -120,12 +120,12 @@ Route::get('/tipovia', 'TipoviaController@index');
 Route::post('/insertartipovia', 'TipoviaController@create');
 Route::get('/actualizartipovia/{id}', 'TipoviaController@edit');
 Route::post('/updatetipovia/{id}', 'TipoviaController@update');
-//Route::get('/eliminartipovia/{id}', 'TipoviaController@eliminar');
-//Route::post('/deletetipovia/{id}', 'TipoviaController@destroy');
 Route::get('/desactivartipovia/{id}', 'TipoviaController@desactivar');
 Route::post('/deshabilitadotipovia/{id}', 'TipoviaController@deshabilitado');
 Route::get('/activartipovia/{id}', 'TipoviaController@activar');
 Route::post('/habilitadotipovia/{id}', 'TipoviaController@habilitado');
+Route::post('/tipovia/{tipovia}', 'TipoviaController@desactivar')->name('tipovias.desactivar');
+Route::delete('/tipovia/{tipovia}', 'TipoviaController@activar')->name('tipovias.activar');
 
 
 
