@@ -178,3 +178,7 @@ Route::post('/asignacion/{id}', 'AsignacionController@destroy')->name('asignacio
 
 
 Route::resource('rol', 'RolController');
+
+
+//RUTAS DASHBOARD
+Route::get('/', 'DashboardController@denuncia');
