@@ -178,3 +178,5 @@ Route::post('/asignacion/{id}', 'AsignacionController@destroy')->name('asignacio
 
 
 Route::resource('rol', 'RolController');
+
+//Nueva Rama Robinson
