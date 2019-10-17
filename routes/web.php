@@ -178,3 +178,5 @@ Route::post('/asignacion/{id}', 'AsignacionController@destroy')->name('asignacio
 
 
 Route::resource('rol', 'RolController');
+Route::post('/rol/{rol}', 'RolController@desactivar')->name('roles.desactivar');
+Route::delete('/rol/{rol}', 'RolController@activar')->name('roles.activar');

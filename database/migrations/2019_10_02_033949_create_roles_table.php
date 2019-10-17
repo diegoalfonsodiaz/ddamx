@@ -17,6 +17,7 @@ class CreateRolesTable extends Migration
             $table->bigIncrements('id');
             $table->string('nombre');
             $table->string('descripcion');
+            $table->boolean('estado')->default(1);
             $table->timestamps();
         });
     }

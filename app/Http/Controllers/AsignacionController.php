@@ -18,9 +18,9 @@ class AsignacionController extends Controller
         //rol
         ->join('roles as r', 'a.role_id','=', 'r.id')
         
-        ->select('a.id','u.name as usuario','u.email as correo','u.estado as estado','r.nombre as rol')
-        ->where('estado','=', 1)
-        //->orderBy('idtecnico_externo','desc')
+        ->select('a.id','u.name as usuario','u.email as correo','u.estado as estado','r.nombre as rol','r.estado as estadorol')
+        ->where('u.estado','=', 1)
+        ->where('r.estado','=', 1)
         ->get();
         return view('asignacion.index', ["asignaciones"=>$asignaciones])->with('i');
 
@@ -47,11 +47,6 @@ class AsignacionController extends Controller
         return redirect()->route('asignacion.index')->with('info', 'Se registro Corectamente la Asignación');
     }
 
- 
-    public function show(Asignacion $asignacion)
-    {
-        
-    }
 
    
     public function edit($id)
