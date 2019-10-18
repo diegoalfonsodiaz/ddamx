@@ -180,3 +180,16 @@ Route::post('/asignacion/{id}', 'AsignacionController@destroy')->name('asignacio
 Route::resource('rol', 'RolController');
 
 //Nueva Rama Robinson
+
+
+
+
+
+
+
+
+//Implementacion de plantilla externa
+Route::get('inicio', 'FrontendController@indexinicio');
+Route::get('denunciaexterna', 'FrontendController@indexdenuncia');
+Route::resource('contacto', 'ContactoController');
+Route::resource('solicitudexterna','SolicitudExternaController');
