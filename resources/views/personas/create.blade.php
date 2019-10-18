@@ -43,6 +43,10 @@
                   <input type="text" class="form-control input-lg" name="telefono" placeholder="Teléfono" required >
                 </div>
                 <div class="form-group">
+                  <label >Ornato</label>
+                  <input type="text" class="form-control input-lg" name="ornato" placeholder="Ornato">
+                </div>
+                <div class="form-group">
                   <label >Correo electrónico</label>
                   <input type="email" class="form-control input-lg " name="correo" placeholder="Correo electrónico">
                 </div>
