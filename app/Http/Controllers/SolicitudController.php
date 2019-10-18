@@ -9,9 +9,18 @@ use App\Persona;
 use App\Estadofactibilidad;
 use App\Ejecutor;
 use App\Tipoobra;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class SolicitudController extends Controller
 {
+
+    public function exportPDF($id){
+        $customPaper = array(0,0,612.00,1008.00);
+        $solicitud = Solicitud::find($id);
+        $pdf = PDF::loadView('pdf.solicitud', compact('solicitud'))->setPaper($customPaper,'portrait');
+
+        return $pdf->download('solicitud.pdf');
+    }
  
     public function index()
     {
@@ -118,8 +127,8 @@ class SolicitudController extends Controller
 
     }
 
-    public function destroy(Solicitud $solicitud)
+    public function destroy()
     {
-        //
+        
     }
 }
