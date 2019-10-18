@@ -8,6 +8,9 @@
 <body>
 @foreach($solicitud as $solicitudes)
     
+
+    {{ $solicitudes->expediente }} <br>
+    {{ $solicitudes->expedienteinterno }} <br>
     {{ $solicitudes->nombre_persona }} <br>
     {{ $solicitudes->direccionobra }}<br>
     {{ $solicitudes->direccionobra }}<br>
@@ -21,7 +24,7 @@
     {{ $solicitudes->eornato }}<br>
     
 
-   
+   7887878
 
     @endforeach
 </body>
