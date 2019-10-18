@@ -24,7 +24,7 @@ $fecha=date("Y-m-d",strtotime($fecha_actual."- 1 days"));
       ->where('personas.estado','=','1')
       ->count();
       return view('admin.dashboard',compact('consulta','consultapersona'));
-//-------------------------------------------------------------------------
+//----------------------------------------------------------------------------
      
 
     }
