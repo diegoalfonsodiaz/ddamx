@@ -9,14 +9,14 @@
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>$consulta</h3>
+            <h3>{{$consulta}}</h3><h3>Denuncia</h3>
 
-              <p>New Orders</p>
+              <p>AGREGADA RECIENTEMENTE</p>
             </div>
             <div class="icon">
               <i class="ion ion-bag"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{url('denuncia')}}" class="small-box-footer">DENUNCIAS <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -24,14 +24,14 @@
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3>$consulta<sup style="font-size: 20px">%</sup></h3>
+              <h3>{{$consultapersona}}<sup style="font-size: 100px"></sup> Personas</h3>
 
-              <p>Bounce Rate</p>
+              <p>PERSONAS ACTIVAS</p>
             </div>
             <div class="icon">
               <i class="ion ion-stats-bars"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{url('persona')}}" class="small-box-footer">Listado de Personas<i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -39,7 +39,7 @@
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
-              <h3>44</h3>
+              <h3></h3>
 
               <p>User Registrations</p>
             </div>

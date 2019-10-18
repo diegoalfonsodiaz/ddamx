@@ -7,7 +7,7 @@ use DB;
 
 class DashboardController extends Controller
 {
-    public function denuncia()
+    public function dashboard()
     {
     $fecha_actual = date("Y-m-d");
 //resto 1 día
@@ -17,7 +17,29 @@ $fecha=date("Y-m-d",strtotime($fecha_actual."- 1 days"));
          ->where('denuncias.fecha','=',$fecha)
          ->count();
         // print_r($fecha);
-       return view('admin.dashboard', ["consulta"=>$consulta])->with('i');
+//-------------------------------------------------------------------------
+        //consulta personas activas
+        $consultapersona= DB::table('personas')
+        ->select('personas.id')
+      ->where('personas.estado','=','1')
+      ->count();
+      return view('admin.dashboard',compact('consulta','consultapersona'));
+//-------------------------------------------------------------------------
+     
+
     }
 
+   //PERSONAS ACTIVAS
+ public function personasactivas()
+ {
+      $consulta= DB::table('personas')
+      ->select('personas.id')
+      ->where('personas.estado','=','1')
+      ->count();
+      //print_r($consulta);
+     return view('admin.dashboard', ["consulta"=>$consulta])->with('i');
+ }
+
+
+      
 }

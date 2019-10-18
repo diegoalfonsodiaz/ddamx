@@ -14,6 +14,10 @@ Route::get('/menu', function () {
     return view('admin.dashboard');
 });
 //Robinson C
+//RUTAS DASHBOARD
+Route::get('/menu', 'DashboardController@dashboard');
+//DENUCNIAS DE ALTA
+
 
 
 /* RUTAS CARGO EJECUTORES -----------------------------------------------------------------------*/
@@ -180,5 +184,3 @@ Route::post('/asignacion/{id}', 'AsignacionController@destroy')->name('asignacio
 Route::resource('rol', 'RolController');
 
 
-//RUTAS DASHBOARD
-Route::get('/', 'DashboardController@denuncia');
