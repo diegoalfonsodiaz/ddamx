@@ -51,7 +51,8 @@ class SolicitudExternaController extends Controller
             'dpi' => 'required',
             'nombre' => 'required',
             'apellido' => 'required',
-            'telefono' => 'required'
+            'telefono' => 'required',
+            recaptchaFieldName() => recaptchaRuleName()
             
         ]);
        //return Persona::create($request->all());

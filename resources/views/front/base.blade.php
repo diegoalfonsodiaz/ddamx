@@ -18,6 +18,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" type="text/css" href="{{ asset('front_end/css/jquery.circliful.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('front_end/vendors/owl-carousel/owl.carousel.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('front_end/vendors/owl-carousel/owl.theme.css')}}">
+    {!! htmlScriptTagJsApi() !!}
     <!--end of page level css-->
      
     

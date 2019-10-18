@@ -29,6 +29,14 @@
             <div class="form-group">
                 <strong>Descripcion</strong>
                 <input type="text" name="descripcion" class="form-control" placeholder="descripcion">
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                    {!! htmlFormSnippet() !!}
+                    @error('g-recaptcha-response')
+                        <span class="invalid-feedback" role="alert" style="display: block">
+                            <strong>{{ $message}}</strong>
+                        </span>
+                    @enderror
             </div>        
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

@@ -41,6 +41,7 @@ class ContactoController extends Controller
         $this->validate($request,
             [
                 'nombre'=>'required',
+                recaptchaFieldName() => recaptchaRuleName()
             ]
         );
         $contacto = new Contacto();
