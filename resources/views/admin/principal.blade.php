@@ -102,16 +102,12 @@ desired effect
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
-                                </div>
+                                
                             </li>
                         @endguest
-                    
-
-            
           </li>
           <!-- Control Sidebar Toggle Button -->
           
@@ -158,19 +154,15 @@ desired effect
 
     <!-- Main content -->
     <section class="content container-fluid">
-
-
-
       <!--------------------------
         | Your Page Content Here |
         -------------------------->
         @yield('contenido')
-
     </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-
+  </div>
   <!-- Main Footer -->
   <footer class="main-footer">
     <!-- To the right -->
