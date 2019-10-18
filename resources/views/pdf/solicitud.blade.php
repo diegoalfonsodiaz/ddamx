@@ -6,19 +6,23 @@
     <title></title>
 </head>
 <body>
-    1 <br>
-    2<br>
-    3<br>
-    4<br>
-    6<br>
-    7<br>
-    8<br>
-    9<br>
-    10<br>
-    11<br>
-    12<br>
-    13<br>
-    14<br>
-    15<br>
+@foreach($solicitud as $solicitudes)
+    
+    {{ $solicitudes->nombre_persona }} <br>
+    {{ $solicitudes->direccionobra }}<br>
+    {{ $solicitudes->direccionobra }}<br>
+    {{ $solicitudes->nombre_ejecutor }}<br>
+    {{ $solicitudes->direccionejecutor }}<br>
+    {{ $solicitudes->numerofinca }}<br>
+    {{ $solicitudes->numerofolio }}<br>
+    {{ $solicitudes->libro }}<br>
+    {{ $solicitudes->catastral }}<br>
+    {{ $solicitudes->solvenciamunicipal }}<br>
+    {{ $solicitudes->eornato }}<br>
+    
+
+   
+
+    @endforeach
 </body>
 </html>

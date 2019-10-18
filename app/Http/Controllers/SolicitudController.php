@@ -16,9 +16,27 @@ class SolicitudController extends Controller
 
     public function exportPDF($id){
         $customPaper = array(0,0,612.00,1008.00);
-        $solicitud = Solicitud::find($id);
-        $pdf = PDF::loadView('pdf.solicitud', compact('solicitud'))->setPaper($customPaper,'portrait');
-
+        $solicitud=DB::table('solicituds')
+        ->leftjoin('ejecutors','solicituds.ejecutor_id','=','ejecutors.id')
+        ->leftjoin('personas','solicituds.persona_id','=','personas.id')
+        ->leftjoin('tipoobras','solicituds.tipoobra_id','=','tipoobras.id')
+        ->leftjoin('estadofactibilidads','solicituds.estadofactibilidad_id','=','estadofactibilidads.id')
+        ->select('personas.nombre as nombre_persona','personas.apellido','personas.dpi',
+        'tipoobras.nombre as nombre_tipoobra','estadofactibilidads.nombre as nombre_estadofactibilidad',
+        'ejecutors.nombre as nombre_ejecutor','ejecutors.direccion as direccionejecutor',
+        'ejecutors.ornato as eornato', 
+        'solicituds.direccionobra','solicituds.codigoinmueble',
+        'solicituds.expediente','solicituds.expedienteinterno','solicituds.numerofinca',
+        'solicituds.numerofolio',
+        'solicituds.libro','solicituds.catastral','solicituds.solvenciamunicipal',
+        'solicituds.observacion','solicituds.longitud','solicituds.ancho',
+        'solicituds.profundidad','solicituds.fechasolicitud',
+        'solicituds.diametrotubo','solicituds.diametrocolector',
+        'solicituds.ejecutor_id','solicituds.persona_id',
+        'solicituds.tipoobra_id','solicituds.estadofactibilidad_id')
+        ->where('solicituds.id','=',$id)
+        ->get();
+        $pdf = PDF::loadView('pdf.solicitud',  ["solicitud"=>$solicitud])->setPaper($customPaper,'portrait');
         return $pdf->download('solicitud.pdf');
     }
  
