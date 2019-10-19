@@ -86,7 +86,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="typography.html">Estado actual</a>
                             </li>
-                            <li><a href="{{ url('/solicitudexterna') }}">Solicitud</a>
+                            <li><a href="{{ url('/buscardpi') }}">Solicitud</a>
                             </li>
                         </ul>
                     </li>

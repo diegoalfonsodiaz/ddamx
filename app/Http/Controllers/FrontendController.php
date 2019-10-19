@@ -32,6 +32,11 @@ class FrontendController extends Controller
         return view('front.denunciaexterna');
         //
     }
+    public function indexdpi()
+    {
+        return view('front.ciudadano.buscardpi');
+        //
+    }
     public function indexcontacto()
     {
         return view('front.contacto');

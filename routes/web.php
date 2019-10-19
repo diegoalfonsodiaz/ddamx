@@ -191,5 +191,9 @@ Route::resource('rol', 'RolController');
 //Implementacion de plantilla externa
 Route::get('inicio', 'FrontendController@indexinicio');
 Route::get('denunciaexterna', 'FrontendController@indexdenuncia');
+Route::put('denuncias','DenunciaController@store2')->name('denuncias.store2');
 Route::resource('contacto', 'ContactoController');
 Route::resource('solicitudexterna','SolicitudExternaController');
+Route::get('buscardpi', 'FrontendController@indexdpi');
+Route::put('solicituddpi','SolicitudExternaController@solicitardpi')->name('solicituddpi.solicitardpi');
+Route::get('solicitar','SolicitudExternaController@indexsolicitar');

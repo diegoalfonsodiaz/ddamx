@@ -2,32 +2,37 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use App\SolicitudExterna;
 use App\Persona;
 use App\Solicitud;
 use App\Prueba;
+use Faker\Provider\nl_NL\Person;
 use Illuminate\Http\Request;
 
 class SolicitudExternaController extends Controller
 {
-    private $persona = null;
-    public function __construct()
-    {
-        $persona = new Persona();
-    }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         return view('front.ciudadano.solicitudexterna');
     }
-    public function solicitud()
+   
+    public function solicitardpi(Request $request)
     {
-        return view('front.ciudadano.solicitud');
+        $cantidad= DB::table('personas')->where('dpi', $request->dpi)->count();
+   
+        if($cantidad >= 1){
+            $personas = DB::table('personas')->where('dpi', $request->dpi)->get();
+            return view('front.ciudadano.solicitudexterna',compact('personas'));
+        }
+        else{
+            $dpi = $request->dpi;
+            return view('front.ciudadano.persona_y_solicitud',compact('dpi'));
+        }
+
     }
+       
+    
 
     /**
      * Show the form for creating a new resource.
@@ -56,7 +61,24 @@ class SolicitudExternaController extends Controller
             
         ]);
        //return Persona::create($request->all());
+       $cantidad= DB::table('personas')->where('dpi', $request->dpi)->count();
+   
+       if($cantidad >= 1){
+        $id_persona = DB::table('personas')->where('dpi', $request->dpi)->value('id');
 
+       $solicitud= new Solicitud();
+       $solicitud->persona_id = $id_persona;
+       $solicitud->direccionobra = $request->input('direccionobra');
+       $solicitud->codigoinmueble = $request->input('codigoinmueble');
+       $solicitud->ejecutor_id = '1';
+       $solicitud->tipoobra_id = '1';
+       
+       $solicitud->save();
+
+       return redirect('inicio')->with('info', 'Se envio Corectamente tu solicitud');
+
+       }
+       else{
        $persona=new Persona();
        $persona->dpi=$request->dpi;
        $persona->nombre=$request->nombre;
@@ -75,7 +97,7 @@ class SolicitudExternaController extends Controller
        $solicitud->save();
 
        return redirect('inicio')->with('info', 'Se envio Corectamente tu solicitud');
-       
+        }      
     }
     public function findpersona()
     {
