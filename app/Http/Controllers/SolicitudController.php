@@ -30,7 +30,7 @@ class SolicitudController extends Controller
         'solicituds.expediente','solicituds.expedienteinterno','solicituds.numerofinca',
         'solicituds.numerofolio',
         'solicituds.libro','solicituds.catastral','solicituds.solvenciamunicipal',
-        'solicituds.observacion','solicituds.longitud','solicituds.ancho',
+        'solicituds.observacion as observacion','solicituds.longitud','solicituds.ancho',
         'solicituds.profundidad','solicituds.fechasolicitud',
         'solicituds.diametrotubo','solicituds.diametrocolector',
         'solicituds.ejecutor_id','solicituds.persona_id',

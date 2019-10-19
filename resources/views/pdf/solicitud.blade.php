@@ -88,7 +88,7 @@
 
     <br><br><br>
     <?php
-        echo str_repeat ("&nbsp;", 30);
+        echo str_repeat ("&nbsp;", 28);
     ?>
     {{ $solicitudes->numerofinca }}
 
@@ -100,12 +100,26 @@
     <?php
         echo str_repeat ("&nbsp;", 38);
     ?>
-    {{ $solicitudes->libro }}<br><br>
-    {{ $solicitudes->catastral }}<br><br>
+    {{ $solicitudes->libro }}
+    
+    <br>
+    <?php
+        echo str_repeat ("&nbsp;", 28);
+    ?>
+    {{ $solicitudes->catastral }}
+
+    <?php
+        echo str_repeat ("&nbsp;", 110);
+    ?>
     {{ $solicitudes->solvenciamunicipal }}<br><br>
 
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <?php
+        echo str_repeat ("&nbsp;", 28);
+    ?>
+    {{ $solicitudes->observacion }}
+
     
-    {{ $solicitudes->eornato }}
    
     @endforeach
 </body>
