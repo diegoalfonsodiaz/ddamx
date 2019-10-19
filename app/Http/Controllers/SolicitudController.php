@@ -10,6 +10,7 @@ use App\Estadofactibilidad;
 use App\Ejecutor;
 use App\Tipoobra;
 use Barryvdh\DomPDF\Facade as PDF;
+use Illuminate\Support\Carbon;
 
 class SolicitudController extends Controller
 {
@@ -36,7 +37,12 @@ class SolicitudController extends Controller
         'solicituds.tipoobra_id','solicituds.estadofactibilidad_id')
         ->where('solicituds.id','=',$id)
         ->get();
-        $pdf = PDF::loadView('pdf.solicitud',  ["solicitud"=>$solicitud])->setPaper($customPaper,'portrait');
+        $fechaEntera = time();
+        //$dias = date("d", $fechaEntera);
+//$anio = date("Y", $fechaEntera);
+//$mes = date("m", $fechaEntera);
+        
+        $pdf = PDF::loadView('pdf.solicitud', ["fechaEntera"=>$fechaEntera], ["solicitud"=>$solicitud] )->setPaper($customPaper,'portrait');
         return $pdf->download('solicitud.pdf');
     }
  
