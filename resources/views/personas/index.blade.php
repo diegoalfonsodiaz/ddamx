@@ -14,13 +14,18 @@
 @stop
 @section('contenido')
 
-<div class="box-header">
-            @if(session()->has('flash'))
-              <div class="col-md-6">
-                <div class="alert alert-success">{{session('flash')}}
-                </div>
-              </div>
-              @endif</div>
+  <div class="box-header">
+    @if(session()->has('flash'))
+      <div class="col-md-6">
+          <div class="alert alert-success" role="alert">
+              {{ session('flash') }}
+              <button type="button" class="close" data-dismiss="alert" alert-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+        </div>
+      @endif
+  </div>
 
 <div class="box box-primary">
             <div class="box-header">
@@ -39,6 +44,7 @@
                                 <th>Nombre</th>
                                 <th>Apellido</th>
                                 <th>Telefono</th>
+                                <th>Ornato</th>
                                 <th>Correo</th>
                                 <th>Estado</th>
                                 <th>Acciones</th>
@@ -52,6 +58,7 @@
                                 <td>{{$persona->nombre}}</td>
                                 <td>{{$persona->apellido}}</td>
                                 <td>{{$persona->telefono}}</td>
+                                <td>{{$persona->ornato}}</td>
                                 <td>{{$persona->correo}}</td>
                                 @if($persona->estado==1)
                                 <td ><p style="color:green;">Activo</p></td>

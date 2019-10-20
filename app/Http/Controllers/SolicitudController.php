@@ -45,7 +45,7 @@ class SolicitudController extends Controller
         $estado=Estadofactibilidad::where('estado','=','1')->get();
         $tipoobra=Tipoobra::where('estado','=','1')->get();
         return view('solicitud.create',compact('ejecutor','persona','estado', 'tipoobra'));
-        
+
 
     }
 
@@ -89,7 +89,7 @@ class SolicitudController extends Controller
         return view('solicitud.detalle', [
             'solicitud' => $solicitud
         ]);
-
+    
     }
 
     public function edit($id)
@@ -118,7 +118,7 @@ class SolicitudController extends Controller
 
     }
 
-    public function destroy(Solicitud $solicitud)
+    public function destroy(Request $request)
     {
         //
     }

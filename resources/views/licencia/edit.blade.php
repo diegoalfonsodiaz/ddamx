@@ -22,9 +22,9 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
 
                         <!-- personas -->
-                        <div class="form-group">
-                            <label for="select" class="">Solicitud Factibilidad (Ingrese Codigo Inmueble)</label>
-                            <select name="persona_id" class="form-control" id="persona">}
+                        <div class="form-group {{ $errors->has('solicitudfactibilidad_id') ? 'has-error': ''}}">
+                            <label for="select" class="">Solicitud de factibilidad (Ingrese el código de inmueble)</label>
+                            <select name="solicitudfactibilidad_id" class="form-control" id="persona">}
                                 
                                 @foreach($solicitud as $carac)
                                 @if ($carac->id==$licencia->id)
@@ -34,61 +34,28 @@
                                 @endif
                                 @endforeach
                             </select>
+
+                            {!! $errors->first('solicitudfactibilidad_id',' <span class="help-block">Debe seleccionar un código de inmueble ó esta intentando ingresar un inmueble ya existente</span>')!!}
+
                         </div>
  
 
-                        <div class="form-group">
-                            <strong>Numero Licencia</strong>
-                            <input type="text" name="numerolicencia"  value="{{ $licencia->numerolicencia }}" class="form-control" placeholder="Numero Licencia">
+                        <div class="form-group {{ $errors->has('numerolicencia') ? 'has-error': ''}}">
+                            <strong>Número de licencia</strong>
+                            <input type="text" name="numerolicencia"  value="{{ $licencia->numerolicencia }}" class="form-control" placeholder="Número de icencia">
+                            {!! $errors->first('numerolicencia',' <span class="help-block">Campo obligatorio</span>')!!}
+
                         </div>
 
-                        <div class="form-group">
-                            <label for="direccion_fab">Fecha Autorización</label>
+                        <div class="form-group {{ $errors->has('fechaautorizacion') ? 'has-error': ''}}" >
+                            <label for="direccion_fab">Fecha de autorización</label>
                             <input type="date" name="fechaautorizacion" value="{{ $licencia->fechaautorizacion }}"  class="form-control" >
+                            {!! $errors->first('fechaautorizacion',' <span class="help-block">Campo obligatorio</span>')!!}
+
                         </div>
 
-                        <div class="form-group">
-                            <strong>Recibo</strong>
-                            <input type="text" name="recibo" value="{{ $licencia->recibo }}"  class="form-control" placeholder="Recibo">
-                        </div>
-
-                        <div class="form-group">
-                            <strong>Monto</strong>
-                            <input type="text" name="monto" value="{{ $licencia->monto }}"  class="form-control" placeholder="Monto">
-                        </div>
-
-                        <div class="form-group">
-                            <strong>Derecho</strong>
-                            <input type="text" name="derecho" value="{{ $licencia->derecho }}"  class="form-control" placeholder="Derecho">
-                        </div>
-
-                        <div class="form-group">
-                            <strong>Remocion</strong>
-                            <input type="text" name="remocion" value="{{ $licencia->remocion }}"  class="form-control" placeholder="Remocion">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="direccion_fab">Fecha Remoción</label>
-                            <input type="date" name="fechaconexion" value="{{ $licencia->fechaconexion }}"  class="form-control" >
-                        </div>
-
-
-                        <div class="form-group">
-                            <strong>Estado licencia</strong>
-                            <select name="estadolicencia_id" id="estadolicencia_id"  class="form-control selectpicker" data-live-search="true">
-                                
-                                @foreach($estado as $c)
-                                      @if ($c->id==$licencia->estadolicencia_id)
-                                        <option value="{{$c->id}}" selected>{{$c->nombre}}</option>
-                                        @else
-                                        <option value="{{$c->id}}">{{$c->nombre}}</option>
-                                        @endif
-                                    @endforeach
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <strong>Tipo Vía </strong>
+                        <div class="form-group {{ $errors->has('tipovia_id') ? 'has-error': ''}}">
+                            <strong>Tipo de Vía </strong>
                             <select name="tipovia_id" id="tipovia_id"  class="form-control selectpicker" data-live-search="true">
                                 
                                   @foreach($tipovia as $c)
@@ -99,12 +66,73 @@
                                           @endif
                                       @endforeach
                             </select>
+                            {!! $errors->first('tipovia_id',' <span class="help-block">Campo obligatorio</span>')!!}
+
                         </div>
+
+
+                        <div class="form-group {{ $errors->has('recibo') ? 'has-error': ''}}">
+                            <strong>No. de recibo</strong>
+                            <input type="text" name="recibo" value="{{ $licencia->recibo }}"  class="form-control" placeholder="Recibo">
+                            {!! $errors->first('recibo',' <span class="help-block">Campo obligatorio</span>')!!}
+
+                        </div>
+
+                       
+
+                        <div class="form-group {{ $errors->has('derecho') ? 'has-error': ''}}">
+                            <strong>Derecho Q.</strong>
+                            <input type="text" name="derecho" value="{{ $licencia->derecho }}"  class="form-control" placeholder="Derecho">
+                            {!! $errors->first('derecho',' <span class="help-block">Campo obligatorio</span>')!!}
+
+                        </div>
+
+                        <div class="form-group {{ $errors->has('remocion') ? 'has-error': ''}}">
+                            <strong>Remosión Q.</strong>
+                            <input type="text" name="remocion" value="{{ $licencia->remocion }}"  class="form-control" placeholder="Remocion">
+                            {!! $errors->first('remocion',' <span class="help-block">Campo obligatorio</span>')!!}
+
+                        </div>
+
+                        <div class="form-group {{ $errors->has('fechaconexion') ? 'has-error': ''}}">
+                            <label for="direccion_fab">Fecha de conexión</label>
+                            <input type="date" name="fechaconexion" value="{{ $licencia->fechaconexion }}"  class="form-control" >
+                            {!! $errors->first('fechaconexion',' <span class="help-block">Campo obligatorio</span>')!!}
+
+                        </div>
+
+                        <div class="form-group {{ $errors->has('monto') ? 'has-error': ''}}">
+                            <strong>Días de procesamiento</strong>
+                            <input type="text" name="monto" value="{{ $licencia->monto }}"  class="form-control" placeholder="Monto">
+                            {!! $errors->first('monto',' <span class="help-block">Campo obligatorio</span>')!!}
+
+                        </div>
+
+
+                        <div class="form-group {{ $errors->has('estadolicencia_id') ? 'has-error': ''}}">
+                            <strong>Estado de licencia</strong>
+                            <select name="estadolicencia_id" id="estadolicencia_id"  class="form-control selectpicker" data-live-search="true">
+                                
+                                @foreach($estado as $c)
+                                      @if ($c->id==$licencia->estadolicencia_id)
+                                        <option value="{{$c->id}}" selected>{{$c->nombre}}</option>
+                                        @else
+                                        <option value="{{$c->id}}">{{$c->nombre}}</option>
+                                        @endif
+                                    @endforeach
+                            </select>
+                            {!! $errors->first('estadolicencia_id',' <span class="help-block">Campo obligatorio</span>')!!}
+
+                        </div>
+                        
+                        
 
                     </div>
                     
                     <div class="col-xs-12 col-sm-12 col-md-12 ">
                             <button type="submit" class="btn btn-primary">Guardar</button>
+                            <a href="{{route('licencia.index')}}" class="btn btn-danger pull-right"> Regresar</a> 
+
                     </div>
                 </div>
    
