@@ -1,76 +1,94 @@
 @extends('admin.principal')
+
+@section('header')
+  <h1>Tipo Vía</h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+        <li class="active">Tipo vía</li>
+        <br>
+      </ol>
+      
+@stop
+
 @section('contenido')
 
-<div class="box box-primary">
-  <div class="box-header with-border">
-    <h1>Listado Tipo Vías</h1>
-    <a class="btn btn-primary" href="{{ url('/agregartipovia') }}" type="button">Nuevo</a>
-    
+  <div class="box-header">
     @if(session('info'))
-    <div class="alert alert-success" role="alert">
-        {{ session('info') }}
-        <button type="button" class="close" data-dismiss="alert" alert-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
+      <div class="col-md-6">
+        <div class="alert alert-success" role="alert">
+            {{ session('info') }}
+            <button type="button" class="close" data-dismiss="alert" alert-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+      </div>
     @endif
-
-    <table class="table table-bordered table-hover ">
-      <thead>
-          <tr>
-          <th scope="col" width="250px">Nombre</th>
-          <th scope="col" width="450px">Descripcion</th>
-          <th scope="col" width="200px">Estado</th>
-          <th scope="col" width="200px">Acciones</th>
-          </tr>
-      </thead>
-    
-      <tbody>
-
-        @if(count($tipovias)>0)
-          @foreach($tipovias->all() as $tpv)
-            <tr>
-
-              <td>{{ $tpv->nombre }}</td>
-              <td>{{ $tpv->descripcion }}</td>
-              
-              <td>
-                @if($tpv->estado == 1)
-                  <!--<a class="badge badge-danger">Activado</a>-->
-                  <a class="label label-success">Activo</a>        
-                @endif
-                
-                @if($tpv->estado == 0)
-                  <a class="label label-danger">Desactivado</a>
-                @endif
-              </td>
-
-              <td>
-                <!-- <a class="badge badge-warning" href='{{ url("/eliminartipovia/{$tpv->id}") }}'> Eliminar </a>  -->
-
-                <a class="btn btn-warning" href='{{ url("/actualizartipovia/{$tpv->id}") }}' class="btn btn-default btn-sm">
-                  <span class="glyphicon glyphicon-edit"></span>
-                </a>
-                
-                @if($tpv->estado == 1)
-                  <a class="btn btn-danger" href='{{ url("/desactivartipovia/{$tpv->id}") }}' type="button" class="btn btn-default btn-sm">
-                  <span class="glyphicon glyphicon-trash"></span>
-                </a>
-                @endif
-                
-                @if($tpv->estado == 0)
-                <a class="btn btn-primary" href='{{ url("/activartipovia/{$tpv->id}") }}' type="button" class="btn btn-default btn-sm">
-                  <span class="glyphicon glyphicon-ok-circle"></span>
-                </a>
-                @endif
-              </td>
-
-            </tr>
-          @endforeach
-        @endif
-
-      </tbody>
-    </table>
   </div>
+
+<div class="box box-primary">
+
+      <div class="box-header">
+        <a href="{{ url('/agregartipovia') }}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear Estado</a> 
+        <h3 class="box-title">Listado de Tipos de Vía</h3>
+      </div>
+
+
+    <div class="box-body">
+      <table id="persona-table" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+            <th scope="col" width="250px">Nombre</th>
+            <th scope="col" width="450px">Descripcion</th>
+            <th scope="col" width="200px">Estado</th>
+            <th scope="col" width="200px">Acciones</th>
+            </tr>
+        </thead>
+      
+        <tbody>
+
+          
+            @foreach($tipovias as $tipovia)
+              <tr>
+
+                <td>{{ $tipovia->nombre }}</td>
+                <td>{{ $tipovia->descripcion }}</td>
+
+                @if($tipovia->estado == 1)
+                  <td ><p style="color:green;">Activo</p></td>
+                @else
+                  <td ><p style="color:red;">Inactivo</p></td>
+                @endif
+
+                <td>
+
+                    <a href='{{ url("/actualizartipovia/{$tipovia->id}") }}' class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
+                
+
+                    @if($tipovia->estado == 1)
+                      <form method="POST" 
+                        action="{{route('tipovias.desactivar', $tipovia)}}"
+                        style="display:inline">
+                        {{csrf_field()}} {{ method_field('POST')}}
+                        <button class="btn btn-xs btn-danger" ><i class="fa fa-remove"></i></button>
+                      </form>
+                  
+                    @else
+                      <form method="POST" 
+                        action="{{route('tipovias.activar', $tipovia)}}"
+                        style="display:inline">
+                        {{csrf_field()}} {{ method_field('DELETE')}}
+                        <button class="btn btn-xs btn-success" ><i class="fa fa-check"></i></button>
+                      </form>
+                  
+                    @endif
+
+                </td>
+
+              </tr>
+            @endforeach
+
+        </tbody>
+      </table>
+    </div>
 </div>
 @stop 

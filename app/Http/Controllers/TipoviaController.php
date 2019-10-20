@@ -95,64 +95,29 @@ class TipoviaController extends Controller
     $data = array(
         'nombre' => $request->input('nombre'),
         'descripcion' => $request->input('descripcion'),
-        'estado' => $request->input('estado')
     );
     Tipovia::where('id', $id)->update($data);
     return redirect('tipovia')->with('info', 'Registros Actualizados correctamente');
     }
 
-    public function eliminar($id)
+    public function activar(Tipovia $tipovia, Request $request)
     {
-        $vt = Tipovia::find($id);
-        return view('tipovia.eliminar', [
-            'tpv' => $vt
-        ]);
+        $tipovia->estado='1';
+        $tipovia->save();
+        return redirect('tipovia')->with('info', 'Estado Activado correctamente');
+    }
+    
+
+    public function desactivar(Tipovia $tipovia, Request $request)
+    {
+        $tipovia->estado='0';
+        $tipovia->save();
+        return redirect('tipovia')->with('info', 'Estado desactivado correctamente');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        Tipovia::find($id)->delete();
-        return redirect('tipovia')->with('info','Registro eliminado con éxito');
-    }
+   
+   
 
-    public function activar($id)
-    {
-        $vt = Tipovia::find($id);
-        return view('tipovia.activar', [
-            'tpv' => $vt
-        ]);
-    }
-    public function habilitado($id, Request $request)
-    {
-        $data = array(
-            'nombre' => $request->input('nombre'),
-            'descripcion' => $request->input('descripcion'),
-            'estado' => $request->input('estado')
-        );
-        Tipovia::where('id', $id)->update($data);
-        return redirect('tipovia')->with('info', 'Estado habilitado');
-    }
-    public function desactivar($id)
-    {
-        $vt = Tipovia::find($id);
-        return view('tipovia.desactivar', [
-            'tpv' => $vt
-        ]);
-    }
-    public function deshabilitado($id, Request $request)
-    {
-        $data = array(
-            'nombre' => $request->input('nombre'),
-            'descripcion' => $request->input('descripcion'),
-            'estado' => $request->input('estado')
-        );
-        Tipovia::where('id', $id)->update($data);
-        return redirect('tipovia')->with('info', 'Estado deshabilitado');
-    }
+ 
+  
 }
