@@ -111,13 +111,29 @@
     <?php
         echo str_repeat ("&nbsp;", 110);
     ?>
-    {{ $solicitudes->solvenciamunicipal }}<br><br>
+    {{ $solicitudes->solvenciamunicipal }}
 
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
     <?php
-        echo str_repeat ("&nbsp;", 28);
+        echo str_repeat ("&nbsp;", 30);
     ?>
     {{ $solicitudes->observacion }}
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <?php
+        echo str_repeat ("&nbsp;", 125);
+    ?>
+    {{ $solicitudes->ornato_persona }}
+
+    <br><br>
+    <?php
+        echo str_repeat ("&nbsp;", 125);
+    ?>
+    {{ $solicitudes->eornato }}
+
+    
 
     
    

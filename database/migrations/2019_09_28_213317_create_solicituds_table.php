@@ -26,7 +26,7 @@ class CreateSolicitudsTable extends Migration
             $table->string('libro')->nullable();
             $table->string('catastral')->nullable();
             $table->string('solvenciamunicipal')->nullable();
-            $table->string('observacion')->nullable();
+            $table->text('observacion')->nullable();
             $table->string('longitud')->nullable();
             $table->string('ancho')->nullable();
             $table->string('profundidad')->nullable();

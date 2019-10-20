@@ -97,8 +97,8 @@
                         </div>
 
                         <div class="form-group">
-                            <strong>Observación</strong>
-                            <textarea type="text" name="observacion" value="{{ $solicitud->observacion }}" class="form-control" rows="3" placeholder="Observación"></textarea>
+                            <strong>Observacion</strong>
+                            <input Type="text" name="observacion" value="{{ $solicitud->observacion }}"  class="form-control" placeholder="Observacion">
                         </div>
 
                         <div class="form-group">

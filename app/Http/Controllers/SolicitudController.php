@@ -22,7 +22,7 @@ class SolicitudController extends Controller
         ->leftjoin('personas','solicituds.persona_id','=','personas.id')
         ->leftjoin('tipoobras','solicituds.tipoobra_id','=','tipoobras.id')
         ->leftjoin('estadofactibilidads','solicituds.estadofactibilidad_id','=','estadofactibilidads.id')
-        ->select('personas.nombre as nombre_persona','personas.apellido','personas.dpi',
+        ->select('personas.nombre as nombre_persona','personas.apellido','personas.dpi','personas.ornato as ornato_persona',
         'tipoobras.nombre as nombre_tipoobra','estadofactibilidads.nombre as nombre_estadofactibilidad',
         'ejecutors.nombre as nombre_ejecutor','ejecutors.direccion as direccionejecutor',
         'ejecutors.ornato as eornato', 
