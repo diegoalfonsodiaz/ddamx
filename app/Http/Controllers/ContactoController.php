@@ -54,7 +54,7 @@ class ContactoController extends Controller
         $contacto->save();
 
         
-        return redirect('contacto')->with('info', 'Se envio Corectamente tu comentario');
+        return redirect('contactoexterno')->with('info', 'Se envio Corectamente tu comentario');
         //
     }
 
