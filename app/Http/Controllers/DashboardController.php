@@ -25,21 +25,7 @@ $fecha=date("Y-m-d",strtotime($fecha_actual."- 1 days"));
       ->count();
       return view('admin.dashboard',compact('consulta','consultapersona'));
 //----------------------------------------------------------------------------
-     
-
     }
 
-   //PERSONAS ACTIVAS
- public function personasactivas()
- {
-      $consulta= DB::table('personas')
-      ->select('personas.id')
-      ->where('personas.estado','=','1')
-      ->count();
-      //print_r($consulta);
-     return view('admin.dashboard', ["consulta"=>$consulta])->with('i');
- }
-
-
-      
+       
 }
