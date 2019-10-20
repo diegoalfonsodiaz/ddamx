@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Frontend;
+use DB;
 use Illuminate\Http\Request;
+use App\Solicitud;
 
-class FrontendController extends Controller
+class EstadoFactibilidadExternoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,46 +15,26 @@ class FrontendController extends Controller
      */
     public function index()
     {
+        return view('front.estado.estadofactibilidadexterno');
         //
     }
-
-    public function indexinicio()
-    {
-        return view('front.inicio');
-        //
-    }
-    public function indexciudadano()
-    {
-        return view('front.ciudadano.create');
-        //
-    }
-    public function indexdenuncia()
-    {
-        return view('front.denunciaexterna');
-        //
-    }
-    public function indexdpi()
-    {
-        return view('front.ciudadano.buscardpi');
-        //
-    }
-    public function indexdpiestado()
-    {
-        return view('front.estado.buscardpiestado');
-        //
-    }
-    public function indexcontacto()
-    {
-        return view('front.contacto');
-        //
-    }
-    
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
+    public function solicitardpiestado(Request $request)
+    {
+        $solicitud=DB::table('solicituds')
+        ->join('personas','personas.id','=','solicituds.persona_id')
+        ->join('estadofactibilidads','solicituds.estadofactibilidad_id','=','estadofactibilidads.id')
+        ->select('solicituds.id','personas.nombre','personas.apellido','personas.dpi','solicituds.fechasolicitud','solicituds.direccionobra','solicituds.codigoinmueble','estadofactibilidads.nombre as nombre_estadofactibilidad')
+        ->where('personas.dpi','=', $request->dpi) 
+        ->get();
+
+        return view('front.estado.estadofactibilidadexterno', ["solicitud"=>$solicitud])->with('i');
+    }
     public function create()
     {
         //
@@ -73,10 +54,10 @@ class FrontendController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Frontend  $frontend
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Frontend $frontend)
+    public function show($id)
     {
         //
     }
@@ -84,10 +65,10 @@ class FrontendController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Frontend  $frontend
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Frontend $frontend)
+    public function edit($id)
     {
         //
     }
@@ -96,10 +77,10 @@ class FrontendController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Frontend  $frontend
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Frontend $frontend)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -107,10 +88,10 @@ class FrontendController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Frontend  $frontend
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Frontend $frontend)
+    public function destroy($id)
     {
         //
     }

@@ -26,6 +26,14 @@
                     <label for="exampleInputPassword1">Seleccione Imagen como prueba</label>
                     <input name="foto" type="file" class="form-control" id="exampleInputPassword1" placeholder="Seleccione una imagen">
                 </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                    {!! htmlFormSnippet() !!}
+                    @error('g-recaptcha-response')
+                        <span class="invalid-feedback" role="alert" style="display: block">
+                            <strong>{{ $message}}</strong>
+                        </span>
+                    @enderror
+            </div>  
             </div>
             <!-- /.box-body -->
 
