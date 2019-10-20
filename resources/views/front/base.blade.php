@@ -59,10 +59,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <a href="tel:"><i class="livicon" data-name="phone" data-size="18" data-loop="true" data-c="#fff" data-hc="#fff"></i></a>
                                 <label class="hidden-xs"><a href="tel:" class="text-white">(502) 77672000 ext. 123</a></label>
                             </li>
+                            @if (Auth::check())
+                            <!-- <a class="livicon" data-name="user" data-size="18" data-loop="true" data-c="#fff" data-hc="#fff" href="{{ url('/menu') }}">Sistema Interno</a> -->
                             <li>
-                                <a href="tel:"><i class="livicon" data-name="user" data-size="18" data-loop="true" data-c="#fff" data-hc="#fff"></i></a>
-                                <label class="hidden-xs"><a href="tel:" class="text-white">Login</a></label>
+                                <a href="{{ url('/menu') }}"><i class="livicon" data-name="user" data-size="18" data-loop="true" data-c="#fff" data-hc="#fff"></i></a>
+                                <label class="hidden-xs"><a href="{{ url('/menu') }}" class="text-white">Sistema Interno</a></label>
                             </li>
+                            @endif
                         </ul>
                     </li>
                 </ul>
@@ -81,7 +84,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div>
             <div class="collapse navbar-collapse" id="collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="{{ url('/inicio') }}">Home</a>
+                    <li><a href="{{ url('/') }}">Home</a>
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> Licencia</a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="typography.html">Estado actual</a>

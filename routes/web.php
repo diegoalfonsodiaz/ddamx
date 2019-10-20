@@ -2,7 +2,7 @@
 
 
 
-Route::get('/', function (){
+Route::get('/login', function (){
     return view ('auth.login') ;
 });
 
@@ -189,7 +189,7 @@ Route::resource('rol', 'RolController');
 
 
 //Implementacion de plantilla externa
-Route::get('inicio', 'FrontendController@indexinicio');
+Route::get('/', 'FrontendController@indexinicio');
 Route::get('denunciaexterna', 'FrontendController@indexdenuncia');
 Route::put('denuncias','DenunciaController@store2')->name('denuncias.store2');
 Route::resource('contacto', 'ContactoController');
