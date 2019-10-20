@@ -23,9 +23,35 @@ $fecha=date("Y-m-d",strtotime($fecha_actual."- 1 days"));
         ->select('personas.id')
       ->where('personas.estado','=','1')
       ->count();
-      return view('admin.dashboard',compact('consulta','consultapersona'));
+     
 //----------------------------------------------------------------------------
-    }
+        $consultapersonadesac= DB::table('personas')
+        ->select('personas.id')
+        ->where('personas.estado','=','0')
+        ->count();
+//----------------------------------------------------------------------------
+        $consultasolicitud= DB::table('solicituds')
+        ->select('solucituds.id')
+        ->where('solicituds.estadofactibilidad_id','=','2')
+        ->count();
+//----------------------------------------------------------------------------
+        //consulta Solicitud no factibles
+        $consultasolicitudnofac= DB::table('solicituds')
+        ->select('solucituds.id')
+        ->where('solicituds.estadofactibilidad_id','=','3')
+        ->count();
+//-------------------------------------------------------------------------------
+        $licencia= DB::table('licencias')
+        ->select('licencias.id')
+        ->where('licencias.estadolicencia_id','=','1')
+        ->count();
+//-------------------------------------------------------------------------------
+        $licenciadesc= DB::table('licencias')
+        ->select('licencias.id')
+        ->where('licencias.estadolicencia_id','=','2')
+        ->count();
+        return view('admin.dashboard',compact('consulta','consultapersona','consultapersonadesac','consultasolicitud','consultasolicitudnofac','licencia','licenciadesc'));
+        }
 
        
 }
