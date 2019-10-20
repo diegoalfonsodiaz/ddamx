@@ -15,7 +15,9 @@ class ContactoController extends Controller
      */
     public function index()
     {
-        return view('front.contacto');
+        $contacto = Contacto::orderBy('id', 'desc')->get();
+        
+        return view('contacto.index',compact('contacto'));
         //
     }
 
@@ -26,6 +28,7 @@ class ContactoController extends Controller
      */
     public function create()
     {
+        return view('front.contacto');
         //
     }
     

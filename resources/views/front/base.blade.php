@@ -95,7 +95,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </li>
                     <li><a href="{{ url('/denunciaexterna') }}">Denuncia</a>
                     </li>
-                    <li><a href="{{ url('/contacto') }}">contacto</a>
+                    <li><a href="{{ url('/contactoexterno') }}">contacto</a>
                     </li>
                 </ul>
             </div>

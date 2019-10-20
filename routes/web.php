@@ -194,6 +194,7 @@ Route::delete('/rol/{rol}', 'RolController@activar')->name('roles.activar');
 Route::get('/', 'FrontendController@indexinicio');
 Route::resource('denunciaexterna', 'DenunciaExternaController');
 Route::resource('contacto', 'ContactoController');
+Route::get('contactoexterno', 'ContactoController@create');
 Route::resource('solicitudexterna','SolicitudExternaController');
 Route::get('buscardpi', 'FrontendController@indexdpi');
 Route::put('solicituddpi','SolicitudExternaController@solicitardpi')->name('solicituddpi.solicitardpi');

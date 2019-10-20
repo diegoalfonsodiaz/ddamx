@@ -17,9 +17,9 @@
                     <input type="text" name="descripcion" class="form-control" placeholder="nombre">
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" style="display: none">
                     <label for="direccion_fab">Fecha en que sucedio</label>
-                    <input type="date" name="fecha" class="form-control" >
+                    <input type="date" name="fecha" value="<?php echo date("Y-m-d");?>" class="form-control"  >
                 </div>
 
                 <div class="form-group">
