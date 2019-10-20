@@ -19,6 +19,7 @@ class CreatePersonasTable extends Migration
             $table->string('nombre',100);
             $table->string('apellido',100);
             $table->string('telefono',50);
+            $table->string('ornato')->nullable();
             $table->string('correo',100)->nullable();
             $table->boolean('estado')->default(1);
             $table->timestamps();
