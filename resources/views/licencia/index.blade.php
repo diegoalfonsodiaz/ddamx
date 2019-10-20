@@ -25,34 +25,26 @@
                         <thead>
                             <tr>
                             
-                                <th>#</th>
-                                <th>Numero de Licencias</th>
-                                <th>Fecha Autorización</th>
-                                <th>Recibo</th>
-                                <th>Monto</th>
-                                <th>Derecho</th>
-                                <th>Remoción</th>
-                                <th>Fecha Conexión</th>
-                                <th>Estado Licencia</th>
-                                <th>Fac Inmueble</th>
-                                <th>Tipo Vía</th>
+                              
+                                <th>No. de licencia</th>
+                                <th>Inmueble</th>
+                                <th>No. Recibo</th>  
+                                <th>Fecha de autorización</th>
+                                <th>Fecha de conexión</th>
+                                <th>Estado</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($licencia as $licencias)
                             <tr>
-                                <td>{{ ++$i }}</td>
+                                
                                 <td>{{$licencias->numerolicencia}}</td>
-                                <td>{{$licencias->fechaautorizacion}}</td>
+                                <td>{{$licencias->inmueble}}</td>
                                 <td>{{$licencias->recibo}}</td>
-                                <td>{{$licencias->monto}}</td>
-                                <td>{{$licencias->derecho}}</td>
-                                <td>{{$licencias->remocion}}</td>
+                                <td>{{$licencias->fechaautorizacion}}</td>
                                 <td>{{$licencias->fechaconexion}}</td>
                                 <td>{{$licencias->estadolicencia}}</td>
-                                <td>{{$licencias->inmueble}}</td>
-                                <td>{{$licencias->tipovia}}</td>
 
                                 
                                 <td>

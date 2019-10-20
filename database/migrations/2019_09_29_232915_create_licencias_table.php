@@ -23,7 +23,7 @@ class CreateLicenciasTable extends Migration
             $table->string('remocion');
             $table->date('fechaconexion');
             $table->unsignedBigInteger('estadolicencia_id');
-            $table->unsignedBigInteger('solicitudfactibilidad_id');
+            $table->unsignedBigInteger('solicitudfactibilidad_id')->unique();
             $table->unsignedBigInteger('tipovia_id');
             $table->timestamps();
 
