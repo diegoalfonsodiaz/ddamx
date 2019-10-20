@@ -192,8 +192,7 @@ Route::delete('/rol/{rol}', 'RolController@activar')->name('roles.activar');
 
 //Implementacion de plantilla externa
 Route::get('/', 'FrontendController@indexinicio');
-Route::get('denunciaexterna', 'FrontendController@indexdenuncia');
-Route::put('denuncias','DenunciaController@store2')->name('denuncias.store2');
+Route::resource('denunciaexterna', 'DenunciaExternaController');
 Route::resource('contacto', 'ContactoController');
 Route::resource('solicitudexterna','SolicitudExternaController');
 Route::get('buscardpi', 'FrontendController@indexdpi');

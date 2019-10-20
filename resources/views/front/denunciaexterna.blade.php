@@ -8,8 +8,8 @@
         </div>
             <!-- /.box-header -->
             <!-- form start -->
-        <form role="form" method="POST" action="{{route('denuncias.store2')}}" enctype="multipart/form-data">
-        {{csrf_field()}} {{ method_field('PUT')}}
+        <form role="form" method="POST" action="{{route('denunciaexterna.store')}}" enctype="multipart/form-data">
+        {{csrf_field()}} 
             <div class="box-body">
 
                 <div class="form-group">
