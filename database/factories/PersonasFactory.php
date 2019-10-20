@@ -13,6 +13,7 @@ $factory->define(Persona::class, function (Faker $faker) {
         'apellido' => $faker->lastname,
         'telefono' =>  $faker->numberBetween(11111111,9999999),
         'correo' => $faker->unique()->safeEmail,
+        'ornato' => $faker->numberBetween(111111,999999),
         'estado' => $faker->randomElement(['1', '0']),
         'updated_at'=>now(),
         'created_at'=>now(),

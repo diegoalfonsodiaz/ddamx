@@ -50,7 +50,8 @@
                         <td>{{ ++$i }}</td>
                         <td>{{ $asignacion->usuario }}
                         <td>{{ $asignacion->correo }}</td>
-                        <td>{{ $asignacion->rol }}</td>                        
+                        <td>{{ $asignacion->rol }}</td>
+                                                
                         
                         <td>
                             <a href="{{ route('asignacion.edit',$asignacion->id) }}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>

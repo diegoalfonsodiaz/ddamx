@@ -53,6 +53,7 @@ class PersonaController extends Controller
        $persona->nombre=$request->nombre;
        $persona->apellido=$request->apellido;
        $persona->telefono=$request->telefono;
+       $persona->ornato=$request->ornato;
        $persona->correo=$request->correo;
        $persona->save();
 
@@ -79,6 +80,7 @@ class PersonaController extends Controller
         $persona->nombre=$request->nombre;
         $persona->apellido=$request->apellido;
         $persona->telefono=$request->telefono;
+        $persona->ornato=$request->ornato;
         $persona->correo=$request->correo;
         $persona->estado='1';
         $persona->save();
