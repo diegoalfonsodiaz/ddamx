@@ -28,7 +28,7 @@ class BitacoraController extends Controller
     }
 
 
-    public function create(Request $request)
+    public function create()
     {
         $asunto=Asunto::all();
         $usuarios=User::all();

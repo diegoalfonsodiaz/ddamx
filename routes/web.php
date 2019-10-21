@@ -19,7 +19,7 @@ Route::get('/menu', 'DashboardController@dashboard');
 //DENUCNIAS DE ALTA
 
 
-Route::resource('ticket', 'TicketController');
+
 /* RUTAS CARGO EJECUTORES -----------------------------------------------------------------------*/
 Route::resource('asunto', 'AsuntoController');
 //Route::get('/cargoejecutor', 'CargoejecutorController@index');
@@ -38,7 +38,9 @@ Route::get('/solicitudpdf/{id}', 'SolicitudController@exportPDF')->name('solicit
 
 /* FIN  EJECUTORES  ***asdf***********************************************************************/
 /* RUTAS  OBRA -----------------------------------------------------------------------*/
-
+Route::get('/ticket/{id}', 'TicketController@index')->name('ticket.index');
+Route::get('/ticketcreate', 'TicketController@create')->name('ticket.create');
+Route::post('/ticket','TicketController@store')->name('ticket.store');
 
 
 

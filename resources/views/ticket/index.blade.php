@@ -12,14 +12,15 @@
       
 @stop
 @section('contenido')
+
   <div class="box box-primary">
     <div class="box-header">        
-      <!-- <a href="{{route('denuncia.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Nueva Denuncia</a>  -->
-      <h3 class="box-title">Tickets</h3>
+       
+     
     </div>
             <!-- /.box-header -->
     <div class="box-body">
-            
+     
         <table id="persona-table" class="table table-striped table-bordered" style="width:100%">
             <thead>
                 <tr>
@@ -34,40 +35,15 @@
             @foreach ($ticket as $tickets)
         <tr>
             <td>{{ ++$i }}</td>
-            <td>{{ $tickets->bitacora }}</td>
+            <td>Ticket:  #  {{ $tickets->bitacora }} Asunto: {{ $tickets->descripcion }} </td>
             <td>{{ $tickets->detalle }}</td>
             <td>{{ $tickets->user }}</td>
             <td>
-                 <form action="{{ route('ticket.destroy',$tickets->id) }}" method="POST">
-                    <a class="btn btn btn-info" href="{{ route('ticket.edit',$tickets->id) }}"><i class="fa fa-pencil"></i></a>
-   
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn btn-danger"><i class="fa fa-remove"></i></button>
-                </form> 
             </td>
         </tr>
         @endforeach
             </tbody>
-
         </table>
-
     </div>
   </div>
-
 @stop
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

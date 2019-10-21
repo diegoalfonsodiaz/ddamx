@@ -15,7 +15,7 @@ class TicketController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
         $ticket= DB::table('tickets as t')
         //persona
@@ -23,7 +23,8 @@ class TicketController extends Controller
         //tipoobra
         ->leftjoin('bitacoras as b', 't.bitacora_id','=', 'b.id')
         //
-        ->select('t.id','b.id as bitacora','t.fecha', 'u.name as user','t.detalle',)
+        ->select('t.id','b.id as bitacora','t.fecha', 'u.name as user','t.detalle','b.descripcion')
+        ->where('t.bitacora_id','=', $id)
         ->get();
         return view('ticket.index', ["ticket"=>$ticket])->with('i');
     }
@@ -35,7 +36,9 @@ class TicketController extends Controller
      */
     public function create()
     {
-        //
+        $usuarios=User::all();
+        $bitacora=Bitacora::all();
+        return view('ticket.create',compact('usuarios','bitacora'));
     }
 
     /**
@@ -46,7 +49,8 @@ class TicketController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Ticket::create($request->all());
+        return redirect()->route('bitacora.index');
     }
 
     /**
@@ -57,7 +61,7 @@ class TicketController extends Controller
      */
     public function show(Ticket $ticket)
     {
-        //
+        
     }
 
     /**
@@ -68,7 +72,7 @@ class TicketController extends Controller
      */
     public function edit(Ticket $ticket)
     {
-        //
+        
     }
 
     /**
@@ -80,7 +84,7 @@ class TicketController extends Controller
      */
     public function update(Request $request, Ticket $ticket)
     {
-        //
+        
     }
 
     /**

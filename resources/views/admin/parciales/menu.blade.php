@@ -72,6 +72,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="{{ url('/bitacora') }}">Bitacora  </a></li>
+            <li><a href="{{ url('/ticketcreate') }}">Seguimiento  </a></li>
             <li><a href="{{ url('/asunto') }}">Asunto de Bitacora</a></li>
           </ul>
         </li>

@@ -1,20 +1,20 @@
 @extends('admin.principal')
 @section('header')
   <h1>
-    Denuncias
-    <small>Denuncias Públicas</small>
+    Contacto
+    <small>Listado de datos de personas que solicitan mas información acerca de la pagina</small>
   </h1>
 
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-    <li class="active">Denuncias</li>
+    <li class="active">Contacto</li>
   </ol>
       
 @stop
 @section('contenido')
   <div class="box box-primary">
     <div class="box-header">        
-      <h3 class="box-title">Denuncia</h3>
+      
     </div>
             <!-- /.box-header -->
     <div class="box-body">
