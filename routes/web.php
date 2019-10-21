@@ -19,7 +19,7 @@ Route::get('/menu', 'DashboardController@dashboard');
 //DENUCNIAS DE ALTA
 
 
-
+Route::resource('ticket', 'TicketController');
 /* RUTAS CARGO EJECUTORES -----------------------------------------------------------------------*/
 Route::resource('asunto', 'AsuntoController');
 //Route::get('/cargoejecutor', 'CargoejecutorController@index');
