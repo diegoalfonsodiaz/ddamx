@@ -2,7 +2,7 @@
 
 
 
-Route::get('/', function (){
+Route::get('/login', function (){
     return view ('auth.login') ;
 });
 
@@ -182,3 +182,23 @@ Route::post('/rol/{rol}', 'RolController@desactivar')->name('roles.desactivar');
 Route::delete('/rol/{rol}', 'RolController@activar')->name('roles.activar');
 
 //Nueva Rama Robinson
+
+
+
+
+
+
+
+
+//Implementacion de plantilla externa
+Route::get('/', 'FrontendController@indexinicio');
+Route::resource('denunciaexterna', 'DenunciaExternaController');
+Route::resource('contacto', 'ContactoController');
+Route::get('contactoexterno', 'ContactoController@create');
+Route::resource('solicitudexterna','SolicitudExternaController');
+Route::get('buscardpi', 'FrontendController@indexdpi');
+Route::put('solicituddpi','SolicitudExternaController@solicitardpi')->name('solicituddpi.solicitardpi');
+Route::get('solicitar','SolicitudExternaController@indexsolicitar');
+Route::get('buscardpiestado', 'FrontendController@indexdpiestado');
+Route::put('solicituddpiestado','EstadoFactibilidadExternoController@solicitardpiestado')->name('solicituddpiestado.solicitardpiestado');
+Route::resource('estadofactibilidadexterno', 'EstadoFactibilidadExternoController');

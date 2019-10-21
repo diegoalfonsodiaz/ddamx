@@ -31,7 +31,7 @@
 
                 
 
-                <div class="form-group">
+                <div class="form-group" style="display: none">
                     <label for="direccion_fab">Fecha</label>
                     <input type="date" name="fecha" value="<?php echo date("Y-m-d");?>" class="form-control" required>
                 </div>
