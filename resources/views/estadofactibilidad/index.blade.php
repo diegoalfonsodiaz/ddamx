@@ -27,7 +27,7 @@
 <div class="box box-primary">
 
       <div class="box-header">
-        <a href="{{ route('estadofactibilidad.create') }}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear Estado</a> 
+        <a href="{{ route('estadofactibilidad.create') }}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear Estado</a>
         <h3 class="box-title">Listado de Estados</h3>
       </div>
         

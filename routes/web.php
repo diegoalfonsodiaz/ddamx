@@ -2,7 +2,7 @@
 
 //pruebas
 
-Route::get('/', function (){
+Route::get('/login', function (){
     return view ('auth.login') ;
 });
 
@@ -34,7 +34,7 @@ Route::resource('licencia', 'LicenciaController');
 Route::post('/solicitud/{id}', 'SolicitudController@show')->name('solicitudes.show');
 Route::get('/solicitud/{id}', 'PersonaController@edit')->name('solicitudes.edit');
 Route::put('/solicitud/{id}', 'PersonaController@update')->name('solicitudes.update');
-
+Route::get('/solicitudpdf/{id}', 'SolicitudController@exportPDF')->name('solicitudes.pdf');
 
 /* FIN  EJECUTORES  ***asdf***********************************************************************/
 /* RUTAS  OBRA -----------------------------------------------------------------------*/
@@ -124,12 +124,12 @@ Route::get('/tipovia', 'TipoviaController@index');
 Route::post('/insertartipovia', 'TipoviaController@create');
 Route::get('/actualizartipovia/{id}', 'TipoviaController@edit');
 Route::post('/updatetipovia/{id}', 'TipoviaController@update');
-//Route::get('/eliminartipovia/{id}', 'TipoviaController@eliminar');
-//Route::post('/deletetipovia/{id}', 'TipoviaController@destroy');
 Route::get('/desactivartipovia/{id}', 'TipoviaController@desactivar');
 Route::post('/deshabilitadotipovia/{id}', 'TipoviaController@deshabilitado');
 Route::get('/activartipovia/{id}', 'TipoviaController@activar');
 Route::post('/habilitadotipovia/{id}', 'TipoviaController@habilitado');
+Route::post('/tipovia/{tipovia}', 'TipoviaController@desactivar')->name('tipovias.desactivar');
+Route::delete('/tipovia/{tipovia}', 'TipoviaController@activar')->name('tipovias.activar');
 
 
 
@@ -184,3 +184,27 @@ Route::post('/asignacion/{id}', 'AsignacionController@destroy')->name('asignacio
 Route::resource('rol', 'RolController');
 
 
+Route::post('/rol/{rol}', 'RolController@desactivar')->name('roles.desactivar');
+Route::delete('/rol/{rol}', 'RolController@activar')->name('roles.activar');
+
+//Nueva Rama Robinson
+
+
+
+
+
+
+
+
+//Implementacion de plantilla externa
+Route::get('/', 'FrontendController@indexinicio');
+Route::resource('denunciaexterna', 'DenunciaExternaController');
+Route::resource('contacto', 'ContactoController');
+Route::get('contactoexterno', 'ContactoController@create');
+Route::resource('solicitudexterna','SolicitudExternaController');
+Route::get('buscardpi', 'FrontendController@indexdpi');
+Route::put('solicituddpi','SolicitudExternaController@solicitardpi')->name('solicituddpi.solicitardpi');
+Route::get('solicitar','SolicitudExternaController@indexsolicitar');
+Route::get('buscardpiestado', 'FrontendController@indexdpiestado');
+Route::put('solicituddpiestado','EstadoFactibilidadExternoController@solicitardpiestado')->name('solicituddpiestado.solicitardpiestado');
+Route::resource('estadofactibilidadexterno', 'EstadoFactibilidadExternoController');

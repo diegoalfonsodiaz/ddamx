@@ -37,7 +37,7 @@ class LicenciaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
         $solicitud=Solicitud::where('estadofactibilidad_id','=','2')->get();
         $estado=Estadolicencia::where('estado','=','1')->get();
@@ -53,6 +53,19 @@ class LicenciaController extends Controller
      */
     public function store(Request $request)
     {
+        $this->Validate($request, [
+            'solicitudfactibilidad_id' => 'required|unique:licencias,solicitudfactibilidad_id',
+            'numerolicencia' => 'required',
+            'fechaautorizacion' => 'required',
+            'tipovia_id' => 'required',
+            'recibo' => 'required',
+            'derecho' => 'required',
+            'remocion' => 'required',
+            'fechaconexion' => 'required',
+            'monto' => 'required',
+            'estadolicencia_id' => 'required',
+            
+        ]);
         Licencia::create($request->all());
         return redirect()->route('licencia.index');
     }
@@ -74,13 +87,14 @@ class LicenciaController extends Controller
      * @param  \App\Licencia  $licencia
      * @return \Illuminate\Http\Response
      */
-    public function edit(Licencia $licencia,$id)
+    public function edit($id)
     {
-        $solicitud =Solicitud::where('estadofactibilidad_id','=','1')->get();
+        $solicitud =Solicitud::where('estadofactibilidad_id','=','2')->get();
         $licencia=Licencia::findOrFail($id);
         $estado=Estadolicencia::where('estado','=','1')->get();
         $tipovia=Tipovia::where('estado','=','1')->get();
-        return view('licencia.edit', compact('solicitud','estado','tipovia','licencia'));
+       
+       return view('licencia.edit', compact('solicitud','estado','tipovia','licencia'));
     }
 
     /**
@@ -92,6 +106,19 @@ class LicenciaController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->Validate($request, [
+            'solicitudfactibilidad_id' => 'required|unique:licencias,solicitudfactibilidad_id,'.$id.',id',
+            'numerolicencia' => 'required',
+            'fechaautorizacion' => 'required',
+            'tipovia_id' => 'required',
+            'recibo' => 'required',
+            'derecho' => 'required',
+            'remocion' => 'required',
+            'fechaconexion' => 'required',
+            'monto' => 'required',
+            'estadolicencia_id' => 'required',
+            
+        ]);
         Licencia::findOrFail($id)->update($request->all());
         return redirect()->route('licencia.index');
     }

@@ -76,5 +76,6 @@
           </ul>
         </li>
         @endif
+        <li><a href="{{route('contacto.index')}}"> <i class="fa  fa-phone"></i> <span>  Contacto </span> </a></li>
         
       </ul>

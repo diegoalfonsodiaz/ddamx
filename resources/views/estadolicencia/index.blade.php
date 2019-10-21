@@ -27,7 +27,7 @@
     <div class="box box-primary">
 
       <div class="box-header">
-        <a href="{{ url('/agregarForm') }}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear Estado</a> 
+        <a href="{{ url('/agregarForm') }}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear Estado</a>
         <h3 class="box-title">Listado de Estados de Licencia</h3>
       </div>
 

@@ -69,8 +69,8 @@
                                 <form method="POST" 
                                     action="#"
                                     style="display:inline">
-                                    {{csrf_field()}} {{ method_field('DELETE')}}
-                                    <button class="btn btn-xs btn-success" ><i class="fa fa-print"></i></button>
+                                    {{csrf_field()}}
+                                    <a class="btn btn-xs btn-success"href="{{ route('solicitudes.pdf', $solicitudes->id) }}" ><i class="fa fa-print"></i></a>
                                     </form>
                                   @endif
                                 </td>

@@ -2,7 +2,7 @@
 
 @section('header')
 <h1>
-        Crear Personas
+        Editar Personas
         
       </h1>
       <ol class="breadcrumb">
@@ -43,6 +43,10 @@
                 <div class="form-group">
                   <label >Teléfono</label>
                   <input type="text" class="form-control input-lg" name="telefono" value="{{old('telefono',$persona->telefono)}}" placeholder="Teléfono" required>
+                </div>
+                <div class="form-group">
+                  <label >Ornato</label>
+                  <input type="text" class="form-control input-lg" name="ornato" value="{{old('ornato',$persona->ornato)}}" placeholder="Ornato">
                 </div>
                 <div class="form-group">
                   <label >Correo electrónico</label>

@@ -15,7 +15,7 @@ class CreateDenunciasTable extends Migration
     {
         Schema::create('denuncias', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('descripcion', 245);
+            $table->text('descripcion');
             $table->date('fecha');
             $table->string('foto', 200);
             $table->unsignedBigInteger('estadodenuncia_id');

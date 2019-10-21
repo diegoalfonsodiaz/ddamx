@@ -13,22 +13,17 @@ class EstadofactibilidadTableSeeder extends Seeder
     public function run()
     {
         DB::table('estadofactibilidads')->insert([
-            'nombre' => "En Proceso",
+            'nombre' => "Sin Procesar",
             'estado' => '1',
         ]);
 
         DB::table('estadofactibilidads')->insert([
-            'nombre' => "Anulada",
+            'nombre' => "Factible",
             'estado' => '1',
         ]);
 
         DB::table('estadofactibilidads')->insert([
-            'nombre' => "Revisión",
-            'estado' => '1',
-        ]);
-
-        DB::table('estadofactibilidads')->insert([
-            'nombre' => "Aprobado",
+            'nombre' => "No Factible",
             'estado' => '1',
         ]);
     }
