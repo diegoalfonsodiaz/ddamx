@@ -17,7 +17,7 @@
                             <select name="bitacora_id" class="form-control" id="solicitud">
                                 <option value="0" disabled selected>=== Selecciona el numero de la licencia ===</option>
                                 @foreach($bitacora as $carac)
-                                <option value="{{$carac->id}}">{{$carac->descripcion}}</option>
+                                <option value="{{$carac->id}}"># {{$carac->id}} Asunto: {{$carac->descripcion}}</option>
                                 @endforeach
                             </select>
                         </div>
