@@ -41,10 +41,7 @@
                             <input type="text" name="derecho"  value="{{ $licencias->derecho }}" class="form-control" placeholder="Fecha Autorizacion" disabled>
                         </div>
 
-                        <div class="form-group">
-                            <strong>Remoción</strong>
-                            <input type="text" name="remocion"  value="{{ $licencias->remocion }}" class="form-control" placeholder="Fecha Autorizacion" disabled>
-                        </div>
+                       
             </div>
         </div>
     </div>
@@ -54,7 +51,10 @@
         <div class="box box-primary">
             <div class="box-body">
                            
-                        
+            <div class="form-group">
+                            <strong>Remoción</strong>
+                            <input type="text" name="remocion"  value="{{ $licencias->remocion }}" class="form-control" placeholder="Fecha Autorizacion" disabled>
+                        </div>
 
                         <div class="form-group">
                             <strong>Fecha conexión</strong>
