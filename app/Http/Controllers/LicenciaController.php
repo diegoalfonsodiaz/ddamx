@@ -77,9 +77,21 @@ class LicenciaController extends Controller
      * @param  \App\Licencia  $licencia
      * @return \Illuminate\Http\Response
      */
-    public function show(Licencia $licencia)
+    public function show($id)
     {
-        //
+        $licencia=DB::table('licencias')
+        ->leftjoin('estadolicencias','licencias.estadolicencia_id','=','estadolicencias.id')
+        ->leftjoin('tipovias','licencias.tipovia_id','=','tipovias.id')
+        ->leftjoin('solicituds','licencias.solicitudfactibilidad_id','=','solicituds.id')
+        ->select('licencias.numerolicencia as numerolicencia','licencias.fechaautorizacion as fechaautorizacion','licencias.recibo as recibo',
+        'licencias.monto as monto', 'licencias.derecho as derecho','licencias.remocion as remocion','licencias.fechaconexion as fechaconexion',
+        'estadolicencias.nombre as nombre','solicituds.codigoinmueble as codigoinmueble','tipovias.nombre as tipovia')
+        ->where('licencias.id','=',$id)
+        ->get();
+
+        return view('licencia.detalle', [
+            'licencia' => $licencia
+        ]);
     }
 
     public function exportpdf($id)

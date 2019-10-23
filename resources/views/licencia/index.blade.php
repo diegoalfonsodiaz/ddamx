@@ -48,13 +48,14 @@
 
                                 
                                 <td>
-                                <form action="{{ route('licencia.destroy',$licencias->id) }}" method="POST">
-                                    <a class="btn btn-primary" href="{{ route('licencia.edit',$licencias->id) }}">Editar</a>
+                                <form action="{{ route('licencia.destroy',$licencias->id) }}" method="POST" style="display:inline">
+                                <a class="btn btn-xs btn-info" href="{{ route('licencia.edit',$licencias->id) }}"><i class="fa fa-pencil"></i></a>
                 
                                     @csrf
                                     @method('DELETE')
                                     
                                 </form>
+                                <a class="btn btn-xs btn-warning" href="{{ route('licencia.show',$licencias->id) }}"><i class="fa fa-eye"></i></a>
                                 <form method="POST" 
                                     action="{{ route('licencias.pdf',$licencias->id) }}"
                                     style="display:inline">
