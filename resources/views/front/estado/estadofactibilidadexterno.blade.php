@@ -4,12 +4,12 @@
 @section('content')
 <!-- Main content -->
 <section class="content paddingleft_right15">
+ <h2>
+                    Solicitudes de factibilidad regigistradas
+                </h2>
     <div class="row">
         <div class="panel panel-primary ">
   
-                <h2>
-                    Solicitudes de factibilidad regi
-                </h2>
 
             <br />
             <div class="panel-body">
