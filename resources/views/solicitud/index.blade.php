@@ -77,7 +77,7 @@
                                     action="#"
                                     style="display:inline">
                                     {{csrf_field()}} @method('DELETE')
-                                    <a class="btn btn-xs btn-danger" href="{{ route('solicitudes.historial', $solicitudes->id) }}" ><i class="fa fa-history"></i></a>
+                                    <a class="btn btn-xs btn-danger" href="{{ route('solicitudes.historial', $solicitudes->id) }}" ><i class="fa fa-archive"></i></a>
                                     </form>
                                 </td>
                             </tr>
