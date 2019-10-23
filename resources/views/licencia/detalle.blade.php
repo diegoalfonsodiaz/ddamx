@@ -42,10 +42,7 @@
                             <input type="text" name="recibo"  value="{{ $licencias->recibo }}" class="form-control" placeholder="Fecha Autorizacion" disabled>
                         </div>
 
-                        <div class="form-group">
-                            <strong>Derecho</strong>
-                            <input type="text" name="derecho"  value="{{ $licencias->derecho }}" class="form-control" placeholder="Fecha Autorizacion" disabled>
-                        </div>
+                       
 
                        
             </div>
@@ -56,8 +53,13 @@
     <div class="col-md-6">
         <div class="box box-primary">
             <div class="box-body">
-                           
-            <div class="form-group">
+
+                         <div class="form-group">
+                            <strong>Derecho</strong>
+                            <input type="text" name="derecho"  value="{{ $licencias->derecho }}" class="form-control" placeholder="Fecha Autorizacion" disabled>
+                        </div>
+                        
+                         <div class="form-group">
                             <strong>Remoción</strong>
                             <input type="text" name="remocion"  value="{{ $licencias->remocion }}" class="form-control" placeholder="Fecha Autorizacion" disabled>
                         </div>
