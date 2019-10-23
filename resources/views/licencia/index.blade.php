@@ -55,6 +55,12 @@
                                     @method('DELETE')
                                     
                                 </form>
+                                <form method="POST" 
+                                    action="{{ route('licencias.pdf',$licencias->id) }}"
+                                    style="display:inline">
+                                    {{csrf_field()}} {{ method_field('DELETE')}}
+                                    <button class="btn btn-xs btn-success" ><i class="fa fa-print"></i></button>
+                                    </form>                                    
                                 </td>
                             </tr>
                             @endforeach

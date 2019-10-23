@@ -30,7 +30,7 @@ Route::resource('solicitud', 'SolicitudController');
 /* FIN CARGO EJECUTORES  **************************************************************************/
 /* RUTAS  EJECUTORES -----------------------------------------------------------------------*/
 Route::resource('licencia', 'LicenciaController');
-
+Route::delete('/licenciapdf/{id}','LicenciaController@exportpdf')->name('licencias.pdf');
 Route::post('/solicitud/{id}', 'SolicitudController@show')->name('solicitudes.show');
 Route::get('/solicitud/{id}', 'PersonaController@edit')->name('solicitudes.edit');
 Route::put('/solicitud/{id}', 'PersonaController@update')->name('solicitudes.update');
