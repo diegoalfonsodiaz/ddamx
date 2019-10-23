@@ -5,7 +5,7 @@ return [
     'unavailable_audits' => 'No hay historial para este registro',
 
     'updated'            => [
-        'metadata' => 'On :audit_created_at, :user_name [:audit_ip_address] updated this record via :audit_url',
+        'metadata' => 'En :audit_created_at, :user_name [:audit_ip_address] actualizó este registro a través de :audit_url',
         'modified' => [
             'numerolicencia'   => 'El número de licencia a sido modificado de <strong>:old</strong> a <strong>:new</strong>',
             'fechaautorizacion' => 'La Fecha de autorización a sido modificado de <strong>:old</strong> a <strong>:new</strong>',
