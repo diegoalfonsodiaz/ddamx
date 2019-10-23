@@ -16,24 +16,30 @@
         <div class="box box-primary">
                 <div class="box-body">
 
+                         <div class="form-group">
+                            <strong>Código de inmueble</strong>
+                            <input type="text" name="codigoinmueble"  value="{{ $licencias->codigoinmueble }}" class="form-control" placeholder="Fecha Autorizacion" disabled>
+                        </div>
+
                         <div class="form-group">
-                            <strong>Número licencia</strong>
+                            <strong>Número de licencia</strong>
                             <input type="text" name="numerolicencia"  value="{{ $licencias->numerolicencia }}" class="form-control" placeholder="Número licencia" disabled>
                         </div>
 
                         <div class="form-group">
-                            <strong>Fecha autorización</strong>
+                            <strong>Fecha de autorización</strong>
                             <input type="text" name="fechaautorizacion"  value="{{ $licencias->fechaautorizacion }}" class="form-control" placeholder="Fecha Autorizacion" disabled>
                         </div>
 
+                        
                         <div class="form-group">
-                            <strong>Número Recibo</strong>
-                            <input type="text" name="recibo"  value="{{ $licencias->recibo }}" class="form-control" placeholder="Fecha Autorizacion" disabled>
+                            <strong>Tipo de Vía</strong>
+                            <input type="text" name="tipovia"  value="{{ $licencias->tipovia }}" class="form-control" placeholder="Fecha Autorizacion" disabled>
                         </div>
 
                         <div class="form-group">
-                            <strong>Monto</strong>
-                            <input type="text" name="monto"  value="{{ $licencias->monto }}" class="form-control" placeholder="Fecha Autorizacion" disabled>
+                            <strong>Número de recibo</strong>
+                            <input type="text" name="recibo"  value="{{ $licencias->recibo }}" class="form-control" placeholder="Fecha Autorizacion" disabled>
                         </div>
 
                         <div class="form-group">
@@ -57,24 +63,20 @@
                         </div>
 
                         <div class="form-group">
-                            <strong>Fecha conexión</strong>
+                            <strong>Fecha de conexión</strong>
                             <input type="text" name="fechaconexion"  value="{{ $licencias->fechaconexion }}" class="form-control" placeholder="Fecha Autorizacion" disabled>
                         </div>
 
                         <div class="form-group">
-                            <strong>Estado Licencia</strong>
+                            <strong>Días de procesamiento</strong>
+                            <input type="text" name="monto"  value="{{ $licencias->monto }}" class="form-control" placeholder="Fecha Autorizacion" disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <strong>Estado de licencia</strong>
                             <input type="text" name="nombre"  value="{{ $licencias->nombre }}" class="form-control" placeholder="Fecha Autorizacion" disabled>
                         </div>
 
-                        <div class="form-group">
-                            <strong>Código inmueble</strong>
-                            <input type="text" name="codigoinmueble"  value="{{ $licencias->codigoinmueble }}" class="form-control" placeholder="Fecha Autorizacion" disabled>
-                        </div>
-
-                        <div class="form-group">
-                            <strong>Tipo Vía</strong>
-                            <input type="text" name="tipovia"  value="{{ $licencias->tipovia }}" class="form-control" placeholder="Fecha Autorizacion" disabled>
-                        </div>
 
                         <div class="form-group">
             
