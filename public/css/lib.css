@@ -87,7 +87,7 @@ p label {
 .warning > a:visited,
 .warning > a:hover,
 .warning > a:active {
-    color           : #f89a14;
+    color           : #f81414;
     text-decoration : none;
 }
 .yellow,
@@ -117,7 +117,7 @@ p label {
     color            : #fff;
 }
 .bg-warning {
-    background-color : #f89a14;
+    background-color : #f81414;
     color            : #fff;
 }
 /* ---------- //Text-Bg color Code Css End ---------- */
@@ -671,7 +671,7 @@ footer .btn-primary.text-white {
     background-color : #418bca;
 }
 .warning_skin {
-    background-color : #F89A14;
+    background-color : #f81414;
 }
 .purple_skin {
     background-color : #D2527F;

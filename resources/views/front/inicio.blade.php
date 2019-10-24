@@ -21,14 +21,12 @@ Home
 {{-- slider --}}
 @section('top')
     <!--Carousel Start -->
-    <div class="container">
-        <div id="owl-demo" class="owl-carousel owl-theme">
-            <div class="item"><img src="{{ asset('images/Portada5.jpg') }}" alt="slider-image">
-            </div>
-            <div class="item"><img src="{{ asset('images/Portada3.jpg') }}" alt="slider-image">
-            </div>
-            <div class="item"><img src="{{ asset('images/Portada4.jpg') }}" alt="slider-image">
-            </div>
+    <div id="owl-demo" class="owl-carousel owl-theme">
+        <div class="item"><img src="{{ asset('front_end/images/Portada5.jpg') }}" alt="slider-image">
+        </div>
+        <div class="item"><img src="{{ asset('front_end/images/Portada3.jpg') }}" alt="slider-image">
+        </div>
+        <div class="item"><img src="{{ asset('front_end/images/Portada4.jpg') }}" alt="slider-image">
         </div>
     </div>
     <!-- //Carousel End -->
@@ -78,7 +76,7 @@ Home
             <div class="col-sm-6 col-md-3 wow bounceInUp" data-wow-duration="3s" data-wow-delay="0.8s">
                 <div class="box">
                     <div class="box-icon box-icon2">
-                        <i class="livicon icon1" data-name="warning" data-size="55" data-loop="true" data-c="#f89a14" data-hc="#f89a14"></i>
+                        <i class="livicon icon1" data-name="warning" data-size="55" data-loop="true" data-c="#f81414" data-hc="#f81414"></i>
                     </div>
                     <div class="info">
                         <h3 class="warning text-center">Denuncia</h3>
@@ -93,7 +91,7 @@ Home
             <div class="col-sm-6 col-md-3 wow bounceInRight" data-wow-duration="5s" data-wow-delay="1.2s">
                 <div class="box">
                     <div class="box-icon box-icon3">
-                        <i class="livicon icon1" data-name="phone" data-size="55" data-loop="true" data-c="#FFD43C" data-hc="#FFD43C"></i>
+                        <i class="livicon icon1" data-name="phone" data-size="55" data-loop="true" data-c="#f2d22e" data-hc="#f2d22e"></i>
                     </div>
                     <div class="info">
                         <h3 class="yellow text-center">Contactanos</h3>
@@ -107,7 +105,7 @@ Home
         </div>
         <!-- //Services Section End -->
     </div>
-    <div class="container">
+
     <section class="purchas-main">
             <div class="container bg-border wow pulse" data-wow-duration="2.5s">
                 <div class="row">
@@ -125,7 +123,7 @@ Home
 
                 <div class="col-md-9 col-sm-9 col-xs-12 wow zoomIn" data-wow-duration="2s">
                     <div class="layout-image">
-                        <img src="{{ asset('images/ejemplo4.png') }}" alt="layout" class="img-responsive" />
+                        <img src="{{ asset('front_end/images/ejemplo4.png') }}" alt="layout" class="img-responsive" />
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-12 wow lightSpeedIn" data-wow-duration="2s">
@@ -146,7 +144,7 @@ Home
     
     <!-- //Our Team End -->
         <!-- What we are section Start -->
-        <br>
+    <div class="container">
         <div class="row">
             <!-- What we are Start -->
             <div class="col-md-6 col-sm-6 wow zoomInLeft" data-wow-duration="3s">
@@ -155,7 +153,7 @@ Home
                         <h4 class="border-warning"><span class="heading_border bg-warning">Misión</span></h4>
                     </div>
                 </div>
-                <img src="{{ asset('images/mision.jpg') }}" alt="image_12" class="img-responsive">
+                <img src="{{ asset('front_end/images/mision.jpg') }}" alt="image_12" class="img-responsive">
                 <p>
                     Proporcionar soluciones integrales y sostenibles para el manejo de aguas residuales y pluviales, tanto en el área urbana como en el área rural del municipio de Quetzaltenango.
                         Las condiciones municipales promueven con énfasis la competitividad e inversiones para lograr un desarrollo eficaz en los servicios y todos los ciudadanos puedan beneficiarse.
@@ -170,29 +168,27 @@ Home
                         <h4 class="border-success"><span class="heading_border bg-success">Mision</span></h4>
                     </div>
                 </div>
-                <img src="{{ asset('images/vision.jpg') }}" alt="image_11" class="img-responsive">
+                <img src="{{ asset('front_end/images/vision.jpg') }}" alt="image_11" class="img-responsive">
                 <p>
                     Somos el servicio municipal de referencia en la región occidental para el manejo de aguas residuales y aguas pluviales, financieramente auto sostenible, administrativamente eficiente e integral en las soluciones que propone para la gestión de aguas residuales y pluviales en el área urbana y rural del municipio de Quetzaltenango.
                 </p>
             </div>
             <!-- //About Us End -->
         </div>
-        <br>
-        <br>
         <!-- //What we are section End -->
         <!-- Testimonial Start -->
 
         <!-- //Our Skills End -->
     </div>
     <!-- //Container End -->
-</div>
 @stop
 {{-- footer scripts --}}
 @section('footer_scripts')
     <!-- page level js starts-->
-     <script type="text/javascript" src="{{ asset('front_end/vendors/owl_carousel/js/owl.carousel.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('front_end/vendors/wow/js/wow.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('front_end/js/frontend/jquery.circliful.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('front_end/vendors/wow/js/wow.min.js') }}" ></script>
+    <script type="text/javascript" src="{{ asset('front_end/vendors/owl_carousel/js/owl.carousel.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('front_end/js/frontend/carousel.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('front_end/js/frontend/aboutus.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('front_end/js/frontend/index.js') }}"></script>
     <!--page level js ends-->
 @stop

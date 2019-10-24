@@ -208,3 +208,4 @@ Route::get('solicitar','SolicitudExternaController@indexsolicitar');
 Route::get('buscardpiestado', 'FrontendController@indexdpiestado');
 Route::put('solicituddpiestado','EstadoFactibilidadExternoController@solicitardpiestado')->name('solicituddpiestado.solicitardpiestado');
 Route::resource('estadofactibilidadexterno', 'EstadoFactibilidadExternoController');
+Route::get('pruebalogin', 'FrontendController@indexlogin');

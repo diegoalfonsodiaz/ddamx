@@ -47,6 +47,11 @@ class FrontendController extends Controller
         return view('front.contacto');
         //
     }
+    public function indexlogin()
+    {
+        return view('front.login');
+        //
+    }
     
 
     /**

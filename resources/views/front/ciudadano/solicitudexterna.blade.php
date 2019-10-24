@@ -66,7 +66,7 @@
                     
                     <div class="box-footer">
                         <button class="btn btn-primary" type="submit">Enviar</button>
-                        <a href="{{url('buscardpi')}}" class="btn btn-danger" type="reset">Regresar</a>
+                        <button href="{{url('buscardpi')}}" class="btn btn-danger" type="reset">Regresar</button>
                     </div>
 
                     <label></label>
