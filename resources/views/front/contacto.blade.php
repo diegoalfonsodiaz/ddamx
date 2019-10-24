@@ -3,7 +3,7 @@
 {{-- page level styles --}}
 @section('header_styles')
     <!--page level css starts-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/frontend/contact.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('front_end/css/frontend/contact.css') }}">
     <!--end of page level css-->
 @stop
 
@@ -69,7 +69,7 @@
 @section('footer_scripts')
     <!-- page level js starts-->
     <script src="https://maps.google.com/maps/api/js?sensor=true"></script>
-    <script type="text/javascript" src="{{ asset('vendors/gmaps/js/gmaps.min.js') }}" ></script>
+    <script type="text/javascript" src="{{ asset('front_end/vendors/gmaps/js/gmaps.min.js') }}" ></script>
     <!--page level js ends-->
     <script>
 

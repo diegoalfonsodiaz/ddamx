@@ -9,11 +9,11 @@ Home
 {{-- page level styles --}}
 @section('header_styles')
     <!--page level css starts-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/frontend/tabbular.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('vendors/animate/animate.min.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/frontend/jquery.circliful.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('vendors/owl_carousel/css/owl.carousel.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('vendors/owl_carousel/css/owl.theme.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('front_end/css/frontend/tabbular.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('front_end/vendors/animate/animate.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('front_end/css/frontend/jquery.circliful.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('front_end/vendors/owl_carousel/css/owl.carousel.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('front_end/vendors/owl_carousel/css/owl.theme.css') }}">
 
     <!--end of page level css-->
 @stop
@@ -184,9 +184,9 @@ Home
 {{-- footer scripts --}}
 @section('footer_scripts')
     <!-- page level js starts-->
-    <script type="text/javascript" src="{{ asset('vendors/owl_carousel/js/owl.carousel.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('vendors/wow/js/wow.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/frontend/carousel.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/frontend/aboutus.js') }}"></script>
+     <script type="text/javascript" src="{{ asset('front_end/vendors/owl_carousel/js/owl.carousel.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('front_end/vendors/wow/js/wow.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('front_end/js/frontend/carousel.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('front_end/js/frontend/aboutus.js') }}"></script>
     <!--page level js ends-->
 @stop

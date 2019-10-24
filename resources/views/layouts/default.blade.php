@@ -17,7 +17,7 @@
         @show
     </title>
     <!--global css starts-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/lib.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('front_end/css/lib.css') }}">
     {!! htmlScriptTagJsApi() !!}
     <!--end of global css-->
     <!--page level css-->
@@ -173,7 +173,7 @@
         <i class="livicon" data-name="plane-up" data-size="18" data-loop="true" data-c="#fff" data-hc="white"></i>
     </a>
     <!--global js starts-->
-    <script type="text/javascript" src="{{ asset('js/frontend/lib.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('front_end/js/frontend/lib.js') }}"></script>
     <!--global js end-->
     <!-- begin page level js -->
     @yield('footer_scripts')

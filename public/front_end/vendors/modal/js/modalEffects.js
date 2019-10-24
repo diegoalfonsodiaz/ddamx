@@ -6,7 +6,7 @@
  * http://www.opensource.org/licenses/mit-license.php
  * 
  * Copyright 2013, Codrops
- * http://www.codrops.com 
+ * http://www.codrops.com
  */
 var ModalEffects = (function() {
 
@@ -14,11 +14,10 @@ var ModalEffects = (function() {
 
 		var overlay = document.querySelector( '.md-overlay' );
 
-		[].slice.call( document.querySelectorAll( ".btn-effect" ) ).forEach( function( el, i ) {
+		[].slice.call( document.querySelectorAll( '.md-trigger' ) ).forEach( function( el, i ) {
 
 			var modal = document.querySelector( '#' + el.getAttribute( 'data-modal' ) ),
-				close = modal.querySelector( '.btn-modal' );
-				console.log(modal);
+				close = modal.querySelector( '.md-close' );
 
 			function removeModal( hasPerspective ) {
 				classie.remove( modal, 'md-show' );
