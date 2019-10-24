@@ -1,7 +1,7 @@
 @extends('front.base')
 
 @section('contenido_front')
-
+<div class="container">
 <!-- //Breadcrumb Section End -->
     <!-- Map Section Start -->
     <div class="">
@@ -45,10 +45,11 @@
     </div>
    
     </form>
+    <br>
             </div>
-
+<br>
         </div>
     </div>
-
+</div>
 
 @stop
