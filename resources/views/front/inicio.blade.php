@@ -21,12 +21,14 @@ Home
 {{-- slider --}}
 @section('top')
     <!--Carousel Start -->
-    <div id="owl-demo" class="owl-carousel owl-theme">
-        <div class="item"><img src="{{ asset('images/Portada5.jpg') }}" alt="slider-image">
-        </div>
-        <div class="item"><img src="{{ asset('images/Portada3.jpg') }}" alt="slider-image">
-        </div>
-        <div class="item"><img src="{{ asset('images/Portada4.jpg') }}" alt="slider-image">
+    <div class="container">
+        <div id="owl-demo" class="owl-carousel owl-theme">
+            <div class="item"><img src="{{ asset('images/Portada5.jpg') }}" alt="slider-image">
+            </div>
+            <div class="item"><img src="{{ asset('images/Portada3.jpg') }}" alt="slider-image">
+            </div>
+            <div class="item"><img src="{{ asset('images/Portada4.jpg') }}" alt="slider-image">
+            </div>
         </div>
     </div>
     <!-- //Carousel End -->
@@ -105,7 +107,7 @@ Home
         </div>
         <!-- //Services Section End -->
     </div>
-
+    <div class="container">
     <section class="purchas-main">
             <div class="container bg-border wow pulse" data-wow-duration="2.5s">
                 <div class="row">
@@ -144,6 +146,7 @@ Home
     
     <!-- //Our Team End -->
         <!-- What we are section Start -->
+        <br>
         <div class="row">
             <!-- What we are Start -->
             <div class="col-md-6 col-sm-6 wow zoomInLeft" data-wow-duration="3s">
@@ -174,12 +177,15 @@ Home
             </div>
             <!-- //About Us End -->
         </div>
+        <br>
+        <br>
         <!-- //What we are section End -->
         <!-- Testimonial Start -->
 
         <!-- //Our Skills End -->
     </div>
     <!-- //Container End -->
+</div>
 @stop
 {{-- footer scripts --}}
 @section('footer_scripts')

@@ -64,6 +64,11 @@
                                 <a href="{{ url('/menu') }}"><i class="livicon" data-name="user" data-size="18" data-loop="true" data-c="#fff" data-hc="#fff"></i></a>
                                 <label class="hidden-xs"><a href="{{ url('/menu') }}" class="text-white">Sistema Interno</a></label>
                             </li>
+                            @else
+                            <li>
+                                <a href="{{ url('/login') }}"><i class="livicon" data-name="user" data-size="18" data-loop="true" data-c="#fff" data-hc="#fff"></i></a>
+                                <label class="hidden-xs"><a href="{{ url('/login') }}" class="text-white">Login</a></label>
+                             </li>
                             @endif
                         </ul>
                     </li>
