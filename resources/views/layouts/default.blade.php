@@ -17,11 +17,7 @@
         @show
     </title>
     <!--global css starts-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/lib.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('front_end/css/tabbular.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('front_end/css/jquery.circliful.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('front_end/vendors/owl-carousel/owl.carousel.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('front_end/vendors/owl-carousel/owl.theme.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/lib.css') }}">
     {!! htmlScriptTagJsApi() !!}
     <!--end of global css-->
     <!--page level css-->
@@ -177,7 +173,7 @@
         <i class="livicon" data-name="plane-up" data-size="18" data-loop="true" data-c="#fff" data-hc="white"></i>
     </a>
     <!--global js starts-->
-    <script type="text/javascript" src="{{ asset('assets/js/frontend/lib.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/frontend/lib.js') }}"></script>
     <!--global js end-->
     <!-- begin page level js -->
     @yield('footer_scripts')

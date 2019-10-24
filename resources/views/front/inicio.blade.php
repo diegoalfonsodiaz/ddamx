@@ -9,11 +9,11 @@ Home
 {{-- page level styles --}}
 @section('header_styles')
     <!--page level css starts-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/frontend/tabbular.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/animate/animate.min.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/frontend/jquery.circliful.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/owl_carousel/css/owl.carousel.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/owl_carousel/css/owl.theme.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/frontend/tabbular.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('vendors/animate/animate.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/frontend/jquery.circliful.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('vendors/owl_carousel/css/owl.carousel.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('vendors/owl_carousel/css/owl.theme.css') }}">
 
     <!--end of page level css-->
 @stop
@@ -22,11 +22,11 @@ Home
 @section('top')
     <!--Carousel Start -->
     <div id="owl-demo" class="owl-carousel owl-theme">
-        <div class="item"><img src="{{ asset('assets/images/Portada5.jpg') }}" alt="slider-image">
+        <div class="item"><img src="{{ asset('images/Portada5.jpg') }}" alt="slider-image">
         </div>
-        <div class="item"><img src="{{ asset('assets/images/Portada3.jpg') }}" alt="slider-image">
+        <div class="item"><img src="{{ asset('images/Portada3.jpg') }}" alt="slider-image">
         </div>
-        <div class="item"><img src="{{ asset('assets/images/Portada4.jpg') }}" alt="slider-image">
+        <div class="item"><img src="{{ asset('images/Portada4.jpg') }}" alt="slider-image">
         </div>
     </div>
     <!-- //Carousel End -->
@@ -123,7 +123,7 @@ Home
 
                 <div class="col-md-9 col-sm-9 col-xs-12 wow zoomIn" data-wow-duration="2s">
                     <div class="layout-image">
-                        <img src="{{ asset('assets/images/ejemplo4.png') }}" alt="layout" class="img-responsive" />
+                        <img src="{{ asset('images/ejemplo4.png') }}" alt="layout" class="img-responsive" />
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-12 wow lightSpeedIn" data-wow-duration="2s">
@@ -152,7 +152,7 @@ Home
                         <h4 class="border-warning"><span class="heading_border bg-warning">Misión</span></h4>
                     </div>
                 </div>
-                <img src="{{ asset('assets/images/mision.jpg') }}" alt="image_12" class="img-responsive">
+                <img src="{{ asset('images/mision.jpg') }}" alt="image_12" class="img-responsive">
                 <p>
                     Proporcionar soluciones integrales y sostenibles para el manejo de aguas residuales y pluviales, tanto en el área urbana como en el área rural del municipio de Quetzaltenango.
                         Las condiciones municipales promueven con énfasis la competitividad e inversiones para lograr un desarrollo eficaz en los servicios y todos los ciudadanos puedan beneficiarse.
@@ -167,7 +167,7 @@ Home
                         <h4 class="border-success"><span class="heading_border bg-success">Mision</span></h4>
                     </div>
                 </div>
-                <img src="{{ asset('assets/images/vision.jpg') }}" alt="image_11" class="img-responsive">
+                <img src="{{ asset('images/vision.jpg') }}" alt="image_11" class="img-responsive">
                 <p>
                     Somos el servicio municipal de referencia en la región occidental para el manejo de aguas residuales y aguas pluviales, financieramente auto sostenible, administrativamente eficiente e integral en las soluciones que propone para la gestión de aguas residuales y pluviales en el área urbana y rural del municipio de Quetzaltenango.
                 </p>
@@ -184,10 +184,9 @@ Home
 {{-- footer scripts --}}
 @section('footer_scripts')
     <!-- page level js starts-->
-    <script type="text/javascript" src="{{ asset('assets/js/frontend/jquery.circliful.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/vendors/wow/js/wow.min.js') }}" ></script>
-    <script type="text/javascript" src="{{ asset('assets/vendors/owl_carousel/js/owl.carousel.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/frontend/carousel.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/frontend/index.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('vendors/owl_carousel/js/owl.carousel.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('vendors/wow/js/wow.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/frontend/carousel.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/frontend/aboutus.js') }}"></script>
     <!--page level js ends-->
 @stop

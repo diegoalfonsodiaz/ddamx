@@ -48,9 +48,9 @@
 {{-- page level scripts --}}
 @section('footer_scripts')
     <!-- page level js starts-->
-    <script type="text/javascript" src="{{ asset('assets/vendors/owl_carousel/js/owl.carousel.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/vendors/wow/js/wow.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/frontend/carousel.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/frontend/aboutus.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('vendors/owl_carousel/js/owl.carousel.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('vendors/wow/js/wow.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/frontend/carousel.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/frontend/aboutus.js') }}"></script>
     <!--page level js ends-->
 @stop
