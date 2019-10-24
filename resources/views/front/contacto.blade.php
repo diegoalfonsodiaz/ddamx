@@ -72,7 +72,6 @@
     <script type="text/javascript" src="{{ asset('front_end/vendors/gmaps/js/gmaps.min.js') }}" ></script>
     <!--page level js ends-->
     <script>
-
         $(document).ready(function() {
             var map = new GMaps({
                 el: '#map',
