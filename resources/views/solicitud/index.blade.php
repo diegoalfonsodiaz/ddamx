@@ -73,6 +73,12 @@
                                     <a class="btn btn-xs btn-success"href="{{ route('solicitudes.pdf', $solicitudes->id) }}" ><i class="fa fa-print"></i></a>
                                     </form>
                                   @endif
+                                  <form method="POST" 
+                                    action="#"
+                                    style="display:inline">
+                                    {{csrf_field()}} @method('DELETE')
+                                    <a class="btn btn-xs btn-danger" href="{{ route('solicitudes.historial', $solicitudes->id) }}" ><i class="fa fa-archive"></i></a>
+                                    </form>
                                 </td>
                             </tr>
                             @endforeach
