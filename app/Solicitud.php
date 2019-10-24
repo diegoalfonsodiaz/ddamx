@@ -52,8 +52,8 @@ class Solicitud extends Model implements Auditable
                                    
                                 }  
                                 elseif (Arr::has($data, 'new_values.estadofactibilidad_id') ) {
-                                    $data['old_values']['estadofactibilidad_id'] = Tipoobra::find($this->getOriginal('estadofactibilidad_id'))->nombre;
-                                    $data['new_values']['estadofactibilidad_id'] = Tipoobra::find($this->getAttribute('estadofactibilidad_id'))->nombre;
+                                    $data['old_values']['estadofactibilidad_id'] = Estadofactibilidad::find($this->getOriginal('estadofactibilidad_id'))->nombre;
+                                    $data['new_values']['estadofactibilidad_id'] = Estadofactibilidad::find($this->getAttribute('estadofactibilidad_id'))->nombre;
                                    
                                 }  
                                 return $data;
