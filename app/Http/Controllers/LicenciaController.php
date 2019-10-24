@@ -141,6 +141,7 @@ class LicenciaController extends Controller
         $estado=Estadolicencia::where('estado','=','1')->get();
         $tipovia=Tipovia::where('estado','=','1')->get();
        
+        
        return view('licencia.edit', compact('solicitud','estado','tipovia','licencia'));
     }
 
@@ -179,5 +180,15 @@ class LicenciaController extends Controller
     public function destroy(Licencia $licencia)
     {
         //
+    }
+
+    public function historial($id)
+    {
+        
+
+       $audits=Licencia::find($id)->audits;
+
+      // print_r($audits);
+       return view('licencia.historial', compact('audits'));       
     }
 }
