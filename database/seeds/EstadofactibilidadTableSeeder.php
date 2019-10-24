@@ -26,5 +26,10 @@ class EstadofactibilidadTableSeeder extends Seeder
             'nombre' => "No Factible",
             'estado' => '1',
         ]);
+
+        DB::table('estadofactibilidads')->insert([
+            'nombre' => "En Proceso",
+            'estado' => '1',
+        ]);
     }
 }
