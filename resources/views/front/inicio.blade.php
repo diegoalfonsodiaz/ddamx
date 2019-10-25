@@ -115,7 +115,7 @@ Home
                     <div class="col-md-5 col-sm-5 col-xs-12"><a href="{{ url('/buscardpi') }}" class="btn btn-primary purchase-styl ">Solicita ahora</a></div>
                 </div>
             </div>
-        </section>
+    </section>
 
     <!-- Layout Section Start -->
     <section class="feature-main">
@@ -182,7 +182,7 @@ Home
         <!-- //Our Skills End -->
     </div>
     <!-- //Container End -->
-    </div>
+</div>
 
 @stop
 {{-- footer scripts --}}
