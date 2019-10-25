@@ -107,7 +107,7 @@ desired effect
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="https://avatars.servers.getgo.com/2205256774854474505_medium.jpg" class="img-circle" alt="User Image">
+          <img  src="{{ asset('images/logo_muni_3.jpg') }}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p> </p>
