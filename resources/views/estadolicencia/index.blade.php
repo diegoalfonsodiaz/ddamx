@@ -5,9 +5,7 @@
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
         <li class="active">Estado Licencia</li>
-        <br>
       </ol>
-      
 @stop
 
 @section('contenido')
@@ -28,7 +26,7 @@
 
       <div class="box-header">
         <a href="{{ url('/agregarForm') }}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear Estado</a>
-        <h3 class="box-title">Listado de Estados de Licencia</h3>
+        <h3 class="box-title">Estado Licencia</h3>
       </div>
 
 
@@ -38,7 +36,7 @@
         <tr>
         <th scope="col" width="250px">Nombre</th>
         <th scope="col" width="450px">Descripcion</th>
-        <th scope="col" width="200px">Acciones</th>
+        <th scope="col" width="200px">Estado</th>
         </tr>
     </thead>
 

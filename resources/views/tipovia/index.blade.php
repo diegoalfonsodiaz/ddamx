@@ -29,12 +29,12 @@
 
       <div class="box-header">
         <a href="{{ url('/agregartipovia') }}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear Estado</a> 
-        <h3 class="box-title">Listado de Tipos de Vía</h3>
+        <h3 class="box-title">Tipo Vía</h3>
       </div>
 
 
     <div class="box-body">
-      <table id="persona-table" class="table table-striped table-bordered" style="width:100%">
+      <table id="" class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr>
             <th scope="col" width="250px">Nombre</th>
