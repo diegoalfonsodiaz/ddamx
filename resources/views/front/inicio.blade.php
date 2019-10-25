@@ -20,6 +20,7 @@ Home
 
 {{-- slider --}}
 @section('top')
+<div class="container">
     <!--Carousel Start -->
     <div id="owl-demo" class="owl-carousel owl-theme">
         <div class="item"><img src="{{ asset('front_end/images/Portada5.jpg') }}" alt="slider-image">
@@ -34,7 +35,7 @@ Home
 
 {{-- content --}}
 @section('content')
-    <div class="container">
+    
         
         <!-- Service Section Start-->
         <div class="row">
@@ -104,7 +105,7 @@ Home
             <!-- //20+ Page Section End -->
         </div>
         <!-- //Services Section End -->
-    </div>
+    
 
     <section class="purchas-main">
             <div class="container bg-border wow pulse" data-wow-duration="2.5s">
@@ -114,7 +115,7 @@ Home
                     <div class="col-md-5 col-sm-5 col-xs-12"><a href="{{ url('/buscardpi') }}" class="btn btn-primary purchase-styl ">Solicita ahora</a></div>
                 </div>
             </div>
-        </section>
+    </section>
 
     <!-- Layout Section Start -->
     <section class="feature-main">
@@ -181,6 +182,8 @@ Home
         <!-- //Our Skills End -->
     </div>
     <!-- //Container End -->
+</div>
+
 @stop
 {{-- footer scripts --}}
 @section('footer_scripts')

@@ -15,7 +15,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="/plantilla/bower_components/Ionicons/css/ionicons.min.css">
   <link rel="stylesheet" href="/plantilla/css/AdminLTE.min.css">
   <link rel="stylesheet" href="/plantilla/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
-  <link rel="stylesheet" href="/plantilla/css/skins/skin-red.min.css">
+  <link rel="stylesheet" href="/plantilla/css/skins/skin-blue.min.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -40,7 +40,7 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="hold-transition skin-red sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
   <!-- Main Header -->
@@ -107,7 +107,7 @@ desired effect
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="https://avatars.servers.getgo.com/2205256774854474505_medium.jpg" class="img-circle" alt="User Image">
+          <img  src="{{ asset('images/logo_muni_3.jpg') }}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p> </p>

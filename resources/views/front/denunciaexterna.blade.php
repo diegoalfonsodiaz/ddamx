@@ -50,14 +50,14 @@
             <!-- //Conatc Form Section End -->
         </div>
     </div>
+  
     
 @stop
-
 
 {{-- page level scripts --}}
 @section('footer_scripts')
     <!-- page level js starts-->
-     <script type="text/javascript" src="{{ asset('front_end/vendors/owl_carousel/js/owl.carousel.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('front_end/vendors/owl_carousel/js/owl.carousel.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('front_end/vendors/wow/js/wow.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('front_end/js/frontend/carousel.js') }}"></script>
     <script type="text/javascript" src="{{ asset('front_end/js/frontend/aboutus.js') }}"></script>
