@@ -50,7 +50,7 @@ class TipoobraController extends Controller
         $tipoobra->estado = '1';
         $tipoobra->save();
  
-        return redirect(route('tipoobras.index'))->with('info', 'Datos ingresados correctamente');
+        return redirect(route('tipoobras.index'))->with('flash', 'Datos ingresados correctamente');
     }
 
     /**

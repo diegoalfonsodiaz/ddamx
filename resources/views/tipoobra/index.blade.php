@@ -15,12 +15,17 @@
 @section('contenido')
 
 <div class="box-header">
-            @if(session()->has('info'))
-              <div class="col-md-6">
-                <div class="alert alert-success">{{session('flash')}}
-                </div>
+@if(session()->has('flash'))
+      <div class="col-md-6">
+          <div class="alert alert-success" role="alert">
+              {{ session('flash') }}
+              <button type="button" class="close" data-dismiss="alert" alert-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+        </div>
+      @endif
               </div>
-              @endif</div>
 
 <div class="box box-primary">
             <div class="box-header">
