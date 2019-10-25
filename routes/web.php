@@ -142,7 +142,10 @@ Route::delete('/tipovia/{tipovia}', 'TipoviaController@activar')->name('tipovias
 
 /* RUTAS  TIPO DE OBRA -----------------------------------------------------------------------*/
 //Route::get('/tipoobra','TipoobraController@index');
-Route::resource('tipoobra', 'TipoobraController');
+Route::get('/tipoobra', 'TipoobraController@index')->name('tipoobras.index');
+Route::get('/tipoobra/create','TipoobraController@create')->name('tipoobras.create');
+Route::post('/tipoobra','TipoobraController@store')->name('tipoobras.store');
+
 Route::get('/desactivar/{id}', 'TipoobraController@desactivar');
 Route::post('/deshabilitado/{id}', 'TipoobraController@deshabilitado');
 Route::get('/activar/{id}', 'TipoobraController@activar');

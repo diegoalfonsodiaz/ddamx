@@ -5,7 +5,7 @@
               <h3 class="box-title">Crear Tipo de obra</h3>
             <!-- /.box-header -->
             <!-- form start -->
-            <form action="{{ route('tipoobra.store') }}" method="POST">
+            <form action="{{ route('tipoobras.store') }}" method="POST">
     @csrf
   
      <div class="row">

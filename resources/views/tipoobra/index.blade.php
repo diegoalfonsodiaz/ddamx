@@ -1,72 +1,69 @@
 @extends('admin.principal')
-@section('contenido')
-<div class="box box-primary">
-            <div class="box-header with-border">
-    <h1>Listado Tipo de obra</h1>
-    <a class="btn btn-primary" href="{{ route('tipoobra.create') }}" type="button">Nuevo</a>
-    
-    @if(session('info'))
-    <div class="alert alert-success" role="alert">
-        {{ session('info') }}
-        <button type="button" class="close" data-dismiss="alert" alert-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    @endif
 
-    <table class="table table-bordered table-hover ">
-    <thead>
-        <tr>
-        <th scope="col">Nombre</th>
-        <th scope="col">Estado</th>
-        <th scope="col">Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
+@section('header')
+<h1>
+        Tipos de obra
+       
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+        <li class="active">Tipos de obra</li>
         
-    @if(count($tipoobra)>0)
-      @foreach($tipoobra->all() as $ef)
-        <tr>
-          
-          <td>{{ $ef->nombre }}</td>
-          <td> 
-          @if($ef->estado == 1)
-          <!--<a class="badge badge-danger">Activado</a>-->
-          <a class="label label-success">Activo</a>
-          @endif
-          @if($ef->estado == 0)
-          <!--<a href="#" class="badge badge-danger">Desactivado</a>-->
-          <a class="label label-danger">Desactivado</a>
-          @endif
-          </td>
+      </ol>
+      
+@stop
+@section('contenido')
 
-          <td>
-            <a class="btn btn-info" href="#" type="button" class="btn btn-default btn-sm">
-              <span class="glyphicon glyphicon-eye-open" ></span>
-            </a>
+<div class="box-header">
+            @if(session()->has('info'))
+              <div class="col-md-6">
+                <div class="alert alert-success">{{session('flash')}}
+                </div>
+              </div>
+              @endif</div>
 
-            <a class="btn btn-warning" href='{{ route('tipoobra.edit',$ef->id) }}' class="btn btn-default btn-sm">
-              <span class="glyphicon glyphicon-edit"></span>
-            </a>
-            @if($ef->estado == 1)
-            <a class="btn btn-danger" href='{{ url("/desactivar/{$ef->id}") }}' type="button" class="btn btn-default btn-sm">
-              <span class="glyphicon glyphicon-trash"></span>
-            </a>
-            @endif
-            @if($ef->estado == 0)
-            <a class="btn btn-primary" href='{{ url("/activar/{$ef->id}") }}' type="button" class="btn btn-default btn-sm">
-              <span class="glyphicon glyphicon-ok-circle"></span>
-            </a>
-            @endif
+<div class="box box-primary">
+            <div class="box-header">
+            <a href="{{route('tipoobras.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear tipo de obra</a> 
+              <h3 class="box-title">Listado Tipos de obras</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+            
+                <table id="personas-table" class="table table-striped table-bordered" style="width:100%">
+                        <thead>
+                            <tr>
+                            <th>Nombre</th>
+                                <th>Estado</th>
+                                
+                              
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($tipoobra as $tipoobras)
+                            <tr>
+                            <td>{{$tipoobras->nombre}}</td>
+                             
+                               
+                                @if($tipoobras->estado==1)
+                                <td ><p style="color:green;">Activo</p></td>
+                              
+                                @else
+                                <td ><p style="color:red;">Inactivo</p></td>
+                                @endif
+                              <td>
+                              </td>
+                                
+                               
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    
 
-          </td>
-          
-        </tr>
-      @endforeach
-    @endif
+                        
+                </table>
+            </div>
+    </div>
 
-    </tbody>
-    </table>
 
-   
 @stop

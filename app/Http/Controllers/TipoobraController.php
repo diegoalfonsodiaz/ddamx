@@ -14,14 +14,9 @@ class TipoobraController extends Controller
      */
     public function index()
     {
-        $tipoobra = tipoobra::latest()->paginate(5);
-  
-        return view('tipoobra.index',compact('tipoobra'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
-        //$tipoobra = tipoobra::all()->where('estado','1');
-  
-        //return view('tipoobra.index');
-        //
+        
+       $tipoobra =Tipoobra::all();        
+       return view('tipoobra.index',compact('tipoobra'));
     }
 
     /**
@@ -48,12 +43,14 @@ class TipoobraController extends Controller
                 'nombre'=>'required'
             ]
         );
-        $tipoobra = new Tipoobra;
-        $tipoobra->nombre = $request->input('nombre');
+
+
+        $tipoobra=new Tipoobra();
+        $tipoobra->nombre=$request->nombre;
         $tipoobra->estado = '1';
         $tipoobra->save();
-        return redirect('tipoobra')->with('info', 'Se registro Corectamente el Tipo de obra');
-        //
+ 
+        return redirect(route('tipoobras.index'))->with('info', 'Datos ingresados correctamente');
     }
 
     /**
