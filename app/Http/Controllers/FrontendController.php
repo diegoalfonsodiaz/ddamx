@@ -52,6 +52,11 @@ class FrontendController extends Controller
         return view('front.login');
         //
     }
+    public function indexsolicitudfinalizada()
+    {
+        return view('front.ciudadano.solicitudfinalizada');
+        //
+    }
     
 
     /**

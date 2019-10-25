@@ -26,6 +26,12 @@ class EstadoFactibilidadExternoController extends Controller
      */
     public function solicitardpiestado(Request $request)
     {
+        $this->Validate($request, [
+            'dpi' => 'required',
+            recaptchaFieldName() => recaptchaRuleName()
+            
+        ]);
+
         $solicitud=DB::table('solicituds')
         ->join('personas','personas.id','=','solicituds.persona_id')
         ->join('estadofactibilidads','solicituds.estadofactibilidad_id','=','estadofactibilidads.id')

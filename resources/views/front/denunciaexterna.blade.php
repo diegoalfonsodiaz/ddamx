@@ -15,7 +15,7 @@
 
                     <div class="form-group">
                     <strong>Descripción de la denuncia</strong>
-                    <input type="text" name="descripcion" class="form-control" placeholder="nombre">
+                    <input type="text" name="descripcion" class="form-control" placeholder="descripcion">
                     </div>
 
                     <div class="form-group" style="display: none">

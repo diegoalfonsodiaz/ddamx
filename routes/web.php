@@ -211,3 +211,4 @@ Route::get('buscardpiestado', 'FrontendController@indexdpiestado');
 Route::put('solicituddpiestado','EstadoFactibilidadExternoController@solicitardpiestado')->name('solicituddpiestado.solicitardpiestado');
 Route::resource('estadofactibilidadexterno', 'EstadoFactibilidadExternoController');
 Route::get('pruebalogin', 'FrontendController@indexlogin');
+Route::get('solicitudfinalizada', 'FrontendController@indexsolicitudfinalizada');

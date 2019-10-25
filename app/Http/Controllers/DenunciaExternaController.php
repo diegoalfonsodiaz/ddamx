@@ -41,7 +41,8 @@ class DenunciaExternaController extends Controller
         //
         $this->Validate($request,
 			[
-                'descripcion'=>'required'
+                'descripcion'=>'required',
+                recaptchaFieldName() => recaptchaRuleName()
 			]
 		);
 
