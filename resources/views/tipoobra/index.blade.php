@@ -40,6 +40,7 @@
                             <tr>
                             <th>Nombre</th>
                                 <th>Estado</th>
+                                <th>Acciones</th>
                                 
                               
                             </tr>
@@ -57,6 +58,25 @@
                                 <td ><p style="color:red;">Inactivo</p></td>
                                 @endif
                               <td>
+                              <a href="{{route('tipoobras.edit', $tipoobras)}}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
+
+                              @if($tipoobras->estado==1)
+                                    <form method="POST" 
+                                    action="{{route('tipoobras.desactivar', $tipoobras)}}"
+                                    style="display:inline">
+                                    {{csrf_field()}} {{ method_field('POST')}}
+                                    <button class="btn btn-xs btn-danger" ><i class="fa fa-remove"></i></button>
+                                    </form>
+                              
+                                @else
+                                <form method="POST" 
+                                    action="{{route('tipoobras.activar', $tipoobras)}}"
+                                    style="display:inline">
+                                    {{csrf_field()}} {{ method_field('DELETE')}}
+                                    <button class="btn btn-xs btn-success" ><i class="fa fa-check"></i></button>
+                                    </form>
+                              
+                                @endif
                               </td>
                                 
                                

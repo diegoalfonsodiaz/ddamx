@@ -145,11 +145,11 @@ Route::delete('/tipovia/{tipovia}', 'TipoviaController@activar')->name('tipovias
 Route::get('/tipoobra', 'TipoobraController@index')->name('tipoobras.index');
 Route::get('/tipoobra/create','TipoobraController@create')->name('tipoobras.create');
 Route::post('/tipoobra','TipoobraController@store')->name('tipoobras.store');
+Route::get('/tipoobra/{tipoobra}', 'TipoobraController@edit')->name('tipoobras.edit');
+Route::put('/tipoobra/{tipoobra}', 'TipoobraController@update')->name('tipoobras.update');
+Route::post('/tipoobra/{tipoobra}', 'TipoobraController@desactivar')->name('tipoobras.desactivar');
+Route::delete('/tipoobra/{tipoobra}', 'TipoobraController@activar')->name('tipoobras.activar');
 
-Route::get('/desactivar/{id}', 'TipoobraController@desactivar');
-Route::post('/deshabilitado/{id}', 'TipoobraController@deshabilitado');
-Route::get('/activar/{id}', 'TipoobraController@activar');
-Route::post('/habilitado/{id}', 'TipoobraController@habilitado');
 /* FIN  TIPO DE OBRA   **************************************************************************/
 Route::get('/persona','PersonaController@index')->name('personas.index');
 Route::get('/persona/create','PersonaController@create')->name('personas.create');
