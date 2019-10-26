@@ -24,11 +24,11 @@
                         <!-- personas -->
                         <div class="form-group {{ $errors->has('solicitudfactibilidad_id') ? 'has-error': ''}}">
                             <label for="select" class="">Solicitud de factibilidad (Ingrese el código de inmueble)</label>
-                            <select name="solicitudfactibilidad_id" class="form-control" id="persona">}
+                            <select name="solicitudfactibilidad_id" class="form-control" id="codigo">}
                                 
                                 @foreach($solicitud as $carac)
-                                @if ($carac->id==$licencia->id)
-                                <option value="{{$carac->id}}">{{$carac->codigoinmueble}}</option>
+                                @if ($carac->id==$licencia->solicitudfactibilidad_id)
+                                <option value="{{$carac->id}}" selected>{{$carac->codigoinmueble}}</option>
                                 @else
                                 <option value="{{$carac->id}}">{{$carac->codigoinmueble}}</option>
                                 @endif
@@ -38,7 +38,8 @@
                             {!! $errors->first('solicitudfactibilidad_id',' <span class="help-block">Debe seleccionar un código de inmueble ó esta intentando ingresar un inmueble ya existente</span>')!!}
 
                         </div>
- 
+
+                        
 
                         <div class="form-group {{ $errors->has('numerolicencia') ? 'has-error': ''}}">
                             <strong>Número de licencia</strong>
@@ -108,7 +109,7 @@
 
                         </div>
 
-
+                        @if (auth()->user()->hasRole(['admin']))
                         <div class="form-group {{ $errors->has('estadolicencia_id') ? 'has-error': ''}}">
                             <strong>Estado de licencia</strong>
                             <select name="estadolicencia_id" id="estadolicencia_id"  class="form-control selectpicker" data-live-search="true">
@@ -124,7 +125,7 @@
                             {!! $errors->first('estadolicencia_id',' <span class="help-block">Campo obligatorio</span>')!!}
 
                         </div>
-                        
+                        @endif
                         
 
                     </div>
@@ -143,7 +144,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 
 <script >
-$('#persona').select2({
+$('#codigo').select2({
   theme: "classic"
 });
 </script>

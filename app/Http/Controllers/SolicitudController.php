@@ -156,4 +156,14 @@ class SolicitudController extends Controller
     {
         
     }
+
+    public function historial($id)
+    {
+        
+
+       $audits=Solicitud::find($id)->audits;
+
+      // print_r($audits);
+       return view('solicitud.historial', compact('audits'));       
+    }
 }

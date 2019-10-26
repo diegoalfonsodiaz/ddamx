@@ -61,12 +61,18 @@
                                     style="display:inline">
                                     {{csrf_field()}} {{ method_field('DELETE')}}
                                     <button class="btn btn-xs btn-success" ><i class="fa fa-print"></i></button>
-                                    </form>                                    
+                                    </form>  
+
+                                    <form method="POST" 
+                                    action="#"
+                                    style="display:inline">
+                                    {{csrf_field()}} @method('DELETE')
+                                    <a class="btn btn-xs btn-danger" href="{{ route('licencias.historial', $licencias->id) }}" ><i class="fa fa-archive"></i></a>
+                                    </form>                                  
                                 </td>
                             </tr>
                             @endforeach
                         </tbody>
-
                 </table>
             </div>
     </div>

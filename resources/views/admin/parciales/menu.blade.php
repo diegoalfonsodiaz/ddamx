@@ -14,7 +14,6 @@
             <li><a href=" {{ url('/ejecutor') }} ">Ejecutores</a></li>
             <li><a href="{{ url('/cargoejecutor') }} ">Cargo Ejecutor</a></li>
             <li><a href="{{ url('/tipoobra') }} ">Tipo de Obra</a></li>
-            <li><a href="{{ url('/estadolicencia') }}">Estado licencia</a></li>
             <li><a href=" {{ url('/estadofactibilidad') }} ">Estado factibilidad</a></li>
           </ul>
         </li>
