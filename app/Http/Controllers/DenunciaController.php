@@ -42,11 +42,10 @@ class DenunciaController extends Controller
      */
     public function store(Request $request)
     {
-        $this->Validate($request,
-			[
-                'descripcion'=>'required'
-			]
-		);
+        $validate = $request->validate([
+            'descripcion'=>'required',
+            'foto' =>'required|mimes:jpg,jpeg,bmp,png',
+        ]);
 
 		if ($request->hasFile('foto')) {
 			# code...

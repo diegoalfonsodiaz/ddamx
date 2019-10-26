@@ -7,16 +7,18 @@
     </ol>
 @stop
 @section('contenido')
-    <div class="box box-primary">
-        <div class="box-header with-border">
-            @if(count($errors)>0)
-            @foreach($errors->all() as $error)
-                <div class="alert alert-danger"> 
-                {{ $error }}
-                </div>
-            @endforeach
-            @endif
+<div class="box-header">
+    @if($errors->any())
+      <div class="col-md-6">
+        <div class="alert alert-danger" role="alert">
+            Ingrese  imagenes  con  formato  JPG,  JPEG,  BMP,  PNG.
+            <button type="button" class="close" data-dismiss="alert" alert-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
         </div>
+      </div>
+    @endif
+</div>
             <!-- /.box-header -->
             <!-- form start -->
         <form role="form" method="POST" action="{{route('denuncia.store')}}" enctype="multipart/form-data">
