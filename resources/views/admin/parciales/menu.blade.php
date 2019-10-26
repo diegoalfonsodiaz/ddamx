@@ -1,6 +1,6 @@
 <ul class="sidebar-menu" data-widget="tree">
         <li class="header">Navegacion</li>
-        <li class="active"><a href="#"><i class="fa fa-dashboard"></i> <span>Inicio</span></a></li>
+        <li class="active"><a href=" {{ url('/menu') }} "><i class="fa fa-dashboard"></i> <span>Inicio</span></a></li>
         <li><a href="{{route('personas.index')}}"> <i class="fa fa-user-plus"></i> <span>  Personas </span> </a></li>
         <li><a href="{{route('solicitud.index')}}"> <i class="fa  fa-check-square"></i> <span>  Solicitud de factibilidad </span> </a></li>
         <li><a href="{{ url('/licencia') }}"> <i class="fa  fa-file-word-o"></i> <span>  Licencia </span> </a></li>

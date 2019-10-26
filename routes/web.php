@@ -1,6 +1,6 @@
 <?php
 
-
+//pruebas
 
 Route::get('/login', function (){
     return view ('auth.login') ;
@@ -14,6 +14,10 @@ Route::get('/menu', function () {
     return view('admin.dashboard');
 });
 //Robinson C
+//RUTAS DASHBOARD
+Route::get('/menu', 'DashboardController@dashboard');
+//DENUCNIAS DE ALTA
+
 
 
 /* RUTAS CARGO EJECUTORES -----------------------------------------------------------------------*/
@@ -26,7 +30,7 @@ Route::resource('solicitud', 'SolicitudController');
 /* FIN CARGO EJECUTORES  **************************************************************************/
 /* RUTAS  EJECUTORES -----------------------------------------------------------------------*/
 Route::resource('licencia', 'LicenciaController');
-
+Route::delete('/licenciapdf/{id}','LicenciaController@exportpdf')->name('licencias.pdf');
 Route::post('/solicitud/{id}', 'SolicitudController@show')->name('solicitudes.show');
 Route::get('/solicitud/{id}', 'PersonaController@edit')->name('solicitudes.edit');
 Route::put('/solicitud/{id}', 'PersonaController@update')->name('solicitudes.update');
@@ -178,6 +182,8 @@ Route::post('/asignacion/{id}', 'AsignacionController@destroy')->name('asignacio
 
 
 Route::resource('rol', 'RolController');
+
+
 Route::post('/rol/{rol}', 'RolController@desactivar')->name('roles.desactivar');
 Route::delete('/rol/{rol}', 'RolController@activar')->name('roles.activar');
 

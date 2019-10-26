@@ -8,6 +8,7 @@ use App\Solicitud;
 use App\Estadolicencia;
 use App\Tipovia;
 use DB;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class LicenciaController extends Controller
 {
@@ -76,10 +77,56 @@ class LicenciaController extends Controller
      * @param  \App\Licencia  $licencia
      * @return \Illuminate\Http\Response
      */
-    public function show(Licencia $licencia)
+    public function show($id)
     {
-        //
+        $licencia=DB::table('licencias')
+        ->leftjoin('estadolicencias','licencias.estadolicencia_id','=','estadolicencias.id')
+        ->leftjoin('tipovias','licencias.tipovia_id','=','tipovias.id')
+        ->leftjoin('solicituds','licencias.solicitudfactibilidad_id','=','solicituds.id')
+        ->select('licencias.numerolicencia as numerolicencia','licencias.fechaautorizacion as fechaautorizacion','licencias.recibo as recibo',
+        'licencias.monto as monto', 'licencias.derecho as derecho','licencias.remocion as remocion','licencias.fechaconexion as fechaconexion',
+        'estadolicencias.nombre as nombre','solicituds.codigoinmueble as codigoinmueble','tipovias.nombre as tipovia')
+        ->where('licencias.id','=',$id)
+        ->get();
+
+        return view('licencia.detalle', [
+            'licencia' => $licencia
+        ]);
     }
+
+    public function exportpdf($id)
+        {
+            $licencia=DB::table('licencias')
+            ->leftjoin('solicituds','licencias.solicitudfactibilidad_id','=','solicituds.id')
+            ->leftjoin('tipovias','licencias.tipovia_id','=','tipovias.id')
+            ->leftjoin('ejecutors','solicituds.ejecutor_id','=','ejecutors.id')
+            ->select('licencias.id','licencias.numerolicencia','licencias.recibo','licencias.monto',
+            'licencias.derecho','licencias.remocion','licencias.fechaconexion',
+            'licencias.fechaautorizacion',
+            'licencias.estadolicencia_id','solicituds.id as idsolicitud','solicituds.direccionobra',
+            'licencias.solicitudfactibilidad_id','solicituds.expediente',
+            'solicituds.longitud','solicituds.ancho','solicituds.profundidad',
+            'solicituds.diametrotubo','solicituds.diametrocolector','solicituds.numerofinca',
+            'solicituds.numerofolio','solicituds.libro','solicituds.catastral',
+            'solicituds.solvenciamunicipal','licencias.tipovia_id',
+            'tipovias.nombre as nombre_tipovia','solicituds.ejecutor_id','solicituds.persona_id')
+            ->where('licencias.id','=',$id)
+            ->get();
+            foreach ($licencia as $licencias) {
+                 $datos=DB::table('solicituds')
+            ->leftjoin('personas','solicituds.persona_id','personas.id')
+            ->leftjoin('ejecutors','solicituds.ejecutor_id','ejecutors.id')
+            ->select('personas.nombre as nombre_persona','personas.apellido','ejecutors.nombre as nombre_ejecutor',
+            'ejecutors.direccion as direccion_ejecutor')
+            ->where('solicituds.id','=',$licencias->idsolicitud)
+            ->get();
+            $nombrepdf=$licencias->numerolicencia;
+            }  
+           
+        $pdf=PDF::loadView('licencia.pdf.licencia',compact('licencia','datos'));
+         return $pdf->download($nombrepdf.'.pdf');
+        //  return view('licencia.pdf.licencia',compact('licencia','datos'));
+        }
 
     /**
      * Show the form for editing the specified resource.
