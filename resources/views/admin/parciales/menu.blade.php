@@ -71,14 +71,9 @@
               </span>
           </a>
           <ul class="treeview-menu">
-<<<<<<< HEAD
-            <li><a href="{{ url('/bitacora') }}">Bitacora  </a></li>
-            <li><a href="{{ url('/ticketcreate') }}">Seguimiento  </a></li>
-            <li><a href="{{ url('/asunto') }}">Asunto de Bitacora</a></li>
-=======
             <li {{ request()->is('bitacora') ? 'class=active' : '' }}><a href="{{ url('/bitacora') }}">Bitacora  </a></li>
             <li {{ request()->is('asunto') ? 'class=active' : '' }}><a href="{{ url('/asunto') }}">Asunto de Bitacora</a></li>
->>>>>>> 3059921b00a1ea8cc18c19bda92b9c23bb0321b0
+            <li {{ request()->is('asunto') ? 'class=active' : '' }}><a href="{{ url('/ticketcreate') }}">Seguimiento</a></li>
           </ul>
         </li>
         @endif

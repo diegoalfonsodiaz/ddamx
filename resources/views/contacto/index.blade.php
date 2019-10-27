@@ -1,33 +1,20 @@
 @extends('admin.principal')
 @section('header')
   <h1>
-<<<<<<< HEAD
-    Contacto
-    <small>Listado de datos de personas que solicitan mas información acerca de la pagina</small>
-=======
     Contactos
     <small>Contactos</small>
->>>>>>> 3059921b00a1ea8cc18c19bda92b9c23bb0321b0
   </h1>
 
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-<<<<<<< HEAD
-    <li class="active">Contacto</li>
-=======
     <li class="active">Contactos</li>
->>>>>>> 3059921b00a1ea8cc18c19bda92b9c23bb0321b0
   </ol>
       
 @stop
 @section('contenido')
   <div class="box box-primary">
     <div class="box-header">        
-<<<<<<< HEAD
-      
-=======
       <h3 class="box-title">Contactos</h3>
->>>>>>> 3059921b00a1ea8cc18c19bda92b9c23bb0321b0
     </div>
             <!-- /.box-header -->
     <div class="box-body">
