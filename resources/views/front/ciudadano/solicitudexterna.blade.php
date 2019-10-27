@@ -21,7 +21,7 @@
                   <input type="text" name="dpi" class="form-control" readonly="readonly" value={{$persona->dpi}} placeholder="Descripcion"  required>
                 </div>
                 <div class="form-group">
-                  <strong >Nombre</strong>
+                  <strong >Nombres</strong>
                   <input type="text"  name="nombre" class="form-control" readonly="readonly" value={{$persona->nombre}} placeholder="Nombre" required>
                 </div>
                 <div class="form-group">

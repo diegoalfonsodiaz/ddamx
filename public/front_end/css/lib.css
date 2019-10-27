@@ -21,6 +21,10 @@ body {
     padding-bottom : 0 !important;
 
 }
+.h2 { color: #369; }
+.message {
+    text-decoration-color: #EF6F6C; 
+}
 .icon-section {
     background-color : #418bca;
     line-height      : 7px;

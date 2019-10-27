@@ -42,6 +42,12 @@ class FrontendController extends Controller
         return view('front.estado.buscardpiestado');
         //
     }
+
+    public function indexcodigo()
+    {
+        return view('front.licencia.buscarcodigo');
+        //
+    }
     public function indexcontacto()
     {
         return view('front.contacto');
@@ -57,6 +63,22 @@ class FrontendController extends Controller
         return view('front.ciudadano.solicitudfinalizada');
         //
     }
+    public function indexnosotros()
+    {
+        return view('front.nosotros');
+        //
+    }
+    public function indexpreguntas()
+    {
+        return view('front.preguntas');
+        //
+    }
+    public function indexpruebahtml()
+    {
+        return view('front.pruebahtml');
+        //
+    }
+    
     
 
     /**

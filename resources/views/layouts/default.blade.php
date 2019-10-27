@@ -90,13 +90,23 @@
             <div class="collapse navbar-collapse" id="collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="{{ url('/') }}">Home</a>
-                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> Licencia</a>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> DDAMX</a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{ url('/nosotros') }}">Acerca de nosotros</a>
+                            </li>
+                            <li><a href="{{ url('/preguntas') }}">Preguntas frecuentes</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> Factibilidad</a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="{{ url('/buscardpiestado') }}">Estado actual</a>
                             </li>
                             <li><a href="{{ url('/buscardpi') }}">Solicitud</a>
                             </li>
                         </ul>
+                    </li>
+                     <li><a href="{{ url('/buscarcodigo') }}">Estado de licencia</a>
                     </li>
                     <li><a href="{{ url('/denunciaexterna') }}">Denuncia</a>
                     </li>
