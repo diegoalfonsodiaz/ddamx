@@ -13,7 +13,9 @@
 /*-----------------------------------------------------------------------------------*/
 /*  GENERAL STYLING
 /*-----------------------------------------------------------------------------------*/
-
+html{
+    height: 100%;
+}
 body {
     font-family    : 'Lato', sans-serif;
     height         : 100%;
@@ -21,6 +23,19 @@ body {
     padding-bottom : 0 !important;
 
 }
+.container{
+        margin: auto;
+        height: auto;
+        min-height:100%;
+        
+}
+.container::after{
+    width: 100%;
+    height:1px;
+    display:block;
+    clear:both;
+    }
+
 .h2 { color: #369; }
 .message {
     text-decoration-color: #EF6F6C; 
@@ -524,6 +539,8 @@ blockquote {
 /* ---------- Footer Section Css ---------- */
 
 footer {
+    width: 100%;
+    margin: -1px auto 0;
     background-color : #262626;
 }
 footer h4 {
