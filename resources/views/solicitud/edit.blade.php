@@ -131,7 +131,7 @@
                             <select name="ejecutor_id" id="ejecutor_id"  class="form-control selectpicker" data-live-search="true">
                                 
                                 @foreach($ejecutor as $c)
-                                      @if ($c->id==$solicitud->persona_id)
+                                      @if ($c->id==$solicitud->ejecutor_id)
                                         <option value="{{$c->id}}" selected>{{$c->nombre}}</option>
                                         @else
                                         <option value="{{$c->id}}">{{$c->nombre}}</option>
@@ -144,7 +144,7 @@
                             <select name="estadofactibilidad_id" id="estadofactibilidad_id"  class="form-control selectpicker" data-live-search="true">
                                 
                                     @foreach($estado as $c)
-                                      @if ($c->id==$solicitud->persona_id)
+                                      @if ($c->id==$solicitud->estadofactibilidad_id)
                                         <option value="{{$c->id}}" selected>{{$c->nombre}}</option>
                                         @else
                                         <option value="{{$c->id}}">{{$c->nombre}}</option>
@@ -157,7 +157,7 @@
                             <select name="tipoobra_id" id="tipoobra_id"  class="form-control selectpicker" data-live-search="true">
                                 
                                   @foreach($tipoobra as $c)
-                                        @if ($c->id==$solicitud->persona_id)
+                                        @if ($c->id==$solicitud->tipoobra_id)
                                           <option value="{{$c->id}}" selected>{{$c->nombre}}</option>
                                           @else
                                           <option value="{{$c->id}}">{{$c->nombre}}</option>

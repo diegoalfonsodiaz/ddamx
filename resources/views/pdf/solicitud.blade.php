@@ -1,29 +1,218 @@
 <!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <div style="background-position: center; position: fixed;  text-align: center; z-index: -1000; ">
-        <img src="https://scontent.fgua3-2.fna.fbcdn.net/v/t1.0-9/72218390_2479778338804564_8816007235076358144_n.jpg?_nc_cat=107&_nc_oc=AQmI6AW1zEjolcLL36OdDy8GJmezDfEAdZ6Er6XMhF2Pm_RXos4b2Mfa-JVkpMmr6Qg&_nc_ht=scontent.fgua3-2.fna&oh=94d620e0718fa26e1d4f2032d409ec7e&oe=5E20EF23" style="width: 110%; height: 110%;">
-    </div>
+    
+    <style type="text/css">
+        p{
+            line-height: 70%;
+        }
+        #expediente{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 406;
+            top: 69;
+            position: fixed;
+        }
+        #fecha{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 0;
+            top: 148;
+            position: fixed;
+        }
+        #ppropietario{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 72;
+            top: 168;
+            position: fixed;
+        }
+        #pdireccion{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 72;
+            top: 185;
+            position: fixed;
+        }
+        #pdireccionobra{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 120;
+            top: 202;
+            position: fixed;
+        }
+        #pejecutor{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 72;
+            top: 245;
+            position: fixed;
+        }
+        #pdirejecutor{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 72;
+            top: 263;
+            position: fixed;
+        }
+        #pfinca{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 90;
+            top: 298;
+            position: fixed;
+        }
+        #pfolio{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 275;
+            top: 298;
+            position: fixed;
+        }
+        #plibro{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 462;
+            top: 298;
+            position: fixed;
+        }
+        #pcatastral{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 170;
+            top: 316;
+            position: fixed;
+        }
+        #psolvencia{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 462;
+            top: 316;
+            position: fixed;
+        }
+        #observacion{
+            line-height: 175%;
+        }
+        #ornatoper{
+            background: #fff;
+            color: black;
+            height: 10px;
+            
+            width: 100%;
+            left: 0;
+            top: 788;
+            position: fixed;
+        }
+        #ornatoejec{
+            background: #fff;
+            color: black;
+            height: 10px;
+            
+            width: 100%;
+            left: 0;
+            top: 815;
+            position: fixed;
+        }
+        #pcargo1{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 330;
+            top: 245;
+            position: fixed;
+        }
+        #pcargo2{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 397;
+            top: 245;
+            position: fixed;
+        }
+        #pcargo3{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 480;
+            top: 245;
+            position: fixed;
+        }
+         
+        #espacio{
+            line-height: 20%;
+        }
+        h4{
+        font-weight: normal;
+        }
+}
+        
+   </style>
+
 </head>
 <body>
+<pre id="espacio">
+</pre>
 @foreach($solicitud as $solicitudes)
     
-    <br><br><br><br><br>
-    <?php
-        echo str_repeat ("&nbsp;", 135);
-    ?>
-    {{ $solicitudes->expediente }} <br>
-    
-   
+    <label id="expediente">
+        {{ $solicitudes->expediente }}
+    </label>
+
+
     @endforeach
-<br><br><br><br><br>
-<?php
+    <br><br><br>
+    
+    <label id="fecha">
+    <?php
     $dias = date("d", $fechaEntera);
     $anio = date("Y", $fechaEntera);
     $mes = date("m", $fechaEntera);
-    echo str_repeat ("&nbsp;", 100);  echo $dias; 
+    echo str_repeat ("&nbsp;", 97);  echo $dias; 
     echo "      ";echo "      ";
-    echo str_repeat ("&nbsp;", 30);
+    echo str_repeat ("&nbsp;", 27);
     if ($mes = '1') {
         echo "Enero";
     } elseif ($mes = '2') {
@@ -51,92 +240,92 @@
     } 
     echo "      ";echo "      ";
     $anios = substr("$anio", -2); 
-    echo str_repeat ("&nbsp;", 25); echo "$anios";
-?>
-
-@foreach($solicitud as $solicitudes)
-
-    <br><br>
-    <?php
-        echo str_repeat ("&nbsp;", 30);
+    echo str_repeat ("&nbsp;", 30); echo "$anios";
     ?>
-    {{ $solicitudes->nombre_persona }}
+    </label>
 
-    <br><br>
-    <?php
-        echo str_repeat ("&nbsp;", 30);
-    ?>
-    {{ $solicitudes->direccionobra }}
-    
-    <br>
-    <?php
-        echo str_repeat ("&nbsp;", 75);
-    ?>
-    {{ $solicitudes->direccionobra }}
-    
-    <br><br><br>
-    <?php
-        echo str_repeat ("&nbsp;", 30);
-    ?>
-    {{ $solicitudes->nombre_ejecutor }}
-    
-    <br>
-    <?php
-        echo str_repeat ("&nbsp;", 30);
-    ?>
-    {{ $solicitudes->direccionejecutor }}
-
-    <br><br><br>
-    <?php
-        echo str_repeat ("&nbsp;", 28);
-    ?>
-    {{ $solicitudes->numerofinca }}
-
-    <?php
-        echo str_repeat ("&nbsp;", 40);
-    ?>
-    {{ $solicitudes->numerofolio }}
-
-    <?php
-        echo str_repeat ("&nbsp;", 38);
-    ?>
-    {{ $solicitudes->libro }}
-    
-    <br>
-    <?php
-        echo str_repeat ("&nbsp;", 28);
-    ?>
-    {{ $solicitudes->catastral }}
-
-    <?php
-        echo str_repeat ("&nbsp;", 110);
-    ?>
-    {{ $solicitudes->solvenciamunicipal }}
-
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-    <?php
-        echo str_repeat ("&nbsp;", 30);
-    ?>
-    {{ $solicitudes->observacion }}
-
-
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <?php
-        echo str_repeat ("&nbsp;", 125);
-    ?>
-    {{ $solicitudes->ornato_persona }}
-
-    <br><br>
-    <?php
-        echo str_repeat ("&nbsp;", 125);
-    ?>
-    {{ $solicitudes->eornato }}
-
-    
-
-    
    
+    @foreach($solicitud as $solicitudes)
+        <label id="ppropietario">
+            {{ $solicitudes->nombre_persona }}  {{ $solicitudes->apellido }}
+        </label>
+
+        <label id="pdireccion">
+            {{ $solicitudes->direccionobra }}
+        </label>
+
+        <label id="pdireccionobra">
+            {{ $solicitudes->direccionobra }}
+        </label>
+
+        <label id="pdireccionobra">
+            {{ $solicitudes->direccionobra }}
+        </label>
+
+        <label id="pejecutor">
+            {{ $solicitudes->nombre_ejecutor }}
+            <label id="pcargo1">
+                @if($solicitudes->cargo == 1)
+                    X
+                @endif
+            </label>
+
+            <label id="pcargo2">
+                @if($solicitudes->cargo == 2)
+                    X
+                @endif
+            </label>
+
+            <label id="pcargo3">
+                @if($solicitudes->cargo == 3)
+                    X
+                @endif
+            </label>
+        </label>
+
+        <label id="pdirejecutor">
+            {{ $solicitudes->direccionejecutor }}
+        </label>
+
+        <label id="pfinca">
+            {{ $solicitudes->numerofinca }}
+        </label>
+
+        <label id="pfolio">
+            {{ $solicitudes->numerofolio }}
+        </label>
+
+        <label id="plibro">
+            {{ $solicitudes->libro }}
+        </label>
+
+        <label id="pcatastral">
+            {{ $solicitudes->catastral }}
+        </label>
+
+        <label id="psolvencia">
+            {{ $solicitudes->solvenciamunicipal }}
+        </label>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br>
+        <p id="observacion" style='text-indent: 7em'>
+            {{ $solicitudes->observacion }}
+        </p>
+    @endforeach
+
+
+    @foreach($solicitud as $solicitudes)
+    <br><br><br><br><br><br><br>
+        <p id="ornatoper" style='text-indent: 34em'>
+            {{ $solicitudes->ornato_persona }}
+        </p>
+ 
+        <p id="ornatoejec" style='text-indent: 34em'>
+            {{ $solicitudes->eornato }}
+        </p>
     @endforeach
 </body>
+
 </html>
