@@ -18,6 +18,8 @@ class CreateDenunciasTable extends Migration
             $table->text('descripcion');
             $table->date('fecha');
             $table->string('foto', 200);
+            $table->string('direccion', 200)->nullable();
+            $table->string('telefono', 200);
             $table->unsignedBigInteger('estadodenuncia_id');
             $table->timestamps();
 

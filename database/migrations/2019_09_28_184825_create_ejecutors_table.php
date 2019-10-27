@@ -19,7 +19,7 @@ class CreateEjecutorsTable extends Migration
             $table->string('direccion', 245);
             $table->string('ornato');
             $table->boolean('estado')->default(1);
-            $table->unsignedBigInteger('cargoejecutor_id');
+            $table->unsignedBigInteger('cargoejecutor_id')->nullable();
             $table->timestamps();
             $table->foreign('cargoejecutor_id')->references('id')->on('cargoejecutors');
         });

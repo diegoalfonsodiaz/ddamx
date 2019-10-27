@@ -27,6 +27,8 @@
                             
                               
                                 <th>No. de licencia</th>
+                                <th>Nombres</th>
+                                <th>Apellidos</th>
                                 <th>Inmueble</th>
                                 <th>No. Recibo</th>  
                                 <th>Fecha de autorización</th>
@@ -38,8 +40,11 @@
                         <tbody>
                             @foreach($licencia as $licencias)
                             <tr>
-                                
-                                <td>{{$licencias->numerolicencia}}</td>
+                            <td>{{$licencias->numerolicencia}}</td>
+                            @foreach($datos as $dato)
+                            <td>{{$dato->nombre_persona}}</td>
+                            <td>{{$dato->apellido}}</td>
+                            @endforeach 
                                 <td>{{$licencias->inmueble}}</td>
                                 <td>{{$licencias->recibo}}</td>
                                 <td>{{$licencias->fechaautorizacion}}</td>
@@ -72,6 +77,8 @@
                                 </td>
                             </tr>
                             @endforeach
+                            
+                            
                         </tbody>
                 </table>
             </div>
