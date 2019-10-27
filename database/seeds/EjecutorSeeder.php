@@ -13,22 +13,22 @@ class EjecutorSeeder extends Seeder
     public function run()
     {
         DB::table('ejecutors')->insert([
-            'cargoejecutor_id' => '1',
+            'nombre' => 'Sin Asignar',
+            'direccion' => ' ',
+            'ornato' => ' ',
+        ]);
+        DB::table('ejecutors')->insert([
+            'cargoejecutor_id' => '2',
             'nombre' => 'Marvin Sosa',
             'direccion' => 'Colonia Valle de las Rosas',
             'ornato' => '31241234643',
         ]);
         DB::table('ejecutors')->insert([
-            'cargoejecutor_id' => '2',
+            'cargoejecutor_id' => '3',
             'nombre' => 'Jose Leal',
             'direccion' => 'Colonia Vista Bella',
             'ornato' => '452389',
         ]);
-        DB::table('ejecutors')->insert([
-            'cargoejecutor_id' => '3',
-            'nombre' => 'Edwin Luna',
-            'direccion' => 'Colonia La union',
-            'ornato' => '8054736',
-        ]);
+        
     }
 }
