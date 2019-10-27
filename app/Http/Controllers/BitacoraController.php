@@ -16,11 +16,11 @@ class BitacoraController extends Controller
     {
         $bitacora= DB::table('bitacoras as b')
         //persona
-        ->join('users as u', 'b.user_id','=', 'u.id')
+        ->leftjoin('users as u', 'b.user_id','=', 'u.id')
         //ejecutor
-        ->join('asuntos as a', 'b.asunto_id','=', 'a.id')
+        ->leftjoin('asuntos as a', 'b.asunto_id','=', 'a.id')
         //tipoobra
-        ->join('licencias as l', 'b.licencia_id','=', 'l.id')
+        ->leftjoin('licencias as l', 'b.licencia_id','=', 'l.id')
         //
         ->select('b.id','b.fecha', 'u.name as user','l.numerolicencia as nlicencia','b.descripcion','a.nombre as asunto')
         ->get();
@@ -28,7 +28,7 @@ class BitacoraController extends Controller
     }
 
 
-    public function create(Request $request)
+    public function create()
     {
         $asunto=Asunto::all();
         $usuarios=User::all();

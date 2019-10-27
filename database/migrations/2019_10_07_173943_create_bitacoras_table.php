@@ -17,7 +17,7 @@ class CreateBitacorasTable extends Migration
             $table->bigIncrements('id');
             $table->date('fecha')->nullable();
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('licencia_id');
+            $table->unsignedBigInteger('licencia_id')->nullable();
             $table->string('descripcion',250)->nullable();
             $table->unsignedBigInteger('asunto_id');
             $table->timestamps();

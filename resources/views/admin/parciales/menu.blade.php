@@ -73,6 +73,7 @@
           <ul class="treeview-menu">
             <li {{ request()->is('bitacora') ? 'class=active' : '' }}><a href="{{ url('/bitacora') }}">Bitacora  </a></li>
             <li {{ request()->is('asunto') ? 'class=active' : '' }}><a href="{{ url('/asunto') }}">Asunto de Bitacora</a></li>
+            <li {{ request()->is('ticketcreate') ? 'class=active' : '' }}><a href="{{ url('/ticketcreate') }}">Seguimiento</a></li>
           </ul>
         </li>
         @endif
