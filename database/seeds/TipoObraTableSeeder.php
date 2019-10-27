@@ -14,6 +14,12 @@ class TipoObraTableSeeder extends Seeder
     public function run()
     {
         DB::table('tipoobras')->insert([
+            'nombre' => "Sin Asignar",
+        ]);
+        DB::table('tipoobras')->insert([
+            'nombre' => "Unifamiliar",
+        ]);
+        DB::table('tipoobras')->insert([
             'nombre' => "Multifamiliar",
         ]);
         DB::table('tipoobras')->insert([
