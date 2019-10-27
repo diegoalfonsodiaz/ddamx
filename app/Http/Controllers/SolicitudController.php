@@ -25,7 +25,7 @@ class SolicitudController extends Controller
         ->select('personas.nombre as nombre_persona','personas.apellido','personas.dpi','personas.ornato as ornato_persona',
         'tipoobras.nombre as nombre_tipoobra','estadofactibilidads.nombre as nombre_estadofactibilidad',
         'ejecutors.nombre as nombre_ejecutor','ejecutors.direccion as direccionejecutor',
-        'ejecutors.ornato as eornato', 
+        'ejecutors.ornato as eornato', 'ejecutors.cargoejecutor_id as cargo',
         'solicituds.direccionobra','solicituds.codigoinmueble',
         'solicituds.expediente','solicituds.expedienteinterno','solicituds.numerofinca',
         'solicituds.numerofolio',

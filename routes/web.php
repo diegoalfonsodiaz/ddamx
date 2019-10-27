@@ -38,7 +38,9 @@ Route::get('/solicitudpdf/{id}', 'SolicitudController@exportPDF')->name('solicit
 
 /* FIN  EJECUTORES  ***asdf***********************************************************************/
 /* RUTAS  OBRA -----------------------------------------------------------------------*/
-
+Route::get('/ticket/{id}', 'TicketController@index')->name('ticket.index');
+Route::get('/ticketcreate', 'TicketController@create')->name('ticket.create');
+Route::post('/ticket','TicketController@store')->name('ticket.store');
 
 
 
@@ -142,11 +144,14 @@ Route::delete('/tipovia/{tipovia}', 'TipoviaController@activar')->name('tipovias
 
 /* RUTAS  TIPO DE OBRA -----------------------------------------------------------------------*/
 //Route::get('/tipoobra','TipoobraController@index');
-Route::resource('tipoobra', 'TipoobraController');
-Route::get('/desactivar/{id}', 'TipoobraController@desactivar');
-Route::post('/deshabilitado/{id}', 'TipoobraController@deshabilitado');
-Route::get('/activar/{id}', 'TipoobraController@activar');
-Route::post('/habilitado/{id}', 'TipoobraController@habilitado');
+Route::get('/tipoobra', 'TipoobraController@index')->name('tipoobras.index');
+Route::get('/tipoobra/create','TipoobraController@create')->name('tipoobras.create');
+Route::post('/tipoobra','TipoobraController@store')->name('tipoobras.store');
+Route::get('/tipoobra/{tipoobra}', 'TipoobraController@edit')->name('tipoobras.edit');
+Route::put('/tipoobra/{tipoobra}', 'TipoobraController@update')->name('tipoobras.update');
+Route::post('/tipoobra/{tipoobra}', 'TipoobraController@desactivar')->name('tipoobras.desactivar');
+Route::delete('/tipoobra/{tipoobra}', 'TipoobraController@activar')->name('tipoobras.activar');
+
 /* FIN  TIPO DE OBRA   **************************************************************************/
 Route::get('/persona','PersonaController@index')->name('personas.index');
 Route::get('/persona/create','PersonaController@create')->name('personas.create');

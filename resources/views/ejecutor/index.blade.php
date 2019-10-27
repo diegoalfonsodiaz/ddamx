@@ -4,7 +4,7 @@
             <div class="box-header with-border">
               <h3 class="box-title"> Cargo Ejecutor</h3>
               <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('ejecutor.create') }}"> Crear Cargo Ejecutor </a>
+                <a href="{{ route('ejecutor.create') }}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear  Ejecutor</a>
               <br><br>
               
             </div>
@@ -29,11 +29,11 @@
             <td>{{ $ejecutors->cargo }}</td>
             <td>
                 <form action="{{ route('ejecutor.destroy',$ejecutors->id) }}" method="POST">
-                    <a class="btn btn btn-info" href="{{ route('ejecutor.edit',$ejecutors->id) }}"><i class="fa fa-pencil"></i></a>
+                    <a class="btn btn-xs btn-info" href="{{ route('ejecutor.edit',$ejecutors->id) }}"><i class="fa fa-pencil"></i></a>
    
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn btn-danger"><i class="fa fa-remove"></i></button>
+                    <button type="submit" class="btn btn-xs btn-danger"><i class="fa fa-remove"></i></button>
                 </form>
             </td>
         </tr>
