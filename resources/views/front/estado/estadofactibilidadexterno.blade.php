@@ -1,24 +1,21 @@
-@extends('front.base')
-@section('header')
-<h1>
-        Solicitud factibilidad
-        </h1>
+@extends('layouts/default')
 
-      
-@stop
-@section('contenido_front')
-<div class="box-header">
-            
-<div class="box box-primary">
-            <div class="box-header">
-            
-              <h3 class="box-title">Solicitudes de factibilidad registradas</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-            
-                <table id="persona-table" class="table table-striped table-bordered" style="width:100%">
-                        <thead>
+
+@section('content')
+<!-- Main content -->
+<section class="content paddingleft_right15">
+ <h2>
+                    Solicitudes de factibilidad regigistradas
+                </h2>
+    <div class="row">
+        <div class="panel panel-primary ">
+  
+
+            <br />
+            <div class="panel-body">
+                <div class="table-responsive">
+                <table class="table table-bordered width100" id="table">
+                    <thead>
                             <tr>
                             
                                 <th>Solicitud No.</th>
@@ -45,9 +42,11 @@
                             </tr>
                             @endforeach
                         </tbody>
-
                 </table>
+                </div>
             </div>
-    </div>
+        </div>
+    </div>    <!-- row-->
+</section>
 
 @stop

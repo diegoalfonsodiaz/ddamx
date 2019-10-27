@@ -14,14 +14,9 @@ class TipoobraController extends Controller
      */
     public function index()
     {
-        $tipoobra = tipoobra::latest()->paginate(5);
-  
-        return view('tipoobra.index',compact('tipoobra'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
-        //$tipoobra = tipoobra::all()->where('estado','1');
-  
-        //return view('tipoobra.index');
-        //
+        
+       $tipoobra =Tipoobra::all();        
+       return view('tipoobra.index',compact('tipoobra'));
     }
 
     /**
@@ -48,12 +43,14 @@ class TipoobraController extends Controller
                 'nombre'=>'required'
             ]
         );
-        $tipoobra = new Tipoobra;
-        $tipoobra->nombre = $request->input('nombre');
+
+
+        $tipoobra=new Tipoobra();
+        $tipoobra->nombre=$request->nombre;
         $tipoobra->estado = '1';
         $tipoobra->save();
-        return redirect('tipoobra')->with('info', 'Se registro Corectamente el Tipo de obra');
-        //
+ 
+        return redirect(route('tipoobras.index'))->with('flash', 'Datos ingresados correctamente');
     }
 
     /**
@@ -73,14 +70,9 @@ class TipoobraController extends Controller
      * @param  \App\Tipoobra  $tipoobra
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Tipoobra $tipoobra)
     {
-        //return view('tipoobra.edit',compact('tipoobra'));
-        //
-        $ef = Tipoobra::find($id);
-        return view('tipoobra.edit', [
-            'tipoobra' => $ef
-        ]);
+        return view('tipoobra.edit', compact('tipoobra'));
     }
 
     /**
@@ -90,19 +82,18 @@ class TipoobraController extends Controller
      * @param  \App\Tipoobra  $tipoobra
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Tipoobra $tipoobra, Request $request )
     {
         $this->validate($request,
             [
                 'nombre'=>'required'
             ]
         );
-        $data = array(
-            'nombre' => $request->input('nombre'),
-            'estado' => $request->input('estado')
-        );
-        Tipoobra::where('id', $id)->update($data);
-        return redirect('tipoobra')->with('info', 'Se Actualizaron los datos correctamente');
+        $tipoobra->nombre=$request->nombre;
+        $tipoobra->estado='1';
+        $tipoobra->save();
+
+             return redirect(route('tipoobras.index'))->with('flash', 'Datos actualizados correctamente');
         //
     }
 
@@ -116,36 +107,21 @@ class TipoobraController extends Controller
     {
         //
     }
-    public function activar($id)
+  
+    public function desactivar(Tipoobra $tipoobra, Request $request)
     {
-        $ef = Tipoobra::find($id);
-        return view('tipoobra.activar', [
-            'tipoobra' => $ef
-        ]);
+     
+        $tipoobra->estado='0';
+        $tipoobra->save();
+        return redirect(route('tipoobras.index'))->with('flash', 'Tipo de obra desactivada correctamente');
     }
-    public function habilitado($id, Request $request)
+
+    public function activar(Tipoobra $tipoobra, Request $request)
     {
-        $data = array(
-            'nombre' => $request->input('nombre'),
-            'estado' => $request->input('estado')
-        );
-        Tipoobra::where('id', $id)->update($data);
-        return redirect('tipoobra')->with('info', 'Se Habilitó el estado');
+     
+        $tipoobra->estado='1';
+        $tipoobra->save();
+        return redirect(route('tipoobras.index'))->with('flash', 'Tipo de obra activada correctamente');
     }
-    public function desactivar($id)
-    {
-        $ef = Tipoobra::find($id);
-        return view('tipoobra.desactivar', [
-            'tipoobra' => $ef
-        ]);
-    }
-    public function deshabilitado($id, Request $request)
-    {
-        $data = array(
-            'nombre' => $request->input('nombre'),
-            'estado' => $request->input('estado')
-        );
-        Tipoobra::where('id', $id)->update($data);
-        return redirect('tipoobra')->with('info', 'Se Desabilito el estado');
-    }
+    
 }

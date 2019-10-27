@@ -13,18 +13,18 @@ class estadolicenciaSeeder extends Seeder
     public function run()
     {
         DB::table('estadolicencias')->insert([
-            'nombre' => 'Existencia de papeleria',
-            'descripcion' => 'Su papeleria se ha recibido',
+            'nombre' => 'Emisión de orden de pago',
+            'descripcion' => 'Debe pagar en banco Banrural',
             'estado' => '1',
         ]);
         DB::table('estadolicencias')->insert([
-            'nombre' => 'Informe emitido',
-            'descripcion' => 'Se ha realizado la factibilidad',
+            'nombre' => 'Elaboración de licencia de conexión',
+            'descripcion' => 'su licencia esta en proceso',
             'estado' => '1',
         ]);
         DB::table('estadolicencias')->insert([
-            'nombre' => 'Orden de pago',
-            'descripcion' => 'acercarse a las instalaciones a hacer su pago',
+            'nombre' => 'Emisión de licencia de conexión',
+            'descripcion' => 'Debe pasar a traer su licencia',
             'estado' => '1',
         ]);
     }
