@@ -15,6 +15,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="/plantilla/bower_components/Ionicons/css/ionicons.min.css">
   <link rel="stylesheet" href="/plantilla/css/AdminLTE.min.css">
   <link rel="stylesheet" href="/plantilla/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="/plantilla/bower_components/responsive/css/jquery.dataTables.min.css">
+   <link rel="stylesheet" href="/plantilla/bower_components/responsive/css/responsive.dataTables.min.css">
   <link rel="stylesheet" href="/plantilla/css/skins/skin-blue.min.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
   <link rel="stylesheet"
@@ -162,8 +164,11 @@ desired effect
 <!-- REQUIRED JS SCRIPTS -->
 
 <!-- jQuery 3 -->
-<script src="/plantilla/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/plantilla/bower_components/responsive/js/jquery-3.3.1.js"></script>
+<script src="/plantilla/bower_components/responsive/js/jquery.dataTables.min.js"></script>
+<!--<script src="/plantilla/bower_components/jquery/dist/jquery.min.js"></script>-->
 <!-- Bootstrap 3.3.7 -->
+<script src="/plantilla/bower_components/responsive/js/dataTables.responsive.min.js"></script>
 <!-- DataTables -->
 <script src="/plantilla/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="/plantilla/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
@@ -181,6 +186,7 @@ desired effect
       'ordering'    : false,
       'info'        : true,
       'autoWidth'   : false,
+      'responsive':true,
       
     });
 
@@ -194,6 +200,7 @@ $(document).ready(function() {
       'ordering'    : false,
       'info'        : true,
       'autoWidth'   : false,
+      'responsive':true,
       
     });
     

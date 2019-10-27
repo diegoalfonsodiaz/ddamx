@@ -36,7 +36,7 @@
             <!-- /.box-header -->
             <div class="box-body">
             
-                <table id="persona-table" class="table table-striped table-bordered" style="width:100%">
+                <table id="persona-table" class="display responsive nowrap" style="width:100%">
                         <thead>
                             <tr>
                             <th>ID</th>
