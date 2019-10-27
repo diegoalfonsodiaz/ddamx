@@ -187,11 +187,7 @@ desired effect
       'info'        : true,
       'autoWidth'   : false,
     'responsive':true,
-    rowReorder: {
-            selector: 'td:nth-child(2)'
-        },
-      
-    });
+    
 
 } );
 
