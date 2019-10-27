@@ -30,6 +30,14 @@
                     <textarea type="text" name="descripcion" class="form-control" rows="3" placeholder="Descripción" required></textarea>
                     <!-- <input type="text" name="descripcion" class="form-control" placeholder="Descripción"> -->
                 </div>
+                <div class="form-group">
+                            <strong>Dirección</strong>
+                            <input type="text" name="direccion" class="form-control" placeholder="Dirección">
+                </div>
+                <div class="form-group">
+                            <strong>Teléfono</strong>
+                            <input type="text" name="telefono" class="form-control" placeholder="Teléfono">
+                        </div>
 
                 
 

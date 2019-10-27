@@ -18,7 +18,9 @@ class DenunciaController extends Controller
     {
         $denuncia= DB::table('denuncias as d')
         ->join('estadodenuncias as e', 'd.estadodenuncia_id','=', 'e.id')
-        ->select('d.id', 'd.descripcion', 'd.fecha', 'd.foto', 'e.descripcion as estado', 'e.estado as es')
+        ->select('d.id', 'd.descripcion', 'd.fecha',
+         'd.foto', 'e.descripcion as estado', 'e.estado as es',
+         'd.direccion', 'd.telefono')
         ->get();
         return view('denuncia.index', ["denuncia"=>$denuncia])->with('i');
     }
@@ -45,6 +47,7 @@ class DenunciaController extends Controller
         $validate = $request->validate([
             'descripcion'=>'required',
             'foto' =>'required|mimes:jpg,jpeg,bmp,png',
+            'telefono' => 'required',
         ]);
 
 		if ($request->hasFile('foto')) {
@@ -55,7 +58,9 @@ class DenunciaController extends Controller
 		}
         
         $denuncia = new Denuncia;
-		$denuncia->descripcion = $request->input('descripcion');
+        $denuncia->descripcion = $request->input('descripcion');
+        $denuncia->direccion = $request->input('direccion');
+        $denuncia->telefono = $request->input('telefono');
         $denuncia->fecha = $request->input('fecha');
         $denuncia->foto = $name;
 		$denuncia->estadodenuncia_id = '1';

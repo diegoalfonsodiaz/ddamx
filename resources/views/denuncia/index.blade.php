@@ -41,6 +41,8 @@
                   <th width="400px">Descripción</th>
                   <th width="120px">Fecha</th>
                   <th width="220px">Fotografía</th>
+                  <th width="220px">Direccíon</th>
+                  <th width="220px">Teléfono</th>
                   <th width="125px">Estado Denuncia</th>
                   <th width="125px">Acciones</th>
                 </tr>
@@ -54,9 +56,11 @@
                       <td>
                       <div class="center">
                       <img style="width:150px;height:100px;" src="images/{{ $den->foto }}" class="card-img-top" alt="Imagen no encontrada">
-                      <a target="_blank" href="images/{{ $den->foto }}">Abrir Foto</a>
+                      <a target="_blank" href="images/{{ $den->foto }}">Abrir</a>
                       </div>
                       </td>
+                      <td>{{ $den->direccion }}</td>
+                      <td>{{ $den->telefono }}</td>
                       
                       @if($den->es==1)
                         <td ><p style="color:green;"> {{ $den->estado }} </p></td>
