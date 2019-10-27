@@ -54,6 +54,7 @@
 
                       <td>
                         <a href="{{ route('denuncia.edit',$den->id) }}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
+                        <a class="btn btn-primary" href="{{ route('ticketdenuncia.index', $den->id) }}">Seguimiento</a>
                       </td>
 
                     </tr>

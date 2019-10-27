@@ -43,6 +43,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="{{ url('/denuncia') }}">Denuncias </a></li>
+            <li><a href="{{ url('/ticketdenunciacreate') }}">Seguimiento  </a></li>
             <li><a href="{{route('estadodenuncias.index')}}">Estado Denuncias</a></li>
           </ul>
         </li>
