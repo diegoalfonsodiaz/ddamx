@@ -38,7 +38,9 @@ Route::get('/solicitudpdf/{id}', 'SolicitudController@exportPDF')->name('solicit
 
 /* FIN  EJECUTORES  ***asdf***********************************************************************/
 /* RUTAS  OBRA -----------------------------------------------------------------------*/
-
+Route::get('/ticket/{id}', 'TicketController@index')->name('ticket.index');
+Route::get('/ticketcreate', 'TicketController@create')->name('ticket.create');
+Route::post('/ticket','TicketController@store')->name('ticket.store');
 
 
 
