@@ -62,13 +62,14 @@
                                     
                                 </form>
                                 <a class="btn btn-xs btn-warning" href="{{ route('licencia.show',$licencias->id) }}"><i class="fa fa-eye"></i></a>
+                                @if($licencias->estadolicencia_id==3)
                                 <form method="POST" 
                                     action="{{ route('licencias.pdf',$licencias->id) }}"
                                     style="display:inline">
                                     {{csrf_field()}} {{ method_field('DELETE')}}
                                     <button class="btn btn-xs btn-success" ><i class="fa fa-print"></i></button>
                                     </form>  
-
+                                    @endif
                                     <form method="POST" 
                                     action="#"
                                     style="display:inline">
