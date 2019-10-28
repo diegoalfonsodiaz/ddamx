@@ -7,6 +7,12 @@
     <!--end of page level css-->
 @stop
 
+{{-- Page title --}}
+@section('title')
+Contacto
+@parent
+@stop
+
 {{-- Page content --}}
 @section('content')
     <!-- Map Section Start -->

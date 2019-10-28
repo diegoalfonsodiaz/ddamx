@@ -1,5 +1,11 @@
 @extends('layouts/default')
 
+{{-- Page title --}}
+@section('title')
+Denuncia
+@parent
+@stop
+
 {{-- Page content --}}
 @section('content')
 
