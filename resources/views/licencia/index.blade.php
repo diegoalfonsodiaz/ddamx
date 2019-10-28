@@ -14,8 +14,13 @@
 @section('contenido')
 <div class="box box-primary">
             <div class="box-header">
-            
-            <a href="{{route('licencia.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear Nueva Licencia</a> 
+            @if (auth()->user()->hasRole(['admin']))
+                <a href="{{route('licencia.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear Nueva Licencia</a> 
+                @elseif(auth()->user()->hasRole(['jefeoperaciones']))
+                <a href="{{route('licencia.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear Nueva Licencia</a>
+                @elseif(auth()->user()->hasRole(['operaciones']))
+                <a href="{{route('licencia.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear Nueva Licencia</a>
+            @endif
               <h3 class="box-title">Licencias</h3>
             </div>
             <!-- /.box-header -->
@@ -54,13 +59,26 @@
 
                                 
                                 <td>
+                                @if (auth()->user()->hasRole(['admin']))
                                 <form action="{{ route('licencia.destroy',$licencias->id) }}" method="POST" style="display:inline">
                                 <a class="btn btn-xs btn-info" href="{{ route('licencia.edit',$licencias->id) }}"><i class="fa fa-pencil"></i></a>
-                
                                     @csrf
                                     @method('DELETE')
-                                    
                                 </form>
+                                @elseif (auth()->user()->hasRole(['jefeoperaciones']))
+                                <form action="{{ route('licencia.destroy',$licencias->id) }}" method="POST" style="display:inline">
+                                <a class="btn btn-xs btn-info" href="{{ route('licencia.edit',$licencias->id) }}"><i class="fa fa-pencil"></i></a>
+                                    @csrf
+                                    @method('DELETE')
+                                </form>
+                                @elseif (auth()->user()->hasRole(['operaciones']))
+                                <form action="{{ route('licencia.destroy',$licencias->id) }}" method="POST" style="display:inline">
+                                <a class="btn btn-xs btn-info" href="{{ route('licencia.edit',$licencias->id) }}"><i class="fa fa-pencil"></i></a>
+                                    @csrf
+                                    @method('DELETE')
+                                </form>
+
+                                @endif
                                 <a class="btn btn-xs btn-warning" href="{{ route('licencia.show',$licencias->id) }}"><i class="fa fa-eye"></i></a>
                                 @if($licencias->estadolicencia_id==3)
                                 <form method="POST" 
@@ -70,12 +88,16 @@
                                     <button class="btn btn-xs btn-success" ><i class="fa fa-print"></i></button>
                                     </form>  
                                     @endif
+
+
+                                    @if (auth()->user()->hasRole(['admin']))
                                     <form method="POST" 
                                     action="#"
                                     style="display:inline">
                                     {{csrf_field()}} @method('DELETE')
                                     <a class="btn btn-xs btn-danger" href="{{ route('licencias.historial', $licencias->id) }}" ><i class="fa fa-archive"></i></a>
-                                    </form>                                  
+                                    </form>  
+                                    @endif                                
                                 </td>
                             </tr>
                             @endforeach
