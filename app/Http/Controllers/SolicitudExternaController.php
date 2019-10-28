@@ -74,7 +74,7 @@ class SolicitudExternaController extends Controller
        
        $solicitud->save();
 
-       return redirect('solicitudfinalizada');
+       return view('front.ciudadano.solicitudfinalizada');
 
        }
        else{
@@ -95,7 +95,7 @@ class SolicitudExternaController extends Controller
        
        $solicitud->save();
 
-       return redirect('buscardpi')->with('info', 'Se envio Corectamente tu solicitud');
+       return view('front.ciudadano.solicitudfinalizada');
         }      
     }
     public function findpersona()

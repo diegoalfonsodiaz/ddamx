@@ -29,7 +29,7 @@ class EstadoFactibilidadExternoController extends Controller
     {
         $this->Validate($request, [
             'dpi' => 'required',
-            
+            recaptchaFieldName() => recaptchaRuleName()
         ]);
 
         
@@ -57,7 +57,7 @@ class EstadoFactibilidadExternoController extends Controller
     {
         $this->Validate($request, [
             'codigo' => 'required',
-            
+            recaptchaFieldName() => recaptchaRuleName()
         ]);
 
         $cantidad =DB::table('licencias')

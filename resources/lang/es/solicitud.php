@@ -27,7 +27,7 @@ return [
             'ejecutor_id' => 'El Ejecutor a sido modificado de <strong>:old</strong> a <strong>:new</strong>',
             'estadofactibilidad_id' => 'El Estado de factibilidad a sido modificado de <strong>:old</strong> a <strong>:new</strong>',
             'tipoobra_id' => 'El Tipo de obra a sido modificado de <strong>:old</strong> a <strong>:new</strong>',
-
+            'recaptcha' => 'Debes demostrar que eres humano',
         ],
     ],
     // ...
