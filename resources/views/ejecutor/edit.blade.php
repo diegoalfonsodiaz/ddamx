@@ -27,12 +27,15 @@
                       <div class="form-group">
                         <label for="cargoejecutor_id">Cargo:</label>
                         <select name="cargoejecutor_id" id="cargoejecutor_id" class="form-control selectpicker" data-live-search="true">
-                          @foreach($cargoejecutor as $c)
-                              @if ($c->id==$ejecutor->id)
-                            <option value="{{$c->id}}" selected>{{$c->nombre}}</option>
-                            @else
-                            <option value="{{$c->id}}">{{$c->nombre}}</option>
-                            @endif
+                            @foreach ($cargoejecutor as $cargo)
+                              <option 
+                                value="{{ $cargo->id }}"
+                                @if ($cargo->id === $ejecutor->cargoejecutor_id)
+                                  selected
+                                @endif
+                              > 
+                              {{ $cargo->nombre }} 
+                              </option>
                             @endforeach
                           </select>
                       </div>
