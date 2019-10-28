@@ -9,10 +9,15 @@ use App\User;
 class UserController extends Controller
 {
   
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index(Request $request)
     {
         //$request->user()->autorizeRoles('admin');
-
+        $request->user()->autorizeRoles(['admin']);
         $usuarios = User::all();
         return view('usuario.index',compact('usuarios'))->with('i');
     }
@@ -20,6 +25,7 @@ class UserController extends Controller
   
     public function create(Request $request)
     {
+        $request->user()->autorizeRoles(['admin']);
         //$request->user()->autorizeRoles('operaciones');
         return view('usuario.create');
     }
@@ -27,6 +33,7 @@ class UserController extends Controller
   
     public function store(Request $request)
     {
+        $request->user()->autorizeRoles(['admin']);
         $this->validate($request,
             [
                 'name'=>'required',
@@ -55,14 +62,16 @@ class UserController extends Controller
     }
 
 
-    public function edit(User $usuario)
+    public function edit(User $usuario,Request $request)
     {
+        $request->user()->autorizeRoles(['admin']);
         return view('usuario.edit',compact('usuario'));
     }
 
 
     public function update(Request $request, User $usuario)
     {
+        $request->user()->autorizeRoles(['admin']);
         $this->validate($request,
             [
                 'name'=>'required',
@@ -82,6 +91,7 @@ class UserController extends Controller
    
     public function desactivar(User $usuario, Request $request)
     {
+        $request->user()->autorizeRoles(['admin']);
         $usuario->estado='0';
         $usuario->save();
         return redirect(route('usuario.index'))->with('info', 'Estado desactivado correctamente');
@@ -89,6 +99,7 @@ class UserController extends Controller
 
     public function activar(User $usuario, Request $request)
     {
+        $request->user()->autorizeRoles(['admin']);
         $usuario->estado='1';
         $usuario->save();
         return redirect(route('usuario.index'))->with('info', 'Estado activado correctamente');

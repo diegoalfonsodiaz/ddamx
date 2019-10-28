@@ -15,11 +15,13 @@
           <ul class="treeview-menu">
             <li {{ request()->is('ejecutor') ? 'class=active' : '' }} > <a href=" {{ url('/ejecutor') }} ">Ejecutores</a></li>
             <li {{ request()->is('cargoejecutor') ? 'class=active' : '' }}><a href="{{ url('/cargoejecutor') }} ">Cargo Ejecutor</a></li>
+            @if (auth()->user()->hasRole(['admin']))
             <li {{ request()->is('tipoobra') ? 'class=active' : '' }}><a href="{{ url('/tipoobra') }} ">Tipo de Obra</a></li>
             <li {{ request()->is('estadofactibilidad') ? 'class=active' : '' }}><a href=" {{ url('/estadofactibilidad') }} ">Estado factibilidad</a></li>
+            @endif
           </ul>
         </li>
-        @if (auth()->user()->hasRole(['admin']))
+        
         <li class="treeview {{request()->is('/licencia') ? 'active' :''}}">
           <a href="#"><i class="fa fa-book"></i> <span>Licencias</span>
             <span class="pull-right-container">
@@ -28,12 +30,13 @@
           </a>
           <ul class="treeview-menu">
             <li {{ request()->is('licencia') ? 'class=active' : '' }}><a href="{{ url('/licencia') }}">Licencias</a></li>
+            @if (auth()->user()->hasRole(['admin']))
             <li {{ request()->is('estadolicencia') ? 'class=active' : '' }}><a href="{{ url('/estadolicencia') }}">Estado licencias</a></li>
+            @endif
             <li {{ request()->is('tipovia') ? 'class=active' : '' }}><a href="{{ url('/tipovia') }}">Tipo de via </a></li>
 
           </ul>
         </li>
-        @endif
 
         <li class="treeview">
           <a href="#"><i class="fa  fa-gavel"></i> <span>Denuncias</span>
@@ -42,14 +45,9 @@
               </span>
           </a>
           <ul class="treeview-menu">
-<<<<<<< HEAD
-            <li><a href="{{ url('/denuncia') }}">Denuncias </a></li>
-            <li><a href="{{ url('/ticketdenunciacreate') }}">Seguimiento  </a></li>
-            <li><a href="{{route('estadodenuncias.index')}}">Estado Denuncias</a></li>
-=======
             <li {{ request()->is('denuncia') ? 'class=active' : '' }}><a href="{{ url('/denuncia') }}">Denuncias </a></li>
             <li {{ request()->is('estadodenuncia') ? 'class=active' : '' }}><a href="{{route('estadodenuncias.index')}}">Estado Denuncias</a></li>
->>>>>>> ab736b8e5fed3f88594f8f02ca734be1b977c57c
+            <li {{ request()->is('ticketdenunciacreate') ? 'class=active' : '' }}><a href="{{ url('/ticketdenunciacreate') }}">Ingresar Seguimiento</a></li>
           </ul>
         </li>
 
