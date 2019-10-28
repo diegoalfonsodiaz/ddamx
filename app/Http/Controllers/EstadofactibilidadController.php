@@ -7,7 +7,11 @@ use App\Estadofactibilidad;
 
 class EstadofactibilidadController extends Controller
 {
-    
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $estadofactibilidades = Estadofactibilidad::all();
@@ -21,6 +25,7 @@ class EstadofactibilidadController extends Controller
 
     public function store(Request $request)
     {
+        $request->user()->autorizeRoles(['admin']);
         $this->validate($request,
             [
                 'nombre'=>'required|max:190'
@@ -40,14 +45,16 @@ class EstadofactibilidadController extends Controller
     }
 
     
-    public function edit(Estadofactibilidad $estadofactibilidad)
+    public function edit(Estadofactibilidad $estadofactibilidad,Request $request)
     {
+        $request->user()->autorizeRoles(['admin']);
         return view('estadofactibilidad.edit',compact('estadofactibilidad'));
     }
 
     
     public function update(Request $request, Estadofactibilidad $estadofactibilidad)
     {
+        $request->user()->autorizeRoles(['admin']);
         $request->validate([
             'nombre' => 'required'
         ]);
@@ -59,6 +66,7 @@ class EstadofactibilidadController extends Controller
 
     public function desactivar(Estadofactibilidad $estadofactibilidad, Request $request)
     {
+        $request->user()->autorizeRoles(['admin']);
         $estadofactibilidad->estado='0';
         $estadofactibilidad->save();
         return redirect(route('estadofactibilidad.index'))->with('info', 'Estado desactivado correctamente');
@@ -66,6 +74,7 @@ class EstadofactibilidadController extends Controller
 
     public function activar(Estadofactibilidad $estadofactibilidad, Request $request)
     {
+        $request->user()->autorizeRoles(['admin']);
         $estadofactibilidad->estado='1';
         $estadofactibilidad->save();
         return redirect(route('estadofactibilidad.index'))->with('info', 'Estado activado correctamente');

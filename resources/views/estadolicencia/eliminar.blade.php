@@ -12,7 +12,7 @@
             <input type="hidden" name="nombre" value="{{ $estadolicen->nombre }}" class="form-control" placeholder="Estado Licencia">
             <br>
             <label for="">DESCRIPCIÓN: </label>
-            <strong><label>{{ $estadolicen->descripcion }}</label></strong>
+            <strong><label>{{ $estadolicen->descripción }}</label></strong>
             <input type="hidden" name="descripcion" value="{{ $estadolicen->descripcion }}" class="form-control" placeholder="Estado Licencia">
             <br>
             <button type="submit" class="btn btn-primary">Eliminar</button>

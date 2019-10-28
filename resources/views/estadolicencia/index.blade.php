@@ -3,7 +3,7 @@
 @section('header')
   <h1>Estado Licencia</h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+        <li><a href="/menu"><i class="fa fa-dashboard"></i> Inicio</a></li>
         <li class="active">Estado Licencia</li>
       </ol>
 @stop
@@ -35,8 +35,9 @@
         <thead>
         <tr>
         <th scope="col" width="250px">Nombre</th>
-        <th scope="col" width="450px">Descripcion</th>
+        <th scope="col" width="450px">Descripción</th>
         <th scope="col" width="200px">Estado</th>
+        <th scope="col" width="200px">Acciones</th>
         </tr>
     </thead>
 

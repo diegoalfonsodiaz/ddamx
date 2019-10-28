@@ -12,11 +12,17 @@ class TipoobraController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+    public function __construct()
     {
-        
-       $tipoobra =Tipoobra::all();        
-       return view('tipoobra.index',compact('tipoobra'));
+        $this->middleware('auth');
+    }
+
+    public function index(Request $request)
+    {
+        $request->user()->autorizeRoles(['admin']);
+        $tipoobra =Tipoobra::all();        
+        return view('tipoobra.index',compact('tipoobra'));
     }
 
     /**
@@ -24,8 +30,9 @@ class TipoobraController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
+        $request->user()->autorizeRoles(['admin']);
         return view('tipoobra.create');
         //
     }
@@ -38,6 +45,7 @@ class TipoobraController extends Controller
      */
     public function store(Request $request)
     {
+        $request->user()->autorizeRoles(['admin']);
         $this->validate($request,
             [
                 'nombre'=>'required'
@@ -70,8 +78,9 @@ class TipoobraController extends Controller
      * @param  \App\Tipoobra  $tipoobra
      * @return \Illuminate\Http\Response
      */
-    public function edit(Tipoobra $tipoobra)
+    public function edit(Tipoobra $tipoobra,Request $request)
     {
+        $request->user()->autorizeRoles(['admin']);
         return view('tipoobra.edit', compact('tipoobra'));
     }
 
@@ -84,6 +93,7 @@ class TipoobraController extends Controller
      */
     public function update(Tipoobra $tipoobra, Request $request )
     {
+        $request->user()->autorizeRoles(['admin']);
         $this->validate($request,
             [
                 'nombre'=>'required'
@@ -110,6 +120,7 @@ class TipoobraController extends Controller
   
     public function desactivar(Tipoobra $tipoobra, Request $request)
     {
+        $request->user()->autorizeRoles(['admin']);
      
         $tipoobra->estado='0';
         $tipoobra->save();
@@ -118,7 +129,8 @@ class TipoobraController extends Controller
 
     public function activar(Tipoobra $tipoobra, Request $request)
     {
-     
+        
+        $request->user()->autorizeRoles(['admin']);
         $tipoobra->estado='1';
         $tipoobra->save();
         return redirect(route('tipoobras.index'))->with('flash', 'Tipo de obra activada correctamente');
