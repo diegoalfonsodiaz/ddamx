@@ -43,7 +43,7 @@ class EjecutorController extends Controller
         //
     }
 
-    public function edit($id, EjecutorRequest $request)
+    public function edit($id)
     {
         $cargoejecutor=Cargoejecutor::all();
         $ejecutor=Ejecutor::findOrFail($id);
