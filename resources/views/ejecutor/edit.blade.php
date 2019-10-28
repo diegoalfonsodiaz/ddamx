@@ -1,5 +1,15 @@
 @extends('admin.principal')
 @section('contenido')
+
+@if(count($errors)>0)
+<button type="buttom" class="close" data-dismiss="alert">Cerrar</button>
+    @foreach($errors->all() as $error)
+        <div class="alert alert-danger"> 
+            <button type="buttom" class="close" data-dismiss="alert">Cerrar</button>
+            {{ $error }}
+        </div>
+    @endforeach
+@endif
 <div class="box box-primary">
             <div class="box-header with-border">
               <h3 class="box-title">Editar Cargo de ejecutor</h3>

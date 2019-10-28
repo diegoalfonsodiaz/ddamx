@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Contacto;
 use Illuminate\Http\Request;
+use Illuminate\Session\SessionManager;
 use App\Http\Requests\ContactoRequest;
 
 class ContactoController extends Controller
@@ -39,7 +40,7 @@ class ContactoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, SessionManager $sessionManager)
     {
         $this->validate($request,
             [
@@ -53,8 +54,11 @@ class ContactoController extends Controller
         $contacto->descripcion = $request->input('descripcion');
         $contacto->save();
 
+        $sessionManager->flash('mensajetipo', '!Gracias por comunicarte con nosotros!');
+        $sessionManager->flash('mensaje', 'La interacción con nosotros nos permite ofrecerte un mejor servicio.');
+
         
-        return redirect('contactoexterno')->with('info', 'Se envio Corectamente tu comentario');
+        return view('front.respuesta');
         //
     }
 

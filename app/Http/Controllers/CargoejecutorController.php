@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Cargoejecutor;
 use Illuminate\Http\Request;
+use App\Http\Requests\CargoEjecutorRequest;
 
 class CargoejecutorController extends Controller
 {
@@ -14,6 +15,7 @@ class CargoejecutorController extends Controller
      */
     public function index()
     {
+
         $cargoejecutor = Cargoejecutor::latest()->paginate(5);
   
         return view('cargoejecutor.index',compact('cargoejecutor'))
@@ -36,13 +38,9 @@ class CargoejecutorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CargoEjecutorRequest $request)
     {
-        $this->validate($request,
-            [
-                'nombre'=>'required|max:190'
-            ]
-        );
+        
         $cargoejecutor = new Cargoejecutor;
         $cargoejecutor->nombre = $request->input('nombre');
         $cargoejecutor->estado = '1';
