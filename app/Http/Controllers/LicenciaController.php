@@ -64,15 +64,15 @@ class LicenciaController extends Controller
         
         
             
-            /*$estado=Estadolicencia::where('estado','=','1')
-            ->whereIn('id', [1, 2,3])
-            ->get();*/
             
+            $estadooperaciones=Estadolicencia::where('estado','=','1')
+            ->whereIn('id', [1, 2])
+            ->get();
  
         $solicitud=Solicitud::where('estadofactibilidad_id','=','2')->get();
         $estado=Estadolicencia::where('estado','=','1')->get();
         $tipovia=Tipovia::where('estado','=','1')->get();
-        return view('licencia.create',compact('solicitud','estado','tipovia'));
+        return view('licencia.create',compact('solicitud','estado','tipovia','estadooperaciones'));
     }
 
     /**
@@ -177,6 +177,9 @@ class LicenciaController extends Controller
     public function edit($id, Request $request)
     {
        
+        $estadooperaciones=Estadolicencia::where('estado','=','1')
+            ->whereIn('id', [1, 2])
+            ->get();
         
         
          $solicitud =Solicitud::where('estadofactibilidad_id','=','2')->get();
@@ -185,7 +188,7 @@ class LicenciaController extends Controller
         $tipovia=Tipovia::where('estado','=','1')->get();
        
         
-      return view('licencia.edit', compact('solicitud','estado','tipovia','licencia'));
+      return view('licencia.edit', compact('solicitud','estado','tipovia','licencia','estadooperaciones'));
     }
 
     /**
