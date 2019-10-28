@@ -421,7 +421,7 @@ blockquote {
 .layout-styl li {
     margin-bottom : 20px;
     font-size     : 21px;
-    font-weight   : 300 !important;
+    font-weight   : 500 !important;
     color         : #515763;
     text-align    : left
 }

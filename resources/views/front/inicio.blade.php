@@ -110,6 +110,7 @@ Home
     <section class="purchas-main">
             <div class="container bg-border wow pulse" data-wow-duration="2.5s">
                 <div class="row">
+
                     <div class="col-md-7 col-sm-7 col-xs-12">
                         <h1 class="purchae-hed">Haz tu solicitud de licencia desde el sitio web</h1></div>
                     <div class="col-md-5 col-sm-5 col-xs-12"><a href="{{ url('/buscardpi') }}" class="btn btn-primary purchase-styl ">Solicita ahora</a></div>
@@ -118,31 +119,14 @@ Home
     </section>
 
     <!-- Layout Section Start -->
-    <section class="feature-main">
-    <h1 class="purchae-hed">Sigue estos procesos para obtener tu licencia</h1>
+    
         <div class="container">
-            <div class="row">
-
-                <div class="col-md-9 col-sm-9 col-xs-12 wow zoomIn" data-wow-duration="2s">
-
-                    <div class="layout-image">
-                        <img src="{{ asset('front_end/images/proceso_licencia.png') }}" alt="layout" class="img-responsive" />
+         
+                    <div>
+                        <img src="{{ asset('front_end/images/Proceso_licencia.png') }}" style="width: 100%; height:     100%"/>
                     </div>
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-12 wow lightSpeedIn" data-wow-duration="2s">
-                    <ul class="list-unstyled pull-right text-right layout-styl">
-                        <li>
-                            <i class="livicon" data-name="checked-on" data-size="20" data-loop="true" data-c="#418bca" data-hc="#418bca"></i> Llena el formulario con tus datos
-                        </li>
-                        <li><i class="livicon" data-name="checked-on" data-size="20" data-loop="true" data-c="#418bca" data-hc="#418bca"></i> Contactate con el supervisor asignado </li>
-                        <li><i class="livicon" data-name="checked-on" data-size="20" data-loop="true" data-c="#418bca" data-hc="#418bca"></i> Sigue el proceso de tu licencia </li>
-                        <li><i class="livicon" data-name="checked-on" data-size="20" data-loop="true" data-c="#418bca" data-hc="#418bca"></i> Paga en el lugar indicado </li>
-                        <li><i class="livicon" data-name="checked-on" data-size="20" data-loop="true" data-c="#418bca" data-hc="#418bca"></i> Presenta la documentacion final </li>
-                    </ul>
-                </div>
-            </div>
+           
         </div>
-    </section>
     <!-- //Layout Section Start -->
     
     <!-- //Our Team End -->
