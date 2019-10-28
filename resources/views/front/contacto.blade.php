@@ -113,7 +113,7 @@ Contacto
                 </div>
             </div>
     </div>
-    
+</div>  
 @stop
 
 {{-- page level scripts --}}
