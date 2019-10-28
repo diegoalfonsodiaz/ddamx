@@ -12,8 +12,15 @@ class EstadolicenciaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+    public function __construct()
     {
+        $this->middleware('auth');
+    }
+
+    public function index(Request $request)
+    {
+        $request->user()->autorizeRoles(['admin']);
         $el = Estadolicencia::all();
         return view('estadolicencia.index', ['estadolicencias'=>$el]);
     }
@@ -25,6 +32,7 @@ class EstadolicenciaController extends Controller
      */
     public function create(Request $request)
     {
+        $request->user()->autorizeRoles(['admin']);
         $this->validate($request,
             [
                 'nombre'=>'required',
@@ -70,8 +78,9 @@ class EstadolicenciaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id,Request $request )
     {
+        $request->user()->autorizeRoles(['admin']);
         $el = Estadolicencia::find($id);
         return view('estadolicencia.actualizar', [
             'estadolicen' => $el
@@ -87,6 +96,7 @@ class EstadolicenciaController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->user()->autorizeRoles(['admin']);
         $this->validate($request,
             [
                 'nombre'=>'required',
@@ -110,22 +120,25 @@ class EstadolicenciaController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function eliminar($id)
+    public function eliminar($id,Request $request )
     {
+        $request->user()->autorizeRoles(['admin']);
         $el = Estadolicencia::find($id);
         return view('estadolicencia.eliminar', [
             'estadolicen' => $el
         ]);
     }
      
-    public function destroy($id)
+    public function destroy($id,Request $request)
     {
+        $request->user()->autorizeRoles(['admin']);
         Estadolicencia::find($id)->delete();
         return redirect('estadolicencia')->with('info','Registro eliminado satisfactoriamente');
     }
 
     public function activar(Estadolicencia $estadolicencia, Request $request)
     {
+        $request->user()->autorizeRoles(['admin']);
         $estadolicencia->estado='1';
         $estadolicencia->save();
         return redirect('estadolicencia')->with('info', 'Estado Activado correctamente');
@@ -134,6 +147,7 @@ class EstadolicenciaController extends Controller
 
     public function desactivar(Estadolicencia $estadolicencia, Request $request)
     {
+        $request->user()->autorizeRoles(['admin']);
         $estadolicencia->estado='0';
         $estadolicencia->save();
         return redirect('estadolicencia')->with('info', 'Estado desactivado correctamente');
