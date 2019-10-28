@@ -12,6 +12,10 @@ use Barryvdh\DomPDF\Facade as PDF;
 
 class LicenciaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -57,26 +61,16 @@ class LicenciaController extends Controller
      */
     public function create(Request $request)
     {
-        if($request->user()->autorizeRoles('secretaria')) 
-        {
-            $estado=Estadolicencia::where('estado','=','1')
-            ->whereIn('id', [1, 2])
-            ->get();
-        }
-        if($request->user()->autorizeRoles('jefeoperaciones')) 
-        {
-            $estado=Estadolicencia::where('estado','=','1')
+        
+        
+            
+            /*$estado=Estadolicencia::where('estado','=','1')
             ->whereIn('id', [1, 2,3])
-            ->get();
-        }
-        if($request->user()->autorizeRoles('operaciones')) 
-        {
-            $estado=Estadolicencia::where('estado','=','1')
-            ->whereIn('id', [1, 2])
-            ->get();
-        }
+            ->get();*/
+            
+ 
         $solicitud=Solicitud::where('estadofactibilidad_id','=','2')->get();
-        //$estado=Estadolicencia::where('estado','=','1')->get();
+        $estado=Estadolicencia::where('estado','=','1')->get();
         $tipovia=Tipovia::where('estado','=','1')->get();
         return view('licencia.create',compact('solicitud','estado','tipovia'));
     }
@@ -182,28 +176,12 @@ class LicenciaController extends Controller
      */
     public function edit($id, Request $request)
     {
-        if($request->user()->autorizeRoles('secretaria')) 
-        {
-            $estado=Estadolicencia::where('estado','=','1')
-            ->whereIn('id', [1, 2])
-            ->get();
-        }
-        if($request->user()->autorizeRoles('jefeoperaciones')) 
-        {
-            $estado=Estadolicencia::where('estado','=','1')
-            ->whereIn('id', [1, 2,3])
-            ->get();
-        }
-        if($request->user()->autorizeRoles('operaciones')) 
-        {
-            $estado=Estadolicencia::where('estado','=','1')
-            ->whereIn('id', [1, 2])
-            ->get();
-        }
+       
+        
         
          $solicitud =Solicitud::where('estadofactibilidad_id','=','2')->get();
         $licencia=Licencia::findOrFail($id);
-        // $estado=Estadolicencia::where('estado','=','1');
+        $estado=Estadolicencia::where('estado','=','1')->get();
         $tipovia=Tipovia::where('estado','=','1')->get();
        
         

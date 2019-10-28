@@ -96,13 +96,34 @@
                             {!! $errors->first('monto',' <span class="help-block">Campo obligatorio</span>')!!}
                         </div>
                         
+
                         <div class="form-group {{ $errors->has('estadolicencia_id') ? 'has-error': ''}}">
                             <strong>Estado de licencia</strong>
                             <select name="estadolicencia_id" id="estadolicencia_id"  class="form-control selectpicker" data-live-search="true">
                                 <option value="0" disabled selected>=== Seleccione el estado de la Licencia ===</option>
+                                    @if (auth()->user()->hasRole(['operacion']))
+                                        @foreach($estado as $c)
+                                            @if ($c->id==1)
+                                            <option value="{{$c->id}}">{{$c->nombre}}</option>
+                                            @endif
+                                            @if ($c->id==2)
+                                            <option value="{{$c->id}}">{{$c->nombre}}</option>
+                                            @endif
+                                        @endforeach
+                                    @elseif(auth()->user()->hasRole(['jefeoperaciones']))
                                     @foreach($estado as $c)
                                         <option value="{{$c->id}}">{{$c->nombre}}</option>
                                     @endforeach
+                                    @elseif(auth()->user()->hasRole(['admin']))
+                                    @foreach($estado as $c)
+                                        <option value="{{$c->id}}">{{$c->nombre}}</option>
+                                    @endforeach
+
+                                    @endif
+
+                                    <!-- @foreach($estado as $c)
+                                        <option value="{{$c->id}}">{{$c->nombre}}</option>
+                                    @endforeach -->
                             </select>
 
                             {!! $errors->first('estadolicencia_id',' <span class="help-block">Campo obligatorio</span>')!!}

@@ -114,16 +114,27 @@
                             <strong>Estado de licencia</strong>
                             <select name="estadolicencia_id" id="estadolicencia_id"  class="form-control selectpicker" data-live-search="true">
                                 
-                                @foreach($estado as $c)
-                                      @if ($c->id==$licencia->estadolicencia_id)
-                                        <option value="{{$c->id}}" selected>{{$c->nombre}}</option>
-                                        @else
+                            @if (auth()->user()->hasRole(['operacion']))
+                                        @foreach($estado as $c)
+                                            @if ($c->id==1)
+                                            <option value="{{$c->id}}">{{$c->nombre}}</option>
+                                            @endif
+                                            @if ($c->id==2)
+                                            <option value="{{$c->id}}">{{$c->nombre}}</option>
+                                            @endif
+                                        @endforeach
+                                    @elseif(auth()->user()->hasRole(['jefeoperaciones']))
+                                    @foreach($estado as $c)
                                         <option value="{{$c->id}}">{{$c->nombre}}</option>
-                                        @endif
                                     @endforeach
+                                    @elseif(auth()->user()->hasRole(['admin']))
+                                    @foreach($estado as $c)
+                                        <option value="{{$c->id}}">{{$c->nombre}}</option>
+                                    @endforeach
+
+                                    @endif
                             </select>
                             {!! $errors->first('estadolicencia_id',' <span class="help-block">Campo obligatorio</span>')!!}
-
                         </div>
                       
                         
