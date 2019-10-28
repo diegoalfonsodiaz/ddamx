@@ -2,7 +2,7 @@
 
 {{-- Page title --}}
 @section('title')
-Home
+Inicio
 @parent
 @stop
 
@@ -51,7 +51,7 @@ Home
                     <div class="info">
                         <h3 class="success text-center">Consulta</h3>
                         <p>Consulta si cuentas con la licencia para poder instalar los servicios de alcantarillado y drenaje.</p>
-                        <div class="text-right primary"><a href="{{ url('/buscardpiestado') }}">Consultar</a>
+                        <div class="text-right primary"><a href="{{ url('/buscarcodigo') }}">Consultar</a>
                         </div>
                     </div>
                 </div>
@@ -66,7 +66,7 @@ Home
                     </div>
                     <div class="info">
                         <h3 class="primary text-center">Solicita</h3>
-                        <p>En caso de no contar con la licencia de drenaje y alcantarillado sigue los pasos para realizar la solicitud de está.</p>
+                        <p>En caso de no contar con la licencia de conexión de drenaje y alcantarillado realiza la solicitud de factibilidad para la conexión de los servicios.</p>
                         <div class="text-right primary"><a href="{{ url('/buscardpi') }}">Solicitar</a>
                         </div>
                     </div>
@@ -81,8 +81,8 @@ Home
                     </div>
                     <div class="info">
                         <h3 class="warning text-center">Denuncia</h3>
-                        <p>Reporta cualquier anomalia que veas, esto nos ayudara a ofrecerte un mejor servicio para todos.</p>
-                        <div class="text-right primary"><a href="{{ url('/denunciaexterna') }}">Denuncia</a>
+                        <p>Reporta cualquier anomalía que veas, esto nos ayudara a ofrecerte un mejor servicio para todos.</p>
+                        <div class="text-right primary"><a href="{{ url('/denunciaexterna') }}">Denunciar</a>
                         </div>
                     </div>
                 </div>
@@ -96,7 +96,7 @@ Home
                     </div>
                     <div class="info">
                         <h3 class="yellow text-center">Contactanos</h3>
-                        <p>Contacta con nosotros para poder realizar cualquier tramite o hacernos saber cualquier duda que tengas.</p>
+                        <p>Contacta con nosotros para poder realizar cualquier trámite o hacernos saber cualquier duda que tengas.</p>
                         <div class="text-right primary"><a href="{{ url('/contactoexterno') }}">Cantactanos</a>
                         </div>
                     </div>
@@ -110,79 +110,30 @@ Home
     <section class="purchas-main">
             <div class="container bg-border wow pulse" data-wow-duration="2.5s">
                 <div class="row">
+
                     <div class="col-md-7 col-sm-7 col-xs-12">
                         <h1 class="purchae-hed">Haz tu solicitud de licencia desde el sitio web</h1></div>
                     <div class="col-md-5 col-sm-5 col-xs-12"><a href="{{ url('/buscardpi') }}" class="btn btn-primary purchase-styl ">Solicita ahora</a></div>
                 </div>
             </div>
     </section>
-
+    <br>
     <!-- Layout Section Start -->
-    <section class="feature-main">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-md-9 col-sm-9 col-xs-12 wow zoomIn" data-wow-duration="2s">
-                    <div class="layout-image">
-                        <img src="{{ asset('front_end/images/ejemplo4.png') }}" alt="layout" class="img-responsive" />
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-12 wow lightSpeedIn" data-wow-duration="2s">
-                    <ul class="list-unstyled pull-right text-right layout-styl">
-                        <li>
-                            <i class="livicon" data-name="checked-on" data-size="20" data-loop="true" data-c="#418bca" data-hc="#418bca"></i> Llena el formulario con tus datos
-                        </li>
-                        <li><i class="livicon" data-name="checked-on" data-size="20" data-loop="true" data-c="#418bca" data-hc="#418bca"></i> Contactate con el supervisor asignado </li>
-                        <li><i class="livicon" data-name="checked-on" data-size="20" data-loop="true" data-c="#418bca" data-hc="#418bca"></i> Sigue el proceso de tu licencia </li>
-                        <li><i class="livicon" data-name="checked-on" data-size="20" data-loop="true" data-c="#418bca" data-hc="#418bca"></i> Paga en el lugar indicado </li>
-                        <li><i class="livicon" data-name="checked-on" data-size="20" data-loop="true" data-c="#418bca" data-hc="#418bca"></i> Presenta la documentacion final </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- //Layout Section Start -->
     
-    <!-- //Our Team End -->
-        <!-- What we are section Start -->
-    <div class="container">
-        <div class="row">
-            <!-- What we are Start -->
-            <div class="col-md-6 col-sm-6 wow zoomInLeft" data-wow-duration="3s">
-                <div class="text-left">
+        <div class="container">
+         
                     <div>
-                        <h4 class="border-warning"><span class="heading_border bg-warning">Misión</span></h4>
+                        <img src="{{ asset('front_end/images/Proceso_licencia.png') }}" style="width: 100%; height:     100%"/>
                     </div>
-                </div>
-                <img src="{{ asset('front_end/images/mision.jpg') }}" alt="image_12" class="img-responsive">
-                <p>
-                    Proporcionar soluciones integrales y sostenibles para el manejo de aguas residuales y pluviales, tanto en el área urbana como en el área rural del municipio de Quetzaltenango.
-                        Las condiciones municipales promueven con énfasis la competitividad e inversiones para lograr un desarrollo eficaz en los servicios y todos los ciudadanos puedan beneficiarse.
-                </p>
-                
-            </div>
-            <!-- //What we are End -->
-            <!-- About Us Start -->
-            <div class="col-md-6 col-sm-6 wow zoomInRight" data-wow-duration="3s">
-                <div class="text-left">
-                    <div>
-                        <h4 class="border-success"><span class="heading_border bg-success">Mision</span></h4>
-                    </div>
-                </div>
-                <img src="{{ asset('front_end/images/vision.jpg') }}" alt="image_11" class="img-responsive">
-                <p>
-                    Somos el servicio municipal de referencia en la región occidental para el manejo de aguas residuales y aguas pluviales, financieramente auto sostenible, administrativamente eficiente e integral en las soluciones que propone para la gestión de aguas residuales y pluviales en el área urbana y rural del municipio de Quetzaltenango.
-                </p>
-            </div>
-            <!-- //About Us End -->
+           
         </div>
-        <!-- //What we are section End -->
-        <!-- Testimonial Start -->
 
-        <!-- //Our Skills End -->
     </div>
     <!-- //Container End -->
 </div>
+
+<br>
+<br>
 
 @stop
 {{-- footer scripts --}}

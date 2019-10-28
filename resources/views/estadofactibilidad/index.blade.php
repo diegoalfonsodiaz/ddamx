@@ -33,7 +33,7 @@
         
 
         <div class="box-body">
-          <table id="persona-table" class="table table-striped table-bordered" style="width:100%">
+          <table id="" class="table table-striped table-bordered" style="width:100%">
               <thead>
                   <tr>
                     <th scope="col">Nombre</th>

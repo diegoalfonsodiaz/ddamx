@@ -96,20 +96,53 @@
                             {!! $errors->first('monto',' <span class="help-block">Campo obligatorio</span>')!!}
                         </div>
                         
+
+                        @if (auth()->user()->hasRole(['admin']))
                         <div class="form-group {{ $errors->has('estadolicencia_id') ? 'has-error': ''}}">
                             <strong>Estado de licencia</strong>
                             <select name="estadolicencia_id" id="estadolicencia_id"  class="form-control selectpicker" data-live-search="true">
                                 <option value="0" disabled selected>=== Seleccione el estado de la Licencia ===</option>
-                                    @foreach($estado as $c)
+                                @foreach($estado as $c)
                                         <option value="{{$c->id}}">{{$c->nombre}}</option>
                                     @endforeach
+
+                                    
                             </select>
 
                             {!! $errors->first('estadolicencia_id',' <span class="help-block">Campo obligatorio</span>')!!}
                         </div>
-                        
-                        
+                        @elseif (auth()->user()->hasRole(['jefeoperaciones']))
 
+                        <div class="form-group {{ $errors->has('estadolicencia_id') ? 'has-error': ''}}">
+                            <strong>Estado de licencia</strong>
+                            <select name="estadolicencia_id" id="estadolicencia_id"  class="form-control selectpicker" data-live-search="true">
+                                <option value="0" disabled selected>=== Seleccione el estado de la Licencia ===</option>
+                                @foreach($estado as $c)
+                                        <option value="{{$c->id}}">{{$c->nombre}}</option>
+                                    @endforeach
+
+                                    
+                            </select>
+
+                            {!! $errors->first('estadolicencia_id',' <span class="help-block">Campo obligatorio</span>')!!}
+                        </div>
+
+                        @elseif (auth()->user()->hasRole(['operaciones']))
+
+                        <div class="form-group {{ $errors->has('estadolicencia_id') ? 'has-error': ''}}">
+                            <strong>Estado de licencia</strong>
+                            <select name="estadolicencia_id" id="estadolicencia_id"  class="form-control selectpicker" data-live-search="true">
+                                <option value="0" disabled selected>=== Seleccione el estado de la Licencia ===</option>
+                                @foreach($estadooperaciones as $ci)
+                                        <option value="{{$ci->id}}">{{$ci->nombre}}</option>
+                                    @endforeach
+
+                                    
+                            </select>
+
+                            {!! $errors->first('estadolicencia_id',' <span class="help-block">Campo obligatorio</span>')!!}
+                        </div>
+                        @endif
                     </div>
                     
                     <div class="col-xs-12 col-sm-12 col-md-12 ">

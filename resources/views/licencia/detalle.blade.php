@@ -20,6 +20,18 @@
                             <strong>Código de inmueble</strong>
                             <input type="text" name="codigoinmueble"  value="{{ $licencias->codigoinmueble }}" class="form-control" placeholder="Fecha Autorizacion" disabled>
                         </div>
+                        @foreach($datos as $dato)
+                        <div class="form-group">
+                            <strong>Nombres</strong>
+                            <input type="text" name="codigoinmueble"  value="{{ $dato->nombre_persona }}" class="form-control" placeholder="Fecha Autorizacion" disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <strong>Apellidos</strong>
+                            <input type="text" name="codigoinmueble"  value="{{ $dato->apellido }}" class="form-control" placeholder="Fecha Autorizacion" disabled>
+                        </div>
+                        @endforeach
+                       
 
                         <div class="form-group">
                             <strong>Número de licencia</strong>
@@ -37,10 +49,7 @@
                             <input type="text" name="tipovia"  value="{{ $licencias->tipovia }}" class="form-control" placeholder="Fecha Autorizacion" disabled>
                         </div>
 
-                        <div class="form-group">
-                            <strong>Número de recibo</strong>
-                            <input type="text" name="recibo"  value="{{ $licencias->recibo }}" class="form-control" placeholder="Fecha Autorizacion" disabled>
-                        </div>
+                       
 
                        
 
@@ -53,6 +62,10 @@
     <div class="col-md-6">
         <div class="box box-primary">
             <div class="box-body">
+            <div class="form-group">
+                            <strong>Número de recibo</strong>
+                            <input type="text" name="recibo"  value="{{ $licencias->recibo }}" class="form-control" placeholder="Fecha Autorizacion" disabled>
+                        </div>
 
                          <div class="form-group">
                             <strong>Derecho</strong>

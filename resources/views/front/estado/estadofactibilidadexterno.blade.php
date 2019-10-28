@@ -5,7 +5,7 @@
 <!-- Main content -->
 <section class="content paddingleft_right15">
  <h2>
-                    Solicitudes de factibilidad regigistradas
+                    Solicitudes de factibilidad registradas
                 </h2>
     <div class="row">
         <div class="panel panel-primary ">
@@ -19,13 +19,13 @@
                             <tr>
                             
                                 <th>Solicitud No.</th>
-                                <th>Nombre</th>
+                                <th>Nombres</th>
                                 <th>Apellidos</th>
                                 <th>DPI</th>
                                 <th>Fecha de solicitud</th>
                                 <th>Dirección de la obra</th>
                                 <th>Inmueble</th>
-                                <th>Estado</th>
+                                <th>Estado factibilidad</th>                         
                             </tr>
                         </thead>
                         <tbody>
@@ -38,7 +38,7 @@
                                 <td>{{$solicitudes->fechasolicitud}}</td>
                                 <td>{{$solicitudes->direccionobra}}</td>
                                 <td>{{$solicitudes->codigoinmueble}}</td>
-                                <td>{{$solicitudes->nombre_estadofactibilidad}}</td>
+                                <td style="color:#0e70cc;"><b>{{$solicitudes->nombre_estadofactibilidad}}</b></td>
                             </tr>
                             @endforeach
                         </tbody>

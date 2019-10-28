@@ -1,8 +1,7 @@
 @extends('admin.principal')
 @section('header')
   <h1>
-    Tickets
-    <small>Seguimiento de casos en bitacora</small>
+    Seguimiento de casos
   </h1>
 
   <ol class="breadcrumb">
@@ -28,7 +27,6 @@
                   <th>Ticket ID</th>
                   <th>Descripción</th>
                   <th>Encargado</th>
-                  <th width="280px">Acciones</th>
                 </tr>
             </thead>
             <tbody>

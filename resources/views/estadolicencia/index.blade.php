@@ -3,11 +3,9 @@
 @section('header')
   <h1>Estado Licencia</h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+        <li><a href="/menu"><i class="fa fa-dashboard"></i> Inicio</a></li>
         <li class="active">Estado Licencia</li>
-        <br>
       </ol>
-      
 @stop
 
 @section('contenido')
@@ -28,7 +26,7 @@
 
       <div class="box-header">
         <a href="{{ url('/agregarForm') }}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear Estado</a>
-        <h3 class="box-title">Listado de Estados de Licencia</h3>
+        <h3 class="box-title">Estado Licencia</h3>
       </div>
 
 
@@ -37,7 +35,8 @@
         <thead>
         <tr>
         <th scope="col" width="250px">Nombre</th>
-        <th scope="col" width="450px">Descripcion</th>
+        <th scope="col" width="450px">Descripción</th>
+        <th scope="col" width="200px">Estado</th>
         <th scope="col" width="200px">Acciones</th>
         </tr>
     </thead>

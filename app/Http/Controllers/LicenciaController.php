@@ -12,6 +12,10 @@ use Barryvdh\DomPDF\Facade as PDF;
 
 class LicenciaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -19,18 +23,35 @@ class LicenciaController extends Controller
      */
     public function index()
     {
-        $licencia= DB::table('licencias as l')
+        $datos=[];
+        $licencia= DB::table('licencias')
         //persona
-        ->join('solicituds as ef', 'l.solicitudfactibilidad_id','=', 'ef.id')
+        ->leftjoin('solicituds', 'licencias.solicitudfactibilidad_id','=', 'solicituds.id')
         //ejecutor
-        ->join('estadolicencias as el', 'l.estadolicencia_id','=', 'el.id')
+        ->leftjoin('estadolicencias', 'licencias.estadolicencia_id','=', 'estadolicencias.id')
         //tipoobra
-        ->join('tipovias as tpv', 'l.tipovia_id','=', 'tpv.id')
+        ->leftjoin('tipovias', 'licencias.tipovia_id','=', 'tipovias.id')
         
         //
-        ->select('l.id','l.numerolicencia', 'l.fechaautorizacion','l.recibo','l.monto','l.derecho','l.remocion','l.fechaconexion','ef.codigoinmueble as inmueble','el.nombre as estadolicencia','tpv.nombre as tipovia')
+        ->select('solicituds.id as idsolicitud','licencias.id','licencias.numerolicencia', 'licencias.fechaautorizacion',
+        'licencias.recibo','licencias.monto','licencias.derecho','licencias.remocion','licencias.fechaconexion',
+        'solicituds.codigoinmueble as inmueble','estadolicencias.nombre as estadolicencia',
+        'licencias.estadolicencia_id','tipovias.nombre as tipovia')
         ->get();
-        return view('licencia.index', ["licencia"=>$licencia])->with('i');
+        foreach ($licencia as $licencias) {
+        $datos=DB::table('solicituds')
+       ->leftjoin('personas','solicituds.persona_id','personas.id')
+       ->leftjoin('ejecutors','solicituds.ejecutor_id','ejecutors.id')
+       ->select('personas.nombre as nombre_persona','personas.apellido','ejecutors.nombre as nombre_ejecutor',
+       'ejecutors.direccion as direccion_ejecutor')
+       ->where('solicituds.id','=',$licencias->idsolicitud)
+       ->get();
+       
+            }
+           
+          
+        //return view('licencia.index', ["licencia"=>$licencia])->with('i');
+        return view('licencia.index',compact('licencia','datos'));
     }
 
     /**
@@ -38,12 +59,20 @@ class LicenciaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
+        
+        
+            
+            
+            $estadooperaciones=Estadolicencia::where('estado','=','1')
+            ->whereIn('id', [1, 2])
+            ->get();
+ 
         $solicitud=Solicitud::where('estadofactibilidad_id','=','2')->get();
         $estado=Estadolicencia::where('estado','=','1')->get();
         $tipovia=Tipovia::where('estado','=','1')->get();
-        return view('licencia.create',compact('solicitud','estado','tipovia'));
+        return view('licencia.create',compact('solicitud','estado','tipovia','estadooperaciones'));
     }
 
     /**
@@ -85,13 +114,24 @@ class LicenciaController extends Controller
         ->leftjoin('solicituds','licencias.solicitudfactibilidad_id','=','solicituds.id')
         ->select('licencias.numerolicencia as numerolicencia','licencias.fechaautorizacion as fechaautorizacion','licencias.recibo as recibo',
         'licencias.monto as monto', 'licencias.derecho as derecho','licencias.remocion as remocion','licencias.fechaconexion as fechaconexion',
-        'estadolicencias.nombre as nombre','solicituds.codigoinmueble as codigoinmueble','tipovias.nombre as tipovia')
+        'estadolicencias.nombre as nombre','solicituds.codigoinmueble as codigoinmueble','tipovias.nombre as tipovia',
+        'solicituds.id as idsolicitud')
         ->where('licencias.id','=',$id)
         ->get();
 
-        return view('licencia.detalle', [
-            'licencia' => $licencia
-        ]);
+        foreach ($licencia as $licencias) {
+            $datos=DB::table('solicituds')
+       ->leftjoin('personas','solicituds.persona_id','personas.id')
+       ->leftjoin('ejecutors','solicituds.ejecutor_id','ejecutors.id')
+       ->select('personas.nombre as nombre_persona','personas.apellido','ejecutors.nombre as nombre_ejecutor',
+       'ejecutors.direccion as direccion_ejecutor')
+       ->where('solicituds.id','=',$licencias->idsolicitud)
+       ->get();
+       
+       }  
+
+
+       return view('licencia.detalle',compact('licencia','datos'));
     }
 
     public function exportpdf($id)
@@ -134,15 +174,21 @@ class LicenciaController extends Controller
      * @param  \App\Licencia  $licencia
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, Request $request)
     {
-        $solicitud =Solicitud::where('estadofactibilidad_id','=','2')->get();
+       
+        $estadooperaciones=Estadolicencia::where('estado','=','1')
+            ->whereIn('id', [1, 2])
+            ->get();
+        
+        
+         $solicitud =Solicitud::where('estadofactibilidad_id','=','2')->get();
         $licencia=Licencia::findOrFail($id);
         $estado=Estadolicencia::where('estado','=','1')->get();
         $tipovia=Tipovia::where('estado','=','1')->get();
        
         
-       return view('licencia.edit', compact('solicitud','estado','tipovia','licencia'));
+      return view('licencia.edit', compact('solicitud','estado','tipovia','licencia','estadooperaciones'));
     }
 
     /**

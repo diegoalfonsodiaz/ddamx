@@ -6,6 +6,7 @@ use App\Ejecutor;
 use Illuminate\Http\Request;
 use App\Cargoejecutor;
 use DB;
+use App\Http\Requests\EjecutorRequest;
 
 class EjecutorController extends Controller
 {
@@ -30,7 +31,7 @@ class EjecutorController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(EjecutorRequest $request)
     {
         Ejecutor::create($request->all());
         return redirect()->route('ejecutor.index');
@@ -42,7 +43,7 @@ class EjecutorController extends Controller
         //
     }
 
-    public function edit($id)
+    public function edit($id, EjecutorRequest $request)
     {
         $cargoejecutor=Cargoejecutor::all();
         $ejecutor=Ejecutor::findOrFail($id);

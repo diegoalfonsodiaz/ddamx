@@ -216,3 +216,10 @@ Route::get('buscardpiestado', 'FrontendController@indexdpiestado');
 Route::put('solicituddpiestado','EstadoFactibilidadExternoController@solicitardpiestado')->name('solicituddpiestado.solicitardpiestado');
 Route::resource('estadofactibilidadexterno', 'EstadoFactibilidadExternoController');
 Route::get('pruebalogin', 'FrontendController@indexlogin');
+Route::get('solicitudfinalizada', 'FrontendController@indexsolicitudfinalizada');
+Route::get('nosotros', 'FrontendController@indexnosotros');
+Route::get('preguntas', 'FrontendController@indexpreguntas');
+Route::get('buscarcodigo', 'FrontendController@indexcodigo');
+Route::put('solicitudcodigo','EstadoFactibilidadExternoController@solicitarcodigo')->name('solicitudcodigo.solicitarcodigo');
+
+

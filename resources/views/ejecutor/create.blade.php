@@ -1,5 +1,15 @@
 @extends('admin.principal')
 @section('contenido')
+@if(count($errors)>0)
+<div class="alert alert-danger">
+    @foreach($errors->all() as $error)
+        <ul>
+            <li>{{ $error }}</li>    
+        </ul>  
+        
+    @endforeach
+    </div>
+@endif
 <div class="box box-primary" >
             <div class="box-header with-border">
               <h1 class="box-title">Crear </h1>

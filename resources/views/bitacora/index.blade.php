@@ -44,8 +44,8 @@
                                 <td>{{$bitacoras->asunto}}</td>
                                 <td>
                                 <form action="{{ route('bitacora.destroy',$bitacoras->id) }}" method="POST">
-                                    <a class="btn btn-primary" href="{{ route('bitacora.edit', $bitacoras->id) }}">Editar</a>
-                                    <a class="btn btn-primary" href="{{ route('ticket.index', $bitacoras->id) }}">Seguimiento</a>
+                                    <a  href="{{ route('bitacora.edit', $bitacoras->id) }}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
+                                    <a class="btn btn-xs btn-primary" href="{{ route('ticket.index', $bitacoras->id) }}">Seguimiento</a>
                                     @csrf
                                     @method('DELETE')
                                     

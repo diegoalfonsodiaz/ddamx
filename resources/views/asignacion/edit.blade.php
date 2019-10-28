@@ -30,7 +30,7 @@
                     <label for="user_id">Usuario</label>
                     <select class="form-control input-lg" name="user_id" id="user_id" class="form-control selectpicker" data-live-search="true">
                         @foreach($usuario as $u)
-                        @if ($u->id==$asignacion->id)
+                        @if ($u->id==$asignacion->user_id)
                             <option value="{{$u->id}}" selected>{{$u->name}}</option>
                             @else
                             <option value="{{$u->id}}">{{$u->name}}</option>
@@ -45,7 +45,7 @@
                     <label for="role_id">Rol</label>
                     <select class="form-control input-lg" name="role_id" id="role_id" class="form-control selectpicker" data-live-search="true">
                         @foreach($rol as $r)
-                        @if ($r->id==$asignacion->id)
+                        @if ($r->id==$asignacion->role_id)
                             <option value="{{$u->id}}" selected>{{$r->nombre}}</option>
                             @else
                             <option value="{{$r->id}}">{{$r->nombre}}</option>
