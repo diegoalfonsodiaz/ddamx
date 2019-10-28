@@ -19,6 +19,7 @@ class LicenciaController extends Controller
      */
     public function index()
     {
+        $datos=[];
         $licencia= DB::table('licencias')
         //persona
         ->leftjoin('solicituds', 'licencias.solicitudfactibilidad_id','=', 'solicituds.id')
@@ -40,8 +41,10 @@ class LicenciaController extends Controller
        'ejecutors.direccion as direccion_ejecutor')
        ->where('solicituds.id','=',$licencias->idsolicitud)
        ->get();
+       
             }
            
+          
         //return view('licencia.index', ["licencia"=>$licencia])->with('i');
         return view('licencia.index',compact('licencia','datos'));
     }
