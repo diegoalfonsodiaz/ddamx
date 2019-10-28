@@ -73,11 +73,7 @@ class FrontendController extends Controller
         return view('front.preguntas');
         //
     }
-    public function indexpruebahtml()
-    {
-        return view('front.pruebahtml');
-        //
-    }
+
     
     
 

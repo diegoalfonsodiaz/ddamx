@@ -51,7 +51,7 @@ Inicio
                     <div class="info">
                         <h3 class="success text-center">Consulta</h3>
                         <p>Consulta si cuentas con la licencia para poder instalar los servicios de alcantarillado y drenaje.</p>
-                        <div class="text-right primary"><a href="{{ url('/buscardpiestado') }}">Consultar</a>
+                        <div class="text-right primary"><a href="{{ url('/buscarcodigo') }}">Consultar</a>
                         </div>
                     </div>
                 </div>
