@@ -4,8 +4,9 @@
 @section('content')
 <!-- Main content -->
 <section class="content paddingleft_right15">
+
  <h2>
-                    Solicitudes de factibilidad registradas
+                    Estado de la licencia
                 </h2>
     <div class="row">
         <div class="panel panel-primary ">
@@ -25,7 +26,8 @@
                                 <th>Fecha de solicitud</th>
                                 <th>Dirección de la obra</th>
                                 <th>Inmueble</th>
-                                <th>Estado factibilidad</th>                         
+                                <th>Estado factibilidad</th>
+                                <th>Estado licencia</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -38,7 +40,8 @@
                                 <td>{{$solicitudes->fechasolicitud}}</td>
                                 <td>{{$solicitudes->direccionobra}}</td>
                                 <td>{{$solicitudes->codigoinmueble}}</td>
-                                <td style="color:#0e70cc;"><b>{{$solicitudes->nombre_estadofactibilidad}}</b></td>
+                                <td style = "color: #02c927;"><b>{{$solicitudes->nombre_estadofactibilidad}}<b></td>
+                                <td style = "color: #0269c9;"><b>{{$solicitudes->nombre_estadolicencia}}<b></td>
                             </tr>
                             @endforeach
                         </tbody>

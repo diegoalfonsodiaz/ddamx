@@ -1,11 +1,16 @@
 @extends('layouts/default')
 
+{{-- Page title --}}
+@section('title')
+Denuncia
+@parent
+@stop
+
 {{-- Page content --}}
 @section('content')
 
     <!-- Container Section Start -->
     <div class="container">
-        <div class="row">
             <!-- Contact form Section Start -->
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <h2>Realize su denuncia</h2>
@@ -15,17 +20,27 @@
 
                     <div class="form-group">
                     <strong>Descripción de la denuncia</strong>
-                    <input type="text" name="descripcion" class="form-control" placeholder="nombre">
+                    <input type="text" name="descripcion" class="form-control" placeholder="descripcion" required>
                     </div>
 
                     <div class="form-group" style="display: none">
                     <label for="direccion_fab">Fecha en que sucedio</label>
-                    <input type="date" name="fecha" value="<?php echo date("Y-m-d");?>" class="form-control"  >
+                    <input type="date" name="fecha" value="<?php echo date("Y-m-d");?>" class="form-control" required>
                     </div>
 
                     <div class="form-group">
                     <label for="exampleInputPassword1">Seleccione Imagen como prueba</label>
                     <input name="foto" type="file" class="form-control" id="exampleInputPassword1" placeholder="Seleccione una imagen">
+                    </div>
+
+                    <div class="form-group">
+                    <strong>Dirección de la persona denunciante (Opcional)</strong>
+                    <input type="text" name="direccion" class="form-control" placeholder="dirección">
+                    </div>
+
+                    <div class="form-group">
+                    <strong>Teléfono de la persona denunciante</strong>
+                    <input type="text" name="telefono" class="form-control" placeholder="teléfono" required>
                     </div>
 
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
@@ -48,7 +63,7 @@
                 </form>
             </div>
             <!-- //Conatc Form Section End -->
-        </div>
+        
     </div>
   
     

@@ -10,6 +10,7 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <![endif]-->
     <title>
     	@section('title')
@@ -90,13 +91,23 @@
             <div class="collapse navbar-collapse" id="collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="{{ url('/') }}">Home</a>
-                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> Licencia</a>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> DDAMX</a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{ url('/nosotros') }}">Acerca de nosotros</a>
+                            </li>
+                            <li><a href="{{ url('/preguntas') }}">Preguntas frecuentes</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> Factibilidad</a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="{{ url('/buscardpiestado') }}">Estado actual</a>
                             </li>
                             <li><a href="{{ url('/buscardpi') }}">Solicitud</a>
                             </li>
                         </ul>
+                    </li>
+                     <li><a href="{{ url('/buscarcodigo') }}">Estado de licencia</a>
                     </li>
                     <li><a href="{{ url('/denunciaexterna') }}">Denuncia</a>
                     </li>
@@ -127,7 +138,21 @@
                 <p>
                     La municipalidad de Quetzaltenango funciona desde 1,806 en la cabecera departamental de Quetzaltenango de la República de Guatemala. Es una ciudad que continúa en expansión, conserva muchos aspectos de su estilo neoclásico que recuerdan detalles de Europa, el edificio del palacio municipal desde su fundación ha conservado jardines y esculturas.
                 </p>
-                <h4>Siguenos</h4>
+                
+            </div>
+            <!-- //About Us Section End-->
+            <!-- Contact Section Start -->
+            <div class="col-sm-4">
+                <h4>Contactanos</h4>
+                <ul class="list-unstyled">
+                    <li>14 Avenida, 6--06 zona 3</li>
+                    <li>Quetzaltenango, Quetzaltenango</li>
+                    <li><i class="livicon icon4 icon3" data-name="cellphone" data-size="18" data-loop="true" data-c="#ccc" data-hc="#ccc"></i>Telefono:77672000 ext. 123</li>
+                    <li><i class="livicon icon3" data-name="mail-alt" data-size="20" data-loop="true" data-c="#ccc" data-hc="#ccc"></i> Email: drenajes@munixela.gob.gt</li>
+                    </li>
+                    </li>
+                </ul>
+                <h5>Siguenos</h5>
                 <ul class="list-inline">
                     <li>
                         <a href="https://www.facebook.com/Municipalidad-de-Quetzaltenango-405670849462565/"> <i class="livicon" data-name="facebook" data-size="18" data-loop="true" data-c="#fff" data-hc="#757b87"></i>
@@ -147,20 +172,40 @@
                     </li>
                 </ul>
             </div>
-            <!-- //About Us Section End-->
-            <!-- Contact Section Start -->
-            <div class="col-sm-4">
-                <h4>Contactanos</h4>
-                <ul class="list-unstyled">
-                    <li>14 Avenida, 6--06 zona 3</li>
-                    <li>Quetzaltenango, Quetzaltenango</li>
-                    <li><i class="livicon icon4 icon3" data-name="cellphone" data-size="18" data-loop="true" data-c="#ccc" data-hc="#ccc"></i>Telefono:77672000 ext. 123</li>
-                    <li><i class="livicon icon3" data-name="mail-alt" data-size="20" data-loop="true" data-c="#ccc" data-hc="#ccc"></i> Email: drenajes@munixela.gob.gt</li>
-                    </li>
-                    </li>
-                </ul>
-            </div>
             <!-- //Contact Section End -->
+            <div class="col-sm-4">
+            <h4>Formulario de contacto</h4>
+
+                <form role="form" method="POST" action="{{route('contacto.store')}}" enctype="multipart/form-data">
+                {{csrf_field()}}   
+
+                    <div class="form-group">
+                    <strong>Nombre</strong>
+                    <input type="text" name="nombre" class="form-control" placeholder="Nombre">
+                    </div>
+
+                    <div class="form-group">
+                    <strong>Email</strong>
+                    <input type="text" name="email" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                    <strong>Descripcion</strong>
+                    <input type="text" name="descripcion" class="form-control" placeholder="Descripcion">
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                    {!! htmlFormSnippet() !!}
+                    @error('g-recaptcha-response')
+                        <span class="invalid-feedback" role="alert" style="display: block">
+                            <strong>{{ $message}}</strong>
+                        </span>
+                    @enderror
+                    </div> 
+                    <div class="box-footer">
+                        <button class="btn btn-primary" type="submit">Enviar</button>
+                    </div>
+                </form>
+                </div>
+
              </div>
         <!-- Footer Container Section End -->
     </footer>

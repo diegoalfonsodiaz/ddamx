@@ -29,7 +29,6 @@ class SolicitudExternaController extends Controller
             $dpi = $request->dpi;
             return view('front.ciudadano.persona_y_solicitud',compact('dpi'));
         }
-
     }
        
     
@@ -75,7 +74,7 @@ class SolicitudExternaController extends Controller
        
        $solicitud->save();
 
-       return redirect('buscardpi')->with('info', 'Se envio Corectamente tu solicitud');
+       return redirect('solicitudfinalizada');
 
        }
        else{
