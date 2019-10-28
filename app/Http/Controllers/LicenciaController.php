@@ -182,7 +182,19 @@ class LicenciaController extends Controller
      */
     public function edit($id, Request $request)
     {
-        if($request->user()->autorizeRoles('secretaria'))
+        if($request->user()->autorizeRoles('secretaria')) 
+        {
+            $estado=Estadolicencia::where('estado','=','1')
+            ->whereIn('id', [1, 2])
+            ->get();
+        }
+        if($request->user()->autorizeRoles('jefeoperaciones')) 
+        {
+            $estado=Estadolicencia::where('estado','=','1')
+            ->whereIn('id', [1, 2,3])
+            ->get();
+        }
+        if($request->user()->autorizeRoles('operaciones')) 
         {
             $estado=Estadolicencia::where('estado','=','1')
             ->whereIn('id', [1, 2])
