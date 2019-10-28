@@ -109,7 +109,7 @@
 
                         </div>
 
-                        @if (auth()->user()->hasRole(['admin']))
+                       
                         <div class="form-group {{ $errors->has('estadolicencia_id') ? 'has-error': ''}}">
                             <strong>Estado de licencia</strong>
                             <select name="estadolicencia_id" id="estadolicencia_id"  class="form-control selectpicker" data-live-search="true">
@@ -125,7 +125,7 @@
                             {!! $errors->first('estadolicencia_id',' <span class="help-block">Campo obligatorio</span>')!!}
 
                         </div>
-                        @endif
+                      
                         
 
                     </div>

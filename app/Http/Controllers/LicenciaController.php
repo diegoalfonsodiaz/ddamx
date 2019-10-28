@@ -31,7 +31,8 @@ class LicenciaController extends Controller
         //
         ->select('solicituds.id as idsolicitud','licencias.id','licencias.numerolicencia', 'licencias.fechaautorizacion',
         'licencias.recibo','licencias.monto','licencias.derecho','licencias.remocion','licencias.fechaconexion',
-        'solicituds.codigoinmueble as inmueble','estadolicencias.nombre as estadolicencia','tipovias.nombre as tipovia')
+        'solicituds.codigoinmueble as inmueble','estadolicencias.nombre as estadolicencia',
+        'licencias.estadolicencia_id','tipovias.nombre as tipovia')
         ->get();
         foreach ($licencia as $licencias) {
         $datos=DB::table('solicituds')
@@ -54,10 +55,28 @@ class LicenciaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
+        if($request->user()->autorizeRoles('secretaria')) 
+        {
+            $estado=Estadolicencia::where('estado','=','1')
+            ->whereIn('id', [1, 2])
+            ->get();
+        }
+        if($request->user()->autorizeRoles('jefeoperaciones')) 
+        {
+            $estado=Estadolicencia::where('estado','=','1')
+            ->whereIn('id', [1, 2,3])
+            ->get();
+        }
+        if($request->user()->autorizeRoles('operaciones')) 
+        {
+            $estado=Estadolicencia::where('estado','=','1')
+            ->whereIn('id', [1, 2])
+            ->get();
+        }
         $solicitud=Solicitud::where('estadofactibilidad_id','=','2')->get();
-        $estado=Estadolicencia::where('estado','=','1')->get();
+        //$estado=Estadolicencia::where('estado','=','1')->get();
         $tipovia=Tipovia::where('estado','=','1')->get();
         return view('licencia.create',compact('solicitud','estado','tipovia'));
     }
@@ -161,15 +180,22 @@ class LicenciaController extends Controller
      * @param  \App\Licencia  $licencia
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, Request $request)
     {
-        $solicitud =Solicitud::where('estadofactibilidad_id','=','2')->get();
+        if($request->user()->autorizeRoles('secretaria'))
+        {
+            $estado=Estadolicencia::where('estado','=','1')
+            ->whereIn('id', [1, 2])
+            ->get();
+        }
+        
+         $solicitud =Solicitud::where('estadofactibilidad_id','=','2')->get();
         $licencia=Licencia::findOrFail($id);
-        $estado=Estadolicencia::where('estado','=','1')->get();
+        // $estado=Estadolicencia::where('estado','=','1');
         $tipovia=Tipovia::where('estado','=','1')->get();
        
         
-       return view('licencia.edit', compact('solicitud','estado','tipovia','licencia'));
+      return view('licencia.edit', compact('solicitud','estado','tipovia','licencia'));
     }
 
     /**
