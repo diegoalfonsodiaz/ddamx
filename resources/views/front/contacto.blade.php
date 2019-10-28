@@ -29,11 +29,12 @@
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3856.86439296919!2d-91.51988868515699!3d14.832866989654864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0!2zMTTCsDQ5JzU4LjMiTiA5McKwMzEnMDMuNyJX!5e0!3m2!1ses-419!2sgt!4v1572220387042!5m2!1ses-419!2sgt" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
                 </div>
     </div>
- </div> 
+
 
     <!-- //map Section End -->
     <!-- Container Section Start -->
-    <div class="container">
+        <br>
+        <br>
         <div class="row">
             <!-- Contact form Section Start -->
             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -44,16 +45,16 @@
 
                     <div class="form-group">
                     <strong>Nombre</strong>
-                    <input type="text" name="nombre" class="form-control" placeholder="nombre">
+                    <input type="text" name="nombre" class="form-control" placeholder="Nombre">
                     </div>
 
                     <div class="form-group">
                     <strong>Email</strong>
-                    <input type="text" name="email" class="form-control" placeholder="email">
+                    <input type="text" name="email" class="form-control" placeholder="Email">
                     </div>
                     <div class="form-group">
                     <strong>Descripcion</strong>
-                    <input type="text" name="descripcion" class="form-control" placeholder="descripcion">
+                    <input type="text" name="descripcion" class="form-control" placeholder="Descripcion">
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                     {!! htmlFormSnippet() !!}
@@ -76,7 +77,7 @@
             </div>
             <!-- //Conatc Form Section End -->
         </div>
-    </div>
+</div>
     
 @stop
 
