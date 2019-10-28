@@ -46,6 +46,10 @@
         #espacio{
             line-height: 20%;
         }
+        #espacio2{
+            line-height: 220%;
+            color: #FFFFFF;
+        }
         
    </style>
 </head>
@@ -55,11 +59,14 @@
         <img src="/images/licencia.jpg" style="width: 21.59cm; height: 27.94cm;">
         </div>
 </div>-->
-<pre id="espacio">
-</pre>
+<p id="espacio2">
+    hola
+</p>
+<p id="espacio2" >
+    hola
+</p>
 @foreach($licencia as $licencias)
-    <br> <br><br> <br><br>
-
+    
     <p style='text-indent: 33.5em'>
     {{ $licencias->numerolicencia }}
     </p>
