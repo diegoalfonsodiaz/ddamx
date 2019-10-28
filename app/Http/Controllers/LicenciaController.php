@@ -19,18 +19,34 @@ class LicenciaController extends Controller
      */
     public function index()
     {
-        $licencia= DB::table('licencias as l')
+        $datos=[];
+        $licencia= DB::table('licencias')
         //persona
-        ->join('solicituds as ef', 'l.solicitudfactibilidad_id','=', 'ef.id')
+        ->leftjoin('solicituds', 'licencias.solicitudfactibilidad_id','=', 'solicituds.id')
         //ejecutor
-        ->join('estadolicencias as el', 'l.estadolicencia_id','=', 'el.id')
+        ->leftjoin('estadolicencias', 'licencias.estadolicencia_id','=', 'estadolicencias.id')
         //tipoobra
-        ->join('tipovias as tpv', 'l.tipovia_id','=', 'tpv.id')
+        ->leftjoin('tipovias', 'licencias.tipovia_id','=', 'tipovias.id')
         
         //
-        ->select('l.id','l.numerolicencia', 'l.fechaautorizacion','l.recibo','l.monto','l.derecho','l.remocion','l.fechaconexion','ef.codigoinmueble as inmueble','el.nombre as estadolicencia','tpv.nombre as tipovia')
+        ->select('solicituds.id as idsolicitud','licencias.id','licencias.numerolicencia', 'licencias.fechaautorizacion',
+        'licencias.recibo','licencias.monto','licencias.derecho','licencias.remocion','licencias.fechaconexion',
+        'solicituds.codigoinmueble as inmueble','estadolicencias.nombre as estadolicencia','tipovias.nombre as tipovia')
         ->get();
-        return view('licencia.index', ["licencia"=>$licencia])->with('i');
+        foreach ($licencia as $licencias) {
+        $datos=DB::table('solicituds')
+       ->leftjoin('personas','solicituds.persona_id','personas.id')
+       ->leftjoin('ejecutors','solicituds.ejecutor_id','ejecutors.id')
+       ->select('personas.nombre as nombre_persona','personas.apellido','ejecutors.nombre as nombre_ejecutor',
+       'ejecutors.direccion as direccion_ejecutor')
+       ->where('solicituds.id','=',$licencias->idsolicitud)
+       ->get();
+       
+            }
+           
+          
+        //return view('licencia.index', ["licencia"=>$licencia])->with('i');
+        return view('licencia.index',compact('licencia','datos'));
     }
 
     /**
@@ -85,13 +101,24 @@ class LicenciaController extends Controller
         ->leftjoin('solicituds','licencias.solicitudfactibilidad_id','=','solicituds.id')
         ->select('licencias.numerolicencia as numerolicencia','licencias.fechaautorizacion as fechaautorizacion','licencias.recibo as recibo',
         'licencias.monto as monto', 'licencias.derecho as derecho','licencias.remocion as remocion','licencias.fechaconexion as fechaconexion',
-        'estadolicencias.nombre as nombre','solicituds.codigoinmueble as codigoinmueble','tipovias.nombre as tipovia')
+        'estadolicencias.nombre as nombre','solicituds.codigoinmueble as codigoinmueble','tipovias.nombre as tipovia',
+        'solicituds.id as idsolicitud')
         ->where('licencias.id','=',$id)
         ->get();
 
-        return view('licencia.detalle', [
-            'licencia' => $licencia
-        ]);
+        foreach ($licencia as $licencias) {
+            $datos=DB::table('solicituds')
+       ->leftjoin('personas','solicituds.persona_id','personas.id')
+       ->leftjoin('ejecutors','solicituds.ejecutor_id','ejecutors.id')
+       ->select('personas.nombre as nombre_persona','personas.apellido','ejecutors.nombre as nombre_ejecutor',
+       'ejecutors.direccion as direccion_ejecutor')
+       ->where('solicituds.id','=',$licencias->idsolicitud)
+       ->get();
+       
+       }  
+
+
+       return view('licencia.detalle',compact('licencia','datos'));
     }
 
     public function exportpdf($id)

@@ -26,12 +26,10 @@
                        <!-- personas -->
                        <div class="form-group">
                             <label for="select" class="">Persona</label>
-                            <select name="persona_id" class="form-control" id="persona">}
+                            <select name="persona_id" class="form-control" id="persona" >
                                 
                                 @foreach($persona as $carac)
                                 @if ($carac->id==$solicitud->persona_id)
-                                <option value="{{$carac->id}}">{{$carac->dpi}},  {{$carac->nombre}}  {{$carac->apellido}}</option>
-                                @else
                                 <option value="{{$carac->id}}">{{$carac->dpi}},  {{$carac->nombre}}  {{$carac->apellido}}</option>
                                 @endif
                                 @endforeach

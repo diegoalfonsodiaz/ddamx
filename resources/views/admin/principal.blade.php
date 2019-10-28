@@ -10,11 +10,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>DDAMX</title>
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="shortcut icon" href="{{ asset('front_end/images/logo_muni.png') }}" type="image/x-icon">
   <link rel="stylesheet" href="/plantilla/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="/plantilla/bower_components/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="/plantilla/bower_components/Ionicons/css/ionicons.min.css">
   <link rel="stylesheet" href="/plantilla/css/AdminLTE.min.css">
   <link rel="stylesheet" href="/plantilla/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <!--<link rel="stylesheet" href="/plantilla/bower_components/responsive/css/jquery.dataTables.min.css">-->
+   <link rel="stylesheet" href="/plantilla/bower_components/responsive/css/responsive.dataTables.min.css">
   <link rel="stylesheet" href="/plantilla/css/skins/skin-blue.min.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
   <link rel="stylesheet"
@@ -160,10 +163,13 @@ desired effect
 <!-- ./wrapper -->
 
 <!-- REQUIRED JS SCRIPTS -->
-
-<!-- jQuery 3 -->
 <script src="/plantilla/bower_components/jquery/dist/jquery.min.js"></script>
+<!-- jQuery 3 -->
+<script src="/plantilla/bower_components/responsive/js/jquery-3.3.1.js"></script>
+<script src="/plantilla/bower_components/responsive/js/jquery.dataTables.min.js"></script>
+
 <!-- Bootstrap 3.3.7 -->
+<script src="/plantilla/bower_components/responsive/js/dataTables.responsive.min.js"></script>
 <!-- DataTables -->
 <script src="/plantilla/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="/plantilla/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
@@ -181,9 +187,28 @@ desired effect
       'ordering'    : false,
       'info'        : true,
       'autoWidth'   : false,
-      
-    });
-
+    'responsive':true,
+    language: {
+        "decimal": "",
+        "emptyTable": "No hay información",
+        "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+        "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+        "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+        "infoPostFix": "",
+        "thousands": ",",
+        "lengthMenu": "Mostrar _MENU_ Entradas",
+        "loadingRecords": "Cargando...",
+        "processing": "Procesando...",
+        "search": "Buscar:",
+        "zeroRecords": "Sin resultados encontrados",
+        "paginate": {
+            "first": "Primero",
+            "last": "Ultimo",
+            "next": "Siguiente",
+            "previous": "Anterior"
+        }
+    },
+} );
 } );
 
 $(document).ready(function() {
@@ -194,7 +219,27 @@ $(document).ready(function() {
       'ordering'    : false,
       'info'        : true,
       'autoWidth'   : false,
-      
+      'responsive':true,
+      language: {
+        "decimal": "",
+        "emptyTable": "No hay información",
+        "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+        "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+        "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+        "infoPostFix": "",
+        "thousands": ",",
+        "lengthMenu": "Mostrar _MENU_ Entradas",
+        "loadingRecords": "Cargando...",
+        "processing": "Procesando...",
+        "search": "Buscar:",
+        "zeroRecords": "Sin resultados encontrados",
+        "paginate": {
+            "first": "Primero",
+            "last": "Ultimo",
+            "next": "Siguiente",
+            "previous": "Anterior"
+        }
+    }, 
     });
     
 } );

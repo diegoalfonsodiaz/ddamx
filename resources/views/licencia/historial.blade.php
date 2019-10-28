@@ -2,7 +2,7 @@
 
 @section('header')
 <h1>
-        Historial solicitud factibilidad
+        Historial licencia
        
       </h1>
       <ol class="breadcrumb">

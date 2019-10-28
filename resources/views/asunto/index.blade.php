@@ -2,7 +2,7 @@
 @section('contenido')
 <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title"> Asunto de denuncia</h3>
+              <h3 class="box-title"> Asunto de Bitacora</h3>
               <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('asunto.create') }}"> Crear Asunto de Bitacora </a>
                 <br><br>
@@ -26,11 +26,11 @@
                     <td>
                     
                         <form action="{{ route('asunto.destroy',$asuntos->id) }}" method="POST">
-                            <a class="btn btn btn-info" href="{{ route('asunto.edit',$asuntos->id) }}"><i class="fa fa-pencil"></i></a>
+                            <a class="btn btn-xs btn-info" href="{{ route('asunto.edit',$asuntos->id) }}"><i class="fa fa-pencil"></i></a>
         
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn btn-danger"><i class="fa fa-remove"></i></button>
+                            <button type="submit" class="btn btn-xs btn-danger"><i class="fa fa-remove"></i></button>
                         </form>
                     </td>
                 </tr>

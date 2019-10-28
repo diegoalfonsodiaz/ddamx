@@ -24,10 +24,11 @@
                             <tr>
                             
                                 <th>#</th>
+                                <th>Descripción</th>
                                 <th>Fecha</th>
                                 <th>Usuario</th>
                                 <th>Licencia</th>
-                                <th>Descripción</th>
+                                
                                 <th>Asunto</th>
                                 <th>Acciones</th>
                             </tr>
@@ -36,15 +37,15 @@
                             @foreach($bitacora as $bitacoras)
                             <tr>
                                 <td>{{ ++$i }}</td>
+                                <td>{{$bitacoras->descripcion}}</td>
                                 <td>{{$bitacoras->fecha}}</td>
                                 <td>{{$bitacoras->user}}</td>
                                 <td>{{$bitacoras->nlicencia}}</td>
-                                <td>{{$bitacoras->descripcion}}</td>
                                 <td>{{$bitacoras->asunto}}</td>
                                 <td>
                                 <form action="{{ route('bitacora.destroy',$bitacoras->id) }}" method="POST">
-                                    <a class="btn btn-primary" href="{{ route('bitacora.edit', $bitacoras->id) }}">Editar</a>
-                
+                                    <a  href="{{ route('bitacora.edit', $bitacoras->id) }}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
+                                    <a class="btn btn-xs btn-primary" href="{{ route('ticket.index', $bitacoras->id) }}">Seguimiento</a>
                                     @csrf
                                     @method('DELETE')
                                     
