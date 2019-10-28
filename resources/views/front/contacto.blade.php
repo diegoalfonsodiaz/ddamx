@@ -34,26 +34,24 @@
     <!-- //map Section End -->
     <!-- Container Section Start -->
     <div class="container">
-        <div class="row">
-            <!-- Contact form Section Start -->
-            <div class="col-xs-12 col-sm-12 col-md-12">
+
+            <div class="col-md-6">
                 <h2>Formulario de contacto</h2>
-
-                <form role="form" method="POST" action="{{route('contacto.store')}}" enctype="multipart/form-data">
-                {{csrf_field()}}   
-
+                <!-- Notifications -->
+                <form class="contact" id="contact" action="{{route('contacto.store')}}" method="POST">
+                    {{csrf_field()}}  
                     <div class="form-group">
-                    <strong>Nombre</strong>
-                    <input type="text" name="nombre" class="form-control" placeholder="nombre">
+                        <strong>Nombre</strong>
+                        <input type="text" name="nombre" class="form-control" placeholder="nombre">
                     </div>
 
                     <div class="form-group">
-                    <strong>Email</strong>
-                    <input type="text" name="email" class="form-control" placeholder="email">
+                        <strong>Email</strong>
+                        <input type="text" name="email" class="form-control" placeholder="email">
                     </div>
                     <div class="form-group">
-                    <strong>Descripcion</strong>
-                    <input type="text" name="descripcion" class="form-control" placeholder="descripcion">
+                        <strong>Descripcion</strong>
+                        <input type="text" name="descripcion" class="form-control" placeholder="descripcion">
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                     {!! htmlFormSnippet() !!}
@@ -71,11 +69,43 @@
                     </div>
 
                     <label></label>
-                    
                 </form>
             </div>
             <!-- //Conatc Form Section End -->
-        </div>
+            <!-- Address Section Start -->
+            <div class="col-md-6 col-sm-6" id="address_margt">
+                <div class="media media-right">
+                    <div class="media-left media-top">
+                        <a href="#">
+                            <div class="box-icon">
+                                <i class="livicon" data-name="home" data-size="22" data-loop="true" data-c="#fff" data-hc="#fff"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Dirección:</h4>
+                        <div class="danger">DDAMXA</div>
+                        <address>
+                            14 Avenida, 6--06 zona 3
+                            <br> 3340 Providence Drive #565
+                            <br> Quetzaltenango, Quetzaltenango
+                            <br> Guatemala
+                    </div>
+                </div>
+                <div class="media padleft10">
+                    <div class="media-left media-top">
+                        <a href="#">
+                            <div class="box-icon">
+                                <i class="livicon" data-name="phone" data-size="22" data-loop="true" data-c="#fff" data-hc="#fff"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="media-body padbtm2">
+                        <h4 class="media-heading">Teléfono:</h4> (502) 77672000 ext. 123
+                        <br /> Email: drenajes@munixela.gob.gt
+                    </div>
+                </div>
+            </div>
     </div>
     
 @stop
