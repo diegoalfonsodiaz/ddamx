@@ -42,9 +42,9 @@ Route::get('/ticket/{id}', 'TicketController@index')->name('ticket.index');
 Route::get('/ticketcreate', 'TicketController@create')->name('ticket.create');
 Route::post('/ticket','TicketController@store')->name('ticket.store');
 
-
-
-
+Route::get('/ticketdenuncia/{id}', 'TicketDenunciaController@index')->name('ticketdenuncia.index');
+Route::get('/ticketdenunciacreate', 'TicketDenunciaController@create')->name('ticketdenuncia.create');
+Route::post('/ticketdenuncia','TicketDenunciaController@store')->name('ticketdenuncia.store');
 
 /* FIN  OBRA  **************************************************************************/
 /* RUTAS  PERSONA -----------------------------------------------------------------------*/

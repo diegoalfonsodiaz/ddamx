@@ -3,7 +3,7 @@
 @section('header')
   <h1> Editar Estado Licencia </h1>
   <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+    <li><a href="/menu"><i class="fa fa-dashboard"></i> Inicio</a></li>
     <li class="active">Estado Licencia</li>
   </ol>
 @stop
@@ -39,7 +39,7 @@
                   <input type="text" name="nombre" value="{{ $estadolicen->nombre }}" class="form-control" placeholder="Estado Licencia" require>
                 </div>
             <div class="form-group">
-              <label for="exampleInputEmail1">Descripcion</label>
+              <label for="exampleInputEmail1">Descripción</label>
               <input type="text" name="descripcion" value="{{ $estadolicen->descripcion }}" class="form-control" placeholder="Estado Licencia" require>
             </div>
                 

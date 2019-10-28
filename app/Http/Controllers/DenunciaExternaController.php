@@ -42,6 +42,8 @@ class DenunciaExternaController extends Controller
         $this->Validate($request,
 			[
                 'descripcion'=>'required',
+                'fecha'=>'required',
+                'telefono'=>'required',
                 recaptchaFieldName() => recaptchaRuleName()
 			]
 		);
@@ -57,6 +59,8 @@ class DenunciaExternaController extends Controller
 		$denuncia->descripcion = $request->input('descripcion');
         $denuncia->fecha = $request->input('fecha');
         $denuncia->foto = $name;
+        $denuncia->direccion = $request->input('direccion');
+        $denuncia->telefono = $request->input('telefono');
 		$denuncia->estadodenuncia_id = '1';
 		$denuncia->save();
         return redirect()->route('denunciaexterna.index')->with('info', 'Se registro Corectamente la Denuncia');
