@@ -34,7 +34,7 @@
                 </div>
               
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Descripcion</label>
+                  <label for="exampleInputEmail1">Descripción</label>
                   <input type="text" name="descripcion" class="form-control" placeholder="Ingresar Estado Licencia">
                 </div>
                 
