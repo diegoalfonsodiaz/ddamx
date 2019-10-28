@@ -117,7 +117,7 @@ Inicio
                 </div>
             </div>
     </section>
-
+    <br>
     <!-- Layout Section Start -->
     
         <div class="container">
@@ -127,17 +127,13 @@ Inicio
                     </div>
            
         </div>
-    <!-- //Layout Section Start -->
-    
-    <!-- //Our Team End -->
-       
-        <!-- //What we are section End -->
-        <!-- Testimonial Start -->
 
-        <!-- //Our Skills End -->
     </div>
     <!-- //Container End -->
 </div>
+
+<br>
+<br>
 
 @stop
 {{-- footer scripts --}}

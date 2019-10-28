@@ -1,11 +1,16 @@
 @extends('layouts/default')
 
+{{-- Page title --}}
+@section('title')
+Denuncia
+@parent
+@stop
+
 {{-- Page content --}}
 @section('content')
 
     <!-- Container Section Start -->
     <div class="container">
-        <div class="row">
             <!-- Contact form Section Start -->
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <h2>Realize su denuncia</h2>
@@ -58,7 +63,7 @@
                 </form>
             </div>
             <!-- //Conatc Form Section End -->
-        </div>
+        
     </div>
   
     

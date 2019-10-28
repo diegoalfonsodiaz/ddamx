@@ -7,6 +7,12 @@
     <!--end of page level css-->
 @stop
 
+{{-- Page title --}}
+@section('title')
+Contacto
+@parent
+@stop
+
 {{-- Page content --}}
 @section('content')
     <!-- Map Section Start -->
@@ -29,7 +35,7 @@
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3856.86439296919!2d-91.51988868515699!3d14.832866989654864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0!2zMTTCsDQ5JzU4LjMiTiA5McKwMzEnMDMuNyJX!5e0!3m2!1ses-419!2sgt!4v1572220387042!5m2!1ses-419!2sgt" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
                 </div>
     </div>
- </div> 
+
 
     <!-- //map Section End -->
     <!-- Container Section Start -->
