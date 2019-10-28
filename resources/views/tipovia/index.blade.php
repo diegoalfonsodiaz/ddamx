@@ -3,7 +3,7 @@
 @section('header')
   <h1>Tipo Vía</h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+        <li><a href="/menu"><i class="fa fa-dashboard"></i> Inicio</a></li>
         <li class="active">Tipo vía</li>
         <br>
       </ol>
@@ -29,16 +29,16 @@
 
       <div class="box-header">
         <a href="{{ url('/agregartipovia') }}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear Estado</a> 
-        <h3 class="box-title">Listado de Tipos de Vía</h3>
+        <h3 class="box-title">Tipo Vía</h3>
       </div>
 
 
     <div class="box-body">
-      <table id="persona-table" class="table table-striped table-bordered" style="width:100%">
+      <table id="" class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr>
             <th scope="col" width="250px">Nombre</th>
-            <th scope="col" width="450px">Descripcion</th>
+            <th scope="col" width="450px">Descripción</th>
             <th scope="col" width="200px">Estado</th>
             <th scope="col" width="200px">Acciones</th>
             </tr>

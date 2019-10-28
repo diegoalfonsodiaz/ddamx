@@ -1,7 +1,8 @@
 @extends('admin.principal')
 @section('header')
   <h1>
-    Seguimiento de casos
+    Tickets Denuncias
+    <small>Seguimiento de casos en Denuncias</small>
   </h1>
 
   <ol class="breadcrumb">
@@ -13,11 +14,6 @@
 @section('contenido')
 
   <div class="box box-primary">
-    <div class="box-header">        
-       
-     
-    </div>
-            <!-- /.box-header -->
     <div class="box-body">
      
         <table id="persona-table" class="table table-striped table-bordered" style="width:100%">
@@ -26,14 +22,15 @@
                   <th># </th>
                   <th>Ticket ID</th>
                   <th>Descripción</th>
-                  <th>Encargado</th>
+                  <th>Usuario</th>
+                  <th width="280px">Acciones</th>
                 </tr>
             </thead>
             <tbody>
             @foreach ($ticket as $tickets)
         <tr>
             <td>{{ ++$i }}</td>
-            <td>Ticket:  #  {{ $tickets->bitacora }} Asunto: {{ $tickets->descripcion }} </td>
+            <td>Ticket:  #  {{ $tickets->denuncia }} Asunto: {{ $tickets->descripcion }} </td>
             <td>{{ $tickets->detalle }}</td>
             <td>{{ $tickets->user }}</td>
             <td>

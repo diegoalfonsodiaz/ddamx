@@ -42,8 +42,14 @@
               </span>
           </a>
           <ul class="treeview-menu">
+<<<<<<< HEAD
+            <li><a href="{{ url('/denuncia') }}">Denuncias </a></li>
+            <li><a href="{{ url('/ticketdenunciacreate') }}">Seguimiento  </a></li>
+            <li><a href="{{route('estadodenuncias.index')}}">Estado Denuncias</a></li>
+=======
             <li {{ request()->is('denuncia') ? 'class=active' : '' }}><a href="{{ url('/denuncia') }}">Denuncias </a></li>
             <li {{ request()->is('estadodenuncia') ? 'class=active' : '' }}><a href="{{route('estadodenuncias.index')}}">Estado Denuncias</a></li>
+>>>>>>> ab736b8e5fed3f88594f8f02ca734be1b977c57c
           </ul>
         </li>
 

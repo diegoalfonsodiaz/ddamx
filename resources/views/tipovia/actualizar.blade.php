@@ -3,7 +3,7 @@
 @section('header')
   <h1> Editar Tipo Vía </h1>
   <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+    <li><a href="/menu"><i class="fa fa-dashboard"></i> Inicio</a></li>
     <li class="active">Tipo Vía</li>
   </ol>
 @stop
@@ -38,7 +38,7 @@
                   <input type="text" name="nombre" value="{{ $tpv->nombre }}" class="form-control" placeholder="Tipo vía">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Descripcion</label>
+                  <label for="exampleInputEmail1">Descripción</label>
                   <input type="text" name="descripcion" value="{{ $tpv->descripcion }}" class="form-control" placeholder="Tipo vía">
                 </div>
 

@@ -41,6 +41,7 @@
                             @foreach($licencia as $licencias)
                             <tr>
                             <td>{{$licencias->numerolicencia}}</td>
+                            
                             @foreach($datos as $dato)
                             <td>{{$dato->nombre_persona}}</td>
                             <td>{{$dato->apellido}}</td>

@@ -2,7 +2,7 @@
 
 {{-- Page title --}}
 @section('title')
-Home
+Inicio
 @parent
 @stop
 
