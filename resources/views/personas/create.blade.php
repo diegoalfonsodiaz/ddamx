@@ -2,7 +2,7 @@
 
 @section('header')
 <h1>
-        Crear Personas
+        Crear persona
        
       </h1>
       <ol class="breadcrumb">
@@ -31,8 +31,8 @@
                   <input type="text" class="form-control input-lg" name="dpi" placeholder="DPI" required>
                 </div>
                 <div class="form-group">
-                  <label >Nombre</label>
-                  <input type="text" class="form-control input-lg" name="nombre" placeholder="Nombre" required>
+                  <label >Nombres</label>
+                  <input type="text" class="form-control input-lg" name="nombre" placeholder="Nombres" required>
                 </div>
                 <div class="form-group">
                   <label >Apellidos</label>
@@ -43,8 +43,8 @@
                   <input type="text" class="form-control input-lg" name="telefono" placeholder="Teléfono" required >
                 </div>
                 <div class="form-group">
-                  <label >Ornato</label>
-                  <input type="text" class="form-control input-lg" name="ornato" placeholder="Ornato">
+                  <label >Boleto de ornato</label>
+                  <input type="text" class="form-control input-lg" name="ornato" placeholder="Boleto de ornato">
                 </div>
                 <div class="form-group">
                   <label >Correo electrónico</label>
