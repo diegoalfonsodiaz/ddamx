@@ -46,16 +46,13 @@
                             @foreach($licencia as $licencias)
                             <tr>
                             <td>{{$licencias->numerolicencia}}</td>
-                            
-                            @foreach($datos as $dato)
-                            <td>{{$dato->nombre_persona}}</td>
-                            <td>{{$dato->apellido}}</td>
-                            @endforeach 
-                                <td>{{$licencias->inmueble}}</td>
-                                <td>{{$licencias->recibo}}</td>
-                                <td>{{$licencias->fechaautorizacion}}</td>
-                                <td>{{$licencias->fechaconexion}}</td>
-                                <td>{{$licencias->estadolicencia}}</td>
+                            <td>{{$licencias->nombre_persona}}</td>
+                            <td>{{$licencias->apellido}}</td>
+                            <td>{{$licencias->inmueble}}</td>
+                            <td>{{$licencias->recibo}}</td>
+                            <td>{{$licencias->fechaautorizacion}}</td>
+                            <td>{{$licencias->fechaconexion}}</td>
+                            <td>{{$licencias->estadolicencia}}</td>
 
                                 
                                 <td>

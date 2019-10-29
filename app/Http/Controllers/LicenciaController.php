@@ -23,7 +23,6 @@ class LicenciaController extends Controller
      */
     public function index()
     {
-        $datos=[];
         $licencia= DB::table('licencias')
         //persona
         ->leftjoin('solicituds', 'licencias.solicitudfactibilidad_id','=', 'solicituds.id')
@@ -31,27 +30,21 @@ class LicenciaController extends Controller
         ->leftjoin('estadolicencias', 'licencias.estadolicencia_id','=', 'estadolicencias.id')
         //tipoobra
         ->leftjoin('tipovias', 'licencias.tipovia_id','=', 'tipovias.id')
+        /////
+        ->leftjoin('personas', 'solicituds.persona_id','=', 'personas.id')
         
         //
         ->select('solicituds.id as idsolicitud','licencias.id','licencias.numerolicencia', 'licencias.fechaautorizacion',
         'licencias.recibo','licencias.monto','licencias.derecho','licencias.remocion','licencias.fechaconexion',
         'solicituds.codigoinmueble as inmueble','estadolicencias.nombre as estadolicencia',
-        'licencias.estadolicencia_id','tipovias.nombre as tipovia')
+        'licencias.estadolicencia_id','tipovias.nombre as tipovia','personas.nombre as nombre_persona',
+        'personas.apellido as apellido')
         ->get();
-        foreach ($licencia as $licencias) {
-        $datos=DB::table('solicituds')
-       ->leftjoin('personas','solicituds.persona_id','personas.id')
-       ->leftjoin('ejecutors','solicituds.ejecutor_id','ejecutors.id')
-       ->select('personas.nombre as nombre_persona','personas.apellido','ejecutors.nombre as nombre_ejecutor',
-       'ejecutors.direccion as direccion_ejecutor')
-       ->where('solicituds.id','=',$licencias->idsolicitud)
-       ->get();
        
-            }
            
           
         //return view('licencia.index', ["licencia"=>$licencia])->with('i');
-        return view('licencia.index',compact('licencia','datos'));
+        return view('licencia.index',compact('licencia'));
     }
 
     /**
