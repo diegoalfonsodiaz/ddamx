@@ -5,8 +5,8 @@
        
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li class="active">Solicitudes</li>
+        <li><a href="{{ url('/menu') }}"><i class="fa fa-dashboard"></i> Inicio</a></li>
+        <li class="active">Solicitudes de Factibilidad</li>
       </ol>
 @stop
 @section('contenido')
@@ -25,9 +25,8 @@
                 <div class="box-body">
                        <!-- personas -->
                        <div class="form-group">
-                            <label for="select" class="">Persona</label>
+                            <label for="select" class="">Nombre del propietario</label><label style="color:red;">*</label>
                             <select name="persona_id" class="form-control" id="persona" >
-                                
                                 @foreach($persona as $carac)
                                 @if ($carac->id==$solicitud->persona_id)
                                 <option value="{{$carac->id}}">{{$carac->dpi}},  {{$carac->nombre}}  {{$carac->apellido}}</option>
@@ -38,48 +37,48 @@
  
 
                         <div class="form-group">
-                            <strong>Direccion Obra</strong>
-                            <input type="text" name="direccionobra"  value="{{ $solicitud->direccionobra }}" class="form-control" placeholder="Direccion Obra">
+                            <strong>Dirección de la obra</strong><label style="color:red;">*</label>
+                            <input type="text" autocomplete="off" name="direccionobra"  value="{{ $solicitud->direccionobra }}" class="form-control" placeholder="Dirección de la obra">
                         </div>
 
                         <div class="form-group">
-                            <strong>Codigo Inmueble</strong>
-                            <input type="text" name="codigoinmueble" value="{{ $solicitud->codigoinmueble }}"  class="form-control" placeholder="Codigo Inmueble">
+                            <strong>Código del inmueble</strong>
+                            <input type="text" autocomplete="off" name="codigoinmueble" value="{{ $solicitud->codigoinmueble }}"  class="form-control" placeholder="Código del inmueble">
                         </div>
 
                         <div class="form-group">
-                            <strong>Expediente</strong>
-                            <input type="text" name="expediente" value="{{ $solicitud->expediente }}"  class="form-control" placeholder="Expediente">
+                            <strong>Número de expediente</strong>
+                            <input type="text" autocomplete="off" name="expediente" value="{{ $solicitud->expediente }}"  class="form-control" placeholder="Número de expediente">
                         </div>
 
                         <div class="">
-                            <strong>Expediente Interno</strong>
-                            <input type="text" name="expedienteinterno" value="{{ $solicitud->expedienteinterno }}"  class="form-control" placeholder="Expediente Interno">
+                            <strong>Expediente interno</strong>
+                            <input type="text" autocomplete="off" name="expedienteinterno" value="{{ $solicitud->expedienteinterno }}"  class="form-control" placeholder="Expediente interno">
                         </div>
 
                         <div class="form-group">
                             <label for="direccion_fab">Fecha</label>
-                            <input type="date" name="fechasolicitud" value="{{ $solicitud->fechasolicitud }}"  class="form-control" disabled>
+                            <input type="date" autocomplete="off" name="fechasolicitud" value="{{ $solicitud->fechasolicitud }}"  class="form-control" disabled>
                         </div>
 
                         <div class="form-group">
-                            <strong>Número Finca</strong>
-                            <input type="text" name="numerofinca" value="{{ $solicitud->numerofinca }}"  class="form-control" placeholder="Numero Finc">
+                            <strong>Número de finca</strong>
+                            <input type="text" autocomplete="off" name="numerofinca" value="{{ $solicitud->numerofinca }}"  class="form-control" placeholder="Número de finca">
                         </div>
 
                         <div class="form-group">
-                            <strong>Número Folio</strong>
-                            <input type="text" name="numerofolio" value="{{ $solicitud->numerofolio }}"  class="form-control" placeholder="Número Folio">
+                            <strong>Número de folio</strong>
+                            <input type="text" autocomplete="off" name="numerofolio" value="{{ $solicitud->numerofolio }}"  class="form-control" placeholder="Número de folio">
                         </div>
 
                         <div class="form-group">
                             <strong>Libro</strong>
-                            <input type="text" name="libro" value="{{ $solicitud->libro }}"  class="form-control" placeholder="Libro">
+                            <input type="text" autocomplete="off" name="libro" value="{{ $solicitud->libro }}"  class="form-control" placeholder="Libro">
                         </div>
 
                         <div class="form-group">
-                            <strong>Catastral</strong>
-                            <input type="text" name="catastral" value="{{ $solicitud->catastral }}"  class="form-control" placeholder="Catastral">
+                            <strong>Número de catastral</strong>
+                            <input type="text" autocomplete="off" name="catastral" value="{{ $solicitud->catastral }}"  class="form-control" placeholder="Número de catastral">
                         </div>
                 </div>
            
@@ -90,42 +89,43 @@
         
             <div class="box-body">
             <div class="form-group">
-                            <strong>Solvencia Municipal</strong>
-                            <input type="text" name="solvenciamunicipal" value="{{ $solicitud->solvenciamunicipal }}"  class="form-control" placeholder="Solvencia Municipal">
+                            <strong>Solvencia municipal</strong>
+                            <input type="text" autocomplete="off" name="solvenciamunicipal" value="{{ $solicitud->solvenciamunicipal }}"  class="form-control" placeholder="Solvencia municipal">
                         </div>
 
                         <div class="form-group">
-                            <strong>Observacion</strong>
-                            <input Type="text" name="observacion" value="{{ $solicitud->observacion }}"  class="form-control" placeholder="Observacion">
+                            <strong>Observación</strong>
+                            <!-- <input Type="text" autocomplete="off" name="observacion" value="{{ $solicitud->observacion }}"  class="form-control" rows="3" placeholder="Observación"> -->
+                            <textarea type="text" autocomplete="off" name="observacion"  class="form-control" rows="3" placeholder="Observación">{{ $solicitud->observacion }}</textarea>
                         </div>
 
                         <div class="form-group">
                             <strong>Longitud</strong>
-                            <input type="text" name="longitud" value="{{ $solicitud->longitud }}"  class="form-control" placeholder="Longitud">
+                            <input type="text" autocomplete="off" name="longitud" value="{{ $solicitud->longitud }}"  class="form-control" placeholder="Longitud">
                         </div>
 
                         <div class="form-group">
                             <strong>Ancho</strong>
-                            <input type="text" name="ancho" value="{{ $solicitud->ancho }}"  class="form-control" placeholder="Ancho">
+                            <input type="text" autocomplete="off" name="ancho" value="{{ $solicitud->ancho }}"  class="form-control" placeholder="Ancho">
                         </div>
 
                         <div class="form-group">
                             <strong>Profundidad</strong>
-                            <input type="text" name="profundidad" value="{{ $solicitud->profundidad }}"  class="form-control" placeholder="Profundidad">
+                            <input type="text" autocomplete="off" name="profundidad" value="{{ $solicitud->profundidad }}"  class="form-control" placeholder="Profundidad">
                         </div>
 
                         <div class="form-group">
-                            <strong>Diametro Tubo</strong>
-                            <input type="text" name="diametrotubo" value="{{ $solicitud->diametrotubo }}"  class="form-control" placeholder="Diametro Tubo">
+                            <strong>Diámetro de tubo</strong>
+                            <input type="text" autocomplete="off" name="diametrotubo" value="{{ $solicitud->diametrotubo }}"  class="form-control" placeholder="Diámetro de tubo">
                         </div>
 
                         <div class="form-group">
-                            <strong>Diametro Colector</strong>
-                            <input type="text" name="diametrocolector" value="{{ $solicitud->diametrocolector }}"  class="form-control" placeholder="Diametro Colector">
+                            <strong>Diámetro de colector</strong>
+                            <input type="text" autocomplete="off" name="diametrocolector" value="{{ $solicitud->diametrocolector }}"  class="form-control" placeholder="Diámetro de colector">
                         </div>
 
                         <div class="form-group">
-                            <strong>Ejecutor</strong>
+                            <strong>Nombre del ejecutor</strong>
                             <select name="ejecutor_id" id="ejecutor_id"  class="form-control selectpicker" data-live-search="true">
                                 
                                 @foreach($ejecutor as $c)
@@ -138,7 +138,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <strong>Estado Factibilidad</strong>
+                            <strong>Estado de factibilidad</strong>
                             <select name="estadofactibilidad_id" id="estadofactibilidad_id"  class="form-control selectpicker" data-live-search="true">
                                 
                                     @foreach($estado as $c)
@@ -151,7 +151,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <strong>Tipo obra </strong>
+                            <strong>Tipo de obra </strong>
                             <select name="tipoobra_id" id="tipoobra_id"  class="form-control selectpicker" data-live-search="true">
                                 
                                   @foreach($tipoobra as $c)
