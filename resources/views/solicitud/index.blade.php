@@ -1,12 +1,12 @@
 @extends('admin.principal')
 @section('header')
 <h1>
-        Solicitud factibilidad
-        <small>A continuación se presentan todas las solicitudes de factibilidad para ser verificadas por la entidad</small>
+        Solicitudes de factibilidad
+       
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li class="active">Solicitud de Factibilidad</li>
+        <li><a href="{{ url('/menu') }}"><i class="fa fa-dashboard"></i> Inicio</a></li>
+        <li class="active">Solicitudes de Factibilidad</li>
         
       </ol>
       
@@ -30,7 +30,7 @@
             <div class="box-header">
             
             <a href="{{route('solicitud.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear solicitud de factibilidad</a> 
-              <h3 class="box-title">Solicitudes</h3>
+              <h3 class="box-title">Listado de solicitudes</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -40,12 +40,12 @@
                             <tr>
                             
                                
-                                <th>Nombre</th>
+                                <th>Nombres</th>
                                 <th>Apellidos</th>
                                 <th>DPI</th>
                                 <th>Dirección de la obra</th>
                                 <th>Fecha de solicitud</th>
-                                <th>Inmueble</th>
+                                <th>Número de inmueble</th>
                                 <th>Estado</th>
                                 <th>Acciones</th>
                             </tr>

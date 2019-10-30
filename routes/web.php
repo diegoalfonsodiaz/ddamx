@@ -18,7 +18,7 @@ Route::get('/menu', function () {
 Route::get('/menu', 'DashboardController@dashboard');
 //DENUCNIAS DE ALTA
 
-
+//
 
 /* RUTAS CARGO EJECUTORES -----------------------------------------------------------------------*/
 Route::resource('asunto', 'AsuntoController');

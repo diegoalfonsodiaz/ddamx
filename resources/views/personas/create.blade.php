@@ -6,7 +6,7 @@
        
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+        <li><a href="{{ url('/menu') }}"><i class="fa fa-dashboard"></i> Inicio</a></li>
         <li class="active">Personas</li>
       </ol>
 @stop
@@ -27,28 +27,28 @@
             {{csrf_field()}}
               <div class="box-body">
                 <div class="form-group">
-                  <label >DPI</label>
-                  <input type="text" class="form-control input-lg" name="dpi" placeholder="DPI" required>
+                  <label >DPI</label><label style="color:red;">*</label>
+                  <input type="text" autocomplete="off" class="form-control input-lg" name="dpi" placeholder="DPI" required>
                 </div>
                 <div class="form-group">
-                  <label >Nombres</label>
-                  <input type="text" class="form-control input-lg" name="nombre" placeholder="Nombres" required>
+                  <label >Nombres</label><label style="color:red;">*</label>
+                  <input type="text" autocomplete="off" class="form-control input-lg" name="nombre" placeholder="Nombres" required>
                 </div>
                 <div class="form-group">
-                  <label >Apellidos</label>
-                  <input type="text" class="form-control input-lg" name="apellido" placeholder="Apellidos" required>
+                  <label >Apellidos</label><label style="color:red;">*</label>
+                  <input type="text" autocomplete="off" class="form-control input-lg" name="apellido" placeholder="Apellidos" required>
                 </div>
                 <div class="form-group">
-                  <label >Teléfono</label>
-                  <input type="text" class="form-control input-lg" name="telefono" placeholder="Teléfono" required >
+                  <label >Teléfono</label><label style="color:red;">*</label>
+                  <input type="text" autocomplete="off" class="form-control input-lg" name="telefono" placeholder="Teléfono" required >
                 </div>
                 <div class="form-group">
                   <label >Boleto de ornato</label>
-                  <input type="text" class="form-control input-lg" name="ornato" placeholder="Boleto de ornato">
+                  <input type="text" autocomplete="off" class="form-control input-lg" name="ornato" placeholder="Boleto de ornato">
                 </div>
                 <div class="form-group">
                   <label >Correo electrónico</label>
-                  <input type="email" class="form-control input-lg " name="correo" placeholder="Correo electrónico">
+                  <input type="email" autocomplete="off" class="form-control input-lg " name="correo" placeholder="Correo electrónico">
                 </div>
                 
               </div>
