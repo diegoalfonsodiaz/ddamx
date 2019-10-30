@@ -43,20 +43,22 @@ Contacto
 
             <div class="col-md-6">
                 <h2>Formulario de contacto</h2>
+                 <label><span style="color:red">* </span><span style="color:black">Campos obligatorios</span></label>
+
                 <!-- Notifications -->
                 <form class="contact" id="contact" action="{{route('contacto.store')}}" method="POST">
                     {{csrf_field()}}  
                     <div class="form-group">
-                        <strong>Nombre</strong>
+                        <strong>Nombre<span style="color:red"> *</span></strong>
                         <input type="text" name="nombre" class="form-control" placeholder="nombre">
                     </div>
 
                     <div class="form-group">
-                        <strong>Email</strong>
+                        <strong>Email<span style="color:red"> *</span></strong>
                         <input type="text" name="email" class="form-control" placeholder="email">
                     </div>
                     <div class="form-group">
-                        <strong>Descripcion</strong>
+                        <strong>Descripcion<span style="color:red"> *</span></strong>
                         <input type="text" name="descripcion" class="form-control" placeholder="descripcion">
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">

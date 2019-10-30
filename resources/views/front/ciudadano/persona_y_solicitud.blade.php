@@ -10,6 +10,7 @@
             <!-- Contact form Section Start -->
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <h2>Ingresa tus datos personales:</h2>
+                <label><span style="color:red">* </span><span style="color:black">Campos obligatorios</span></label>
 
                 <form role="form" method="POST" action="{{route('solicitudexterna.store')}}">
                 {{csrf_field()}}   
@@ -20,15 +21,19 @@
                       <input type="text" class="form-control input-lg" name="dpi"  readonly="readonly" value={{$dpi}} placeholder="DPI" required>
                       </div>
                       <div class="form-group">
-                      <strong >Nombres</strong>
+                      <strong >Nombres<span style="color:red"> *</span></strong>
                       <input type="text" class="form-control input-lg" name="nombre" placeholder="Nombre" required>
                       </div>
                       <div class="form-group">
-                      <strong >Apellidos</strong>
+                      <strong >Apellidos<span style="color:red"> *</span></strong>
                       <input type="text" class="form-control input-lg" name="apellido" placeholder="Apellidos" required>
                       </div>
                       <div class="form-group">
-                      <strong >Teléfono</strong>
+                      <strong >Ornato<span style="color:red"> *</span></strong>
+                      <input type="text" class="form-control input-lg" name="ornato" placeholder="Ornato" required>
+                      </div>
+                      <div class="form-group">
+                      <strong >Teléfono<span style="color:red"> *</span></strong>
                       <input type="text" class="form-control input-lg" name="telefono" placeholder="Teléfono" required >
                       </div>
                       <div class="form-group">
@@ -39,13 +44,13 @@
                       <h3 class="box-title">Ingresa los datos de la obra:</h3>
                       </div>
                       <div class="form-group">
-                      <strong>Direccion Obra</strong>
-                      <input type="text" name="direccionobra" class="form-control input-lg " placeholder="Direccion Obra">
+                      <strong>Dirección de la obra<span style="color:red"> *</span></strong>
+                      <input type="text" name="direccionobra" class="form-control input-lg " placeholder="Dirección de la Obra" required>
                       </div>
 
                       <div class="form-group">
-                      <strong>Codigo Inmueble (opcional) </strong>
-                      <input type="text" name="codigoinmueble" class="form-control input-lg " placeholder="Codigo Inmueble">
+                      <strong>Código inmueble</strong>
+                      <input type="text" name="codigoinmueble" class="form-control input-lg " placeholder="Código inmueble">
                       </div>
 
                       <div class="col-xs-12 col-sm-12 col-md-12 text-center">

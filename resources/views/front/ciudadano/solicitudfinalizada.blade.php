@@ -20,7 +20,7 @@
                 <div class="col-md-9 col-sm-9 col-xs-12 wow zoomIn" data-wow-duration="2s">
 
                     <div class="layout-image">
-                        <img src="{{ asset('front_end/images/proceso_licencia.png') }}" alt="layout" class="img-responsive" />
+                        <img src="{{ asset('front_end/images/Proceso_licencia.png') }}" alt="layout" class="img-responsive" />
                     </div>
                 </div>
 

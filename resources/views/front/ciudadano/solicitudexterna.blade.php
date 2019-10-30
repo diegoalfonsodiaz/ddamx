@@ -18,35 +18,40 @@
                 @foreach($personas as $persona)
                 <div class="form-group">
                   <strong >DPI</strong>
-                  <input type="text" name="dpi" class="form-control" readonly="readonly" value={{$persona->dpi}} placeholder="Descripcion"  required>
+                  <input type="text" name="dpi" class="form-control" readonly="readonly" value={{$persona->dpi}}>
                 </div>
                 <div class="form-group">
                   <strong >Nombres</strong>
-                  <input type="text"  name="nombre" class="form-control" readonly="readonly" value={{$persona->nombre}} placeholder="Nombre" required>
+                  <input type="text"  name="nombre" class="form-control" readonly="readonly" value={{$persona->nombre}}>
                 </div>
                 <div class="form-group">
                   <strong >Apellidos</strong>
-                  <input type="text" name="apellido" class="form-control" readonly="readonly" value={{$persona->apellido}} placeholder="Apellidos" required>
+                  <input type="text" name="apellido" class="form-control" readonly="readonly" value={{$persona->apellido}}>
+                </div>
+                <div class="form-group">
+                  <strong >Ornato</strong>
+                  <input type="text" name="ornato" class="form-control" readonly="readonly" value={{$persona->ornato}}>
                 </div>
                 <div class="form-group">
                   <strong >Teléfono</strong>
-                  <input type="text" name="telefono" class="form-control" readonly="readonly" value={{$persona->telefono}} placeholder="Teléfono" required >
+                  <input type="text" name="telefono" class="form-control" readonly="readonly" value={{$persona->telefono}}>
                 </div>
                 <div class="form-group">
                   <strong >Correo electrónico</strong>
-                  <input type="email" name="correo" class="form-control" readonly="readonly"  value={{$persona->correo}} placeholder="Correo electrónico">
+                  <input type="email" name="correo" class="form-control" readonly="readonly"  value={{$persona->correo}} "No registrado">
                 </div>
                  @endforeach
                 <div class="box-header with-border">
                 <h3 class="box-title">Ingresa los datos de la obra:</h3>
                 </div>
+                <label><span style="color:red">* </span><span style="color:black">Campos obligatorios</span></label>
                 <div class="form-group">
-                    <strong>Direccion Obra</strong>
+                    <strong>Direccion Obra<span style="color:red"> *</span></strong>
                     <input type="text" name="direccionobra" class="form-control input-lg " placeholder="Direccion Obra">
                 </div>
 
                 <div class="form-group">
-                    <strong>Codigo Inmueble (opcional) </strong>
+                    <strong>Codigo Inmueble</strong>
                     <input type="text" name="codigoinmueble" class="form-control input-lg " placeholder="Codigo Inmueble">
                 </div>
 

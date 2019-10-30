@@ -56,6 +56,7 @@ class SolicitudExternaController extends Controller
             'nombre' => 'required',
             'apellido' => 'required',
             'telefono' => 'required',
+            'direccion' => 'required',
             recaptchaFieldName() => recaptchaRuleName()
             
         ]);
@@ -82,8 +83,10 @@ class SolicitudExternaController extends Controller
        $persona->dpi=$request->dpi;
        $persona->nombre=$request->nombre;
        $persona->apellido=$request->apellido;
+       $persona->ornato=$request->ornato;
        $persona->telefono=$request->telefono;
        $persona->correo=$request->correo;
+
        $persona->save();
 
        $solicitud= new Solicitud();
