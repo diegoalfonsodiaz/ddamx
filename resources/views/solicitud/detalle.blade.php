@@ -20,7 +20,7 @@
                 ?>
                        <!-- personas -->
                        <div class="form-group">
-                            <strong>Propietario</strong>
+                            <strong>Nombre del propietario</strong>
                            <!-- <input type="text" name="direccionobra"  value="{{ '$solicitudes->nombre_persona'}}" class="form-control" placeholder="Direccion Obra" disabled>-->
                           <input type="text"  value="<?php echo $persona; ?>" class="form-control" placeholder="Direccion Obra" disabled>
                         
@@ -29,23 +29,23 @@
  
 
                         <div class="form-group">
-                            <strong>Direccion Obra</strong>
-                            <input type="text" name="direccionobra"  value="{{ $solicitudes->direccionobra }}" class="form-control" placeholder="Direccion Obra" disabled>
+                            <strong>Dirección de la obra</strong>
+                            <input type="text" name="direccionobra"  value="{{ $solicitudes->direccionobra }}" class="form-control" placeholder="Dirección de la obra" disabled>
                         </div>
 
                         <div class="form-group">
-                            <strong>Codigo Inmueble</strong>
-                            <input type="text" name="codigoinmueble" value="{{ $solicitudes->codigoinmueble }}"  class="form-control" placeholder="Codigo Inmueble" disabled>
+                            <strong>Código de inmueble</strong>
+                            <input type="text" name="codigoinmueble" value="{{ $solicitudes->codigoinmueble }}"  class="form-control" placeholder="Código de inmueble" disabled>
                         </div>
 
                         <div class="form-group">
-                            <strong>Expediente</strong>
-                            <input type="text" name="expediente" value="{{ $solicitudes->expediente }}"  class="form-control" placeholder="Expediente" disabled>
+                            <strong>Número de expediente</strong>
+                            <input type="text" name="expediente" value="{{ $solicitudes->expediente }}"  class="form-control" placeholder="Número de expediente" disabled>
                         </div>
 
                         <div class="">
-                            <strong>Expediente Interno</strong>
-                            <input type="text" name="expedienteinterno" value="{{ $solicitudes->expedienteinterno }}"  class="form-control" placeholder="Expediente Interno" disabled>
+                            <strong>Expediente interno</strong>
+                            <input type="text" name="expedienteinterno" value="{{ $solicitudes->expedienteinterno }}"  class="form-control" placeholder="Expediente interno" disabled>
                         </div>
 
                         <div class="form-group">
@@ -54,13 +54,13 @@
                         </div>
 
                         <div class="form-group">
-                            <strong>Número Finca</strong>
-                            <input type="text" name="numerofinca" value="{{ $solicitudes->numerofinca }}"  class="form-control" placeholder="Número Finca" disabled>
+                            <strong>Número finca</strong>
+                            <input type="text" name="numerofinca" value="{{ $solicitudes->numerofinca }}"  class="form-control" placeholder="Número finca" disabled>
                         </div>
 
                         <div class="form-group">
-                            <strong>Número Folio</strong>
-                            <input type="text" name="numerofolio" value="{{ $solicitudes->numerofolio }}"  class="form-control" placeholder="Número Folio" disabled>
+                            <strong>Número folio</strong>
+                            <input type="text" name="numerofolio" value="{{ $solicitudes->numerofolio }}"  class="form-control" placeholder="Número folio" disabled>
                         </div>
 
                         <div class="form-group">
@@ -69,8 +69,8 @@
                         </div>
 
                         <div class="form-group">
-                            <strong>Catastral</strong>
-                            <input type="text" name="catastral" value="{{ $solicitudes->catastral }}"  class="form-control" placeholder="Catastral" disabled>
+                            <strong>Número de catastral</strong>
+                            <input type="text" name="catastral" value="{{ $solicitudes->catastral }}"  class="form-control" placeholder="Número de catastral" disabled>
                         </div>
                 </div>
            
@@ -81,13 +81,13 @@
         
             <div class="box-body">
             <div class="form-group">
-                            <strong>Solvencia Municipal</strong>
-                            <input type="text" name="solvenciamunicipal" value="{{ $solicitudes->solvenciamunicipal }}"  class="form-control" placeholder="Solvencia Municipal" disabled>
+                            <strong>Solvencia municipal</strong>
+                            <input type="text" name="solvenciamunicipal" value="{{ $solicitudes->solvenciamunicipal }}"  class="form-control" placeholder="Solvencia municipal" disabled>
                         </div>
 
                         <div class="form-group">
-                            <strong>Observacion</strong>
-                            <input Type="text" name="observacion" value="{{ $solicitudes->observacion }}"  class="form-control" placeholder="Observacion" disabled>
+                            <strong>Observación</strong>
+                            <input Type="text" name="observacion" value="{{ $solicitudes->observacion }}"  class="form-control" placeholder="Observación" disabled>
                         </div>
 
                         <div class="form-group">
@@ -106,26 +106,26 @@
                         </div>
 
                         <div class="form-group">
-                            <strong>Diametro Tubo</strong>
-                            <input type="text" name="diametrotubo" value="{{ $solicitudes->diametrotubo }}"  class="form-control" placeholder="Diametro Tubo" disabled>
+                            <strong>Diámetro de tubo</strong>
+                            <input type="text" name="diametrotubo" value="{{ $solicitudes->diametrotubo }}"  class="form-control" placeholder="Diámetro de tubo" disabled>
                         </div>
 
                         <div class="form-group">
-                            <strong>Diametro Colector</strong>
-                            <input type="text" name="diametrocolector" value="{{ $solicitudes->diametrocolector }}"  class="form-control" placeholder="Diametro Colector" disabled>
+                            <strong>Diámetro de colector</strong>
+                            <input type="text" name="diametrocolector" value="{{ $solicitudes->diametrocolector }}"  class="form-control" placeholder="Diámetro de colector" disabled>
                         </div>
 
                         <div class="form-group">
-                            <strong>Ejecutor</strong>
-                            <input type="text" name="diametrocolector" value="{{ $solicitudes->nombre_ejecutor }}"  class="form-control" placeholder="Diametro Colector" disabled>
+                            <strong>Nombre del ejecutor</strong>
+                            <input type="text" name="diametrocolector" value="{{ $solicitudes->nombre_ejecutor }}"  class="form-control" placeholder="Nombre del ejecutor" disabled>
                         </div>
                         <div class="form-group">
-                            <strong>Estado Factibilidad</strong>
-                            <input type="text" name="diametrocolector" value="{{ $solicitudes->nombre_estadofactibilidad  }}"  class="form-control" placeholder="Diametro Colector" disabled>
+                            <strong>Estado de factibilidad</strong>
+                            <input type="text" name="diametrocolector" value="{{ $solicitudes->nombre_estadofactibilidad  }}"  class="form-control" placeholder="Estado de factibilidad" disabled>
                         </div>
                         <div class="form-group">
                             <strong>Tipo de obra</strong>
-                            <input type="text" name="diametrocolector" value="{{ $solicitudes->nombre_tipoobra }}"  class="form-control" placeholder="Diametro Colector" disabled>
+                            <input type="text" name="diametrocolector" value="{{ $solicitudes->nombre_tipoobra }}"  class="form-control" placeholder="Tipo de obra" disabled>
                         </div>
         
                         <div class="form-group">

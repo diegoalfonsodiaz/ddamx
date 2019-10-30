@@ -2,11 +2,11 @@
 
 @section('header')
 <h1>
-        Editar Personas
+        Editar persona
         
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+        <li><a href="/menu"><i class="fa fa-dashboard"></i> Inicio</a></li>
         <li class="active">Personas</li>
       </ol>
 @stop
@@ -28,29 +28,29 @@
             {{csrf_field()}} {{ method_field('PUT')}}
               <div class="box-body">
                 <div class="form-group">
-                  <label >DPI</label>
-                  <input type="text" class="form-control input-lg" name="dpi" placeholder="DPI" value="{{old('dpi',$persona->dpi)}}" required>
+                  <label >DPI</label><label style="color:red;">*</label>
+                  <input type="text" autocomplete="off" class="form-control input-lg" name="dpi" placeholder="DPI" value="{{old('dpi',$persona->dpi)}}" required>
                   
                 </div>
                 <div class="form-group">
-                  <label >Nombre</label>
-                  <input type="text" class="form-control input-lg" name="nombre" placeholder="Nombre" value="{{old('nombre',$persona->nombre)}}" required>
+                  <label >Nombres</label><label style="color:red;">*</label>
+                  <input type="text" autocomplete="off" class="form-control input-lg" name="nombre" placeholder="Nombres" value="{{old('nombre',$persona->nombre)}}" required>
                 </div>
                 <div class="form-group">
-                  <label >Apellidos</label>
-                  <input type="text" class="form-control input-lg" name="apellido" placeholder="Apellidos" value="{{old('apellido',$persona->apellido)}}" required>
+                  <label >Apellidos</label><label style="color:red;">*</label>
+                  <input type="text" autocomplete="off" class="form-control input-lg" name="apellido" placeholder="Apellidos" value="{{old('apellido',$persona->apellido)}}" required>
                 </div>
                 <div class="form-group">
-                  <label >Teléfono</label>
-                  <input type="text" class="form-control input-lg" name="telefono" value="{{old('telefono',$persona->telefono)}}" placeholder="Teléfono" required>
+                  <label >Teléfono</label><label style="color:red;">*</label>
+                  <input type="text" autocomplete="off" class="form-control input-lg" name="telefono" value="{{old('telefono',$persona->telefono)}}" placeholder="Teléfono" required>
                 </div>
                 <div class="form-group">
-                  <label >Ornato</label>
-                  <input type="text" class="form-control input-lg" name="ornato" value="{{old('ornato',$persona->ornato)}}" placeholder="Ornato">
+                  <label >Boleto de ornato</label>
+                  <input type="text" autocomplete="off" class="form-control input-lg" name="Boleto de ornato" value="{{old('ornato',$persona->ornato)}}" placeholder="Ornato">
                 </div>
                 <div class="form-group">
                   <label >Correo electrónico</label>
-                  <input type="email" class="form-control input-lg " name="correo" value="{{old('correo',$persona->correo)}}" placeholder="Correo electrónico">
+                  <input type="email" autocomplete="off" class="form-control input-lg " name="correo" value="{{old('correo',$persona->correo)}}" placeholder="Correo electrónico">
                 </div>
                 
               </div>

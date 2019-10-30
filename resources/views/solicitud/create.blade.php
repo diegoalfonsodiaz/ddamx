@@ -5,8 +5,8 @@
        
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li class="active">Solicitudes</li>
+        <li><a href="{{ url('/menu') }}"><i class="fa fa-dashboard"></i> Inicio</a></li>
+        <li class="active">Solicitudes de Factibilidad</li>
       </ol>
 @stop
 @section('contenido')
@@ -26,9 +26,9 @@
                 <div class="box-body">
                         <!-- personas -->
                             <div class="form-group">
-                                <label for="select" class="">Persona</label>
+                                <label for="select" class="">Nombre del propietario</label><label style="color:red;">*</label>
                                 <select name="persona_id" class="form-control" id="persona" >}
-                                    <option value="0" disabled selected >=== Selecciona Persona ===</option>
+                                    <option value="0" disabled selected >=== Seleccione nombre del propietario ===</option>
                                     @foreach($persona as $carac)
                                     <option value="{{$carac->id}}">{{$carac->dpi}},  {{$carac->nombre}}  {{$carac->apellido}}</option>
                                     @endforeach
@@ -36,53 +36,53 @@
                             </div>
 
                             <div class="form-group">
-                            <strong>Direccion Obra</strong>
-                            <input type="text" name="direccionobra" class="form-control" placeholder="Direccion Obra" required>
+                            <strong>Dirección de la obra</strong><label style="color:red;">*</label>
+                            <input type="text" autocomplete="off" name="direccionobra" class="form-control" placeholder="Dirección de la obra" required>
                         </div>
 
                         <div class="form-group">
-                            <strong>Codigo Inmueble</strong>
-                            <input type="text" name="codigoinmueble" class="form-control" placeholder="Codigo Inmueble">
+                            <strong>Código del inmueble</strong>
+                            <input type="text" autocomplete="off" name="codigoinmueble" class="form-control" placeholder="Código del inmueble">
                         </div>
 
                         <div class="form-group">
-                            <strong>Expediente</strong>
-                            <input type="text" name="expediente" class="form-control" placeholder="Expediente">
+                            <strong>Número de expediente</strong>
+                            <input type="text" autocomplete="off" name="expediente" class="form-control" placeholder="Número de expediente">
                         </div>
 
                         <div class="form-group">
-                            <strong>Expediente Interno</strong>
-                            <input type="text" name="expedienteinterno" class="form-control" placeholder="Expediente Interno">
+                            <strong>Expediente interno</strong>
+                            <input type="text" autocomplete="off" name="expedienteinterno" class="form-control" placeholder="Expediente interno">
                         </div>
 
                         <div class="form-group" style="display: none">
                             <label for="direccion_fab">Fecha</label>
-                            <input type="date" name="fechasolicitud" value="<?php echo date("Y-m-d");?>" class="form-control"  >
+                            <input type="date" autocomplete="off" name="fechasolicitud" value="<?php echo date("Y-m-d");?>" class="form-control"  >
                         </div>
 
                         <div class="form-group">
-                            <strong>Número Finca</strong>
-                            <input type="text" name="numerofinca" class="form-control" placeholder="Numero Finc">
+                            <strong>Número de finca</strong>
+                            <input type="text" autocomplete="off" name="numerofinca" class="form-control" placeholder="Número de finca">
                         </div>
 
                         <div class="form-group">
-                            <strong>Número Folio</strong>
-                            <input type="text" name="numerofolio" class="form-control" placeholder="Número Folio">
+                            <strong>Número de folio</strong>
+                            <input type="text" autocomplete="off" name="numerofolio" class="form-control" placeholder="Número de folio">
                         </div>
 
                         <div class="form-group">
                             <strong>Libro</strong>
-                            <input type="text" name="libro" class="form-control" placeholder="Libro">
+                            <input type="text" autocomplete="off" name="libro" class="form-control" placeholder="Libro">
                         </div>
 
                         <div class="form-group">
-                            <strong>Catastral</strong>
-                            <input type="text" name="catastral" class="form-control" placeholder="Catastral">
+                            <strong>Número de catastral</strong>
+                            <input type="text" autocomplete="off" name="catastral" class="form-control" placeholder="Número de catastral">
                         </div>
 
                         <div class="form-group">
-                            <strong>Solvencia Municipal</strong>
-                            <input type="text" name="solvenciamunicipal" class="form-control" placeholder="Solvencia Municipal">
+                            <strong>Solvencia municipal</strong>
+                            <input type="text" autocomplete="off" name="solvenciamunicipal" class="form-control" placeholder="Solvencia municipal">
                         </div>
                 </div>
            
@@ -97,56 +97,56 @@
                         <div class="form-group">
                             <strong>Observación</strong>
                             <!--<input type="text" name="observacion" class="form-control" placeholder="Observación">-->
-                            <textarea type="text" name="observacion" class="form-control" rows="3" placeholder="Observación"></textarea>
+                            <textarea type="text" autocomplete="off" name="observacion" class="form-control" rows="3" placeholder="Observación"></textarea>
                         </div>
 
                         <div class="form-group">
                             <strong>Longitud</strong>
-                            <input type="text" name="longitud" class="form-control" placeholder="Longitud">
+                            <input type="text" autocomplete="off" name="longitud" class="form-control" placeholder="Longitud">
                         </div>
 
                         <div class="form-group">
                             <strong>Ancho</strong>
-                            <input type="text" name="ancho" class="form-control" placeholder="Ancho">
+                            <input type="text" autocomplete="off" name="ancho" class="form-control" placeholder="Ancho">
                         </div>
 
                         <div class="form-group">
                             <strong>Profundidad</strong>
-                            <input type="text" name="profundidad" class="form-control" placeholder="Profundidad">
+                            <input type="text" autocomplete="off" name="profundidad" class="form-control" placeholder="Profundidad">
                         </div>
 
                         <div class="form-group">
-                            <strong>Diametro Tubo</strong>
-                            <input type="text" name="diametrotubo" class="form-control" placeholder="Diametro Tubo">
+                            <strong>Diámetro de tubo</strong>
+                            <input type="text" autocomplete="off" name="diametrotubo" class="form-control" placeholder="Diámetro de tubo">
                         </div>
 
                         <div class="form-group">
-                            <strong>Diametro Colector</strong>
-                            <input type="text" name="diametrocolector" class="form-control" placeholder="Diametro Colector">
+                            <strong>Diámetro de colector</strong>
+                            <input type="text" autocomplete="off" name="diametrocolector" class="form-control" placeholder="Diámetro de colector">
                         </div>
 
                         <div class="form-group">
-                            <strong>Ejecutor</strong>
+                            <strong>Nombre del ejecutor</strong>
                             <select name="ejecutor_id" id="ejecutor_id"  class="form-control selectpicker" data-live-search="true">
-                                <option value="0" disabled selected>=== Seleccione Ejecutor ===</option>
+                                <option value="0" disabled selected>=== Seleccione nombre del ejecutor ===</option>
                                     @foreach($ejecutor as $c)
                                         <option value="{{$c->id}}">{{$c->nombre}}</option>
                                     @endforeach
                             </select>
                         </div>
                         <div class="form-group">
-                            <strong>Estado Factibilidad</strong>
+                            <strong>Estado de factibilidad</strong>
                             <select name="estadofactibilidad_id" id="estadofactibilidad_id"  class="form-control selectpicker" data-live-search="true">
-                                <option value="0" disabled selected>=== Seleccione Estado Factibilidad ===</option>
+                                <option value="0" disabled selected>=== Seleccione estado de factibilidad ===</option>
                                     @foreach($estado as $c)
                                         <option value="{{$c->id}}">{{$c->nombre}}</option>
                                     @endforeach
                             </select>
                         </div>
                         <div class="form-group">
-                            <strong>Tipo obra </strong>
+                            <strong>Tipo de obra </strong>
                             <select name="tipoobra_id" id="tipoobra_id"  class="form-control selectpicker" data-live-search="true">
-                                <option value="0" disabled selected>=== Seleccione Tipo Obra ===</option>
+                                <option value="0" disabled selected>=== Seleccione tipo de obra ===</option>
                                     @foreach($tipoobra as $c)
                                         <option value="{{$c->id}}">{{$c->nombre}}</option>
                                     @endforeach
