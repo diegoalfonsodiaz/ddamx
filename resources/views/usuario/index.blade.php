@@ -3,8 +3,8 @@
 @section('header')
   <h1>Usuarios</h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li class="active">Usuario</li>
+        <li><a href="/menu"><i class="fa fa-dashboard"></i> Inicio</a></li>
+        <li class="active">usuarios</li>
         
       </ol>
       
@@ -27,8 +27,8 @@
 <div class="box box-primary">
 
       <div class="box-header">
-        <a href="{{ route('usuario.create') }}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear Usuario</a> 
-        <h3 class="box-title">Listado de Usuarios</h3>
+        <a href="{{ route('usuario.create') }}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear usuario</a> 
+        <h3 class="box-title">Listado de usuarios</h3>
       </div>
         
 
@@ -38,7 +38,7 @@
                   <tr>
                     <th scope="col" width="30px">#</th>
                     <th scope="col">Usuario</th>
-                    <th scope="col">Correo Electrónico</th>
+                    <th scope="col">Correo electrónico</th>
                     <th scope="col" width="200px">Estado</th>
                     <th scope="col" width="150px">Acciones</th>
                   </tr>

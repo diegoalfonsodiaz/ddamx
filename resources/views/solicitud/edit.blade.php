@@ -43,7 +43,7 @@
 
                         <div class="form-group">
                             <strong>Código del inmueble</strong>
-                            <input type="text" autocomplete="off" name="codigoinmueble" value="{{ $solicitud->codigoinmueble }}"  class="form-control" placeholder="Código del inmueble">
+                            <input type="text" autocomplete="off" name="codigoinmueble" value="{{ $solicitud->codigoinmueble }}"  class="form-control" placeholder="Inmueble">
                         </div>
 
                         <div class="form-group">

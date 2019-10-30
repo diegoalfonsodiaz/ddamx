@@ -22,7 +22,7 @@
                        <div class="form-group">
                             <strong>Nombre del propietario</strong>
                            <!-- <input type="text" name="direccionobra"  value="{{ '$solicitudes->nombre_persona'}}" class="form-control" placeholder="Direccion Obra" disabled>-->
-                          <input type="text"  value="<?php echo $persona; ?>" class="form-control" placeholder="Direccion Obra" disabled>
+                          <input type="text"  value="<?php echo $persona; ?>" class="form-control" placeholder="Nombre del propietario" disabled>
                         
 
                         </div>
@@ -54,13 +54,13 @@
                         </div>
 
                         <div class="form-group">
-                            <strong>Número finca</strong>
-                            <input type="text" name="numerofinca" value="{{ $solicitudes->numerofinca }}"  class="form-control" placeholder="Número finca" disabled>
+                            <strong>Número de finca</strong>
+                            <input type="text" name="numerofinca" value="{{ $solicitudes->numerofinca }}"  class="form-control" placeholder="Número de finca" disabled>
                         </div>
 
                         <div class="form-group">
-                            <strong>Número folio</strong>
-                            <input type="text" name="numerofolio" value="{{ $solicitudes->numerofolio }}"  class="form-control" placeholder="Número folio" disabled>
+                            <strong>Número de folio</strong>
+                            <input type="text" name="numerofolio" value="{{ $solicitudes->numerofolio }}"  class="form-control" placeholder="Número de folio" disabled>
                         </div>
 
                         <div class="form-group">

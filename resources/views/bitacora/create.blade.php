@@ -1,8 +1,19 @@
 @extends('admin.principal')
+
+@section('header')
+<h1>
+        Crear bitácora
+       
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="{{ url('/menu') }}"><i class="fa fa-dashboard"></i> Inicio</a></li>
+        <li class="active">bitácora</li>
+      </ol>
+@stop
 @section('contenido')
 <div class="box box-primary" >
             <div class="box-header with-border">
-              <h1 class="box-title">Crear Suceso Bitacora </h1>
+           
             <!-- /.box-header -->
             <!-- form start -->
             <form action="{{ route('bitacora.store') }}" method="POST">
@@ -13,9 +24,9 @@
 
                         <!-- personas -->
                         <div class="form-group">
-                            <label for="select" class="">Numero de Licencia</label>
+                            <label for="select" class="">Número de licencia</label>
                             <select name="licencia_id" class="form-control" id="solicitud">
-                                <option value="0" disabled selected>=== Selecciona el numero de la licencia ===</option>
+                                <option value="0" disabled selected>=== Selecciona el número de la licencia ===</option>
                                 @foreach($licencia as $carac)
                                 <option value="{{$carac->id}}">{{$carac->numerolicencia}}</option>
                                 @endforeach
@@ -31,7 +42,7 @@
 
                         <div class="form-group">
                             <strong>Descripción</strong>
-                            <input type="text" name="descripcion" class="form-control" placeholder="Descripción">
+                            <input type="text" autocomplete="off" name="descripcion" class="form-control" placeholder="Descripción">
                         </div>
 
                         <div class="form-group">

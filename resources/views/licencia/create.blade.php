@@ -5,8 +5,8 @@
        
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li class="active">Licencias</li>
+        <li><a href="/menu"><i class="fa fa-dashboard"></i> Inicio</a></li>
+        <li class="active">licencias</li>
       </ol>
 @stop
 @section('contenido')
@@ -36,14 +36,14 @@
 
                         <div class="form-group {{ $errors->has('numerolicencia') ? 'has-error': ''}}">
                             <strong>Número de licencia</strong>
-                            <input type="text" name="numerolicencia" class="form-control" value="{{ old('numerolicencia')}}" placeholder="Número de licencia"  >
+                            <input type="text" autocomplete="off" name="numerolicencia" class="form-control" value="{{ old('numerolicencia')}}" placeholder="Número de licencia"  >
 
                             {!! $errors->first('numerolicencia',' <span class="help-block">Campo obligatorio</span>')!!}
                         </div>
 
                         <div class="form-group {{ $errors->has('fechaautorizacion') ? 'has-error': ''}}" >
                             <label for="direccion_fab">Fecha de autorización</label>
-                            <input type="date" name="fechaautorizacion" class="form-control" value="{{ old('fechaautorizacion')}}" >
+                            <input type="date" autocomplete="off" name="fechaautorizacion" class="form-control" value="{{ old('fechaautorizacion')}}" >
 
                             {!! $errors->first('fechaautorizacion',' <span class="help-block">Campo obligatorio</span>')!!}
                         </div>
@@ -61,7 +61,7 @@
 
                         <div class="form-group {{ $errors->has('recibo') ? 'has-error': ''}}">
                             <strong>No. de recibo</strong>
-                            <input type="text" name="recibo" class="form-control" value="{{ old('recibo')}}" placeholder="No. de recibo" >
+                            <input type="text" autocomplete="off" name="recibo" class="form-control" value="{{ old('recibo')}}" placeholder="No. de recibo" >
 
                             {!! $errors->first('recibo',' <span class="help-block">Campo obligatorio</span>')!!}
                         </div>
@@ -70,28 +70,28 @@
 
                         <div class="form-group {{ $errors->has('derecho') ? 'has-error': ''}}">
                             <strong>Derecho Q.</strong>
-                            <input type="text" name="derecho" class="form-control" value="{{ old('derecho')}}" placeholder="Derecho" >
+                            <input type="text" autocomplete="off" name="derecho" class="form-control" value="{{ old('derecho')}}" placeholder="Derecho" >
 
                             {!! $errors->first('derecho',' <span class="help-block">Campo obligatorio</span>')!!}
                         </div>
 
                         <div class="form-group {{ $errors->has('remocion') ? 'has-error': ''}}">
                             <strong>Remosión Q.</strong>
-                            <input type="text" name="remocion" class="form-control" value="{{ old('remocion')}}" placeholder="Remosión">
+                            <input type="text" autocomplete="off" name="remocion" class="form-control" value="{{ old('remocion')}}" placeholder="Remosión">
 
                             {!! $errors->first('remocion',' <span class="help-block">Campo obligatorio</span>')!!}
                         </div>
 
                         <div class="form-group {{ $errors->has('fechaconexion') ? 'has-error': ''}}">
                             <label for="direccion_fab">Fecha de conexión</label>
-                            <input type="date" name="fechaconexion" class="form-control" value="{{ old('fechaconexion')}}" >
+                            <input type="date" autocomplete="off"  name="fechaconexion" class="form-control" value="{{ old('fechaconexion')}}" >
 
                             {!! $errors->first('fechaconexion',' <span class="help-block">Campo obligatorio</span>')!!}
                         </div>
 
                         <div class="form-group {{ $errors->has('monto') ? 'has-error': ''}}">
                             <strong>Días de procesamiento</strong>
-                            <input type="text" name="monto" class="form-control" value="{{ old('monto')}}" placeholder="Días de procesamiento" >
+                            <input type="text" autocomplete="off" name="monto" class="form-control" value="{{ old('monto')}}" placeholder="Días de procesamiento" >
 
                             {!! $errors->first('monto',' <span class="help-block">Campo obligatorio</span>')!!}
                         </div>
@@ -101,7 +101,7 @@
                         <div class="form-group {{ $errors->has('estadolicencia_id') ? 'has-error': ''}}">
                             <strong>Estado de licencia</strong>
                             <select name="estadolicencia_id" id="estadolicencia_id"  class="form-control selectpicker" data-live-search="true">
-                                <option value="0" disabled selected>=== Seleccione el estado de la Licencia ===</option>
+                                <option value="0" disabled selected>=== Seleccione el estado de la licencia ===</option>
                                 @foreach($estado as $c)
                                         <option value="{{$c->id}}">{{$c->nombre}}</option>
                                     @endforeach
@@ -114,9 +114,9 @@
                         @elseif (auth()->user()->hasRole(['jefeoperaciones']))
 
                         <div class="form-group {{ $errors->has('estadolicencia_id') ? 'has-error': ''}}">
-                            <strong>Estado de licencia</strong>
+                            <strong>Estado de la licencia</strong>
                             <select name="estadolicencia_id" id="estadolicencia_id"  class="form-control selectpicker" data-live-search="true">
-                                <option value="0" disabled selected>=== Seleccione el estado de la Licencia ===</option>
+                                <option value="0" disabled selected>=== Seleccione el estado de la licencia ===</option>
                                 @foreach($estado as $c)
                                         <option value="{{$c->id}}">{{$c->nombre}}</option>
                                     @endforeach
@@ -132,7 +132,7 @@
                         <div class="form-group {{ $errors->has('estadolicencia_id') ? 'has-error': ''}}">
                             <strong>Estado de licencia</strong>
                             <select name="estadolicencia_id" id="estadolicencia_id"  class="form-control selectpicker" data-live-search="true">
-                                <option value="0" disabled selected>=== Seleccione el estado de la Licencia ===</option>
+                                <option value="0" disabled selected>=== Seleccione el estado de la licencia ===</option>
                                 @foreach($estadooperaciones as $ci)
                                         <option value="{{$ci->id}}">{{$ci->nombre}}</option>
                                     @endforeach

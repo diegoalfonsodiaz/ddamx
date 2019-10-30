@@ -2,12 +2,12 @@
 
 @section('header')
   <h1>
-     Cambiar Estado
+     Cambio de estado
   </h1>
 
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-    <li class="active">Denuncias</li>
+    <li class="active">denuncias</li>
   </ol>
 @stop
 
@@ -25,7 +25,7 @@
               <div class="box-body">
 
                   <div class="form-group">
-                    <label for="estadodenuncia_id">Estado Denuncia:</label>
+                    <label for="estadodenuncia_id">Estado de la denuncia</label>
                     <select class="form-control input-lg" name="estadodenuncia_id" id="estadodenuncia_id" class="form-control selectpicker" data-live-search="true">
                       @foreach($estado as $e)
                         @if ($e->id==$denuncia->id)

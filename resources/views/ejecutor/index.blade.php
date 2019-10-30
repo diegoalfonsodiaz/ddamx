@@ -1,10 +1,22 @@
 @extends('admin.principal')
+@section('header')
+<h1>
+        Ejecutores
+       
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="{{ url('/menu') }}"><i class="fa fa-dashboard"></i> Inicio</a></li>
+        <li class="active">ejecutores</li>
+        
+      </ol>
+      @stop
 @section('contenido')
+
 <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title"> Ejecutores</h3>
+              <h3 class="box-title"> Listado de ejecutores</h3>
               <div class="pull-right">
-                <a href="{{ route('ejecutor.create') }}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear  Ejecutor</a>
+                <a href="{{ route('ejecutor.create') }}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear ejecutor</a>
               <br><br>
               
             </div>
@@ -15,8 +27,8 @@
         <tr>
             <th># </th>
             <th>Nombre</th>
-            <th>Direccion</th>
-            <th>Ornato</th>
+            <th>Dirección</th>
+            <th>Boleto de ornato</th>
             <th>Cargo</th>
             <th width="280px">Acciones</th>
         </tr>

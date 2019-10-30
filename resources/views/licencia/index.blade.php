@@ -1,8 +1,8 @@
 @extends('admin.principal')
 @section('header')
 <h1>
-        Licencia
-        <small>Acontinuacion se presentan todas las Licencias para ser verificadas por la entidad</small>
+        Licencias
+       
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
@@ -15,13 +15,13 @@
 <div class="box box-primary">
             <div class="box-header">
             @if (auth()->user()->hasRole(['admin']))
-                <a href="{{route('licencia.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear Nueva Licencia</a> 
+                <a href="{{route('licencia.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear licencia</a> 
                 @elseif(auth()->user()->hasRole(['jefeoperaciones']))
-                <a href="{{route('licencia.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear Nueva Licencia</a>
+                <a href="{{route('licencia.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear licencia</a>
                 @elseif(auth()->user()->hasRole(['operaciones']))
-                <a href="{{route('licencia.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear Nueva Licencia</a>
+                <a href="{{route('licencia.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear licencia</a>
             @endif
-              <h3 class="box-title">Licencias</h3>
+              <h3 class="box-title">Listado de licencias</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
