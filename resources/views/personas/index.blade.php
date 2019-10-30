@@ -7,7 +7,7 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li class="active">Personas</li>
+        <li class="active">personas</li>
         
       </ol>
       
@@ -30,8 +30,8 @@
 <div class="box box-primary">
             <div class="box-header">
             
-            <a href="{{route('personas.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear Persona</a> 
-              <h3 class="box-title">Listado Personas</h3>
+            <a href="{{route('personas.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear persona</a> 
+              <h3 class="box-title">Listado de personas</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -39,12 +39,12 @@
                 <table id="persona-table" class="table table-striped table-bordered " style="width:100%">
                         <thead>
                             <tr>
-                            <th>ID</th>
+                         
                                 <th>DPI</th>
-                                <th>Nombre</th>
-                                <th>Apellido</th>
-                                <th>Telefono</th>
-                                <th>Ornato</th>
+                                <th>Nombres</th>
+                                <th>Apellidos</th>
+                                <th>Teléfonos</th>
+                                <th>Boleto de ornato</th>
                                 <th>Correo</th>
                                 <th>Estado</th>
                                 <th>Acciones</th>
@@ -53,7 +53,7 @@
                         <tbody>
                             @foreach($personas as $persona)
                             <tr>
-                            <td>{{$persona->id}}</td>
+                           
                                 <td>{{$persona->dpi}}</td>
                                 <td>{{$persona->nombre}}</td>
                                 <td>{{$persona->apellido}}</td>
