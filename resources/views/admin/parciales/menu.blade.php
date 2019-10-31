@@ -1,5 +1,5 @@
 <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">Navegacion</li>
+        <li class="header">Navegación</li>
         <li {{ request()->is('menu') ? 'class=active' : '' }}><a href=" {{ url('/menu') }} "><i class="fa fa-dashboard"></i> <span>Inicio</span></a></li>
         <li {{ request()->is('persona') ? 'class=active' : '' }}><a href="{{route('personas.index')}}"> <i class="fa fa-user-plus"></i> <span>  Personas </span> </a></li>
         <li {{ request()->is('ejecutor') ? 'class=active' : '' }} > <a href=" {{ url('/ejecutor') }} "> <i class="fa fa-address-card-o"></i> <span>Ejecutores</span> </a></li>
