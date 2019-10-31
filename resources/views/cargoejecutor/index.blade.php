@@ -1,10 +1,35 @@
 @extends('admin.principal')
+@section('header')
+<h1>
+Cargos de ejecutor
+       
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="{{ url('/menu') }}"><i class="fa fa-dashboard"></i> Inicio</a></li>
+        <li class="active">Mantenimiento</li>
+        <li class="active">Cargos de ejecutor</li>
+        
+      </ol>
+      
+@stop
 @section('contenido')
+<div class="box-header">
+    @if(session()->has('info'))
+      <div class="col-md-6">
+          <div class="alert alert-success" role="alert">
+              {{ session('info') }}
+              <button type="button" class="close" data-dismiss="alert" alert-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+        </div>
+      @endif
+  </div>
 <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title"> Cargo ejecutor</h3>
+              <h3 class="box-title"> Listado de cargos de ejecutor</h3>
               <div class="pull-right">
-                <a  href="{{ route('cargoejecutor.create') }}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear Cargo Ejecutor</a>
+                <a  href="{{ route('cargoejecutor.create') }}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear cargo de ejecutor</a>
                 
             </div>
               <br><br>
