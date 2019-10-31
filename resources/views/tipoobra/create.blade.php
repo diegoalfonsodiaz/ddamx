@@ -6,8 +6,9 @@
        
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li class="active">Tipo obra</li>
+        <li><a href="/menu"><i class="fa fa-dashboard"></i> Inicio</a></li>
+        <li class="active">Mantenimiento</li>
+        <li class="active">tipoobras de obra</li>
       </ol>
 @stop
 @section('contenido')
@@ -23,7 +24,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" method="POST" action="{{route('tipoobras.store')}}">
+            <form autocomplete="off" role="form" method="POST" action="{{route('tipoobras.store')}}">
             {{csrf_field()}}
               <div class="box-body">
                 <div class="form-group">

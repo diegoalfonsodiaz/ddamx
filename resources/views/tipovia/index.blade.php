@@ -1,10 +1,11 @@
 @extends('admin.principal')
 
 @section('header')
-  <h1>Tipo Vía</h1>
+  <h1>Tipos de vía</h1>
       <ol class="breadcrumb">
         <li><a href="/menu"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li class="active">Tipo vía</li>
+        <li class="active">Mantenimiento</li>
+        <li class="active">Tipos de vía</li>
         <br>
       </ol>
       
@@ -28,8 +29,8 @@
 <div class="box box-primary">
 
       <div class="box-header">
-        <a href="{{ url('/agregartipovia') }}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear Estado</a> 
-        <h3 class="box-title">Tipo Vía</h3>
+        <a href="{{ url('/agregartipovia') }}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear tipo de vía</a> 
+        <h3 class="box-title">Listado tipos de vía</h3>
       </div>
 
 

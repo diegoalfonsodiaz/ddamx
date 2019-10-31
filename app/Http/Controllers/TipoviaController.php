@@ -15,7 +15,7 @@ class TipoviaController extends Controller
      */
     public function index()
     {
-        $tpv = Tipovia::all();
+        $tpv = Tipovia::orderBy('id', 'desc')->get();
         return view('tipovia.index', ['tipovias'=>$tpv]);
     }
 
@@ -38,7 +38,7 @@ class TipoviaController extends Controller
         $tpv->descripcion = $request->input('descripcion');
         $tpv->estado = '1';
         $tpv->save();
-        return redirect('tipovia')->with('info', 'Registro éxitoso Tipo vía');
+        return redirect('tipovia')->with('info', 'Datos ingresados correctamente');
     }
 
     /**
@@ -97,14 +97,14 @@ class TipoviaController extends Controller
         'descripcion' => $request->input('descripcion'),
     );
     Tipovia::where('id', $id)->update($data);
-    return redirect('tipovia')->with('info', 'Registros Actualizados correctamente');
+    return redirect('tipovia')->with('info', 'Datos actualizados correctamente');
     }
 
     public function activar(Tipovia $tipovia, Request $request)
     {
         $tipovia->estado='1';
         $tipovia->save();
-        return redirect('tipovia')->with('info', 'Estado Activado correctamente');
+        return redirect('tipovia')->with('info', 'Tipo de vía activado correctamente');
     }
     
 
@@ -112,7 +112,7 @@ class TipoviaController extends Controller
     {
         $tipovia->estado='0';
         $tipovia->save();
-        return redirect('tipovia')->with('info', 'Estado desactivado correctamente');
+        return redirect('tipovia')->with('info', 'Tipo de vía desactivado correctamente');
     }
 
    

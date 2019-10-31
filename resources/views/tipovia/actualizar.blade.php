@@ -1,10 +1,11 @@
 @extends('admin.principal')
 
 @section('header')
-  <h1> Editar Tipo Vía </h1>
+  <h1> Editar tipo de vía </h1>
   <ol class="breadcrumb">
     <li><a href="/menu"><i class="fa fa-dashboard"></i> Inicio</a></li>
-    <li class="active">Tipo Vía</li>
+    <li class="active">Mantenimiento</li>
+    <li class="active">Tipos de vía</li>
   </ol>
 @stop
 
@@ -28,7 +29,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form action='{{ url("/updatetipovia/{$tpv->id}") }}' method="POST">
+            <form autocomplete="off" action='{{ url("/updatetipovia/{$tpv->id}") }}' method="POST">
             
             {{ csrf_field() }}
 

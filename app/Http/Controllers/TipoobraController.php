@@ -21,7 +21,7 @@ class TipoobraController extends Controller
     public function index(Request $request)
     {
         $request->user()->autorizeRoles(['admin']);
-        $tipoobra =Tipoobra::all();        
+        $tipoobra =Tipoobra::orderBy('id', 'desc')->get();        
         return view('tipoobra.index',compact('tipoobra'));
     }
 
