@@ -6,7 +6,8 @@
        
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+        <li><a href="/menu"><i class="fa fa-dashboard"></i> Inicio</a></li>
+        <li class="active">Mantenimiento</li>
         <li class="active">Tipos de obra</li>
         
       </ol>
@@ -30,7 +31,7 @@
 <div class="box box-primary">
             <div class="box-header">
             <a href="{{route('tipoobras.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear tipo de obra</a> 
-              <h3 class="box-title">Listado Tipos de obras</h3>
+              <h3 class="box-title">Listado tipos de obra</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
