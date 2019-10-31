@@ -1,4 +1,15 @@
 @extends('admin.principal')
+@section('header')
+<h1>
+        Crear cargos de ejecutor
+       
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="{{ url('/menu') }}"><i class="fa fa-dashboard"></i> Inicio</a></li>
+        <li class="active">Mantenimiento</li>
+        <li class="active">Cargos de ejecutor</li>
+      </ol>
+@stop
 @section('contenido')
 
 
@@ -15,7 +26,7 @@
 
 <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Crear Cargo ejecutor</h3>
+              <h3 class="box-title"></h3>
             <!-- /.box-header -->
             <!-- form start -->
 
