@@ -45,7 +45,7 @@ class CargoejecutorController extends Controller
         $cargoejecutor->nombre = $request->input('nombre');
         $cargoejecutor->estado = '1';
         $cargoejecutor->save();
-        return redirect('cargoejecutor')->with('info', 'Se registro Corectamente el Estado de Factibilidad');
+        return redirect('cargoejecutor')->with('info', 'Datos ingresados correctamente');
     }
 
     /**
@@ -68,6 +68,7 @@ class CargoejecutorController extends Controller
     public function edit(Cargoejecutor $cargoejecutor)
     {
         return view('cargoejecutor.edit',compact('cargoejecutor'));
+        
     }
 
     /**
@@ -85,8 +86,7 @@ class CargoejecutorController extends Controller
   
         $cargoejecutor->update($request->all());
   
-        return redirect()->route('cargoejecutor.index')
-                        ->with('success','Cargo ejecutor actualizado con exito');
+        return redirect()->route('cargoejecutor.index')->with('info','Datos actualizados correctamente');
     }
 
     /**
@@ -99,6 +99,6 @@ class CargoejecutorController extends Controller
     {
         $cargoejecutor->delete();
         return redirect()->route('cargoejecutor.index')
-                        ->with('success','Cargo borrado');
+                        ->with('info','Cargo de ejecutor eliminado');
     }
 }
