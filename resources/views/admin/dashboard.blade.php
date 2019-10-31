@@ -80,10 +80,10 @@
                 <table class="table no-margin">
                   <thead>
                   <tr>
-                    <th scope="col" width="700px"><p style="color:skyblue;">Descripción</p></th>
-                    <th scope="col" width="200px"><p style="color:skyblue;">Fecha de emisión</p></th>
-                    <th scope="col" width="300px"><p style="color:skyblue;">Dirección</p></th>
-                    <th scope="col" width=200px"><p style="color:skyblue;">Estado de denuncia</p></th>
+                    <th scope="col" width="700px"><p style="color:green;">Descripción</p></th>
+                    <th scope="col" width="200px"><p style="color:green;">Fecha de emisión</p></th>
+                    <th scope="col" width="300px"><p style="color:green;">Dirección</p></th>
+                    <th scope="col" width="200px"><p style="color:green;">Estado de denuncia</p></th>
                   </tr>
 
 
@@ -112,8 +112,8 @@
           </div>
 
           <div class="col-md-6">
-                  <p class="text-left">
-                  <strong style="color:orange;">Información de solicitudes</strong>
+                  <p class="text-center">
+                  <strong style="color:green;">Información general</strong>
                   </p>
                   <div class="progress-group">
                     <span class="progress-text">Solicitudes factibles</span>
@@ -158,9 +158,7 @@
 
 
                 
-                <p class="text-left">
-                 <strong style="color:orange;">Información general</strong>
-                 </p>
+            
                 <div class="col-md-6">
                             <div class="info-box bg-orange">
                         <span class="info-box-icon"><i class="ion-arrow-down-a"></i></span>
