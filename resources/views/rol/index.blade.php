@@ -4,8 +4,8 @@
   <h1>Roles</h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li class="active">Rol</li>
-        
+        <li class="active">Usuarios</li>
+        <li class="active">rol</li>
       </ol>
       
 @stop
@@ -27,8 +27,8 @@
 <div class="box box-primary">
 
       <div class="box-header">
-        <a href="{{ route('rol.create') }}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear Rol</a>
-        <h3 class="box-title">Listado de Roles</h3>
+        <a href="{{ route('rol.create') }}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear rol</a>
+        <h3 class="box-title">Listado de roles</h3>
       </div>
         
 
@@ -37,8 +37,8 @@
               <thead>
                   <tr>
                     <th scope="col" width="30px">#</th>
-                    <th scope="col">Nombre Rol</th>
-                    <th scope="col">Descripción Rol</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Descripción </th>
                     <th scope="col">Estado</th>
                     <th scope="col">Acciones</th>
                   </tr>

@@ -1,10 +1,11 @@
 @extends('admin.principal')
 
 @section('header')
-  <h1> Crear Asignación </h1>
+  <h1>Crear asignación</h1>
   <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-    <li class="active">Asignacion</li>
+    <li><a href="/menu"><i class="fa fa-dashboard"></i> Inicio</a></li>
+    <li class="active">usarios</li>
+    <li class="active">asignacion de roles</li>
   </ol>
 @stop
 
@@ -32,7 +33,7 @@
             <div class="form-group">
                 <strong>Usuario</strong>
                 <select name="user_id" id="user_id"  class="form-control selectpicker" data-live-search="true">
-                <option value="0" disabled selected>=== Seleccione Usuario ===</option>
+                <option value="0" disabled selected>=== Seleccione usuario ===</option>
                 @foreach($usuario as $u)
                     <option value="{{$u->id}}">{{$u->name}}</option>
                 @endforeach
@@ -43,7 +44,7 @@
             <div class="form-group">
                 <strong>Rol</strong>
                 <select name="role_id" id="role_id"  class="form-control selectpicker" data-live-search="true">
-                <option value="0" disabled selected>=== Seleccione Rol ===</option>
+                <option value="0" disabled selected>=== Seleccione rol ===</option>
                 @foreach($rol as $r)
                     <option value="{{$r->id}}">{{$r->nombre}}</option>
                 @endforeach

@@ -1,8 +1,19 @@
 @extends('admin.principal')
+
+@section('header')
+<h1>
+        Editar bitácora
+       
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="{{ url('/menu') }}"><i class="fa fa-dashboard"></i> Inicio</a></li>
+        <li class="active">bitácora</li>
+      </ol>
+@stop
 @section('contenido')
 <div class="box box-primary" >
             <div class="box-header with-border">
-              <h1 class="box-title">Crear Suceso Bitacora </h1>
+             
 
             <form action="{{ route('bitacora.update', $bitacora->id) }}" method="POST">
             @csrf
@@ -12,7 +23,7 @@
 
                         <!-- personas -->
                         <div class="form-group">
-                            <label for="select" class="">Numero de Licencia</label>
+                            <label for="select" class="">Número de licencia</label>
                             <select name="licencia_id" class="form-control" id="solicitud">
                                 
                                 @foreach($licencia as $carac)
@@ -34,7 +45,7 @@
 
                         <div class="form-group">
                             <strong>Descripción</strong>
-                            <input type="text" name="descripcion" value="{{ $bitacora->descripcion }}" class="form-control" placeholder="Descripción">
+                            <input type="text" autocomplete="off" name="descripcion" value="{{ $bitacora->descripcion }}" class="form-control" placeholder="Descripción">
                         </div>
 
                         <div class="form-group">

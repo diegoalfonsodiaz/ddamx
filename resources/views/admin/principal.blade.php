@@ -119,7 +119,7 @@ desired effect
           <span class="hidden-xs">{{ Auth::user()->name }}</span>
           <br>
           @endAuth
-          <a href="#"><i class="fa fa-circle text-success"></i> En Linea</a>
+          <a href="#"><i class="fa fa-circle text-success"></i> En Línea</a>
         </div>
       </div>
 

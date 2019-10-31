@@ -1,12 +1,12 @@
 @extends('admin.principal')
 @section('header')
     <h1>
-        Detalle Licencia
+        Detalle de licencia
        
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Inicio </a></li>
-        <li class="active">Detalle</li>
+        <li class="active">licencias</li>
       </ol>
 @stop
 @section('contenido')

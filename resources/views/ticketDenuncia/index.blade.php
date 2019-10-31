@@ -1,13 +1,13 @@
 @extends('admin.principal')
 @section('header')
   <h1>
-    Tickets Denuncias
-    <small>Seguimiento de casos en Denuncias</small>
+  Seguimiento de las denuncias
+ 
   </h1>
 
   <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-    <li class="active">Tickets</li>
+    <li><a href="/menu"><i class="fa fa-dashboard"></i> Inicio</a></li>
+    <li class="active">Seguimiento de denuncias</li>
   </ol>
       
 @stop

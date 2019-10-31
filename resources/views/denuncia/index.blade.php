@@ -2,7 +2,7 @@
 @section('header')
   <h1>
     Denuncias
-    <small>Denuncias Públicas</small>
+    
   </h1>
 
   <ol class="breadcrumb">
@@ -28,8 +28,8 @@
 
   <div class="box box-primary">
     <div class="box-header">        
-      <a href="{{route('denuncia.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Nueva Denuncia</a> 
-      <h3 class="box-title">Denuncia</h3>
+      <a href="{{route('denuncia.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Nueva denuncia</a> 
+      <h3 class="box-title">Listado de las denuncia</h3>
     </div>
             <!-- /.box-header -->
     <div class="box-body">

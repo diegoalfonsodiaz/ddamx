@@ -1,12 +1,12 @@
 @extends('admin.principal')
 @section('header')
 <h1>
-        Editar Licencia
+        Editar licencia
        
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li class="active">Licencias</li>
+        <li class="active">licencias</li>
       </ol>
 @stop
 @section('contenido')
@@ -43,7 +43,7 @@
 
                         <div class="form-group {{ $errors->has('numerolicencia') ? 'has-error': ''}}">
                             <strong>Número de licencia</strong>
-                            <input type="text" name="numerolicencia"  value="{{ $licencia->numerolicencia }}" class="form-control" placeholder="Número de icencia">
+                            <input type="text" autocomplete="off" name="numerolicencia"  value="{{ $licencia->numerolicencia }}" class="form-control" placeholder="Número de icencia">
                             {!! $errors->first('numerolicencia',' <span class="help-block">Campo obligatorio</span>')!!}
 
                         </div>
@@ -74,7 +74,7 @@
 
                         <div class="form-group {{ $errors->has('recibo') ? 'has-error': ''}}">
                             <strong>No. de recibo</strong>
-                            <input type="text" name="recibo" value="{{ $licencia->recibo }}"  class="form-control" placeholder="Recibo">
+                            <input type="text" autocomplete="off" name="recibo" value="{{ $licencia->recibo }}"  class="form-control" placeholder="Recibo">
                             {!! $errors->first('recibo',' <span class="help-block">Campo obligatorio</span>')!!}
 
                         </div>
@@ -83,14 +83,14 @@
 
                         <div class="form-group {{ $errors->has('derecho') ? 'has-error': ''}}">
                             <strong>Derecho Q.</strong>
-                            <input type="text" name="derecho" value="{{ $licencia->derecho }}"  class="form-control" placeholder="Derecho">
+                            <input type="text" autocomplete="off" name="derecho" value="{{ $licencia->derecho }}"  class="form-control" placeholder="Derecho">
                             {!! $errors->first('derecho',' <span class="help-block">Campo obligatorio</span>')!!}
 
                         </div>
 
                         <div class="form-group {{ $errors->has('remocion') ? 'has-error': ''}}">
                             <strong>Remosión Q.</strong>
-                            <input type="text" name="remocion" value="{{ $licencia->remocion }}"  class="form-control" placeholder="Remocion">
+                            <input type="text" autocomplete="off" name="remocion" value="{{ $licencia->remocion }}"  class="form-control" placeholder="Remocion">
                             {!! $errors->first('remocion',' <span class="help-block">Campo obligatorio</span>')!!}
 
                         </div>
@@ -104,7 +104,7 @@
 
                         <div class="form-group {{ $errors->has('monto') ? 'has-error': ''}}">
                             <strong>Días de procesamiento</strong>
-                            <input type="text" name="monto" value="{{ $licencia->monto }}"  class="form-control" placeholder="Monto">
+                            <input type="text" autocomplete="off" name="monto" value="{{ $licencia->monto }}"  class="form-control" placeholder="Monto">
                             {!! $errors->first('monto',' <span class="help-block">Campo obligatorio</span>')!!}
 
                         </div>
