@@ -1,6 +1,4 @@
 @extends('admin.principal')
-@section('header')
-@stop
 @section('contenido')
 
 <div class="row">
@@ -185,8 +183,8 @@
                             <span class="info-box-icon"><i class="ion-ios-chatbubble-outline"></i></span>
 
                             <div class="info-box-content">
-                            <span class="info-box-text">Licencias</span>
-                            <span class="info-box-number">insert</span>
+                            <span class="info-box-text">Licencias con emisión de orden de pago</span>
+                            <span class="info-box-number">{{$licenciaemision}}</span>
 
                             <div class="progress">
                                 <div class="progress-bar" style="width: 100%"></div>

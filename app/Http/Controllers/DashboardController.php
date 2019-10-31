@@ -68,13 +68,21 @@ $fecha=date("Y-m-d",strtotime($fecha_actual."- 1 days"));
 //-------------------------------------------------------------------------------
         $licencia= DB::table('licencias')
         ->select('licencias.id')
-        ->where('licencias.estadolicencia_id','=','1')
         ->count();
 //-------------------------------------------------------------------------------
         $licenciadesc= DB::table('licencias')
         ->select('licencias.id')
         ->where('licencias.estadolicencia_id','=','2')
         ->count();
+
+//-----------------------------------------------------------------------------
+        $licenciaemision= DB::table('licencias')
+        ->join('estadolicencias','licencias.estadolicencia_id','=','estadolicencias.id')
+        ->select('licencias.id','estadolicencias.nombre')
+        ->where('licencias.estadolicencia_id','=','1')
+        ->count();
+
+
 
         $fecha_actual = date("Y-m-d");
 //sumo 1 día
@@ -92,7 +100,7 @@ $fechamenos= date("Y-m-d",strtotime($fecha_actual."- 1 days"));
         return view('admin.dashboard',compact('consulta','consultapersona',
         'consultapersonadesac','consultasolicitud',
         'consultasolicitudnofac','licencia','licenciadesc',
-        'denuncia', 'contactos', 'solsinprocesar','solicitudfac','solproceso'));
+        'denuncia', 'contactos', 'solsinprocesar','solicitudfac','solproceso','licenciaemision'));
        
         }
 
