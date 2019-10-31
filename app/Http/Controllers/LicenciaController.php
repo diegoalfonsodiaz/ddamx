@@ -80,14 +80,14 @@ class LicenciaController extends Controller
         
         $this->Validate($request, [
             'solicitudfactibilidad_id' => 'required|unique:licencias,solicitudfactibilidad_id',
-            'numerolicencia' => 'required',
-            'fechaautorizacion' => 'required',
+            'numerolicencia',
+            'fechaautorizacion',
             'tipovia_id' => 'required',
-            'recibo' => 'required',
-            'derecho' => 'required',
+            'recibo',
+            'derecho' => 'required', 
             'remocion' => 'required',
-            'fechaconexion' => 'required',
-            'monto' => 'required',
+            'fechaconexion',
+            'monto',
             'estadolicencia_id' => 'required',
             
         ]);
