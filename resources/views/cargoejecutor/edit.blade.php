@@ -17,7 +17,7 @@
               <h3 class="box-title"></h3>
             <!-- /.box-header -->
             <!-- form start -->
-            <form action="{{ route('cargoejecutor.update',$cargoejecutor->id) }}" method="POST">
+            <form autocomplete="off" action="{{ route('cargoejecutor.update',$cargoejecutor->id) }}" method="POST">
         @csrf
         @method('PUT')
    

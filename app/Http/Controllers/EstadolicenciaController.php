@@ -21,7 +21,7 @@ class EstadolicenciaController extends Controller
     public function index(Request $request)
     {
         $request->user()->autorizeRoles(['admin']);
-        $el = Estadolicencia::all();
+        $el = Estadolicencia::orderBy('id', 'desc')->get();
         return view('estadolicencia.index', ['estadolicencias'=>$el]);
     }
 
@@ -44,7 +44,7 @@ class EstadolicenciaController extends Controller
         $estadolicen->nombre = $request->input('nombre');
         $estadolicen->descripcion = $request->input('descripcion');
         $estadolicen->save();
-        return redirect('estadolicencia')->with('info', 'Registro Completado estado Licencia');
+        return redirect('estadolicencia')->with('info', 'Datos ingresados correctamente');
     }
 
     /**
@@ -110,7 +110,7 @@ class EstadolicenciaController extends Controller
         );
 
         Estadolicencia::where('id', $id)->update($data);
-        return redirect('estadolicencia')->with('info', 'Actualización éxitosa');
+        return redirect('estadolicencia')->with('info', 'Datos actualizados correctamente');
     }
 
     /**
@@ -141,7 +141,7 @@ class EstadolicenciaController extends Controller
         $request->user()->autorizeRoles(['admin']);
         $estadolicencia->estado='1';
         $estadolicencia->save();
-        return redirect('estadolicencia')->with('info', 'Estado Activado correctamente');
+        return redirect('estadolicencia')->with('info', 'Estado de licencia activado correctamente');
     }
     
 
@@ -150,6 +150,6 @@ class EstadolicenciaController extends Controller
         $request->user()->autorizeRoles(['admin']);
         $estadolicencia->estado='0';
         $estadolicencia->save();
-        return redirect('estadolicencia')->with('info', 'Estado desactivado correctamente');
+        return redirect('estadolicencia')->with('info', 'Estado de licencia desactivado correctamente');
     }
 }
