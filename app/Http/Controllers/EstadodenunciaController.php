@@ -68,7 +68,7 @@ class EstadodenunciaController extends Controller
      
         $estadodenuncia->estado='0';
         $estadodenuncia->save();
-        return redirect(route('estadodenuncias.index'))->with('flash', 'Estado desactivado correctamente');
+        return redirect(route('estadodenuncias.index'))->with('flash', 'Estado de denuncia desactivado correctamente');
     }
 
     public function activar(Estadodenuncia $estadodenuncia, Request $request)
@@ -76,6 +76,6 @@ class EstadodenunciaController extends Controller
      
         $estadodenuncia->estado='1';
         $estadodenuncia->save();
-        return redirect(route('estadodenuncias.index'))->with('flash', 'Estado activado correctamente');
+        return redirect(route('estadodenuncias.index'))->with('flash', 'Estado de denuncia activado correctamente');
     }
 }

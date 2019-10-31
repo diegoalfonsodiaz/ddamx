@@ -1,10 +1,11 @@
 @extends('admin.principal')
 
 @section('header')
-  <h1>Estados Factibilidades</h1>
+  <h1>Estados de factibilidad</h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li class="active">Estados</li>
+        <li><a href="{{ url('/menu') }}"><i class="fa fa-dashboard"></i> Inicio</a></li>
+        <li class="active">Manteninimiento</li>
+        <li class="active">Estados de factibilidad</li>
         
       </ol>
       
@@ -27,8 +28,8 @@
 <div class="box box-primary">
 
       <div class="box-header">
-        <a href="{{ route('estadofactibilidad.create') }}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear Estado</a>
-        <h3 class="box-title">Listado de Estados</h3>
+        <a href="{{ route('estadofactibilidad.create') }}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear estado de factibilidad</a>
+        <h3 class="box-title">Listado de estados de factibilidad</h3>
       </div>
         
 

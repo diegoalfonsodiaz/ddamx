@@ -31,7 +31,7 @@
             <!-- form start -->
 
             
-            <form action="{{ route('cargoejecutor.store') }}" method="POST">
+            <form autocomplete="off" action="{{ route('cargoejecutor.store') }}" method="POST">
     @csrf
   
      <div class="row">

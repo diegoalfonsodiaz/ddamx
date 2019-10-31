@@ -14,7 +14,7 @@ class EstadofactibilidadController extends Controller
 
     public function index()
     {
-        $estadofactibilidades = Estadofactibilidad::all();
+        $estadofactibilidades = Estadofactibilidad::orderBy('id', 'desc')->get();
         return view('estadofactibilidad.index',compact('estadofactibilidades'));
     }
 
@@ -35,7 +35,7 @@ class EstadofactibilidadController extends Controller
         $estadofactibilidades->nombre = $request->input('nombre');
         $estadofactibilidades->estado = '1';
         $estadofactibilidades->save();
-        return redirect('estadofactibilidad')->with('info', 'Se registro Corectamente el Estado de Factibilidad');
+        return redirect('estadofactibilidad')->with('info', 'Datos ingresados correctamente');
     }
 
    
@@ -60,7 +60,7 @@ class EstadofactibilidadController extends Controller
         ]);
   
         $estadofactibilidad->update($request->all());
-        return redirect('estadofactibilidad')->with('info','El Estado Factibilidad se actulizó con éxito');
+        return redirect('estadofactibilidad')->with('info','Datos actualizados correctamente');
     }
 
 
@@ -69,7 +69,7 @@ class EstadofactibilidadController extends Controller
         $request->user()->autorizeRoles(['admin']);
         $estadofactibilidad->estado='0';
         $estadofactibilidad->save();
-        return redirect(route('estadofactibilidad.index'))->with('info', 'Estado desactivado correctamente');
+        return redirect(route('estadofactibilidad.index'))->with('info', 'Estado de factibilidad desactivado correctamente');
     }
 
     public function activar(Estadofactibilidad $estadofactibilidad, Request $request)
@@ -77,7 +77,7 @@ class EstadofactibilidadController extends Controller
         $request->user()->autorizeRoles(['admin']);
         $estadofactibilidad->estado='1';
         $estadofactibilidad->save();
-        return redirect(route('estadofactibilidad.index'))->with('info', 'Estado activado correctamente');
+        return redirect(route('estadofactibilidad.index'))->with('info', 'Estado de factibilidad activado correctamente');
     }
 
 }

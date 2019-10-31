@@ -1,10 +1,11 @@
 @extends('admin.principal')
 
 @section('header')
-  <h1> Crear estado </h1>
+  <h1> Crear estado de factibilidad </h1>
   <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-    <li class="active">Estados Factibilidad</li>
+    <li><a href="{{ url('/menu') }}"><i class="fa fa-dashboard"></i> Inicio</a></li>
+    <li class="active">Manteninimiento</li>
+    <li class="active">Estados de factibilidad</li>
   </ol>
 @stop
 
@@ -24,13 +25,13 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form action="{{ route('estadofactibilidad.store') }}" method="POST">
+            <form autocomplete="off" action="{{ route('estadofactibilidad.store') }}" method="POST">
             {{ csrf_field() }}
 
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Nombre</label>
-                  <input type="text" name="nombre" class="form-control" placeholder="Ingresar Estado Factibilidad" required>
+                  <input type="text" name="nombre" class="form-control" placeholder="Ingresar estado de factibilidad" required>
                 </div>
                 
                 

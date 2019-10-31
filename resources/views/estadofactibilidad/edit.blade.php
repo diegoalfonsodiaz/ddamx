@@ -1,10 +1,11 @@
 @extends('admin.principal')
 
 @section('header')
-  <h1> Editar Estado </h1>
+  <h1> Editar estado de factibilidad </h1>
   <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-    <li class="active">Estados</li>
+    <li><a href="{{ url('/menu') }}"><i class="fa fa-dashboard"></i> Inicio</a></li>
+    <li class="active">Manteninimiento</li>
+    <li class="active">Estados de factibilidad</li>
   </ol>
 @stop
 
@@ -21,7 +22,7 @@
       </div>
       <!-- /.box-header -->
       <!-- form start -->
-      <form action="{{ route('estadofactibilidad.update', $estadofactibilidad->id) }}" method="POST">
+      <form autocomplete="off" action="{{ route('estadofactibilidad.update', $estadofactibilidad->id) }}" method="POST">
       
         {{ csrf_field() }}
         @method('PUT')
