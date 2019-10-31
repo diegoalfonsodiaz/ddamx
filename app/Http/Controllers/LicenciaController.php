@@ -55,7 +55,7 @@ class LicenciaController extends Controller
     public function create(Request $request)
     {
         
-        
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
             
             
             $estadooperaciones=Estadolicencia::where('estado','=','1')
@@ -76,6 +76,8 @@ class LicenciaController extends Controller
      */
     public function store(Request $request)
     {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
+        
         $this->Validate($request, [
             'solicitudfactibilidad_id' => 'required|unique:licencias,solicitudfactibilidad_id',
             'numerolicencia' => 'required',
@@ -169,6 +171,7 @@ class LicenciaController extends Controller
      */
     public function edit($id, Request $request)
     {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
        
         $estadooperaciones=Estadolicencia::where('estado','=','1')
             ->whereIn('id', [1, 2])
@@ -193,6 +196,7 @@ class LicenciaController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
         $this->Validate($request, [
             'solicitudfactibilidad_id' => 'required|unique:licencias,solicitudfactibilidad_id,'.$id.',id',
             'numerolicencia' => 'required',
@@ -221,9 +225,9 @@ class LicenciaController extends Controller
         //
     }
 
-    public function historial($id)
+    public function historial($id,Request $request)
     {
-        
+        $request->user()->autorizeRoles(['admin']);
 
        $audits=Licencia::find($id)->audits;
 
