@@ -223,3 +223,5 @@ Route::get('buscarcodigo', 'FrontendController@indexcodigo');
 Route::put('solicitudcodigo','EstadoFactibilidadExternoController@solicitarcodigo')->name('solicitudcodigo.solicitarcodigo');
 
 
+//reportes
+Route::get('/reportelicencia','ReportesController@Reportelicencia')->name('reportelicencia.index');
