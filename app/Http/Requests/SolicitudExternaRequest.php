@@ -9,8 +9,6 @@ use App\Solicitud;
 use App\Prueba;
 use Faker\Provider\nl_NL\Person;
 use Illuminate\Http\Request;
-use App\Http\Requests\SolicitudDpiRequest;
-
 
 class SolicitudExternaController extends Controller
 {
@@ -19,14 +17,8 @@ class SolicitudExternaController extends Controller
         return view('front.ciudadano.solicitudexterna');
     }
    
-    public function solicitardpi(SolicitudDpiRequest $request)
+    public function solicitardpi(Request $request)
     {
-        $this->Validate($request, [
-            'dpi' => 'required',
-            recaptchaFieldName() => recaptchaRuleName()
-           
-        ]);
-        
         $cantidad= DB::table('personas')->where('dpi', $request->dpi)->count();
    
         if($cantidad >= 1){
@@ -60,7 +52,11 @@ class SolicitudExternaController extends Controller
     public function store(Request $request)
     {
         $this->Validate($request, [
-            'dpi'=>'required',
+            'dpi' => 'required',
+            'nombre' => 'required',
+            'apellido' => 'required',
+            'telefono' => 'required',
+            recaptchaFieldName() => recaptchaRuleName()
             
         ]);
        //return Persona::create($request->all());

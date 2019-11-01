@@ -95,9 +95,9 @@ Inicio
                         <i class="livicon icon1" data-name="phone" data-size="55" data-loop="true" data-c="#f2d22e" data-hc="#f2d22e"></i>
                     </div>
                     <div class="info">
-                        <h3 class="yellow text-center">Contactanos</h3>
+                        <h3 class="yellow text-center">Contáctenos</h3>
                         <p>Contacta con nosotros para poder realizar cualquier trámite o hacernos saber cualquier duda que tengas.</p>
-                        <div class="text-right primary"><a href="{{ url('/contactoexterno') }}">Cantactanos</a>
+                        <div class="text-right primary"><a href="{{ url('/contactoexterno') }}">Contáctenos</a>
                         </div>
                     </div>
                 </div>

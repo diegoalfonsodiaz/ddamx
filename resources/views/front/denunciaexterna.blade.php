@@ -8,6 +8,16 @@ Denuncia
 
 {{-- Page content --}}
 @section('content')
+@if(count($errors)>0)
+<div class="alert alert-danger">
+    @foreach($errors->all() as $error)
+        <ul>
+            <li>{{ $error }}</li>    
+        </ul>  
+        
+    @endforeach
+    </div>
+@endif
 
     <!-- Container Section Start -->
     <div class="container">
@@ -30,12 +40,12 @@ Denuncia
                     </div>
 
                     <div class="form-group">
-                    <label for="exampleInputPassword1">Seleccione Imagen como prueba</label>
+                    <strong for="exampleInputPassword1">Seleccione Imagen como prueba</strong>
                     <input name="foto" type="file" class="form-control" id="exampleInputPassword1" placeholder="Seleccione una imagen">
                     </div>
 
                     <div class="form-group">
-                    <strong>Dirección de la persona denunciante<span style="color:red"> *</span></strong>
+                    <strong>Dirección de la persona denunciante</strong>
                     <input type="text" name="direccion" class="form-control" placeholder="dirección">
                     </div>
 

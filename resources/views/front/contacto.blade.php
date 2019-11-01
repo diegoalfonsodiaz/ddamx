@@ -15,6 +15,16 @@ Contacto
 
 {{-- Page content --}}
 @section('content')
+@if(count($errors)>0)
+<div class="alert alert-danger">
+    @foreach($errors->all() as $error)
+        <ul>
+            <li>{{ $error }}</li>    
+        </ul>  
+        
+    @endforeach
+    </div>
+@endif
     <!-- Map Section Start -->
 <div class="container">
     <div class="row">

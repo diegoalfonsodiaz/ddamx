@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Denuncia;
 use Illuminate\Http\Request;
+use App\Http\Requests\DenunciaExternaRequest;
 use Illuminate\Session\SessionManager;
 use App\Estadodenuncia;
 use DB;
@@ -37,7 +38,7 @@ class DenunciaExternaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, SessionManager $sessionManager)
+    public function store(DenunciaExternaRequest $request, SessionManager $sessionManager)
     {
         //
         $this->Validate($request,
@@ -65,8 +66,8 @@ class DenunciaExternaController extends Controller
 		$denuncia->estadodenuncia_id = '1';
         $denuncia->save();
         
-        $sessionManager->flash('mensajetipo', '!Gracias por denunciar!');
-        $sessionManager->flash('mensaje', 'Buscaremos solucionar tu problema para ofrercer un mejor servicio para todos.');
+        $sessionManager->flash('mensajetipo', '¡Gracias por denunciar!');
+        $sessionManager->flash('mensaje', 'Buscaremos solucionar tu problema para ofrecerte un mejor servicio.');
 
         return view('front.respuesta');
     }

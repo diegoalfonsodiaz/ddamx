@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use DB;
 use Illuminate\Http\Request;
 use Illuminate\Session\SessionManager;
+use App\Http\Requests\SolicitarDpiEstadoRequest;
+use App\Http\Requests\SolicitarCodigoRequest;
 use App\Solicitud;
 
 class EstadoFactibilidadExternoController extends Controller
@@ -25,11 +27,12 @@ class EstadoFactibilidadExternoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function solicitardpiestado(Request $request, SessionManager $sessionManager)
+    public function solicitardpiestado(SolicitarDpiEstadoRequest $request, SessionManager $sessionManager)
     {
         $this->Validate($request, [
             'dpi' => 'required',
             recaptchaFieldName() => recaptchaRuleName()
+           
         ]);
 
         
@@ -49,11 +52,11 @@ class EstadoFactibilidadExternoController extends Controller
                 return view('front.estado.estadofactibilidadexterno', ["solicitud"=>$solicitud])->with('i');
             }
             elseif($cantidadfac < 1){
-                $sessionManager->flash('mensaje', '!No a realizado ninguna solicitud de factibilidad de conexión!');
+                $sessionManager->flash('mensaje', '¡No ha realizado ninguna solicitud de factibilidad de conexión!');
                 return view('front.estado.sinestado');
             }
     }
-    public function solicitarcodigo(Request $request, SessionManager $sessionManager)
+    public function solicitarcodigo(SolicitarCodigoRequest $request, SessionManager $sessionManager)
     {
         $this->Validate($request, [
             'codigo' => 'required',
