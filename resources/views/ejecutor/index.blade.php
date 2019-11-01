@@ -9,30 +9,30 @@
         <li class="active">ejecutores</li>
         
       </ol>
-      @stop
+@stop
 @section('contenido')
-
 <div class="box box-primary">
-            <div class="box-header with-border">
-              <h3 class="box-title"> Listado de ejecutores</h3>
-              <div class="pull-right">
-                <a href="{{ route('ejecutor.create') }}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear ejecutor</a>
-              <br><br>
-              
+            <div class="box-header">
+            
+              <a href="{{route('ejecutor.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear persona</a> 
+                <h3 class="box-title">Ejecutores</h3>
             </div>
-              <br><br>
             <!-- /.box-header -->
-            <!-- form start -->
-            <table class="table table-bordered">
+            <div class="box-body">
+
+      <table id="persona-table" class="table table-striped table-bordered" style="width:100%">
+      <thead>
         <tr>
             <th># </th>
             <th>Nombre</th>
             <th>Dirección</th>
             <th>Boleto de ornato</th>
             <th>Cargo</th>
-            <th width="280px">Acciones</th>
+            <th >Acciones</th>
         </tr>
+        </thead>
         @foreach ($ejecutor as $ejecutors)
+        <tbody>
         <tr>
             <td>{{ ++$i }}</td>
             <td>{{ $ejecutors->nombre }}</td>
@@ -49,9 +49,10 @@
                 </form>
             </td>
         </tr>
+        </tbody>
         @endforeach
     </table>
-            
-            
+    </div>
 </div>
+            
 @stop

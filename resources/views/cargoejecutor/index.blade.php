@@ -32,18 +32,20 @@ Cargos de ejecutor
                 <a  href="{{ route('cargoejecutor.create') }}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear cargo de ejecutor</a>
                 
             </div>
-              <br><br>
+              <br><br><br>
               
-              <br><br>
             <!-- /.box-header -->
             <!-- form start -->
-            <table class="table table-bordered">
-        <tr>
+        <table   id="persona-table" class="table table-striped table-bordered" style="width:100%">
+            <thead>
+            <tr>
             <th># </th>
             <th>Nombre</th>
-            <th width="280px">Acciones</th>
+            <th >Acciones</th>
         </tr>
+        </thead>
         @foreach ($cargoejecutor as $product)
+        <tbody>
         <tr>
             <td>{{ ++$i }}</td>
             <td>{{ $product->nombre }}</td>
@@ -57,6 +59,7 @@ Cargos de ejecutor
                 </form>
             </td>
         </tr>
+        </tbody>
         @endforeach
     </table>
             
