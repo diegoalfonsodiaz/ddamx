@@ -296,7 +296,10 @@ $(document).ready(function() {
             },
             {
                 extend: 'pdfHtml5',
-                title: 'Data export'
+                title: 'Data export',
+                orientation: 'landscape',
+                pageSize: 'LEGAL',
+                download: 'open',
             },
             {
             extend: 'print',
@@ -304,12 +307,7 @@ $(document).ready(function() {
             
             text: "Imprimir"
             },
-            {
-               extend: 'copy',
-               title: 'Data export',
-               className: 'btn',
-               text: "Copiar"
-            },
+           
             
             
         ]

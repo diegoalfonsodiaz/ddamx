@@ -13,12 +13,9 @@ class ReportesController extends Controller
 {
     //
 
-    public function Reportelicencia()
+    public function Reportelicencia(Request $request)
     {
-        return view('reportes.licenciaporfecha');
-    }
-    public function listo()
-    {
+     
         $licencia= DB::table('licencias')
         //persona
         ->leftjoin('solicituds', 'licencias.solicitudfactibilidad_id','=', 'solicituds.id')
@@ -35,8 +32,14 @@ class ReportesController extends Controller
         'solicituds.codigoinmueble as inmueble','estadolicencias.nombre as estadolicencia',
         'licencias.estadolicencia_id','tipovias.nombre as tipovia','personas.nombre as nombre_persona',
         'personas.apellido as apellido')
+        ->whereBetween('licencias.fechaautorizacion', [$request->fechaautorizacion1,$request->fechaautorizacion2])
         ->get();
-
-        return view('reportes.licenciaporfecha',compact('licencia'));
+        $fecha1=$request->fechaautorizacion1;
+        $fecha2=$request->fechaautorizacion2;
+        return view('reportes.licenciaporfecha',compact('licencia','fecha1','fecha2'));
+    }
+    public function listo()
+    {
+        
     }
 }

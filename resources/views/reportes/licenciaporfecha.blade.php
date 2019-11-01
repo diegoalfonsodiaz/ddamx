@@ -13,13 +13,15 @@
 @section('contenido')
 
 <div class="row">
+<form action="{{ route('reportelicencia.index') }}" method="PUT">
+            {!! csrf_field() !!}  @method('DELETE')
     <div class="col-md-6">
         <div class="box box-primary">
                 <div class="box-body">
                        <!-- personas -->
                         <div class="form-group" >
-                            <label for="direccion_fab">Fecha de autorización</label>
-                            <input type="date" name="fechaautorizacion" class="form-control"  >
+                            <label for="direccion_fab">De:</label>
+                            <input type="date" name="fechaautorizacion1" value="{{ $fecha1}}" class="form-control"  >
 
                            
                         </div>
@@ -32,19 +34,24 @@
         
             <div class="box-body">
            <div class="form-group" >
-                            <label for="direccion_fab">Fecha de autorización</label>
-                            <input type="date" name="fechaautorizacion" class="form-control"  >
+                            <label for="direccion_fab">Hasta:</label>
+                            <input type="date" name="fechaautorizacion2" value="{{$fecha2}}" class="form-control"  >
 
                            
                         </div>
             </div>
         </div>
-    </div>
-    
   
+    </div>
+    <div class="form-group">
+                                <button class="btn btn-primary center-block">Aceptar </button>
+                         </div>
+    
+    
+
 
 </div>
-
+</form>
 <div class="box box-primary">
             <div class="box-header with-border">
             @if(count($errors)>0)
@@ -72,6 +79,11 @@
                                 <th>No. Recibo</th>  
                                 <th>Fecha de autorización</th>
                                 <th>Fecha de conexión</th>
+                                <th>inmueble</th>
+                                <th>Tipo de vía</th>
+                                <th>Derecho</th>
+                                <th>Remosión</th>
+                                <th>Días de procesamiento</th>
                                 <th>Estado</th>
                             
                             </tr>
@@ -86,6 +98,11 @@
                             <td>{{$licencias->recibo}}</td>
                             <td>{{$licencias->fechaautorizacion}}</td>
                             <td>{{$licencias->fechaconexion}}</td>
+                            <td>{{$licencias->inmueble}}</td>
+                            <td>{{$licencias->tipovia}}</td>
+                            <td>{{$licencias->derecho}}</td>
+                            <td>{{$licencias->remocion}}</td>
+                            <td>{{$licencias->monto}}</td>
                             <td>{{$licencias->estadolicencia}}</td>
 
                                 
