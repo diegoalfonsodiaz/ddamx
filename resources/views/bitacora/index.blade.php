@@ -1,12 +1,12 @@
 @extends('admin.principal')
 @section('header')
 <h1>
-        Bitacora
-        <small>Listado de sucesos en licencias </small>
+        Bitácora
+    
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li class="active">Bitacora</li>
+        <li class="active">bitácora</li>
         
       </ol>
       
@@ -15,8 +15,8 @@
 <div class="box box-primary">
             <div class="box-header">
             
-            <a href="{{route('bitacora.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear Suceso</a> 
-              <h3 class="box-title">Bitacora</h3>
+            <a href="{{route('bitacora.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear bitácora</a> 
+              <h3 class="box-title">Listado de bitácoras</h3>
             </div>
             <div class="box-body">
                 <table id="persona-table" class="table table-striped table-bordered" style="width:100%">

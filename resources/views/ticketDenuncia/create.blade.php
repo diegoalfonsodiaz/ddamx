@@ -1,8 +1,18 @@
 @extends('admin.principal')
+@section('header')
+<h1>
+       Crear seguimiento de denuncias
+       
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="{{ url('/menu') }}"><i class="fa fa-dashboard"></i> Inicio</a></li>
+        <li class="active">Seguimiento de denuncias</li>
+      </ol>
+@stop
 @section('contenido')
 <div class="box box-primary" >
             <div class="box-header with-border">
-              <h1 class="box-title">Crear Suceso Denuncias </h1>
+          
             <!-- /.box-header -->
             <!-- form start -->
             <form action="{{ route('ticketdenuncia.store') }}" method="POST">
@@ -25,7 +35,7 @@
 
                         <div class="form-group">
                             <strong>Detalle</strong>
-                            <input type="text" name="detalle" class="form-control" placeholder="Detalle">
+                            <input type="text" autocomplete="off" name="detalle" class="form-control" placeholder="Detalle">
                         </div>
 
                         

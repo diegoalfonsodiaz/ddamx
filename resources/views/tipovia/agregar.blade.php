@@ -1,10 +1,11 @@
 @extends('admin.principal')
 
 @section('header')
-  <h1> Crear Tipo Vía </h1>
+  <h1> Crear tipo de vía </h1>
   <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-    <li class="active">Tipo Vía</li>
+    <li><a href="/menu"><i class="fa fa-dashboard"></i> Inicio</a></li>
+    <li class="active">Mantenimiento</li>
+    <li class="active">Tipos de vía</li>
   </ol>
 @stop
 
@@ -24,7 +25,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form action="{{ url('/insertartipovia') }}" method="POST">
+            <form autocomplete="off" action="{{ url('/insertartipovia') }}" method="POST">
             {{ csrf_field() }}
               <div class="box-body">
                 <div class="form-group">
@@ -32,7 +33,7 @@
                   <input type="text" name="nombre" class="form-control" placeholder="Ingresar Tipo Vía">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Descripcion</label>
+                  <label for="exampleInputEmail1">Descripción</label>
                   <input type="text" name="descripcion" class="form-control" placeholder="Descripcion Tipo Vía">
                 </div>
 

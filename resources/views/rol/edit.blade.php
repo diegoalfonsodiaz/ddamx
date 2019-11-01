@@ -1,10 +1,11 @@
 @extends('admin.principal')
 
 @section('header')
-  <h1> Editar Rol </h1>
+  <h1> Editar rol </h1>
   <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-    <li class="active">Rol</li>
+    <li><a href="/menu"><i class="fa fa-dashboard"></i> Inicio</a></li>
+    <li class="active">usuarios</li>
+    <li class="active">rol</li>
   </ol>
 @stop
 
@@ -21,22 +22,22 @@
       </div>
       <!-- /.box-header -->
       <!-- form start -->
-      <form action="{{ route('rol.update', $rol->id) }}" method="POST">
+      <form autocomplete="off" action="{{ route('rol.update', $rol->id) }}" method="POST">
       
         {{ csrf_field() }}
         @method('PUT')
           
             <div class="box-body">
                 <div class="form-group">
-                    <label>Nombre Rol:</label>
-                    <input type="text" name="nombre" value="{{ $rol->nombre }}" class="form-control" placeholder="Nombre" required>
+                    <label>Nombre del rol</label>
+                    <input type="text" name="nombre" value="{{ $rol->nombre }}" class="form-control" placeholder="Nombre del rol" required>
                 </div>
             </div>
 
             <div class="box-body">
                 <div class="form-group">
-                    <label>Descripción:</label>
-                    <input type="text" name="descripcion" value="{{ $rol->descripcion }}" class="form-control" placeholder="Nombre" required>
+                    <label>Descripción</label>
+                    <input type="text" name="descripcion" value="{{ $rol->descripcion }}" class="form-control" placeholder="Descripción" required>
                 </div>
             </div>
             

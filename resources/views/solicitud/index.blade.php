@@ -45,7 +45,7 @@
                                 <th>DPI</th>
                                 <th>Dirección de la obra</th>
                                 <th>Fecha de solicitud</th>
-                                <th>Número de inmueble</th>
+                                <th>Inmueble</th>
                                 <th>Estado</th>
                                 <th>Acciones</th>
                             </tr>

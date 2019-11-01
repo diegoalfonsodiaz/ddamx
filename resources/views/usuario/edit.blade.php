@@ -1,10 +1,10 @@
 @extends('admin.principal')
 
 @section('header')
-  <h1> Editar Usuario </h1>
+  <h1> Editar usuario </h1>
   <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-    <li class="active">Usuarios</li>
+    <li><a href="/menu"><i class="fa fa-dashboard"></i> Inicio</a></li>
+    <li class="active">usuarios</li>
   </ol>
 @stop
 
@@ -21,29 +21,29 @@
       </div>
       <!-- /.box-header -->
       <!-- form start -->
-      <form action="{{ route('usuario.update', $usuario->id) }}" method="POST">
+      <form autocomplete="off" action="{{ route('usuario.update', $usuario->id) }}" method="POST">
       
         {{ csrf_field() }}
         @method('PUT')
           
             <div class="box-body">
                 <div class="form-group">
-                    <label>Usuario:</label>
-                    <input type="text" name="name" value="{{ $usuario->name }}" class="form-control" placeholder="Nombre" required>
+                    <label>Nombre de usuario </label>
+                    <input type="text" name="name" value="{{ $usuario->name }}" class="form-control" placeholder="Nombre de usuario" required>
                 </div>
             </div>
 
             <div class="box-body">
                 <div class="form-group">
-                    <label>Correo Electrónico:</label>
-                    <input type="text" name="email" value="{{ $usuario->email }}" class="form-control" placeholder="Nombre" required>
+                    <label>Correo electrónico</label>
+                    <input type="email" name="email" value="{{ $usuario->email }}" class="form-control" placeholder="Correo electrónico" required>
                 </div>
             </div>
 
             <div class="box-body">
                 <div class="form-group">
-                    <label>Contraseña:</label>
-                    <input type="password" name="password" value="{{ $usuario->password }}" class="form-control" placeholder="Nombre" required>
+                    <label>Contraseña</label>
+                    <input type="password" name="password"  class="form-control" placeholder="Contraseña" required>
                 </div>
             </div>
             

@@ -57,7 +57,7 @@
               <!-- /.box-body -->
 
               <div class="box-footer">
-                    <button type="submit" class="btn btn-primary">Aceptar</button> 
+                    <button type="submit" class="btn btn-primary">Guardar</button> 
                     <a href="{{route('personas.index')}}" class="btn btn-danger pull-right"> Regresar</a> 
                 </div>
             </form>

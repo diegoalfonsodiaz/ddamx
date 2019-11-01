@@ -1,4 +1,14 @@
 @extends('admin.principal')
+@section('header')
+<h1>
+        Crear ejecutor
+       
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="{{ url('/menu') }}"><i class="fa fa-dashboard"></i> Inicio</a></li>
+        <li class="active">ejecutores</li>
+      </ol>
+@stop
 @section('contenido')
 @if(count($errors)>0)
 <div class="alert alert-danger">
@@ -12,7 +22,7 @@
 @endif
 <div class="box box-primary" >
             <div class="box-header with-border">
-              <h1 class="box-title">Crear </h1>
+         
             <!-- /.box-header -->
             <!-- form start -->
             <form action="{{ route('ejecutor.store') }}" method="POST">
@@ -22,20 +32,20 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <strong>Nombre</strong>
-                            <input type="text" name="nombre" class="form-control" placeholder="nombre">
+                            <input type="text" autocomplete="off" name="nombre" class="form-control" placeholder="Nombre">
                         </div>
                         <div class="form-group">
-                            <strong>Direccion</strong>
-                            <input type="text" name="direccion" class="form-control" placeholder="direccion">
+                            <strong>Dirección</strong>
+                            <input type="text" autocomplete="off" name="direccion" class="form-control" placeholder="Dirección">
                         </div>
                         <div class="form-group">
-                            <strong>Ornato</strong>
-                            <input type="text" name="ornato" class="form-control" placeholder="ornato">
+                            <strong>Boleto de ornato</strong>
+                            <input type="text" autocomplete="off" name="ornato" class="form-control" placeholder="Boleto de ornato">
                         </div>
                         <div class="form-group">
                             <strong>Cargo</strong>
                             <select name="cargoejecutor_id" id="cargoejecutor_id"  class="form-control selectpicker" data-live-search="true">
-                                <option value="0" disabled selected>=== Seleccione Cargo===</option>
+                                <option value="0" disabled selected>=== Seleccione un cargo===</option>
                                     @foreach($cargo as $c)
                                         <option value="{{$c->id}}">{{$c->nombre}}</option>
                                     @endforeach

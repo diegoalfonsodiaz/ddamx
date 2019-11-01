@@ -9,10 +9,9 @@ class AsuntoController extends Controller
 {
     public function index()
     {
-        $asunto = Asunto::latest()->paginate(5);
+        $asunto = Asunto::orderBy('id', 'desc')->get();
   
-        return view('asunto.index',compact('asunto'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('asunto.index',compact('asunto'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
     public function create(Request $request)
     {
@@ -34,7 +33,7 @@ class AsuntoController extends Controller
     $asunto->descripcion = $request->input('descripcion');
     $asunto->estado = '1';
     $asunto->save();
-    return redirect('asunto')->with('info', 'Se registro Corectamente ');
+    return redirect('asunto')->with('info', 'Datos ingresados correctamente');
     }
 
     
@@ -64,15 +63,14 @@ class AsuntoController extends Controller
             'descripcion' => $request->input('descripcion')
         );
         Asunto::where('id', $id)->update($data);
-        return redirect('asunto')->with('info', 'Se Actualizaron los datos correctamente');
+        return redirect('asunto')->with('info', 'Datos actualizados correctamente');
     }
 
    
     public function destroy( Asunto $asunto)
     {
         $asunto->delete();
-        return redirect()->route('asunto.index')
-                        ->with('success',' borrado');
+        return redirect()->route('asunto.index')->with('info','Asunto de bitácora elimanado correctamente');
     }
     
 }

@@ -1,10 +1,11 @@
 @extends('admin.principal')
 
 @section('header')
-  <h1>Estado Licencia</h1>
+  <h1>Estado de licencia</h1>
       <ol class="breadcrumb">
         <li><a href="/menu"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li class="active">Estado Licencia</li>
+        <li class="active">Mantenimiento</li>
+        <li class="active">Estados de licencias</li>
       </ol>
 @stop
 
@@ -25,8 +26,8 @@
     <div class="box box-primary">
 
       <div class="box-header">
-        <a href="{{ url('/agregarForm') }}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear Estado</a>
-        <h3 class="box-title">Estado Licencia</h3>
+        <a href="{{ url('/agregarForm') }}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear estado de licencia</a>
+        <h3 class="box-title">Listado de estados licencias</h3>
       </div>
 
 

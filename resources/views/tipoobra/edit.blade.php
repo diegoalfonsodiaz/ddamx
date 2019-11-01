@@ -1,12 +1,23 @@
 @extends('admin.principal')
+@section('header')
+<h1>
+        Editar tipo de obra
+        
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="/menu"><i class="fa fa-dashboard"></i> Inicio</a></li>
+        <li class="active">Mantenimiento</li>
+        <li class="active">Tipos de obra</li>
+      </ol>
+@stop
 @section('contenido')
 <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Actualizar tipo de obra</h3>
+
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form action="{{ route('tipoobras.update',$tipoobra) }}" method="POST">
+            <form autocomplete="off" action="{{ route('tipoobras.update',$tipoobra) }}" method="POST">
              @csrf
         @method('PUT')
         {{ csrf_field() }}

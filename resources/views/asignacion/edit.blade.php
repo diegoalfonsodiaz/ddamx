@@ -1,10 +1,11 @@
 @extends('admin.principal')
 
 @section('header')
-  <h1> Editar Asignación </h1>
+  <h1> Editar asignación </h1>
   <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-    <li class="active">Asignación</li>
+    <li><a href="/menu"><i class="fa fa-dashboard"></i> Inicio</a></li>
+    <li class="active">usuarios</li>
+    <li class="active">asignación de roles</li>
   </ol>
 @stop
 

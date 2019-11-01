@@ -1,10 +1,10 @@
 @extends('admin.principal')
 
 @section('header')
-  <h1> Crear Usuario </h1>
+  <h1> Crear usuario </h1>
   <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-    <li class="active">Usuarios</li>
+    <li><a href="/menu"><i class="fa fa-dashboard"></i> Inicio</a></li>
+    <li class="active">usuarios</li>
   </ol>
 @stop
 
@@ -24,23 +24,23 @@
     </div>
     <!-- /.box-header -->
     <!-- form start -->
-    <form action="{{ route('usuario.store') }}" method="POST">
+    <form autocomplete="off" action="{{ route('usuario.store') }}" method="POST">
         {{ csrf_field() }}
 
         <div class="box-body">
             <div class="form-group">
-                <label for="exampleInputEmail1">Usuario</label>
-                <input type="text" class="form-control input-lg" name="name" placeholder="Ingrese Usuario" required>
+                <label >Nombre de usuario</label>
+                <input type="text"  class="form-control input-lg" name="name" placeholder="Nombre de usuario" required>
             </div>
 
             <div class="form-group">
-                <label for="exampleInputEmail1">Correo Electrónico</label>
-                <input type="text" class="form-control input-lg" name="email" placeholder="Ingresar Correo Electrónico" required>
+                <label>Correo electrónico</label>
+                <input type="email"  class="form-control input-lg" name="email" placeholder="Correo electrónico" required>
             </div>
 
             <div class="form-group">
-                <label for="exampleInputEmail1">Contraseña</label>
-                <input type="password" class="form-control input-lg" name="password" placeholder="Ingresar Contraseña" required>
+                <label>Contraseña</label>
+                <input type="password"  class="form-control input-lg" name="password" placeholder="Contraseña" required>
             </div>
             
             

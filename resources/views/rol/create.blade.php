@@ -1,10 +1,11 @@
 @extends('admin.principal')
 
 @section('header')
-  <h1> Crear Rol </h1>
+  <h1> Crear rol </h1>
   <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-    <li class="active">Rol</li>
+    <li><a href="/menu"><i class="fa fa-dashboard"></i> Inicio</a></li>
+    <li class="active">usuarios</li>
+    <li class="active">rol</li>
   </ol>
 @stop
 
@@ -24,18 +25,18 @@
     </div>
     <!-- /.box-header -->
     <!-- form start -->
-    <form action="{{ route('rol.store') }}" method="POST">
+    <form autocomplete="off" action="{{ route('rol.store') }}" method="POST">
         {{ csrf_field() }}
 
         <div class="box-body">
             <div class="form-group">
-                <label for="exampleInputEmail1">Nombre Rol</label>
-                <input type="text" class="form-control input-lg" name="nombre" placeholder="Ingrese Rol" required>
+                <label for="exampleInputEmail1">Nombre del rol</label>
+                <input type="text" class="form-control input-lg" name="nombre" placeholder="Nombre del rol" required>
             </div>
 
             <div class="form-group">
                 <label for="exampleInputEmail1">Descripción</label>
-                <input type="text" class="form-control input-lg" name="descripcion" placeholder="Ingresar Descripción" required>
+                <input type="text" class="form-control input-lg" name="descripcion" placeholder="Descripción" required>
             </div>
             
             

@@ -2,12 +2,13 @@
 
 @section('header')
 <h1>
-        Estados denuncias
+        Estados de denuncias
        
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li class="active">Estados</li>
+        <li><a href="/menu"><i class="fa fa-dashboard"></i> Inicio</a></li>
+        <li class="active">Mantenimiento</li>
+        <li class="active">Estados de denuncias</li>
         
       </ol>
       
@@ -15,18 +16,23 @@
 @section('contenido')
 
 <div class="box-header">
-            @if(session()->has('flash'))
-              <div class="col-md-6">
-                <div class="alert alert-success">{{session('flash')}}
-                </div>
-              </div>
-              @endif</div>
+    @if(session('flash'))
+      <div class="col-md-6">
+        <div class="alert alert-success" role="alert">
+            {{ session('flash') }}
+            <button type="button" class="close" data-dismiss="alert" alert-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+      </div>
+    @endif
+</div>
 
 <div class="box box-primary">
             <div class="box-header">
             
-            <a href="{{route('estadodenuncias.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear Estado</a> 
-              <h3 class="box-title">Listado de Estados</h3>
+            <a href="{{route('estadodenuncias.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear estado de denuncias</a> 
+              <h3 class="box-title">Listado de estados de denuncias</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">

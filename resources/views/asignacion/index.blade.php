@@ -4,7 +4,8 @@
   <h1>Asignación de roles</h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li class="active">Asignación</li>
+        <li class="active">usuarios</li>
+        <li class="active">asignación de roles</li>
         
       </ol>
       
@@ -27,8 +28,8 @@
 <div class="box box-primary">
 
       <div class="box-header">
-        <a href="{{ route('asignacion.create') }}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear Asignación</a> 
-        <h3 class="box-title">Listado de Asignaciones</h3>
+        <a href="{{ route('asignacion.create') }}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear asignación</a> 
+        <h3 class="box-title">Listado de asignaciones</h3>
       </div>
         
 
@@ -38,7 +39,7 @@
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Usuario</th>
-                    <th scope="col">Correo Electrónico</th>
+                    <th scope="col">Correo electrónico</th>
                     <th scope="col">Rol</th>
                     <th scope="col" width="150px">Acciones</th>
                   </tr>

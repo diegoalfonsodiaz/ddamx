@@ -1,10 +1,11 @@
 @extends('admin.principal')
 
 @section('header')
-  <h1> Crear Estado Licencia </h1>
+  <h1> Crear estado de licencia </h1>
   <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-    <li class="active">Estado Licencia</li>
+    <li><a href="/menu"><i class="fa fa-dashboard"></i> Inicio</a></li>
+    <li class="active">Mantenimiento</li>
+    <li class="active">Estados de licencias</li>
   </ol>
 @stop
 
@@ -25,17 +26,17 @@
 
             <!-- /.box-header -->
             <!-- form start -->
-            <form action="{{ url('/insertar') }}" method="POST">
+            <form autocomplete="off" action="{{ url('/insertar') }}" method="POST">
             {{ csrf_field() }}
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Nombre</label>
-                  <input type="text" name="nombre" class="form-control" placeholder="Ingresar Estado Licencia">              
+                  <input type="text" name="nombre" class="form-control" placeholder="Ingresar estado de licencia">              
                 </div>
               
                 <div class="form-group">
                   <label for="exampleInputEmail1">Descripción</label>
-                  <input type="text" name="descripcion" class="form-control" placeholder="Ingresar Estado Licencia">
+                  <input type="text" name="descripcion" class="form-control" placeholder="Ingresar descripción de licencia">
                 </div>
                 
                 

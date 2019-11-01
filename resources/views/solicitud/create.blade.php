@@ -41,8 +41,8 @@
                         </div>
 
                         <div class="form-group">
-                            <strong>Código del inmueble</strong>
-                            <input type="text" autocomplete="off" name="codigoinmueble" class="form-control" placeholder="Código del inmueble">
+                            <strong>Inmueble</strong>
+                            <input type="text" autocomplete="off" name="codigoinmueble" class="form-control" placeholder="Inmueble">
                         </div>
 
                         <div class="form-group">
