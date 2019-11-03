@@ -18,6 +18,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="/plantilla/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
   <!--<link rel="stylesheet" href="/plantilla/bower_components/responsive/css/jquery.dataTables.min.css">-->
    <link rel="stylesheet" href="/plantilla/bower_components/responsive/css/responsive.dataTables.min.css">
+   
   <link rel="stylesheet" href="/plantilla/css/skins/skin-blue.min.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
   <link rel="stylesheet"
@@ -163,6 +164,7 @@ desired effect
 <!-- ./wrapper -->
 
 <!-- REQUIRED JS SCRIPTS -->
+
 <script src="/plantilla/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- jQuery 3 -->
 <script src="/plantilla/bower_components/responsive/js/jquery-3.3.1.js"></script>
@@ -174,6 +176,14 @@ desired effect
 <script src="/plantilla/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="/plantilla/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 <script src="/plantilla/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<script src="/plantilla/bower_components/botones/js/dataTables.buttons.min.js"></script>
+<script src="/plantilla/bower_components/botones/js/buttons.flash.min.js"></script>
+<script src="/plantilla/bower_components/botones/js/jszip.min.js"></script>
+<script src="/plantilla/bower_components/botones/js/pdfmake.min.js"></script>
+<script src="/plantilla/bower_components/botones/js/vfs_fonts.js"></script>
+<script src="/plantilla/bower_components/botones/js/buttons.html5.min.js"></script>
+<script src="/plantilla/bower_components/botones/js/buttons.print.min.js"></script>
 <!-- AdminLTE App -->
 <script src="/plantilla/js/adminlte.min.js"></script>
 <script>
@@ -244,6 +254,290 @@ $(document).ready(function() {
     
 } );
 
+
+
+
+$(document).ready(function() {
+    $('#reportelicencia-table').DataTable({
+      'paging'      : true,
+      'lengthChange': true,
+      'searching'   : true,
+      'ordering'    : false,
+      'info'        : true,
+      'autoWidth'   : false,
+    'responsive':true,
+    language: {
+        "decimal": "",
+        "emptyTable": "No hay información",
+        "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+        "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+        "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+        "infoPostFix": "",
+        "thousands": ",",
+        "lengthMenu": "Mostrar _MENU_ Entradas",
+        "loadingRecords": "Cargando...",
+        "processing": "Procesando...",
+        "search": "Buscar:",
+        "zeroRecords": "Sin resultados encontrados",
+        "paginate": {
+            "first": "Primero",
+            "last": "Ultimo",
+            "next": "Siguiente",
+            "previous": "Anterior"
+        }
+    },
+
+    dom: 'Bflrtip',
+        buttons: [
+             
+            {
+                extend: 'excelHtml5',
+                title: 'Reporte de licencias',
+                className: 'btn btn-success',
+                titleAttr: 'Exportar a Excel',
+                text:      '<i class="fa fa-file-excel-o"></i> ',
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'Reporte de licencias',
+                orientation: 'landscape',
+                pageSize: 'LEGAL',
+                download: 'open',
+                titleAttr: 'Exportar a PDF',
+        className: 'btn btn-danger',
+        text:      '<i class="fa fa-file-pdf-o"></i> ',
+            },
+            {
+            extend: 'print',
+            title: 'Reporte de licencias',
+         
+            
+            text:      '<i class="fa fa-print"></i> ',
+				titleAttr: 'Imprimir',
+				className: 'btn btn-info'
+            },
+           
+            
+            
+        ]
+      
+
+      });
+    });
+
+
+
+    //tabla reporte solicitud
+
+    $(document).ready(function() {
+    $('#reportesolicitud-table').DataTable({
+      'paging'      : true,
+      'lengthChange': true,
+      'searching'   : true,
+      'ordering'    : false,
+      'info'        : true,
+      'autoWidth'   : false,
+    'responsive':true,
+    language: {
+        "decimal": "",
+        "emptyTable": "No hay información",
+        "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+        "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+        "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+        "infoPostFix": "",
+        "thousands": ",",
+        "lengthMenu": "Mostrar _MENU_ Entradas",
+        "loadingRecords": "Cargando...",
+        "processing": "Procesando...",
+        "search": "Buscar:",
+        "zeroRecords": "Sin resultados encontrados",
+        "paginate": {
+            "first": "Primero",
+            "last": "Ultimo",
+            "next": "Siguiente",
+            "previous": "Anterior"
+        }
+    },
+
+    dom: 'Bflrtip',
+        buttons: [
+             
+            {
+                extend: 'excelHtml5',
+                title: 'Reporte de solicitudes',
+                className: 'btn btn-success',
+                titleAttr: 'Exportar a Excel',
+                text:      '<i class="fa fa-file-excel-o"></i> ',
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'Reporte de solicitudes',
+                orientation: 'landscape',
+               
+                titleAttr: 'Exportar a PDF',
+        className: 'btn btn-danger',
+        text:      '<i class="fa fa-file-pdf-o"></i> ',
+            },
+            {
+            extend: 'print',
+            title: 'Reporte de solicitudes',
+            
+            
+            text:      '<i class="fa fa-print"></i> ',
+				titleAttr: 'Imprimir',
+        className: 'btn btn-info',
+        orientation: 'landscape',
+            },
+           
+            
+            
+        ]
+      
+
+      });
+    });
+
+
+    $(document).ready(function() {
+    $('#reportepersonas-table').DataTable({
+      'paging'      : true,
+      'lengthChange': true,
+      'searching'   : true,
+      'ordering'    : false,
+      'info'        : true,
+      'autoWidth'   : false,
+    'responsive':true,
+    language: {
+        "decimal": "",
+        "emptyTable": "No hay información",
+        "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+        "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+        "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+        "infoPostFix": "",
+        "thousands": ",",
+        "lengthMenu": "Mostrar _MENU_ Entradas",
+        "loadingRecords": "Cargando...",
+        "processing": "Procesando...",
+        "search": "Buscar:",
+        "zeroRecords": "Sin resultados encontrados",
+        "paginate": {
+            "first": "Primero",
+            "last": "Ultimo",
+            "next": "Siguiente",
+            "previous": "Anterior"
+        }
+    },
+
+    dom: 'Bflrtip',
+        buttons: [
+             
+            {
+                extend: 'excelHtml5',
+                title: 'Reporte de personas',
+                className: 'btn btn-success',
+                titleAttr: 'Exportar a Excel',
+                text:      '<i class="fa fa-file-excel-o"></i> ',
+          
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'Reporte de personas',
+                orientation: 'landscape',
+                pageSize: 'LEGAL',
+                download: 'open',
+                titleAttr: 'Exportar a PDF',
+        className: 'btn btn-danger',
+        text:      '<i class="fa fa-file-pdf-o"></i> ',
+
+            },
+            {
+            extend: 'print',
+            title: 'Reporte de personas',
+            
+            
+            text:      '<i class="fa fa-print"></i> ',
+				titleAttr: 'Imprimir',
+        className: 'btn btn-info',
+    
+            },
+           
+            
+            
+        ]
+      
+
+      });
+    });
+
+
+
+    $(document).ready(function() {
+    $('#reportedenuncias-table').DataTable({
+      'paging'      : true,
+      'lengthChange': true,
+      'searching'   : true,
+      'ordering'    : false,
+      'info'        : true,
+      'autoWidth'   : false,
+    'responsive':true,
+    language: {
+        "decimal": "",
+        "emptyTable": "No hay información",
+        "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+        "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+        "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+        "infoPostFix": "",
+        "thousands": ",",
+        "lengthMenu": "Mostrar _MENU_ Entradas",
+        "loadingRecords": "Cargando...",
+        "processing": "Procesando...",
+        "search": "Buscar:",
+        "zeroRecords": "Sin resultados encontrados",
+        "paginate": {
+            "first": "Primero",
+            "last": "Ultimo",
+            "next": "Siguiente",
+            "previous": "Anterior"
+        }
+    },
+
+    dom: 'Bflrtip',
+        buttons: [
+             
+            {
+                extend: 'excelHtml5',
+                title: 'Reporte de denuncias',
+                className: 'btn btn-success',
+                titleAttr: 'Exportar a Excel',
+                text:      '<i class="fa fa-file-excel-o"></i> ',
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'Reporte de denuncias',
+              
+                download: 'open',
+                titleAttr: 'Exportar a PDF',
+        className: 'btn btn-danger',
+        text:      '<i class="fa fa-file-pdf-o"></i> ',
+            },
+            {
+            extend: 'print',
+            title: 'Reporte de denuncias',
+            
+            
+            text:      '<i class="fa fa-print"></i> ',
+				titleAttr: 'Imprimir',
+				className: 'btn btn-info'
+            },
+           
+            
+            
+        ]
+      
+
+      });
+    });
+    
 </script>
 </body>
 </html>
