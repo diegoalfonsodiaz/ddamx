@@ -60,16 +60,16 @@
         
 
         <li class="treeview">
-          <a href="#"><i class="fa  fa-user"></i> <span>Reportes</span>
+          <a href="#"><i class="fa  fa-building-o"></i> <span>Reportes</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
           </a>
           <ul class="treeview-menu">
             <li ><a href="{{route('reportelicencia.index')}}">Licencias por fecha</a></li>
-            <li><a href="{{'/rol'}}">Solicitudes</a></li>
-            <li><a href="{{ url('/asignacion') }}">Listado de personas</a></li>
-            <li><a href="{{ url('/asignacion') }}">Denuncias por fecha</a></li>
+            <li><a href="{{route('reportesolicitud.index')}}">Solicitudes por fecha</a></li>
+            <li><a href="{{route('reportepersonas.index')}}">Listado de personas</a></li>
+            <li><a href="{{route('reportedenuncias.index')}}">Denuncias por fecha</a></li>
           </ul>
         </li>
 

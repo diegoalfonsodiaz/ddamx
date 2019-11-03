@@ -225,3 +225,7 @@ Route::put('solicitudcodigo','EstadoFactibilidadExternoController@solicitarcodig
 
 //reportes
 Route::get('/reportelicencia','ReportesController@Reportelicencia')->name('reportelicencia.index');
+Route::get('/reportesolicitud','ReportesController@Reportesolicitud')->name('reportesolicitud.index');
+Route::get('/reportepersonas','ReportesController@Reportepersonas')->name('reportepersonas.index');
+Route::get('/reportedenuncias','ReportesController@Reportedenuncias')->name('reportedenuncias.index');
+

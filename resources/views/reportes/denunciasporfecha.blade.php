@@ -2,20 +2,20 @@
 
 @section('header')
 <h1>
-        Reporte de licencias por fecha
+        Reporte de denuncias por fecha
        
       </h1>
       <ol class="breadcrumb">
         <li><a href="/menu"><i class="fa fa-dashboard"></i> Inicio</a></li>
         <li class="active">reportes</li>
-        <li class="active">licencias por fecha</li>
+        <li class="active">denuncias por fecha</li>
 
       </ol>
 @stop
 @section('contenido')
 
 <div class="row">
-<form action="{{ route('reportelicencia.index') }}" method="PUT">
+<form action="{{route('reportedenuncias.index')}}" method="PUT">
             {!! csrf_field() !!}  @method('DELETE')
     <div class="col-md-6">
         <div class="box box-primary">
@@ -69,42 +69,33 @@
            
            
               <div class="box-body">
-              <table id="reportelicencia-table" class="table table-striped table-bordered" style="width:100%">
+              <table id="reportedenuncias-table" class="table table-striped table-bordered" style="width:100%">
                         <thead>
                             <tr>
                             
-                            <th># </th>
-                                <th>No. de licencia</th>
-                                <th>Nombres</th>
-                                <th>Apellidos</th>
-                                <th>Inmueble</th>
-                                <th>No. Recibo</th>  
-                                <th>Fecha de autorización</th>
-                                <th>Fecha de conexión</th>
-                                <th>Tipo de vía</th>
-                                <th>Derecho</th>
-                                <th>Remosión</th>
-                                <th>Días de procesamiento</th>
-                                <th>Estado</th>
+                              
+                            <th width="50px"># </th>
+                  <th width="400px">Descripción</th>
+                  <th width="120px">Fecha</th>
+              
+                  <th width="220px">Dirección</th>
+                  <th width="220px">Teléfono</th>
+                  <th width="125px">Estado Denuncia</th>
+                
                             
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($licencia as $licencias)
+                            @foreach($denuncia as $denuncias)
                             <tr>
                             <td>{{ ++$i }} </td>
-                            <td>{{$licencias->numerolicencia}}</td>
-                            <td>{{$licencias->nombre_persona}}</td>
-                            <td>{{$licencias->apellido}}</td>
-                            <td>{{$licencias->inmueble}}</td>
-                            <td>{{$licencias->recibo}}</td>
-                            <td>{{$licencias->fechaautorizacion}}</td>
-                            <td>{{$licencias->fechaconexion}}</td>
-                            <td>{{$licencias->tipovia}}</td>
-                            <td>{{$licencias->derecho}}</td>
-                            <td>{{$licencias->remocion}}</td>
-                            <td>{{$licencias->monto}}</td>
-                            <td>{{$licencias->estadolicencia}}</td>
+                            <td>{{$denuncias->descripcion}}</td>
+                            <td>{{$denuncias->fecha}}</td>
+                       
+                            <td>{{$denuncias->direccion}}</td>
+                            <td>{{$denuncias->telefono}}</td>
+                            <td>{{$denuncias->estado}}</td>
+                            
 
                                 
                 

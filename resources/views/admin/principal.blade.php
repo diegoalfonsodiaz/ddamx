@@ -292,20 +292,29 @@ $(document).ready(function() {
              
             {
                 extend: 'excelHtml5',
-                title: 'Licencia'
+                title: 'Reporte de licencias',
+                className: 'btn btn-success',
+                titleAttr: 'Exportar a Excel',
+                text:      '<i class="fa fa-file-excel-o"></i> ',
             },
             {
                 extend: 'pdfHtml5',
-                title: 'Data export',
+                title: 'Reporte de licencias',
                 orientation: 'landscape',
                 pageSize: 'LEGAL',
                 download: 'open',
+                titleAttr: 'Exportar a PDF',
+        className: 'btn btn-danger',
+        text:      '<i class="fa fa-file-pdf-o"></i> ',
             },
             {
             extend: 'print',
-            title: 'Data export',
+            title: 'Reporte de licencias',
+         
             
-            text: "Imprimir"
+            text:      '<i class="fa fa-print"></i> ',
+				titleAttr: 'Imprimir',
+				className: 'btn btn-info'
             },
            
             
@@ -317,6 +326,218 @@ $(document).ready(function() {
     });
 
 
+
+    //tabla reporte solicitud
+
+    $(document).ready(function() {
+    $('#reportesolicitud-table').DataTable({
+      'paging'      : true,
+      'lengthChange': true,
+      'searching'   : true,
+      'ordering'    : false,
+      'info'        : true,
+      'autoWidth'   : false,
+    'responsive':true,
+    language: {
+        "decimal": "",
+        "emptyTable": "No hay información",
+        "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+        "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+        "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+        "infoPostFix": "",
+        "thousands": ",",
+        "lengthMenu": "Mostrar _MENU_ Entradas",
+        "loadingRecords": "Cargando...",
+        "processing": "Procesando...",
+        "search": "Buscar:",
+        "zeroRecords": "Sin resultados encontrados",
+        "paginate": {
+            "first": "Primero",
+            "last": "Ultimo",
+            "next": "Siguiente",
+            "previous": "Anterior"
+        }
+    },
+
+    dom: 'Bflrtip',
+        buttons: [
+             
+            {
+                extend: 'excelHtml5',
+                title: 'Reporte de solicitudes',
+                className: 'btn btn-success',
+                titleAttr: 'Exportar a Excel',
+                text:      '<i class="fa fa-file-excel-o"></i> ',
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'Reporte de solicitudes',
+                orientation: 'landscape',
+               
+                titleAttr: 'Exportar a PDF',
+        className: 'btn btn-danger',
+        text:      '<i class="fa fa-file-pdf-o"></i> ',
+            },
+            {
+            extend: 'print',
+            title: 'Reporte de solicitudes',
+            
+            
+            text:      '<i class="fa fa-print"></i> ',
+				titleAttr: 'Imprimir',
+        className: 'btn btn-info',
+        orientation: 'landscape',
+            },
+           
+            
+            
+        ]
+      
+
+      });
+    });
+
+
+    $(document).ready(function() {
+    $('#reportepersonas-table').DataTable({
+      'paging'      : true,
+      'lengthChange': true,
+      'searching'   : true,
+      'ordering'    : false,
+      'info'        : true,
+      'autoWidth'   : false,
+    'responsive':true,
+    language: {
+        "decimal": "",
+        "emptyTable": "No hay información",
+        "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+        "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+        "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+        "infoPostFix": "",
+        "thousands": ",",
+        "lengthMenu": "Mostrar _MENU_ Entradas",
+        "loadingRecords": "Cargando...",
+        "processing": "Procesando...",
+        "search": "Buscar:",
+        "zeroRecords": "Sin resultados encontrados",
+        "paginate": {
+            "first": "Primero",
+            "last": "Ultimo",
+            "next": "Siguiente",
+            "previous": "Anterior"
+        }
+    },
+
+    dom: 'Bflrtip',
+        buttons: [
+             
+            {
+                extend: 'excelHtml5',
+                title: 'Reporte de personas',
+                className: 'btn btn-success',
+                titleAttr: 'Exportar a Excel',
+                text:      '<i class="fa fa-file-excel-o"></i> ',
+          
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'Reporte de personas',
+                orientation: 'landscape',
+                pageSize: 'LEGAL',
+                download: 'open',
+                titleAttr: 'Exportar a PDF',
+        className: 'btn btn-danger',
+        text:      '<i class="fa fa-file-pdf-o"></i> ',
+
+            },
+            {
+            extend: 'print',
+            title: 'Reporte de personas',
+            
+            
+            text:      '<i class="fa fa-print"></i> ',
+				titleAttr: 'Imprimir',
+        className: 'btn btn-info',
+    
+            },
+           
+            
+            
+        ]
+      
+
+      });
+    });
+
+
+
+    $(document).ready(function() {
+    $('#reportedenuncias-table').DataTable({
+      'paging'      : true,
+      'lengthChange': true,
+      'searching'   : true,
+      'ordering'    : false,
+      'info'        : true,
+      'autoWidth'   : false,
+    'responsive':true,
+    language: {
+        "decimal": "",
+        "emptyTable": "No hay información",
+        "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+        "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+        "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+        "infoPostFix": "",
+        "thousands": ",",
+        "lengthMenu": "Mostrar _MENU_ Entradas",
+        "loadingRecords": "Cargando...",
+        "processing": "Procesando...",
+        "search": "Buscar:",
+        "zeroRecords": "Sin resultados encontrados",
+        "paginate": {
+            "first": "Primero",
+            "last": "Ultimo",
+            "next": "Siguiente",
+            "previous": "Anterior"
+        }
+    },
+
+    dom: 'Bflrtip',
+        buttons: [
+             
+            {
+                extend: 'excelHtml5',
+                title: 'Reporte de denuncias',
+                className: 'btn btn-success',
+                titleAttr: 'Exportar a Excel',
+                text:      '<i class="fa fa-file-excel-o"></i> ',
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'Reporte de denuncias',
+              
+                download: 'open',
+                titleAttr: 'Exportar a PDF',
+        className: 'btn btn-danger',
+        text:      '<i class="fa fa-file-pdf-o"></i> ',
+            },
+            {
+            extend: 'print',
+            title: 'Reporte de denuncias',
+            
+            
+            text:      '<i class="fa fa-print"></i> ',
+				titleAttr: 'Imprimir',
+				className: 'btn btn-info'
+            },
+           
+            
+            
+        ]
+      
+
+      });
+    });
+    
 </script>
 </body>
 </html>
