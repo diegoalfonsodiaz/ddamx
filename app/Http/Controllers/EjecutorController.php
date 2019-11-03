@@ -16,7 +16,7 @@ class EjecutorController extends Controller
         
         $ejecutor= DB::table('ejecutors as e')
         ->join('cargoejecutors as c', 'e.cargoejecutor_id','=', 'c.id')
-        ->select('e.id', 'e.nombre', 'e.direccion', 'e.ornato', 'c.nombre as cargo')
+        ->select('e.id', 'e.nombre', 'e.direccion', 'e.ornato', 'c.nombre as cargo','e.estado')
         ->get();
         return view('ejecutor.index', ["ejecutor"=>$ejecutor])->with('i');
         
@@ -26,7 +26,7 @@ class EjecutorController extends Controller
 
     public function create()
     {
-        $cargo=Cargoejecutor::all();
+        $cargo=Cargoejecutor::where('estado','=','1')->get();
         return view("ejecutor.create",compact('cargo'));
     }
 
@@ -63,4 +63,21 @@ class EjecutorController extends Controller
         Ejecutor::findOrFail($id)->delete();
          return redirect()->route('ejecutor.index');
     }
+
+    public function desactivar(Ejecutor $ejecutor, Request $request)
+    {
+     
+        $ejecutor->estado='0';
+        $ejecutor->save();
+        return redirect(route('ejecutor.index'))->with('flash', 'Ejecutor desactivado correctamente');
+    }
+
+    public function activar(Ejecutor $ejecutor, Request $request)
+    {
+     
+        $ejecutor->estado='1';
+        $ejecutor->save();
+        return redirect(route('ejecutor.index'))->with('flash', 'Ejecutor activado correctamente');
+    }
+
 }

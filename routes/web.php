@@ -229,3 +229,7 @@ Route::get('/reportesolicitud','ReportesController@Reportesolicitud')->name('rep
 Route::get('/reportepersonas','ReportesController@Reportepersonas')->name('reportepersonas.index');
 Route::get('/reportedenuncias','ReportesController@Reportedenuncias')->name('reportedenuncias.index');
 
+Route::post('/ejecutor/{ejecutor}', 'EjecutorController@desactivar')->name('ejecutor.desactivar');
+Route::delete('/ejecutor/{ejecutor}', 'EjecutorController@activar')->name('ejecutor.activar');
+Route::post('/cargoejecutor/{cargoejecutor}', 'CargoejecutorController@desactivar')->name('cargoejecutor.desactivar');
+Route::delete('/cargoejecutor/{cargoejecutor}', 'CargoejecutorController@activar')->name('cargoejecutor.activar');
