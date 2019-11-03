@@ -41,7 +41,8 @@ Cargos de ejecutor
             <tr>
             <th># </th>
             <th>Nombre</th>
-            <th >Acciones</th>
+            <th>Estado</th>
+            <th>Acciones</th>
         </tr>
         </thead>
         @foreach ($cargoejecutor as $product)
@@ -49,15 +50,36 @@ Cargos de ejecutor
         <tr>
             <td>{{ ++$i }}</td>
             <td>{{ $product->nombre }}</td>
-            <td>
-                <form action="{{ route('cargoejecutor.destroy',$product->id) }}" method="POST">
-                    <a class="btn btn-xs btn-info" href="{{ route('cargoejecutor.edit',$product->id) }}"><i class="fa fa-pencil"></i></a>
-   
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-xs btn-danger"><i class="fa fa-remove"></i></button>
-                </form>
-            </td>
+            @if($product->estado==1)
+                                <td ><p style="color:green;">Activo</p></td>
+                              
+                                @else
+                                <td ><p style="color:red;">Inactivo</p></td>
+                                @endif
+                              
+                                
+                                <td>
+                                    <a href="{{route('cargoejecutor.edit', $product->id)}}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
+                                    
+                                   
+                                    @if($product->estado==1)
+                                    <form method="POST" 
+                                    action="{{route('cargoejecutor.desactivar', $product->id)}}"
+                                    style="display:inline">
+                                    {{csrf_field()}} {{ method_field('POST')}}
+                                    <button class="btn btn-xs btn-danger" ><i class="fa fa-remove"></i></button>
+                                    </form>
+                              
+                                @else
+                                <form method="POST" 
+                                    action="{{route('cargoejecutor.activar', $product->id)}}"
+                                    style="display:inline">
+                                    {{csrf_field()}} {{ method_field('DELETE')}}
+                                    <button class="btn btn-xs btn-success" ><i class="fa fa-check"></i></button>
+                                    </form>
+                              
+                                @endif
+            
         </tr>
         </tbody>
         @endforeach
