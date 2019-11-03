@@ -223,3 +223,7 @@ Route::get('buscarcodigo', 'FrontendController@indexcodigo');
 Route::put('solicitudcodigo','EstadoFactibilidadExternoController@solicitarcodigo')->name('solicitudcodigo.solicitarcodigo');
 
 
+Route::post('/ejecutor/{ejecutor}', 'EjecutorController@desactivar')->name('ejecutor.desactivar');
+Route::delete('/ejecutor/{ejecutor}', 'EjecutorController@activar')->name('ejecutor.activar');
+Route::post('/cargoejecutor/{cargoejecutor}', 'CargoejecutorController@desactivar')->name('cargoejecutor.desactivar');
+Route::delete('/cargoejecutor/{cargoejecutor}', 'CargoejecutorController@activar')->name('cargoejecutor.activar');
