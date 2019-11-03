@@ -59,7 +59,7 @@ Contacto
                 <form class="contact" id="contact" action="{{route('contacto.store')}}" method="POST">
                     {{csrf_field()}}  
                     <div class="form-group">
-                        <strong>Nombre<span style="color:red"> *</span></strong>
+                        <strong>Nombre y apellido<span style="color:red"> *</span></strong>
                         <input type="text" name="nombre" class="form-control" placeholder="nombre">
                     </div>
 
@@ -68,7 +68,7 @@ Contacto
                         <input type="text" name="email" class="form-control" placeholder="email">
                     </div>
                     <div class="form-group">
-                        <strong>Descripcion<span style="color:red"> *</span></strong>
+                        <strong>Descripción<span style="color:red"> *</span></strong>
                         <input type="text" name="descripcion" class="form-control" placeholder="descripcion">
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
