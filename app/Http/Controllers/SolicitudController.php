@@ -45,6 +45,10 @@ class SolicitudController extends Controller
         $pdf = PDF::loadView('pdf.solicitud', ["fechaEntera"=>$fechaEntera], ["solicitud"=>$solicitud] )->setPaper($customPaper,'portrait');
         return $pdf->download('solicitud.pdf');
     }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
  
     public function index()
     {
@@ -70,9 +74,9 @@ class SolicitudController extends Controller
     }
 
 
-    public function create()
+    public function create(Request $request)
     {
-        
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
         $ejecutor=Ejecutor::where('estado','=','1')->get();
         $persona=Persona::where('estado','=','1')->get();
         $estado=Estadofactibilidad::where('estado','=','1')->get();
@@ -84,6 +88,7 @@ class SolicitudController extends Controller
 
     public function store(Request $request)
     {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
         $this->Validate($request, [
             'direccionobra' => 'required',
             'persona_id' => 'required'
@@ -125,8 +130,9 @@ class SolicitudController extends Controller
     
     }
 
-    public function edit($id)
+    public function edit($id,Request $request)
     {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
         $solicitud = Solicitud::find($id);
         $persona=Persona::where('estado','=','1')->get();
         $ejecutor=Ejecutor::where('estado','=','1')->get();
