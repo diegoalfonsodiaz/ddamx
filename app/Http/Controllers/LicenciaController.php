@@ -39,6 +39,7 @@ class LicenciaController extends Controller
         'solicituds.codigoinmueble as inmueble','estadolicencias.nombre as estadolicencia',
         'licencias.estadolicencia_id','tipovias.nombre as tipovia','personas.nombre as nombre_persona',
         'personas.apellido as apellido')
+        ->orderBy('solicituds.id','desc')
         ->get();
        
            
