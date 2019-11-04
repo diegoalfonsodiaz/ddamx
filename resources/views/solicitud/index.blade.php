@@ -28,8 +28,9 @@
 
 <div class="box box-primary">
             <div class="box-header">
-            
+            @if (auth()->user()->hasRole(['admin','jefeoperaciones','operaciones']))
             <a href="{{route('solicitud.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear solicitud de factibilidad</a> 
+            @endif
               <h3 class="box-title">Listado de solicitudes</h3>
             </div>
             <!-- /.box-header -->
@@ -64,8 +65,9 @@
                                 
                                 <td>
                                 <form action="{{ route('solicitud.destroy',$solicitudes->id) }}" method="POST" style="display:inline">
+                                    @if (auth()->user()->hasRole(['admin','jefeoperaciones','operaciones']))
                                     <a class="btn btn-xs btn-info" href="{{ route('solicitud.edit',$solicitudes->id) }}"><i class="fa fa-pencil"></i></a>
-                
+                                    @endif
                                     @csrf
                                     @method('DELETE')
                                     
