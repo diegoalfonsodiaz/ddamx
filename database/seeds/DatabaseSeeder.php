@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CargoejecutoresTableSeeder::class);
         $this->call(EjecutorSeeder::class);
         $this->call(AsuntoSeeder::class);
-        $this->call(estadolicenciaSeeder::class);
+      //  $this->call(estadolicenciaSeeder::class);
         $this->call(TipoObraTableSeeder::class);
     }
 }
