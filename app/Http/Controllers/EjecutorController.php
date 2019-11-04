@@ -10,13 +10,18 @@ use App\Http\Requests\EjecutorRequest;
 
 class EjecutorController extends Controller
 {
-
-    public function index()
+    public function __construct()
     {
-        
+        $this->middleware('auth');
+    }
+
+    public function index(Request $request)
+    {
+        $request->user()->autorizeRoles(['secretaria','operaciones','jefeoperaciones','admin']);
+
         $ejecutor= DB::table('ejecutors as e')
         ->join('cargoejecutors as c', 'e.cargoejecutor_id','=', 'c.id')
-        ->select('e.id', 'e.nombre', 'e.direccion', 'e.ornato', 'c.nombre as cargo')
+        ->select('e.id', 'e.nombre', 'e.direccion', 'e.ornato', 'c.nombre as cargo','e.estado')
         ->get();
         return view('ejecutor.index', ["ejecutor"=>$ejecutor])->with('i');
         
@@ -24,15 +29,18 @@ class EjecutorController extends Controller
     }
 
 
-    public function create()
+    public function create(Request $request)
     {
-        $cargo=Cargoejecutor::all();
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
+
+        $cargo=Cargoejecutor::where('estado','=','1')->get();
         return view("ejecutor.create",compact('cargo'));
     }
 
 
-    public function store(EjecutorRequest $request)
+    public function store(EjecutorRequest $request,Request $request2)
     {
+        $request2->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
         Ejecutor::create($request->all());
         return redirect()->route('ejecutor.index');
     }
@@ -43,8 +51,10 @@ class EjecutorController extends Controller
         //
     }
 
-    public function edit($id)
+    public function edit($id,Request $request)
     {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
+
         $cargoejecutor=Cargoejecutor::all();
         $ejecutor=Ejecutor::findOrFail($id);
         return view('ejecutor.edit', compact('cargoejecutor'),compact('ejecutor'));
@@ -53,14 +63,37 @@ class EjecutorController extends Controller
 
     public function update(Request $request, $id)
     {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
+
         Ejecutor::findOrFail($id)->update($request->all());
          return redirect()->route('ejecutor.index');
     }
 
 
-    public function destroy($id)
+    public function destroy($id,Request $request)
     {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
+
         Ejecutor::findOrFail($id)->delete();
          return redirect()->route('ejecutor.index');
     }
+
+    public function desactivar(Ejecutor $ejecutor, Request $request)
+    {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
+
+        $ejecutor->estado='0';
+        $ejecutor->save();
+        return redirect(route('ejecutor.index'))->with('flash', 'Ejecutor desactivado correctamente');
+    }
+
+    public function activar(Ejecutor $ejecutor, Request $request)
+    {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
+
+        $ejecutor->estado='1';
+        $ejecutor->save();
+        return redirect(route('ejecutor.index'))->with('flash', 'Ejecutor activado correctamente');
+    }
+
 }

@@ -11,9 +11,15 @@ use DB;
 
 class BitacoraController extends Controller
 {
-
-    public function index()
+    public function __construct()
     {
+        $this->middleware('auth');
+    }
+
+    public function index(Request $request)
+    {
+        $request->user()->autorizeRoles(['secretaria','operaciones','jefeoperaciones','admin']);
+
         $bitacora= DB::table('bitacoras as b')
         //persona
         ->leftjoin('users as u', 'b.user_id','=', 'u.id')
@@ -23,13 +29,16 @@ class BitacoraController extends Controller
         ->leftjoin('licencias as l', 'b.licencia_id','=', 'l.id')
         //
         ->select('b.id','b.fecha', 'u.name as user','l.numerolicencia as nlicencia','b.descripcion','a.nombre as asunto')
+        ->orderBy('b.id','desc')
         ->get();
         return view('bitacora.index', ["bitacora"=>$bitacora])->with('i');
     }
 
 
-    public function create()
+    public function create(Request $request)
     {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
+
         $asunto=Asunto::all();
         $usuarios=User::all();
         $licencia=Licencia::all();
@@ -38,6 +47,8 @@ class BitacoraController extends Controller
 
     public function store(Request $request)
     {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
+
         Bitacora::create($request->all());
         return redirect()->route('bitacora.index');
     }
@@ -59,8 +70,10 @@ class BitacoraController extends Controller
      * @param  \App\Bitacora  $bitacora
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id,Request $request)
     {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
+
         $asunto=Asunto::all();
         $bitacora=Bitacora::findOrFail($id);
         $user=User::all();
@@ -77,6 +90,8 @@ class BitacoraController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
+
         Bitacora::findOrFail($id)->update($request->all());
         return redirect()->route('bitacora.index');
     }

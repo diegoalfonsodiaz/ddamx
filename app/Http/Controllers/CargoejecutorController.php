@@ -101,4 +101,19 @@ class CargoejecutorController extends Controller
         return redirect()->route('cargoejecutor.index')
                         ->with('info','Cargo de ejecutor eliminado');
     }
+    public function desactivar(Cargoejecutor $cargoejecutor, Request $request)
+    {
+     
+        $cargoejecutor->estado='0';
+        $cargoejecutor->save();
+        return redirect(route('cargoejecutor.index'))->with('flash', 'Cargo Ejecutor desactivado correctamente');
+    }
+
+    public function activar(Cargoejecutor $cargoejecutor, Request $request)
+    {
+     
+        $cargoejecutor->estado='1';
+        $cargoejecutor->save();
+        return redirect(route('cargoejecutor.index'))->with('flash', 'Cargo Ejecutor activado correctamente');
+    }
 }

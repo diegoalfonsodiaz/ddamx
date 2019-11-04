@@ -14,7 +14,7 @@
             
             width: 100%;
             left: 406;
-            top: 69;
+            top: 67;
             position: fixed;
         }
         #fecha{
@@ -137,7 +137,7 @@
             
             width: 100%;
             left: 0;
-            top: 788;
+            top: 805;
             position: fixed;
         }
         #ornatoejec{
@@ -147,7 +147,7 @@
             
             width: 100%;
             left: 0;
-            top: 815;
+            top: 834;
             position: fixed;
         }
         #pcargo1{
@@ -156,8 +156,8 @@
             height: 1px;
             
             width: 100%;
-            left: 330;
-            top: 245;
+            left: 322;
+            top: 248;
             position: fixed;
         }
         #pcargo2{
@@ -166,8 +166,8 @@
             height: 1px;
             
             width: 100%;
-            left: 397;
-            top: 245;
+            left: 390;
+            top: 248;
             position: fixed;
         }
         #pcargo3{
@@ -176,8 +176,68 @@
             height: 1px;
             
             width: 100%;
-            left: 480;
-            top: 245;
+            left: 470;
+            top: 248;
+            position: fixed;
+        }
+        #ptipoid2{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 90;
+            top: 408;
+            position: fixed;
+        }
+        #ptipoid3{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 85;
+            top: 422;
+            position: fixed;
+        }
+        #ptipoid4{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 100;
+            top: 436;
+            position: fixed;
+        }
+        #ptipoid5{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 105;
+            top: 451;
+            position: fixed;
+        }
+        #ptipoid6{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 103;
+            top: 465;
+            position: fixed;
+        }
+        #ptipoid7{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 90;
+            top: 479;
             position: fixed;
         }
          
@@ -307,9 +367,40 @@
             {{ $solicitudes->solvenciamunicipal }}
         </label>
 
+        <label id="ptipoid2">
+            @if($solicitudes->tipo == 2)
+                X
+            @endif
+        </label>
+        <label id="ptipoid3">
+            @if($solicitudes->tipo == 3)
+                X
+            @endif
+        </label>
+        <label id="ptipoid4">
+            @if($solicitudes->tipo == 4)
+                X
+            @endif
+        </label>
+        <label id="ptipoid5">
+            @if($solicitudes->tipo == 5)
+                X
+            @endif
+        </label>
+        <label id="ptipoid6">
+            @if($solicitudes->tipo == 6)
+                X
+            @endif
+        </label>
+        <label id="ptipoid7">
+            @if($solicitudes->tipo == 7)
+                X
+            @endif
+        </label>
+
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <br><br>
+        <br><br><br>
         <p id="observacion" style='text-indent: 7em'>
             {{ $solicitudes->observacion }}
         </p>
