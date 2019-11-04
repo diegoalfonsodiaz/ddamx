@@ -21,6 +21,7 @@ class DenunciaController extends Controller
         ->select('d.id', 'd.descripcion', 'd.fecha',
          'd.foto', 'e.descripcion as estado', 'e.estado as es',
          'd.direccion', 'd.telefono')
+         ->orderBy('d.id','desc')
         ->get();
         return view('denuncia.index', ["denuncia"=>$denuncia])->with('i');
     }

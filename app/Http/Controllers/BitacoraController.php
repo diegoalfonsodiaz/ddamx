@@ -23,6 +23,7 @@ class BitacoraController extends Controller
         ->leftjoin('licencias as l', 'b.licencia_id','=', 'l.id')
         //
         ->select('b.id','b.fecha', 'u.name as user','l.numerolicencia as nlicencia','b.descripcion','a.nombre as asunto')
+        ->orderBy('b.id','desc')
         ->get();
         return view('bitacora.index', ["bitacora"=>$bitacora])->with('i');
     }
