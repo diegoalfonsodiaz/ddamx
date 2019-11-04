@@ -46,12 +46,12 @@
                 </div>
                 <label><span style="color:red">* </span><span style="color:black">Campos obligatorios</span></label>
                 <div class="form-group">
-                    <strong>Direccion Obra<span style="color:red"> *</span></strong>
-                    <input type="text" name="direccionobra" class="form-control input-lg " placeholder="Direccion Obra">
+                    <strong>Dirección Obra<span style="color:red"> *</span></strong>
+                    <input type="text" name="direccionobra" class="form-control input-lg " placeholder="Dirección Obra">
                 </div>
 
                 <div class="form-group">
-                    <strong>Codigo Inmueble</strong>
+                    <strong>Código de inmueble</strong>
                     <input type="text" name="codigoinmueble" class="form-control input-lg " placeholder="Codigo Inmueble">
                 </div>
 

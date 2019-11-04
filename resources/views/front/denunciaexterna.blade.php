@@ -31,7 +31,7 @@ Denuncia
 
                     <div class="form-group">
                     <strong>Descripción de la denuncia<span style="color:red"> *</span></strong>
-                    <input type="text" name="descripcion" class="form-control" placeholder="descripcion" required>
+                    <input type="text" name="descripcion" class="form-control" placeholder="descripción" required>
                     </div>
 
                     <div class="form-group" style="display: none">

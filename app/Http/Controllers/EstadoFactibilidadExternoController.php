@@ -108,7 +108,7 @@ class EstadoFactibilidadExternoController extends Controller
             return view('front.licencia.estadolicenciaexterno', ["solicitud"=>$solicitud])->with('i');
         }
         elseif($cantidad < 1){
-                $sessionManager->flash('mensaje', '!No a tramitado su licencia o no a realizado ninguna solicitud de factibilidad de conexión!');
+                $sessionManager->flash('mensaje', '¡No ha tramitado su licencia o no a realizado ninguna solicitud de factibilidad de conexión!');
                 return view('front.estado.sinestado');
             }
     }

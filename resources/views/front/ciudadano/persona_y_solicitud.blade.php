@@ -60,7 +60,7 @@
                       </div>
 
                       <div class="form-group">
-                      <strong>Código inmueble</strong>
+                      <strong>Código de inmueble</strong>
                       <input type="text" name="codigoinmueble" class="form-control input-lg " placeholder="Código de inmueble">
                       </div>
 

@@ -69,7 +69,7 @@ Contacto
                     </div>
                     <div class="form-group">
                         <strong>Descripción<span style="color:red"> *</span></strong>
-                        <input type="text" name="descripcion" class="form-control" placeholder="descripcion">
+                        <input type="text" name="descripcion" class="form-control" placeholder="descripción">
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                     {!! htmlFormSnippet() !!}
