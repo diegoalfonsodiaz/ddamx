@@ -20,6 +20,7 @@ class CreateTipoobrasTable extends Migration
             $table->timestamps();
         });
 
+        //Semillas Tipo de obra
         DB::table('tipoobras')->insert(array('id'=>'1','nombre'=>'Sin asignar','estado'=>'1','created_at'=>now(),'updated_at'=>now()));
         DB::table('tipoobras')->insert(array('id'=>'2','nombre'=>'Unifamiliar','estado'=>'1','created_at'=>now(),'updated_at'=>now()));
         DB::table('tipoobras')->insert(array('id'=>'3','nombre'=>'Bifamiliar','estado'=>'1','created_at'=>now(),'updated_at'=>now()));

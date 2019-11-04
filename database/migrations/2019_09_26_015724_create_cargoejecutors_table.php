@@ -20,6 +20,7 @@ class CreateCargoejecutorsTable extends Migration
             $table->timestamps();
         });
 
+        //Semillas cargo de ejecutor
         DB::table('cargoejecutors')->insert(array('id'=>'1','nombre'=>'Arquitecto','estado'=>'1','created_at'=>now(),'updated_at'=>now()));
         DB::table('cargoejecutors')->insert(array('id'=>'2','nombre'=>'Ingeniero','estado'=>'1','created_at'=>now(),'updated_at'=>now()));
         DB::table('cargoejecutors')->insert(array('id'=>'3','nombre'=>'Constructor','estado'=>'1','created_at'=>now(),'updated_at'=>now()));
