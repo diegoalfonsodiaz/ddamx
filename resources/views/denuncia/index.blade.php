@@ -6,7 +6,7 @@
   </h1>
 
   <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+    <li><a href="/menu"><i class="fa fa-dashboard"></i> Inicio</a></li>
     <li class="active">Denuncias</li>
   </ol>
       
@@ -41,9 +41,9 @@
                   <th width="400px">Descripción</th>
                   <th width="120px">Fecha</th>
                   <th width="220px">Fotografía</th>
-                  <th width="220px">Direccíon</th>
+                  <th width="220px">Dirección</th>
                   <th width="220px">Teléfono</th>
-                  <th width="125px">Estado Denuncia</th>
+                  <th width="125px">Estado de la denuncia</th>
                   <th width="125px">Acciones</th>
                 </tr>
             </thead>
