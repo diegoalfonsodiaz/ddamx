@@ -7,9 +7,15 @@ use App\Estadodenuncia;
 
 class EstadodenunciaController extends Controller
 {
-    public function index()
+    public function __construct()
     {
-        
+        $this->middleware('auth');
+    }
+
+
+    public function index(Request $request)
+    {
+        $request->user()->autorizeRoles(['admin']);
 
 
        $estadodenuncias = Estadodenuncia::orderBy('id', 'desc')->get();
@@ -19,16 +25,19 @@ class EstadodenunciaController extends Controller
             
     }
 
-    public function create()
+    public function create(Request $request)
     {
-        
+        $request->user()->autorizeRoles(['admin']);
+
         return view('estadodenuncias.create');
     }
 
     public function store(Request $request)
     {
         
-      
+        $request->user()->autorizeRoles(['admin']);
+
+
         $this->Validate($request, [
             'descripcion' => 'required'
             
@@ -41,14 +50,20 @@ class EstadodenunciaController extends Controller
 
     }
 
-    public function edit(Estadodenuncia $estadodenuncia)
+    public function edit(Estadodenuncia $estadodenuncia, Request $request)
     {
+        $request->user()->autorizeRoles(['admin']);
+
+
         return view('estadodenuncias.edit', compact('estadodenuncia'));
     }
 
 
     public function update(Estadodenuncia $estadodenuncia,Request $request)
     {
+        $request->user()->autorizeRoles(['admin']);
+
+
         $this->Validate($request, [
             'descripcion' => 'required'
             
@@ -65,7 +80,9 @@ class EstadodenunciaController extends Controller
 
     public function desactivar(Estadodenuncia $estadodenuncia, Request $request)
     {
-     
+        $request->user()->autorizeRoles(['admin']);
+
+
         $estadodenuncia->estado='0';
         $estadodenuncia->save();
         return redirect(route('estadodenuncias.index'))->with('flash', 'Estado de denuncia desactivado correctamente');
@@ -73,7 +90,9 @@ class EstadodenunciaController extends Controller
 
     public function activar(Estadodenuncia $estadodenuncia, Request $request)
     {
-     
+        $request->user()->autorizeRoles(['admin']);
+
+
         $estadodenuncia->estado='1';
         $estadodenuncia->save();
         return redirect(route('estadodenuncias.index'))->with('flash', 'Estado de denuncia activado correctamente');

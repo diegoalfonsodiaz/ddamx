@@ -7,14 +7,26 @@ use Illuminate\Http\Request;
 
 class AsuntoController extends Controller
 {
-    public function index()
+    public function __construct()
     {
+        $this->middleware('auth');
+    }
+
+
+    public function index(Request $request)
+    {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
+        
+
         $asunto = Asunto::orderBy('id', 'desc')->get();
   
         return view('asunto.index',compact('asunto'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
     public function create(Request $request)
     {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
+        
+
         $asunto = Asunto::where('estado',1)->get();
         return view('asunto.create');
     }
@@ -22,6 +34,9 @@ class AsuntoController extends Controller
    
     public function store(Request $request)
     {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
+        
+
         $this->validate($request,
         [
             'nombre'=>'required',
@@ -37,15 +52,19 @@ class AsuntoController extends Controller
     }
 
     
-    public function show($id)
+    public function show($id, Request $request)
     {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
+        
         $asunto=Asunto::findOrFail($id);
         return view('asunto.index');
     }
 
     
-    public function edit(Asunto $asunto)
+    public function edit(Asunto $asunto, Request $request)
     {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
+        
         return view('asunto.edit',compact('asunto'));
 
     }
@@ -53,6 +72,8 @@ class AsuntoController extends Controller
   
     public function update(Request $request, $id)
     {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
+        
         $this->validate($request,
             [
                 'nombre'=>'required'
@@ -67,8 +88,10 @@ class AsuntoController extends Controller
     }
 
    
-    public function destroy( Asunto $asunto)
+    public function destroy( Asunto $asunto, Request $request)
     {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
+        
         $asunto->delete();
         return redirect()->route('asunto.index')->with('info','Asunto de bitácora elimanado correctamente');
     }

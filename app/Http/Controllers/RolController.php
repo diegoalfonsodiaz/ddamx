@@ -7,20 +7,27 @@ use Illuminate\Http\Request;
 
 class RolController extends Controller
 {
-
-    public function index()
+    public function __construct()
     {
+        $this->middleware('auth');
+    }
+
+    public function index(Request $request)
+    {
+        $request->user()->autorizeRoles(['admin']);
         $roles = Role::all();
         return view('rol.index',compact('roles'))->with('i');
     }
 
-    public function create()
+    public function create(Request $request)
     {
+        $request->user()->autorizeRoles(['admin']);
         return view('rol.create');
     }
 
     public function store(Request $request)
     {
+        $request->user()->autorizeRoles(['admin']);
         $this->validate($request,
             [
                 'nombre'=>'required'
@@ -34,14 +41,16 @@ class RolController extends Controller
         return redirect('rol')->with('info', 'Se registro Corectamente el Rol');
     }
 
-    public function edit(Role $rol)
+    public function edit(Role $rol, Request $request)
     {
+        $request->user()->autorizeRoles(['admin']);
         return view('rol.edit',compact('rol'));
     }
 
 
     public function update(Request $request, Role $rol)
     {
+        $request->user()->autorizeRoles(['admin']);
         $this->validate($request,
             [
                 'nombre'=>'required'
@@ -54,6 +63,7 @@ class RolController extends Controller
 
     public function desactivar(Role $rol, Request $request)
     {
+        $request->user()->autorizeRoles(['admin']);
         $rol->estado='0';
         $rol->save();
         return redirect(route('rol.index'))->with('info', 'Estado desactivado correctamente');
@@ -61,6 +71,7 @@ class RolController extends Controller
 
     public function activar(Role $rol, Request $request)
     {
+        $request->user()->autorizeRoles(['admin']);
         $rol->estado='1';
         $rol->save();
         return redirect(route('rol.index'))->with('info', 'Estado activado correctamente');

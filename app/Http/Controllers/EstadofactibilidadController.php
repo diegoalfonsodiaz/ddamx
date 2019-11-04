@@ -12,14 +12,18 @@ class EstadofactibilidadController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function index(Request $request)
     {
+        $request->user()->autorizeRoles(['admin']);
+
         $estadofactibilidades = Estadofactibilidad::orderBy('id', 'desc')->get();
         return view('estadofactibilidad.index',compact('estadofactibilidades'));
     }
 
     public function create(Request $request)
     {
+        $request->user()->autorizeRoles(['admin']);
+
         return view('estadofactibilidad.create');
     }
 
@@ -47,6 +51,7 @@ class EstadofactibilidadController extends Controller
     
     public function edit(Estadofactibilidad $estadofactibilidad,Request $request)
     {
+        
         $request->user()->autorizeRoles(['admin']);
         return view('estadofactibilidad.edit',compact('estadofactibilidad'));
     }
