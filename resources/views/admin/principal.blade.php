@@ -373,7 +373,8 @@ $(document).ready(function() {
                 extend: 'pdfHtml5',
                 title: 'Reporte de solicitudes',
                 orientation: 'landscape',
-               
+                pageSize: 'A3',
+                download: 'open',
                 titleAttr: 'Exportar a PDF',
         className: 'btn btn-danger',
         text:      '<i class="fa fa-file-pdf-o"></i> ',
@@ -443,7 +444,7 @@ $(document).ready(function() {
                 extend: 'pdfHtml5',
                 title: 'Reporte de personas',
                 orientation: 'landscape',
-                pageSize: 'LEGAL',
+                pageSize: 'A4',
                 download: 'open',
                 titleAttr: 'Exportar a PDF',
         className: 'btn btn-danger',
@@ -500,6 +501,7 @@ $(document).ready(function() {
             "previous": "Anterior"
         }
     },
+    
 
     dom: 'Bflrtip',
         buttons: [

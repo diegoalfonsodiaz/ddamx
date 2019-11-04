@@ -12,9 +12,15 @@ use DB;
 class ReportesController extends Controller
 {
     //
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function Reportelicencia(Request $request)
     {
+        $request->user()->autorizeRoles(['secretaria','operaciones','jefeoperaciones','admin']);
+
      
         $licencia= DB::table('licencias')
         //persona
@@ -42,6 +48,7 @@ class ReportesController extends Controller
 
     public function Reportesolicitud(Request $request)
     {
+        $request->user()->autorizeRoles(['secretaria','operaciones','jefeoperaciones','admin']);
 
         $solicitud=DB::table('solicituds')
         ->leftjoin('ejecutors','solicituds.ejecutor_id','=','ejecutors.id')
@@ -70,8 +77,10 @@ class ReportesController extends Controller
     }
 
 
-            public function Reportepersonas()
+            public function Reportepersonas(Request $request)
             {
+                $request->user()->autorizeRoles(['secretaria','operaciones','jefeoperaciones','admin']);
+
                 $personas = Persona::orderBy('id', 'desc')->get();
                     
                 return view('reportes.listadopersonas',compact('personas'))->with('i');;
@@ -81,6 +90,8 @@ class ReportesController extends Controller
   
             public function Reportedenuncias( Request $request)
             {
+                $request->user()->autorizeRoles(['secretaria','operaciones','jefeoperaciones','admin']);
+
                 $denuncia= DB::table('denuncias as d')
                     ->join('estadodenuncias as e', 'd.estadodenuncia_id','=', 'e.id')
                     ->select('d.id', 'd.descripcion', 'd.fecha',

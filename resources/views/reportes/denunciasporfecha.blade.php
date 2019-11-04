@@ -80,7 +80,7 @@
               
                   <th width="220px">Dirección</th>
                   <th width="220px">Teléfono</th>
-                  <th width="125px">Estado Denuncia</th>
+                  <th width="125px">Estado de la  denuncia</th>
                 
                             
                             </tr>
