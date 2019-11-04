@@ -61,7 +61,7 @@
 
                       <div class="form-group">
                       <strong>Código inmueble</strong>
-                      <input type="text" name="codigoinmueble" class="form-control input-lg " placeholder="Código inmueble">
+                      <input type="text" name="codigoinmueble" class="form-control input-lg " placeholder="Código de inmueble">
                       </div>
 
                       <div class="col-xs-12 col-sm-12 col-md-12 text-center">

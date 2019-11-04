@@ -41,7 +41,7 @@ Inicio
         <div class="row">
             <!-- Responsive Section Start -->
             <div class="text-center">
-                <h3 class="border-primary"><span class="heading_border bg-primary">Nuestros servicios en linea</span></h3>
+                <h3 class="border-primary"><span class="heading_border bg-primary">Nuestros servicios en línea</span></h3>
             </div>
             <div class="col-sm-6 col-md-3 wow bounceInLeft" data-wow-duration="3.5s">
                 <div class="box">
@@ -51,6 +51,7 @@ Inicio
                     <div class="info">
                         <h3 class="success text-center">Consulta</h3>
                         <p>Consulta si cuentas con la licencia para poder instalar los servicios de alcantarillado y drenaje.</p>
+                        <p></p>
                         <div class="text-right primary"><a href="{{ url('/buscarcodigo') }}">Consultar</a>
                         </div>
                     </div>
@@ -82,6 +83,7 @@ Inicio
                     <div class="info">
                         <h3 class="warning text-center">Denuncia</h3>
                         <p>Reporta cualquier anomalía que veas, esto nos ayudara a ofrecerte un mejor servicio para todos.</p>
+                        <p></p>
                         <div class="text-right primary"><a href="{{ url('/denunciaexterna') }}">Denunciar</a>
                         </div>
                     </div>
@@ -96,7 +98,8 @@ Inicio
                     </div>
                     <div class="info">
                         <h3 class="yellow text-center">Contáctenos</h3>
-                        <p>Contacta con nosotros para poder realizar cualquier trámite o hacernos saber cualquier duda que tengas.</p>
+                        <p>Comunicate con nosotros para poder realizar cualquier trámite o hacernos saber cualquier duda que tengas.</p>
+                        <p></p>
                         <div class="text-right primary"><a href="{{ url('/contactoexterno') }}">Contáctenos</a>
                         </div>
                     </div>

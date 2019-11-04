@@ -23,7 +23,7 @@ Denuncia
     <div class="container">
             <!-- Contact form Section Start -->
             <div class="col-xs-12 col-sm-12 col-md-12">
-                <h2>Realize su denuncia</h2>
+                <h2>Realice su denuncia</h2>
                  <label><span style="color:red">* </span><span style="color:black">Campos obligatorios</span></label>
 
                 <form role="form" method="POST" action="{{route('denunciaexterna.store')}}" enctype="multipart/form-data">
