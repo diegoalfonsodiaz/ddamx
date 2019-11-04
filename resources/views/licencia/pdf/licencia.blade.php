@@ -98,7 +98,7 @@
        x{{ $licencias->longitud }}
     </p>-->
 @if($licencias->tipovia_id==1)
-    <pre>
+    <pre id="tipos" >
                                 X               {{ $licencias->longitud }}   
 
 
