@@ -16,7 +16,7 @@ class TicketDenunciaController extends Controller
         //denuncias
         ->leftjoin('denuncias as d', 'td.denuncia_id','=', 'd.id')
         //
-        ->select('td.id','d.id as denuncia','td.fecha','td.user','td.detalle','d.descripcion')
+        ->select('td.id','d.id as denuncia','td.fecha','td.user','td.detalle','d.descripcion','td.updated_at as fechamodificacion')
         ->where('td.denuncia_id','=', $id)
         ->get();
         return view('ticketDenuncia.index', ["ticket"=>$ticket])->with('i');
@@ -25,7 +25,7 @@ class TicketDenunciaController extends Controller
  
     public function create()
     {
-        $denuncia=Denuncia::all();
+        $denuncia=Denuncia::whereIn('estadodenuncia_id',[1, 2])->get();
         return view('ticketDenuncia.create',compact('denuncia'));
     }
 
