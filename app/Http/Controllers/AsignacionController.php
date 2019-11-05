@@ -10,8 +10,14 @@ use DB;
 
 class AsignacionController extends Controller
 {
-    public function index()
+    public function __construct()
     {
+        $this->middleware('auth');
+    }
+
+    public function index(Request $request)
+    {
+        $request->user()->autorizeRoles(['admin']);
         $asignaciones= DB::table('role_user as a')
         //usuario
         ->join('users as u', 'a.user_id','=', 'u.id')
@@ -27,8 +33,10 @@ class AsignacionController extends Controller
     }
 
  
-    public function create()
+    public function create(Request $request)
     {
+        $request->user()->autorizeRoles(['admin']);
+
         $usuario=User::where('estado','=','1')->get();
         $rol=Role::all();
         return view('asignacion.create',compact('usuario','rol'));
@@ -37,6 +45,8 @@ class AsignacionController extends Controller
    
     public function store(Request $request)
     {
+        $request->user()->autorizeRoles(['admin']);
+
         $this->validate($request,
             [
                 'user_id'=>'required',
@@ -51,6 +61,8 @@ class AsignacionController extends Controller
    
     public function edit($id)
     {
+        $request->user()->autorizeRoles(['admin']);
+
         $asignacion=Asignacion::findOrFail($id);
         $usuario=User::where('estado','=','1')->get();
         $rol=Role::all();
@@ -60,6 +72,8 @@ class AsignacionController extends Controller
   
     public function update(Request $request, $id)
     {
+        $request->user()->autorizeRoles(['admin']);
+
         Asignacion::findOrFail($id)->update($request->all());
         return redirect()->route('asignacion.index');
     }
@@ -67,6 +81,8 @@ class AsignacionController extends Controller
   
     public function destroy(Asignacion $asignacion, Request $request, $id)
     {
+        $request->user()->autorizeRoles(['admin']);
+
         Asignacion::find($id)->delete();
         return redirect(route('asignacion.index'))->with('info', 'Se eliminó correctamente la Asignación');
     }

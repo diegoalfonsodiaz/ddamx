@@ -38,9 +38,9 @@ class EjecutorController extends Controller
     }
 
 
-    public function store(EjecutorRequest $request,Request $request2)
+    public function store(EjecutorRequest $request)
     {
-        $request2->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
         Ejecutor::create($request->all());
         return redirect()->route('ejecutor.index');
     }
