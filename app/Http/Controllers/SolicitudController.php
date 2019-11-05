@@ -50,8 +50,10 @@ class SolicitudController extends Controller
         $this->middleware('auth');
     }
  
-    public function index()
+    public function index(Request $request)
     {
+        $request->user()->autorizeRoles(['secretaria','operaciones','jefeoperaciones','admin']);
+
         $solicitud=DB::table('solicituds')
         ->leftjoin('ejecutors','solicituds.ejecutor_id','=','ejecutors.id')
         ->leftjoin('personas','solicituds.persona_id','=','personas.id')
@@ -100,10 +102,11 @@ class SolicitudController extends Controller
     }
 
 
-    public function show($id)
+    public function show($id,Request $request)
     {
         //$solicitud = Solicitud::find($id);
-       
+        $request->user()->autorizeRoles(['secretaria','operaciones','jefeoperaciones','admin']);
+
 
         $solicitud=DB::table('solicituds')
         ->leftjoin('ejecutors','solicituds.ejecutor_id','=','ejecutors.id')
@@ -146,6 +149,8 @@ class SolicitudController extends Controller
 
     public function update(Request $request,$id)
     {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
+
         $this->Validate($request, [
             'direccionobra' => 'required',
             'persona_id' => 'required'
@@ -165,7 +170,8 @@ class SolicitudController extends Controller
 
     public function historial($id)
     {
-        
+        $request->user()->autorizeRoles(['secretaria','operaciones','jefeoperaciones','admin']);
+
 
        $audits=Solicitud::find($id)->audits;
 
