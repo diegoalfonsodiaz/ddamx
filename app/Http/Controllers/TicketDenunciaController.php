@@ -9,9 +9,14 @@ use DB;
 
 class TicketDenunciaController extends Controller
 {
-
-    public function index($id)
+    public function __construct()
     {
+        $this->middleware('auth');
+    }
+    public function index($id,Request $request)
+    {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
+
         $ticket= DB::table('ticket_denuncias as td')
         //denuncias
         ->leftjoin('denuncias as d', 'td.denuncia_id','=', 'd.id')
@@ -23,8 +28,10 @@ class TicketDenunciaController extends Controller
     }
 
  
-    public function create()
+    public function create(Request $request)
     {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
+
         $denuncia=Denuncia::whereIn('estadodenuncia_id',[1, 2])->get();
         return view('ticketDenuncia.create',compact('denuncia'));
     }
@@ -32,6 +39,8 @@ class TicketDenunciaController extends Controller
  
     public function store(Request $request)
     {        
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
+
         $ticket = new ticketDenuncia;
         $ticket->denuncia_id = $request->input('denuncia_id');
         $ticket->detalle = $request->input('detalle');
