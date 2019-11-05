@@ -45,7 +45,7 @@
                                 <td>
                                 <form action="{{ route('bitacora.destroy',$bitacoras->id) }}" method="POST">
                                     <a  href="{{ route('bitacora.edit', $bitacoras->id) }}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
-                                    <a class="btn btn-xs btn-primary" href="{{ route('ticket.index', $bitacoras->id) }}">Seguimiento</a>
+                                    <a class="btn btn-xs btn-success" href="{{ route('ticket.index', $bitacoras->id) }}"><i class="fa fa-long-arrow-right"></i></a>
                                     @csrf
                                     @method('DELETE')
                                     
