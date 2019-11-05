@@ -71,7 +71,11 @@
 
 
                       <td>
+                      @if( $den->estadodenuncia == 1 )
                         <a href="{{ route('denuncia.edit',$den->id) }}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
+                      @elseif( $den->estadodenuncia == 2 )
+                        <a href="{{ route('denuncia.edit',$den->id) }}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
+                      @endif
                         <a class="btn btn-primary" href="{{ route('ticketdenuncia.index', $den->id) }}">Seguimiento</a>
                       </td>
 
