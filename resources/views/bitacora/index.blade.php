@@ -15,7 +15,7 @@
 <div class="box box-primary">
             <div class="box-header">
             
-            <a href="{{route('bitacora.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear bitácora</a> 
+        
               <h3 class="box-title">Listado de bitácoras</h3>
             </div>
             <div class="box-body">
