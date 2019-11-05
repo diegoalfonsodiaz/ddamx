@@ -65,9 +65,9 @@
                                 
                                 <td>
                                 <form action="{{ route('solicitud.destroy',$solicitudes->id) }}" method="POST" style="display:inline">
-                                    @if (auth()->user()->hasRole(['admin','jefeoperaciones','operaciones']))
+                                    
                                     <a class="btn btn-xs btn-info" href="{{ route('solicitud.edit',$solicitudes->id) }}"><i class="fa fa-pencil"></i></a>
-                                    @endif
+                                    
                                     @csrf
                                     @method('DELETE')
                                     
