@@ -59,7 +59,7 @@ class AsignacionController extends Controller
 
 
    
-    public function edit($id)
+    public function edit($id,Request $request)
     {
         $request->user()->autorizeRoles(['admin']);
 
