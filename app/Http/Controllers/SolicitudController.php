@@ -34,7 +34,7 @@ class SolicitudController extends Controller
         'solicituds.profundidad','solicituds.fechasolicitud',
         'solicituds.diametrotubo','solicituds.diametrocolector',
         'solicituds.ejecutor_id','solicituds.persona_id',
-        'solicituds.tipoobra_id','solicituds.estadofactibilidad_id')
+        'solicituds.tipoobra_id as tipo','solicituds.estadofactibilidad_id')
         ->where('solicituds.id','=',$id)
         ->get();
         $fechaEntera = time();

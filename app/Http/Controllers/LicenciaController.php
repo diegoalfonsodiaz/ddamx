@@ -21,8 +21,9 @@ class LicenciaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin','secretaria']);
         $licencia= DB::table('licencias')
         //persona
         ->leftjoin('solicituds', 'licencias.solicitudfactibilidad_id','=', 'solicituds.id')
@@ -39,6 +40,7 @@ class LicenciaController extends Controller
         'solicituds.codigoinmueble as inmueble','estadolicencias.nombre as estadolicencia',
         'licencias.estadolicencia_id','tipovias.nombre as tipovia','personas.nombre as nombre_persona',
         'personas.apellido as apellido')
+        ->orderBy('solicituds.id','desc')
         ->get();
        
            
@@ -80,14 +82,14 @@ class LicenciaController extends Controller
         
         $this->Validate($request, [
             'solicitudfactibilidad_id' => 'required|unique:licencias,solicitudfactibilidad_id',
-            'numerolicencia' => 'required',
-            'fechaautorizacion' => 'required',
+            'numerolicencia',
+            'fechaautorizacion',
             'tipovia_id' => 'required',
-            'recibo' => 'required',
-            'derecho' => 'required',
+            'recibo',
+            'derecho' => 'required', 
             'remocion' => 'required',
-            'fechaconexion' => 'required',
-            'monto' => 'required',
+            'fechaconexion',
+            'monto',
             'estadolicencia_id' => 'required',
             
         ]);

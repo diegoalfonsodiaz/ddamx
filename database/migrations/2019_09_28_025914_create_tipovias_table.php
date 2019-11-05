@@ -20,6 +20,14 @@ class CreateTipoviasTable extends Migration
             $table->boolean('estado')->default(1);
             $table->timestamps();
         });
+        DB::table('tipovias')->insert(array('id'=>'1','nombre'=>'Tierra','descripcion'=>'Autorizada','estado'=>'1','created_at'=>now(),'updated_at'=>now()));
+        DB::table('tipovias')->insert(array('id'=>'2','nombre'=>'Empedrado','descripcion'=>'Autorizada','estado'=>'1','created_at'=>now(),'updated_at'=>now()));
+        DB::table('tipovias')->insert(array('id'=>'3','nombre'=>'Adoquin','descripcion'=>'Autorizada','estado'=>'1','created_at'=>now(),'updated_at'=>now()));
+        DB::table('tipovias')->insert(array('id'=>'4','nombre'=>'Asfalto','descripcion'=>'Autorizada','estado'=>'1','created_at'=>now(),'updated_at'=>now()));
+        DB::table('tipovias')->insert(array('id'=>'5','nombre'=>'Pavimento','descripcion'=>'Autorizada','estado'=>'1','created_at'=>now(),'updated_at'=>now()));
+
+
+
     }
 
     /**

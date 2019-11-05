@@ -6,7 +6,7 @@
   </h1>
 
   <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+    <li><a href="/menu"><i class="fa fa-dashboard"></i> Inicio</a></li>
     <li class="active">Denuncias</li>
   </ol>
       
@@ -42,8 +42,8 @@
                   <th width="120px">Fecha</th>
                   <th width="220px">Fotografía</th>
                   <th width="220px">Dirección</th>
-                  <th width="220px">Teléfono</th>
-                  <th width="125px">Estado Denuncia</th>
+                  <th width="150px">Teléfono</th>
+                  <th width="200px">Estado de denuncias</th>
                   <th width="125px">Acciones</th>
                 </tr>
             </thead>
@@ -71,7 +71,11 @@
 
 
                       <td>
+                      @if( $den->estadodenuncia == 1 )
                         <a href="{{ route('denuncia.edit',$den->id) }}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
+                      @elseif( $den->estadodenuncia == 2 )
+                        <a href="{{ route('denuncia.edit',$den->id) }}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
+                      @endif
                         <a class="btn btn-primary" href="{{ route('ticketdenuncia.index', $den->id) }}">Seguimiento</a>
                       </td>
 

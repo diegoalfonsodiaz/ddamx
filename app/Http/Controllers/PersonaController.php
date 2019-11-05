@@ -10,12 +10,17 @@ use Illuminate\Support\Facades\DB;
 
 class PersonaController extends Controller
 {
-    public function index()
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
+    public function index(Request $request)
     {
         //$personas=Persona::all();
        // return view('admin.personas.index',compact('personas'));
 
-
+       $request->user()->autorizeRoles(['secretaria','operaciones','jefeoperaciones','admin']);
        $personas = Persona::orderBy('id', 'desc')->get();
         
        return view('personas.index',compact('personas'));
@@ -31,19 +36,22 @@ class PersonaController extends Controller
         ->toJson();
     }
 
-    public function create()
+    public function create(Request $request)
     {
-        
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
+
         return view('personas.create');
     }
 
     public function store(Request $request)
     {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
+
         $this->Validate($request, [
-            'dpi' => 'required',
+            'dpi' => 'numeric|required|digits_between:13,13',
             'nombre' => 'required',
             'apellido' => 'required',
-            'telefono' => 'required'
+            'telefono' => 'required',
             
         ]);
        //return Persona::create($request->all());
@@ -61,18 +69,22 @@ class PersonaController extends Controller
 
     }
 
-    public function edit(Persona $persona)
+    public function edit(Persona $persona,Request $request)
     {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
+
         return view('personas.edit', compact('persona'));
     }
 
     public function update(Persona $persona,Request $request)
     {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
+
         $this->Validate($request, [
-            'dpi' => 'required',
+            'dpi' => 'numeric|required|digits_between:13,13',
             'nombre' => 'required',
             'apellido' => 'required',
-            'telefono' => 'required'
+            'telefono' => 'required|',
             
         ]);
         //$persona=Persona::findOrFail($request->id);
@@ -92,7 +104,8 @@ class PersonaController extends Controller
 
     public function desactivar(Persona $persona, Request $request)
     {
-     
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
+
         $persona->estado='0';
         $persona->save();
         return redirect(route('personas.index'))->with('flash', 'Persona desactivada correctamente');
@@ -100,6 +113,8 @@ class PersonaController extends Controller
 
     public function activar(Persona $persona, Request $request)
     {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
+
      
         $persona->estado='1';
         $persona->save();

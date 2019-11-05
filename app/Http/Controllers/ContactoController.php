@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Contacto;
 use Illuminate\Http\Request;
-use Illuminate\Session\SessionManager;
 use App\Http\Requests\ContactoRequest;
+use Illuminate\Session\SessionManager;
 
 class ContactoController extends Controller
 {
@@ -40,11 +40,13 @@ class ContactoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, SessionManager $sessionManager)
+    public function store(ContactoRequest $request, SessionManager $sessionManager)
     {
         $this->validate($request,
             [
                 'nombre'=>'required',
+                'email'=>'required',
+                'descripcion'=>'required',
                 recaptchaFieldName() => recaptchaRuleName()
             ]
         );
@@ -54,8 +56,8 @@ class ContactoController extends Controller
         $contacto->descripcion = $request->input('descripcion');
         $contacto->save();
 
-        $sessionManager->flash('mensajetipo', '!Gracias por comunicarte con nosotros!');
-        $sessionManager->flash('mensaje', 'La interacción con nosotros nos permite ofrecerte un mejor servicio.');
+        $sessionManager->flash('mensajetipo', '¡Gracias por comunicarte con nosotros!');
+        $sessionManager->flash('mensaje', 'Te enviaremos nuestra respuesta a tu correo electrónico.');
 
         
         return view('front.respuesta');

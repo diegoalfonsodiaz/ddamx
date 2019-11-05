@@ -8,13 +8,18 @@ use App\Http\Requests\CargoEjecutorRequest;
 
 class CargoejecutorController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
 
         $cargoejecutor = Cargoejecutor::latest()->paginate(5);
   
@@ -29,6 +34,8 @@ class CargoejecutorController extends Controller
      */
     public function create(Request $request)
     {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
+
         return view('cargoejecutor.create');
     }
 
@@ -40,6 +47,7 @@ class CargoejecutorController extends Controller
      */
     public function store(CargoEjecutorRequest $request)
     {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
         
         $cargoejecutor = new Cargoejecutor;
         $cargoejecutor->nombre = $request->input('nombre');
@@ -65,8 +73,10 @@ class CargoejecutorController extends Controller
      * @param  \App\Cargoejecutor  $cargoejecutor
      * @return \Illuminate\Http\Response
      */
-    public function edit(Cargoejecutor $cargoejecutor)
+    public function edit(Cargoejecutor $cargoejecutor, Request $request)
     {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
+
         return view('cargoejecutor.edit',compact('cargoejecutor'));
         
     }
@@ -80,6 +90,8 @@ class CargoejecutorController extends Controller
      */
     public function update(Request $request, Cargoejecutor $cargoejecutor)
     {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
+
         $request->validate([
             'nombre' => 'required',
         ]);
@@ -95,14 +107,18 @@ class CargoejecutorController extends Controller
      * @param  \App\Cargoejecutor  $cargoejecutor
      * @return \Illuminate\Http\Response
      */
-    public function destroy( Cargoejecutor $cargoejecutor)
+    public function destroy( Cargoejecutor $cargoejecutor,Request $request)
     {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
+
         $cargoejecutor->delete();
         return redirect()->route('cargoejecutor.index')
                         ->with('info','Cargo de ejecutor eliminado');
     }
     public function desactivar(Cargoejecutor $cargoejecutor, Request $request)
     {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
+
      
         $cargoejecutor->estado='0';
         $cargoejecutor->save();
@@ -111,7 +127,8 @@ class CargoejecutorController extends Controller
 
     public function activar(Cargoejecutor $cargoejecutor, Request $request)
     {
-     
+        
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
         $cargoejecutor->estado='1';
         $cargoejecutor->save();
         return redirect(route('cargoejecutor.index'))->with('flash', 'Cargo Ejecutor activado correctamente');

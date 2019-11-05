@@ -9,18 +9,25 @@ use DB;
 
 class DenunciaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $request->user()->autorizeRoles(['secretaria','operaciones','jefeoperaciones','admin']);
+
         $denuncia= DB::table('denuncias as d')
         ->join('estadodenuncias as e', 'd.estadodenuncia_id','=', 'e.id')
         ->select('d.id', 'd.descripcion', 'd.fecha',
          'd.foto', 'e.descripcion as estado', 'e.estado as es',
-         'd.direccion', 'd.telefono')
+         'd.direccion', 'd.telefono','d.estadodenuncia_id as estadodenuncia')
+         ->orderBy('d.id','desc')
         ->get();
         return view('denuncia.index', ["denuncia"=>$denuncia])->with('i');
     }
@@ -30,8 +37,10 @@ class DenunciaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
+        $request->user()->autorizeRoles(['secretaria','operaciones','jefeoperaciones','admin']);
+
         $estado=Estadodenuncia::all();
         return view("denuncia.create",compact('estado'));
     }
@@ -44,6 +53,8 @@ class DenunciaController extends Controller
      */
     public function store(Request $request)
     {
+        $request->user()->autorizeRoles(['secretaria','operaciones','jefeoperaciones','admin']);
+
         $validate = $request->validate([
             'descripcion'=>'required',
             'foto' =>'required|mimes:jpg,jpeg,bmp,png',
@@ -85,8 +96,10 @@ class DenunciaController extends Controller
      * @param  \App\Denuncia  $denuncia
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id,Request $request)
     {
+        $request->user()->autorizeRoles(['secretaria','operaciones','jefeoperaciones','admin']);
+
         $estado=Estadodenuncia::where('estado','=','1')->get();
         $denuncia=Denuncia::findOrFail($id);
         return view('denuncia.edit', compact('estado'),compact('denuncia'));
@@ -101,6 +114,7 @@ class DenunciaController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->user()->autorizeRoles(['secretaria','operaciones','jefeoperaciones','admin']);
 
         /*if ($request->hasFile('foto')) {
 			# code...

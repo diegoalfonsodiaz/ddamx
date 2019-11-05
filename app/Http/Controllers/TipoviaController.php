@@ -8,13 +8,18 @@ use App\Tipovia;
 
 class TipoviaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $request->user()->autorizeRoles(['admin']);
         $tpv = Tipovia::orderBy('id', 'desc')->get();
         return view('tipovia.index', ['tipovias'=>$tpv]);
     }
@@ -26,6 +31,7 @@ class TipoviaController extends Controller
      */
     public function create(Request $request)
     {
+        $request->user()->autorizeRoles(['admin']);
         $this->validate($request,
             [
                 'nombre'=>'required',
@@ -69,8 +75,9 @@ class TipoviaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, Request $request)
     {
+        $request->user()->autorizeRoles(['admin']);
         $vt = Tipovia::find($id);
         return view('tipovia.actualizar', [
             'tpv' => $vt
@@ -86,6 +93,7 @@ class TipoviaController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->user()->autorizeRoles(['admin']);
         $this->validate($request,
         [
             'nombre'=>'required',
@@ -102,6 +110,7 @@ class TipoviaController extends Controller
 
     public function activar(Tipovia $tipovia, Request $request)
     {
+        $request->user()->autorizeRoles(['admin']);
         $tipovia->estado='1';
         $tipovia->save();
         return redirect('tipovia')->with('info', 'Tipo de vía activado correctamente');
@@ -110,6 +119,7 @@ class TipoviaController extends Controller
 
     public function desactivar(Tipovia $tipovia, Request $request)
     {
+        $request->user()->autorizeRoles(['admin']);
         $tipovia->estado='0';
         $tipovia->save();
         return redirect('tipovia')->with('info', 'Tipo de vía desactivado correctamente');

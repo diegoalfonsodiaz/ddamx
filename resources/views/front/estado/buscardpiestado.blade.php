@@ -3,6 +3,16 @@
 
 {{-- Page content --}}
 @section('content')
+@if(count($errors)>0)
+<div class="alert alert-danger">
+    @foreach($errors->all() as $error)
+        <ul>
+            <li>{{ $error }}</li>    
+        </ul>  
+        
+    @endforeach
+    </div>
+@endif
 
     <!-- Container Section Start -->
     <div class="container">
@@ -21,11 +31,6 @@
 
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                     {!! htmlFormSnippet() !!}
-                    @error('g-recaptcha-response')
-                        <span class="invalid-feedback" role="alert" style="display: block">
-                            <strong>{{ $message}}</strong>
-                        </span>
-                    @enderror
                     </div> 
 
                     <label></label>

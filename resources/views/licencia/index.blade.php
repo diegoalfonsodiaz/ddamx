@@ -77,7 +77,7 @@
 
                                 @endif
                                 <a class="btn btn-xs btn-warning" href="{{ route('licencia.show',$licencias->id) }}"><i class="fa fa-eye"></i></a>
-                                @if($licencias->estadolicencia_id==3)
+                                @if($licencias->estadolicencia_id==2)
                                 <form method="POST" 
                                     action="{{ route('licencias.pdf',$licencias->id) }}"
                                     style="display:inline">
