@@ -32,5 +32,20 @@ class UserTableSeeder extends Seeder
         $user->save();
         $user->roles()->attach($role_secretaria);
 
+
+        $user = new User();
+        $user->name = "operaciones";
+        $user->email = "operaciones@gmail.com";
+        $user->password = bcrypt('operaciones');
+        $user->save();
+        $user->roles()->attach($role_operaciones);
+
+        $user = new User();
+        $user->name = "jefeoperaciones";
+        $user->email = "jefeoperaciones@gmail.com";
+        $user->password = bcrypt('jefeoperaciones');
+        $user->save();
+        $user->roles()->attach($role_jefeoperaciones);
+
     }
 }
