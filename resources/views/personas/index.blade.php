@@ -30,7 +30,7 @@
 <div class="box box-primary">
             <div class="box-header">
             
-            <a href="{{route('personas.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear persona</a> 
+
               <h3 class="box-title">Listado de personas</h3>
             </div>
             <!-- /.box-header -->
