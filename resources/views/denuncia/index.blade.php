@@ -42,8 +42,8 @@
                   <th width="120px">Fecha</th>
                   <th width="220px">Fotografía</th>
                   <th width="220px">Dirección</th>
-                  <th width="220px">Teléfono</th>
-                  <th width="125px">Estado de la denuncia</th>
+                  <th width="150px">Teléfono</th>
+                  <th width="200px">Estado de denuncias</th>
                   <th width="125px">Acciones</th>
                 </tr>
             </thead>
