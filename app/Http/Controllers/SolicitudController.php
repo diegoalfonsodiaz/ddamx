@@ -168,7 +168,7 @@ class SolicitudController extends Controller
         
     }
 
-    public function historial($id)
+    public function historial($id,Request $request)
     {
         $request->user()->autorizeRoles(['secretaria','operaciones','jefeoperaciones','admin']);
 
