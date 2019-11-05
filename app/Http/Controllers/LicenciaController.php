@@ -23,7 +23,7 @@ class LicenciaController extends Controller
      */
     public function index(Request $request)
     {
-        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin','secretaria']);
         $licencia= DB::table('licencias')
         //persona
         ->leftjoin('solicituds', 'licencias.solicitudfactibilidad_id','=', 'solicituds.id')
