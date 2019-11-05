@@ -86,7 +86,7 @@ class EstadoFactibilidadExternoController extends Controller
             'codigo' => 'required',
             recaptchaFieldName() => recaptchaRuleName()
         ]);
-
+//hola
         $cantidad =DB::table('licencias')
         ->join('solicituds','licencias.solicitudfactibilidad_id','=','solicituds.id')
         ->join('personas','personas.id','=','solicituds.persona_id')
