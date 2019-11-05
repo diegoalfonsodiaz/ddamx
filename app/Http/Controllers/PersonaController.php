@@ -51,7 +51,7 @@ class PersonaController extends Controller
             'dpi' => 'numeric|required|digits_between:13,13',
             'nombre' => 'required',
             'apellido' => 'required',
-            'telefono' => 'required'
+            'telefono' => 'required',
             
         ]);
        //return Persona::create($request->all());
@@ -84,7 +84,7 @@ class PersonaController extends Controller
             'dpi' => 'numeric|required|digits_between:13,13',
             'nombre' => 'required',
             'apellido' => 'required',
-            'telefono' => 'required'
+            'telefono' => 'required|',
             
         ]);
         //$persona=Persona::findOrFail($request->id);
