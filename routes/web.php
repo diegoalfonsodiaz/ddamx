@@ -208,7 +208,7 @@ Route::get('/', 'FrontendController@indexinicio');
 Route::resource('denunciaexterna', 'DenunciaExternaController');
 Route::resource('contacto', 'ContactoController');
 Route::get('contactoexterno', 'ContactoController@create');
-Route::resource('solicitudexterna','SolicitudExternaController');
+Route::put('solicitudexterna','SolicitudExternaController@store')->name('solicitudexterna.store');
 Route::get('buscardpi', 'FrontendController@indexdpi');
 Route::put('solicituddpi','SolicitudExternaController@solicitardpi')->name('solicituddpi.solicitardpi');
 Route::get('solicitar','SolicitudExternaController@indexsolicitar');

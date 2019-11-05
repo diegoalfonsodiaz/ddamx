@@ -91,9 +91,9 @@
             <div class="collapse navbar-collapse" id="collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="{{ url('/') }}">Home</a>
-                    <li><a href="{{ url('/buscardpiestado') }}">Estado de solicitud</a>
-                    </li>
                     <li><a href="{{ url('/buscarcodigo') }}">Estado de licencia</a>      
+                    </li>
+                    <li><a href="{{ url('/buscardpiestado') }}">Estado de factibilidad</a>
                     </li>
                     <li><a href="{{ url('/buscardpi') }}">Solicitud de factibilidad</a>
                     </li>
@@ -133,7 +133,7 @@
             <!-- //About Us Section End-->
             <!-- Contact Section Start -->
             <div class="col-sm-4">
-                <h4>Contactanos</h4>
+                <h4>Contáctenos</h4>
                 <ul class="list-unstyled">
                     <li>14 Avenida, 6--06 zona 3</li>
                     <li>Quetzaltenango, Quetzaltenango</li>
@@ -142,7 +142,7 @@
                     </li>
                     </li>
                 </ul>
-                <h5>Siguenos</h5>
+                <h5>Síguenos</h5>
                 <ul class="list-inline">
                     <li>
                         <a href="https://www.facebook.com/Municipalidad-de-Quetzaltenango-405670849462565/"> <i class="livicon" data-name="facebook" data-size="18" data-loop="true" data-c="#fff" data-hc="#757b87"></i>
@@ -170,7 +170,7 @@
                 {{csrf_field()}}   
 
                     <div class="form-group">
-                    <strong>Nombre</strong>
+                    <strong>Nombre y Apellido</strong>
                     <input type="text" name="nombre" class="form-control" placeholder="Nombre">
                     </div>
 
@@ -179,7 +179,7 @@
                     <input type="text" name="email" class="form-control" placeholder="Email">
                     </div>
                     <div class="form-group">
-                    <strong>Descripcion</strong>
+                    <strong>Descripción</strong>
                     <input type="text" name="descripcion" class="form-control" placeholder="Descripcion">
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">

@@ -15,13 +15,13 @@ class CreateLicenciasTable extends Migration
     {
         Schema::create('licencias', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('numerolicencia');
-            $table->date('fechaautorizacion');
-            $table->string('recibo');
-            $table->string('monto');
+            $table->string('numerolicencia')->nullable();
+            $table->date('fechaautorizacion')->nullable();
+            $table->string('recibo')->nullable();
+            $table->string('monto')->nullable();
             $table->string('derecho');
             $table->string('remocion');
-            $table->date('fechaconexion');
+            $table->date('fechaconexion')->nullable();
             $table->unsignedBigInteger('estadolicencia_id');
             $table->unsignedBigInteger('solicitudfactibilidad_id')->unique();
             $table->unsignedBigInteger('tipovia_id');

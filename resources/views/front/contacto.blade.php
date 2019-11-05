@@ -15,6 +15,16 @@ Contacto
 
 {{-- Page content --}}
 @section('content')
+@if(count($errors)>0)
+<div class="alert alert-danger">
+    @foreach($errors->all() as $error)
+        <ul>
+            <li>{{ $error }}</li>    
+        </ul>  
+        
+    @endforeach
+    </div>
+@endif
     <!-- Map Section Start -->
 <div class="container">
     <div class="row">
@@ -43,21 +53,23 @@ Contacto
 
             <div class="col-md-6">
                 <h2>Formulario de contacto</h2>
+                 <label><span style="color:red">* </span><span style="color:black">Campos obligatorios</span></label>
+
                 <!-- Notifications -->
                 <form class="contact" id="contact" action="{{route('contacto.store')}}" method="POST">
                     {{csrf_field()}}  
                     <div class="form-group">
-                        <strong>Nombre</strong>
+                        <strong>Nombre y apellido<span style="color:red"> *</span></strong>
                         <input type="text" name="nombre" class="form-control" placeholder="nombre">
                     </div>
 
                     <div class="form-group">
-                        <strong>Email</strong>
+                        <strong>Email<span style="color:red"> *</span></strong>
                         <input type="text" name="email" class="form-control" placeholder="email">
                     </div>
                     <div class="form-group">
-                        <strong>Descripcion</strong>
-                        <input type="text" name="descripcion" class="form-control" placeholder="descripcion">
+                        <strong>Descripción<span style="color:red"> *</span></strong>
+                        <input type="text" name="descripcion" class="form-control" placeholder="descripción">
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                     {!! htmlFormSnippet() !!}

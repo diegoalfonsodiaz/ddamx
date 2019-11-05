@@ -8,19 +8,30 @@ Denuncia
 
 {{-- Page content --}}
 @section('content')
+@if(count($errors)>0)
+<div class="alert alert-danger">
+    @foreach($errors->all() as $error)
+        <ul>
+            <li>{{ $error }}</li>    
+        </ul>  
+        
+    @endforeach
+    </div>
+@endif
 
     <!-- Container Section Start -->
     <div class="container">
             <!-- Contact form Section Start -->
             <div class="col-xs-12 col-sm-12 col-md-12">
-                <h2>Realize su denuncia</h2>
+                <h2>Realice su denuncia</h2>
+                 <label><span style="color:red">* </span><span style="color:black">Campos obligatorios</span></label>
 
                 <form role="form" method="POST" action="{{route('denunciaexterna.store')}}" enctype="multipart/form-data">
                 {{csrf_field()}}   
 
                     <div class="form-group">
-                    <strong>Descripción de la denuncia</strong>
-                    <input type="text" name="descripcion" class="form-control" placeholder="descripcion" required>
+                    <strong>Descripción de la denuncia<span style="color:red"> *</span></strong>
+                    <input type="text" name="descripcion" class="form-control" placeholder="descripción" required>
                     </div>
 
                     <div class="form-group" style="display: none">
@@ -29,17 +40,17 @@ Denuncia
                     </div>
 
                     <div class="form-group">
-                    <label for="exampleInputPassword1">Seleccione Imagen como prueba</label>
+                    <strong for="exampleInputPassword1">Seleccione Imagen como prueba</strong>
                     <input name="foto" type="file" class="form-control" id="exampleInputPassword1" placeholder="Seleccione una imagen">
                     </div>
 
                     <div class="form-group">
-                    <strong>Dirección de la persona denunciante (Opcional)</strong>
+                    <strong>Dirección de la persona denunciante</strong>
                     <input type="text" name="direccion" class="form-control" placeholder="dirección">
                     </div>
 
                     <div class="form-group">
-                    <strong>Teléfono de la persona denunciante</strong>
+                    <strong>Teléfono de la persona denunciante<span style="color:red"> *</span></strong>
                     <input type="text" name="telefono" class="form-control" placeholder="teléfono" required>
                     </div>
 
