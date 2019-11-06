@@ -109,7 +109,7 @@
 
                         <div class="form-group">
                             <strong>Profundidad</strong>
-                            <input type="text" autocomplete="off" name="profundidad" class="form-control" placeholder="Profundidad">
+                            <input type="text" autocomplete="off" name="profundidad" class="form-control" placeholder="Profundidad Metros aprox.">
                         </div>
 
                         <div class="form-group">

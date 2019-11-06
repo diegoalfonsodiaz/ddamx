@@ -106,7 +106,7 @@
                                                 {{ $licencias->ancho }} Metros                                                        
 
 
-                                                {{ $licencias->profundidad }} Metros aprox.
+                                                {{ $licencias->profundidad }}
 
 
                                                             {{ $licencias->diametrotubo }} "PVC
@@ -125,7 +125,7 @@
                                  X               {{ $licencias->ancho }} Metros                                                       
 
 
-                                                {{ $licencias->profundidad }} Metros aprox.
+                                                {{ $licencias->profundidad }}
 
 
                                                             {{ $licencias->diametrotubo }} "PVC
@@ -144,7 +144,7 @@
                                                 {{ $licencias->ancho }} Metros                                   
 
 
-                                 X                  {{ $licencias->profundidad }} Metros aprox.
+                                 X               {{ $licencias->profundidad }}
 
 
                                                             {{ $licencias->diametrotubo }} "PVC
@@ -162,7 +162,7 @@
                                                 {{ $licencias->ancho }} Metros                                                       
 
 
-                                               {{ $licencias->profundidad }} Metros aprox. 
+                                                {{ $licencias->profundidad }}
 
 
                                  X                           {{ $licencias->diametrotubo }} "PVC
@@ -180,7 +180,7 @@
                                                 {{ $licencias->ancho }} Metros                                
 
 
-                                               {{ $licencias->profundidad }} Metros aprox. 
+                                                {{ $licencias->profundidad }}
 
 
                                                             {{ $licencias->diametrotubo }} "PVC
@@ -227,7 +227,7 @@
         {{ $licencias->codigoinmueble }}                              {{ $licencias->solvenciamunicipal }}
     </pre>
     <pre id="partecatastral2" style='text-indent: 0.5em'>
-                {{$licencias->fechaconexion }} con plazo de {{ $licencias->monto }} días
+        {{ $licencias->monto }}
     </pre>
 
 @endforeach
