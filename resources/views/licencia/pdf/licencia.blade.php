@@ -224,7 +224,7 @@
     <pre id="espacio">
     </pre>
     <pre id="partecatastral1" style='text-indent: 0.5em'>
-        {{ $licencias->catastral }}                                 {{ $licencias->solvenciamunicipal }}
+        {{ $licencias->codigoinmueble }}                              {{ $licencias->solvenciamunicipal }}
     </pre>
     <pre id="partecatastral2" style='text-indent: 0.5em'>
                 {{$licencias->fechaconexion }} con plazo de {{ $licencias->monto }} días

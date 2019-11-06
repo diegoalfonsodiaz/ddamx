@@ -103,8 +103,10 @@ class LicenciaController extends Controller
      * @param  \App\Licencia  $licencia
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id,Request $request)
     {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin','secretaria']);
+
         $licencia=DB::table('licencias')
         ->leftjoin('estadolicencias','licencias.estadolicencia_id','=','estadolicencias.id')
         ->leftjoin('tipovias','licencias.tipovia_id','=','tipovias.id')
@@ -131,15 +133,17 @@ class LicenciaController extends Controller
        return view('licencia.detalle',compact('licencia','datos'));
     }
 
-    public function exportpdf($id)
+    public function exportpdf($id,Request $request)
         {
+            $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin','secretaria']);
+
             $licencia=DB::table('licencias')
             ->leftjoin('solicituds','licencias.solicitudfactibilidad_id','=','solicituds.id')
             ->leftjoin('tipovias','licencias.tipovia_id','=','tipovias.id')
             ->leftjoin('ejecutors','solicituds.ejecutor_id','=','ejecutors.id')
             ->select('licencias.id','licencias.numerolicencia','licencias.recibo','licencias.monto',
             'licencias.derecho','licencias.remocion','licencias.fechaconexion',
-            'licencias.fechaautorizacion',
+            'licencias.fechaautorizacion','solicituds.codigoinmueble',
             'licencias.estadolicencia_id','solicituds.id as idsolicitud','solicituds.direccionobra',
             'licencias.solicitudfactibilidad_id','solicituds.expediente',
             'solicituds.longitud','solicituds.ancho','solicituds.profundidad',
@@ -229,7 +233,7 @@ class LicenciaController extends Controller
 
     public function historial($id,Request $request)
     {
-        $request->user()->autorizeRoles(['admin']);
+        $request->user()->autorizeRoles(['secretaria','operaciones','jefeoperaciones','admin']);
 
        $audits=Licencia::find($id)->audits;
 

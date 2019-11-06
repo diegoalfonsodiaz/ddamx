@@ -76,9 +76,9 @@
                             <input type="text" autocomplete="off" name="libro" value="{{ $solicitud->libro }}"  class="form-control" placeholder="Libro">
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group" style="display: none">
                             <strong>Número de catastral</strong>
-                            <input type="text" autocomplete="off" name="catastral" value="{{ $solicitud->catastral }}"  class="form-control" placeholder="Número de catastral">
+                            <input type="text" autocomplete="off" name="catastral" value="{{ $solicitud->codigoinmueble }}"  class="form-control" placeholder="Número de catastral">
                         </div>
                 </div>
            

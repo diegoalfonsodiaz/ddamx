@@ -70,7 +70,7 @@
 
                         <div class="form-group">
                             <strong>Número de catastral</strong>
-                            <input type="text" name="catastral" value="{{ $solicitudes->catastral }}"  class="form-control" placeholder="Número de catastral" disabled>
+                            <input type="text" name="catastral" value="{{ $solicitudes->codigoinmueble }}"  class="form-control" placeholder="Número de catastral" disabled>
                         </div>
                 </div>
            
