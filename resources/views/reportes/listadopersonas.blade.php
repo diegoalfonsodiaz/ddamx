@@ -39,6 +39,7 @@
                                 <th>Teléfonos</th>
                                 <th>Boleto de ornato</th>
                                 <th>Correo</th>
+                                <th>Estado</th>
                             
                                 
                             
@@ -54,6 +55,12 @@
                                 <td>{{$persona->telefono}}</td>
                                 <td>{{$persona->ornato}}</td>
                                 <td>{{$persona->correo}}</td>
+                                @if($persona->estado==1)
+                                <td ><p style="color:green;">Activo</p></td>
+                              
+                                @else
+                                <td ><p style="color:red;">Inactivo</p></td>
+                                @endif
      
                             </tr>
                             @endforeach

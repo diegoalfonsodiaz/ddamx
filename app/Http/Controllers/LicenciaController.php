@@ -161,7 +161,7 @@ class LicenciaController extends Controller
             }  
            
         $pdf=PDF::loadView('licencia.pdf.licencia',compact('licencia','datos'));
-         return $pdf->download($nombrepdf.'.pdf');
+        return $pdf->download($nombrepdf.'.pdf');
         //  return view('licencia.pdf.licencia',compact('licencia','datos'));
         }
 
@@ -201,14 +201,14 @@ class LicenciaController extends Controller
         $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
         $this->Validate($request, [
             'solicitudfactibilidad_id' => 'required|unique:licencias,solicitudfactibilidad_id,'.$id.',id',
-            'numerolicencia' => 'required',
-            'fechaautorizacion' => 'required',
+            'numerolicencia',
+            'fechaautorizacion',
             'tipovia_id' => 'required',
-            'recibo' => 'required',
-            'derecho' => 'required',
+            'recibo',
+            'derecho' => 'required', 
             'remocion' => 'required',
-            'fechaconexion' => 'required',
-            'monto' => 'required',
+            'fechaconexion',
+            'monto',
             'estadolicencia_id' => 'required',
             
         ]);

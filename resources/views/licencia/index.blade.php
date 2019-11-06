@@ -87,14 +87,14 @@
                                     @endif
 
 
-                                    @if (auth()->user()->hasRole(['admin']))
+                                  
                                     <form method="POST" 
                                     action="#"
                                     style="display:inline">
                                     {{csrf_field()}} @method('DELETE')
                                     <a class="btn btn-xs btn-danger" href="{{ route('licencias.historial', $licencias->id) }}" ><i class="fa fa-archive"></i></a>
                                     </form>  
-                                    @endif                                
+                                                               
                                 </td>
                             </tr>
                             @endforeach

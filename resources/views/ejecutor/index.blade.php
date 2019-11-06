@@ -14,7 +14,7 @@
 <div class="box box-primary">
             <div class="box-header">
             
-              <a href="{{route('ejecutor.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear ejecutor</a> 
+              <!-- <a href="{{route('ejecutor.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear ejecutor</a>  -->
                 <h3 class="box-title">Listado de ejecutores</h3>
             </div>
             <!-- /.box-header -->

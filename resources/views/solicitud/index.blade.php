@@ -28,9 +28,9 @@
 
 <div class="box box-primary">
             <div class="box-header">
-            @if (auth()->user()->hasRole(['admin','jefeoperaciones','operaciones']))
+           
             <a href="{{route('solicitud.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear solicitud de factibilidad</a> 
-            @endif
+        
               <h3 class="box-title">Listado de solicitudes</h3>
             </div>
             <!-- /.box-header -->
