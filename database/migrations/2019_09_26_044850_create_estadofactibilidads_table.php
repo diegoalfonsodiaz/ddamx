@@ -23,7 +23,7 @@ class CreateEstadofactibilidadsTable extends Migration
         DB::table('estadofactibilidads')->insert(array('id'=>'1','nombre'=>'Sin procesar','created_at'=>now(),'updated_at'=>now()));
        DB::table('estadofactibilidads')->insert(array('id'=>'2','nombre'=>'Factible','created_at'=>now(),'updated_at'=>now()));
        DB::table('estadofactibilidads')->insert(array('id'=>'3','nombre'=>'No Factible','created_at'=>now(),'updated_at'=>now()));
-       DB::table('estadofactibilidads')->insert(array('id'=>'3','nombre'=>'En proceso','created_at'=>now(),'updated_at'=>now()));
+       DB::table('estadofactibilidads')->insert(array('id'=>'4','nombre'=>'En proceso','created_at'=>now(),'updated_at'=>now()));
 
         
     }
