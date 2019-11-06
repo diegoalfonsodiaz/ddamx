@@ -10,13 +10,19 @@ use App\User;
 
 class TicketController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public function index($id,Request $request)
     {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
+
         $ticket= DB::table('tickets as t')
         //persona
         ->leftjoin('users as u', 't.user_id','=', 'u.id')
@@ -34,8 +40,10 @@ class TicketController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
+
         $usuarios=User::all();
         $bitacora=Bitacora::all();
         return view('ticket.create',compact('usuarios','bitacora'));
@@ -49,6 +57,8 @@ class TicketController extends Controller
      */
     public function store(Request $request)
     {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
+
         Ticket::create($request->all());
         return redirect()->route('bitacora.index');
     }

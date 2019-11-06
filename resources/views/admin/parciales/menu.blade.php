@@ -27,7 +27,7 @@
           </ul>
         </li>
         @endif
-        
+        @if (auth()->user()->hasRole(['admin']))
         <li class="treeview {{request()->is('/licencia') ? 'active' :''}}">
           <a href="#"><i class="fa fa-book"></i> <span>Seguimientos</span>
             <span class="pull-right-container">
@@ -39,7 +39,32 @@
           <li {{ request()->is('ticketcreate') ? 'class=active' : '' }}><a href="{{ url('/ticketcreate') }}">Seguimiento de bitácora</a></li>
           </ul>
         </li>
-
+       
+        @elseif (auth()->user()->hasRole(['jefeoperaciones']))
+        <li class="treeview {{request()->is('/licencia') ? 'active' :''}}">
+          <a href="#"><i class="fa fa-book"></i> <span>Seguimientos</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+          <li {{ request()->is('ticketdenunciacreate') ? 'class=active' : '' }}><a href="{{ url('/ticketdenunciacreate') }}">Seguimiento de denuncia</a></li>
+          <li {{ request()->is('ticketcreate') ? 'class=active' : '' }}><a href="{{ url('/ticketcreate') }}">Seguimiento de bitácora</a></li>
+          </ul>
+        </li>
+        @elseif (auth()->user()->hasRole(['operaciones']))
+        <li class="treeview {{request()->is('/licencia') ? 'active' :''}}">
+          <a href="#"><i class="fa fa-book"></i> <span>Seguimientos</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+          <li {{ request()->is('ticketdenunciacreate') ? 'class=active' : '' }}><a href="{{ url('/ticketdenunciacreate') }}">Seguimiento de denuncia</a></li>
+          <li {{ request()->is('ticketcreate') ? 'class=active' : '' }}><a href="{{ url('/ticketcreate') }}">Seguimiento de bitácora</a></li>
+          </ul>
+        </li>
+        @endif
         @if (auth()->user()->hasRole(['admin']))
 
         <li class="treeview">

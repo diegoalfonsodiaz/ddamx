@@ -14,8 +14,14 @@
 @section('contenido')
 <div class="box box-primary">
             <div class="box-header">
-            
-            <a href="{{route('bitacora.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear bitácora</a> 
+            @if (auth()->user()->hasRole(['admin']))
+            <a href="{{route('bitacora.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear bitácora</a>      
+                @elseif(auth()->user()->hasRole(['jefeoperaciones']))
+                <a href="{{route('bitacora.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear bitácora</a>    
+                @elseif(auth()->user()->hasRole(['operaciones']))
+                <a href="{{route('bitacora.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear bitácora</a>   
+            @endif
+           
               <h3 class="box-title">Listado de bitácoras</h3>
             </div>
             <div class="box-body">
@@ -45,7 +51,7 @@
                                 <td>
                                 <form action="{{ route('bitacora.destroy',$bitacoras->id) }}" method="POST">
                                     <a  href="{{ route('bitacora.edit', $bitacoras->id) }}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
-                                    <a class="btn btn-xs btn-primary" href="{{ route('ticket.index', $bitacoras->id) }}">Seguimiento</a>
+                                    <a class="btn btn-xs btn-success" href="{{ route('ticket.index', $bitacoras->id) }}"><i class="fa fa-long-arrow-right"></i></a>
                                     @csrf
                                     @method('DELETE')
                                     

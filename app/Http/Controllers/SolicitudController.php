@@ -45,9 +45,15 @@ class SolicitudController extends Controller
         $pdf = PDF::loadView('pdf.solicitud', ["fechaEntera"=>$fechaEntera], ["solicitud"=>$solicitud] )->setPaper($customPaper,'portrait');
         return $pdf->download('solicitud.pdf');
     }
- 
-    public function index()
+    public function __construct()
     {
+        $this->middleware('auth');
+    }
+ 
+    public function index(Request $request)
+    {
+        $request->user()->autorizeRoles(['secretaria','operaciones','jefeoperaciones','admin']);
+
         $solicitud=DB::table('solicituds')
         ->leftjoin('ejecutors','solicituds.ejecutor_id','=','ejecutors.id')
         ->leftjoin('personas','solicituds.persona_id','=','personas.id')
@@ -70,9 +76,9 @@ class SolicitudController extends Controller
     }
 
 
-    public function create()
+    public function create(Request $request)
     {
-        
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
         $ejecutor=Ejecutor::where('estado','=','1')->get();
         $persona=Persona::where('estado','=','1')->get();
         $estado=Estadofactibilidad::where('estado','=','1')->get();
@@ -84,6 +90,7 @@ class SolicitudController extends Controller
 
     public function store(Request $request)
     {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
         $this->Validate($request, [
             'direccionobra' => 'required',
             'persona_id' => 'required'
@@ -95,10 +102,11 @@ class SolicitudController extends Controller
     }
 
 
-    public function show($id)
+    public function show($id,Request $request)
     {
         //$solicitud = Solicitud::find($id);
-       
+        $request->user()->autorizeRoles(['secretaria','operaciones','jefeoperaciones','admin']);
+
 
         $solicitud=DB::table('solicituds')
         ->leftjoin('ejecutors','solicituds.ejecutor_id','=','ejecutors.id')
@@ -125,8 +133,9 @@ class SolicitudController extends Controller
     
     }
 
-    public function edit($id)
+    public function edit($id,Request $request)
     {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
         $solicitud = Solicitud::find($id);
         $persona=Persona::where('estado','=','1')->get();
         $ejecutor=Ejecutor::where('estado','=','1')->get();
@@ -140,6 +149,8 @@ class SolicitudController extends Controller
 
     public function update(Request $request,$id)
     {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
+
         $this->Validate($request, [
             'direccionobra' => 'required',
             'persona_id' => 'required'
@@ -157,9 +168,10 @@ class SolicitudController extends Controller
         
     }
 
-    public function historial($id)
+    public function historial($id,Request $request)
     {
-        
+        $request->user()->autorizeRoles(['secretaria','operaciones','jefeoperaciones','admin']);
+
 
        $audits=Solicitud::find($id)->audits;
 

@@ -14,43 +14,43 @@
 <div class="box box-primary">
                 
             <div class="box-header with-border">
-            @if(count($errors)>0)
-          @foreach($errors->all() as $error)
-            <div class="alert alert-danger"> 
-              {{ $error }}
-            </div>
-          @endforeach
-        @endif
+     
             </div>
             <!-- /.box-header -->
             <!-- form start -->
             <form role="form" method="POST" action="{{route('personas.update', $persona)}}">
             {{csrf_field()}} {{ method_field('PUT')}}
               <div class="box-body">
-                <div class="form-group">
+                <div class="form-group {{ $errors->has('dpi') ? 'has-error': ''}}">
                   <label >DPI</label><label style="color:red;">*</label>
-                  <input type="text" autocomplete="off" class="form-control input-lg" name="dpi" placeholder="DPI" value="{{old('dpi',$persona->dpi)}}" required>
-                  
+                  <input type="text" autocomplete="off" class="form-control input-lg" name="dpi" placeholder="DPI" value="{{old('dpi',$persona->dpi)}}">
+                  {!! $errors->first('dpi',' <span class="help-block">Verifique su DPI</span>')!!}                  
+
                 </div>
-                <div class="form-group">
+                <div class="form-group {{ $errors->has('nombre') ? 'has-error': ''}}">
                   <label >Nombres</label><label style="color:red;">*</label>
-                  <input type="text" autocomplete="off" class="form-control input-lg" name="nombre" placeholder="Nombres" value="{{old('nombre',$persona->nombre)}}" required>
+                  <input type="text" autocomplete="off" class="form-control input-lg" name="nombre" placeholder="Nombres" value="{{old('nombre',$persona->nombre)}}">
+                  {!! $errors->first('nombre',' <span class="help-block">Verifique sus datos</span>')!!}
                 </div>
-                <div class="form-group">
+                <div class="form-group {{ $errors->has('apellido') ? 'has-error': ''}}">
                   <label >Apellidos</label><label style="color:red;">*</label>
-                  <input type="text" autocomplete="off" class="form-control input-lg" name="apellido" placeholder="Apellidos" value="{{old('apellido',$persona->apellido)}}" required>
+                  <input type="text" autocomplete="off" class="form-control input-lg" name="apellido" placeholder="Apellidos" value="{{old('apellido',$persona->apellido)}}">
+                  {!! $errors->first('apellido',' <span class="help-block">Verifique sus datos</span>')!!}
                 </div>
-                <div class="form-group">
+                <div class="form-group {{ $errors->has('telefono') ? 'has-error': ''}}">
                   <label >Teléfono</label><label style="color:red;">*</label>
-                  <input type="text" autocomplete="off" class="form-control input-lg" name="telefono" value="{{old('telefono',$persona->telefono)}}" placeholder="Teléfono" required>
+                  <input type="text" autocomplete="off" class="form-control input-lg" name="telefono" value="{{old('telefono',$persona->telefono)}}" placeholder="Teléfono">
+                  {!! $errors->first('telefono',' <span class="help-block">Verifique sus datos</span>')!!}
                 </div>
-                <div class="form-group">
+                <div class="form-group {{ $errors->has('ornato') ? 'has-error': ''}}">
                   <label >Boleto de ornato</label>
                   <input type="text" autocomplete="off" class="form-control input-lg" name="Boleto de ornato" value="{{old('ornato',$persona->ornato)}}" placeholder="Ornato">
+                  {!! $errors->first('ornato',' <span class="help-block">Verifique sus datos</span>')!!}
                 </div>
-                <div class="form-group">
+                <div class="form-group {{ $errors->has('correo') ? 'has-error': ''}}">
                   <label >Correo electrónico</label>
                   <input type="email" autocomplete="off" class="form-control input-lg " name="correo" value="{{old('correo',$persona->correo)}}" placeholder="Correo electrónico">
+                  {!! $errors->first('correo',' <span class="help-block">Verifique sus datos</span>')!!}
                 </div>
                 
               </div>

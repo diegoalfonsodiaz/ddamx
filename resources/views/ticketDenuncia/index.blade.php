@@ -22,8 +22,7 @@
                   <th># </th>
                   <th>Ticket ID</th>
                   <th>Descripción</th>
-                  <th>Usuario</th>
-                  <th width="280px">Acciones</th>
+                  <th>Fecha de seguimiento</th>
                 </tr>
             </thead>
             <tbody>
@@ -32,7 +31,7 @@
             <td>{{ ++$i }}</td>
             <td>Ticket:  #  {{ $tickets->denuncia }} Asunto: {{ $tickets->descripcion }} </td>
             <td>{{ $tickets->detalle }}</td>
-            <td>{{ $tickets->user }}</td>
+            <td>{{ $tickets->fechamodificacion }}</td>
             <td>
             </td>
         </tr>

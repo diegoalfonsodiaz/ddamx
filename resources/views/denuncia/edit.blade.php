@@ -2,7 +2,7 @@
 
 @section('header')
   <h1>
-     Cambio de estado
+     Modificar estado de la denuncia
   </h1>
 
   <ol class="breadcrumb">
