@@ -15,7 +15,11 @@ use Illuminate\Support\Carbon;
 class SolicitudController extends Controller
 {
 
-    public function exportPDF($id){
+    public function exportPDF($id, Request $request)
+    
+    {
+        $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin','secretaria']);
+
         $customPaper = array(0,0,612.00,1008.00);
         $solicitud=DB::table('solicituds')
         ->leftjoin('ejecutors','solicituds.ejecutor_id','=','ejecutors.id')

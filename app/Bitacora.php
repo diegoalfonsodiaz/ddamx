@@ -9,6 +9,7 @@ class Bitacora extends Model
     protected $fillable = ['fecha', 
                             'user_id', 
                             'licencia_id', 
-                            'descripcion', 
+                            'descripcion',
+                            'direccion',
                             'asunto_id'];
 }

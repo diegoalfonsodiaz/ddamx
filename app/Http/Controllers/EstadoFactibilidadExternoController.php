@@ -43,19 +43,22 @@ class EstadoFactibilidadExternoController extends Controller
 
    
             if($cantidadfac >= 1){
+
+                $cantidadestado =DB::table('solicituds')
+                ->join('personas','personas.id','=','solicituds.persona_id')
+                ->where('personas.dpi','=', $request->dpi)
+                ->where('solicituds.estadofactibilidad_id','=',2)
+                ->count();
+
                 $solicitud=DB::table('solicituds')
                 ->join('personas','personas.id','=','solicituds.persona_id')
                 ->join('estadofactibilidads','solicituds.estadofactibilidad_id','=','estadofactibilidads.id')
                 ->select('solicituds.id','solicituds.fechasolicitud','solicituds.direccionobra','solicituds.codigoinmueble','estadofactibilidads.nombre as nombre_estadofactibilidad','solicituds.updated_at')
                 ->where('personas.dpi','=', $request->dpi) 
                 ->get();
-
-                $cantidadestado =DB::table('solicituds')
-                ->join('personas','personas.id','=','solicituds.persona_id')
-                ->where('personas.dpi','=', $request->dpi,'AND', 'solicituds.estadofactibilidad_id','=',2) 
-                ->count();
+                
                 if($cantidadestado >= 1){
-                    $sessionManager->flash('mensajeestado', '¡Su solicitud de factibilidad de conexión ha sido aprobada! Sigue estos pasos para tramitar tu licencia:');
+                    $sessionManager->flash('mensajeestado', '¡Alguna de sus solicitudes de factibilidad de conexión ha sido aprobada! Sigue estos pasos para tramitar tu licencia:');
                     $sessionManager->flash('mensaje1', '1. Compra tu solicitud de licencia en los siguientes bancos Banrural y llénalo con tus datos:');
                     $sessionManager->flash('mensaje2', '    MUNICIPALIDAD XELA: 11 AVENIDA ENTRE 5ª. Y 6ª. CALLE ZONA 1, INTERIOR DEL PALACIO.');
                     $sessionManager->flash('mensaje3', '    PARQUE CENTRAL XELA: 12 AVENIDA 5-24 ZONA 1.');
@@ -69,7 +72,14 @@ class EstadoFactibilidadExternoController extends Controller
                     $sessionManager->flash('mensaje11', '   Quetzaltenango, Quetzaltenango.');
                     return view('front.estado.estadofactibilidadexterno', ["solicitud"=>$solicitud])->with('i');             
                 }
-                elseif($cantidadfac < 1){
+                elseif($cantidadestado < 1){
+                    $solicitud=DB::table('solicituds')
+                ->join('personas','personas.id','=','solicituds.persona_id')
+                ->join('estadofactibilidads','solicituds.estadofactibilidad_id','=','estadofactibilidads.id')
+                ->select('solicituds.id','solicituds.fechasolicitud','solicituds.direccionobra','solicituds.codigoinmueble','estadofactibilidads.nombre as nombre_estadofactibilidad','solicituds.updated_at')
+                ->where('personas.dpi','=', $request->dpi) 
+                ->get();
+                
                      return view('front.estado.estadofactibilidadexterno', ["solicitud"=>$solicitud])->with('i');             
                 }
 

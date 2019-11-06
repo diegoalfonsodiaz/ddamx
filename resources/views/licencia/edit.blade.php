@@ -104,7 +104,7 @@
 
                         <div class="form-group {{ $errors->has('monto') ? 'has-error': ''}}">
                             <strong>Días de procesamiento</strong>
-                            <input type="text" autocomplete="off" name="monto" value="{{ $licencia->monto }}"  class="form-control" placeholder="Monto">
+                            <input type="text" autocomplete="off" name="monto" value="{{ $licencia->monto }}"  class="form-control" placeholder="Días de procesamiento">
                             {!! $errors->first('monto',' <span class="help-block">Campo obligatorio</span>')!!}
 
                         </div>

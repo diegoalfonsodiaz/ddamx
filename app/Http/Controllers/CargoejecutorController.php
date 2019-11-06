@@ -38,7 +38,7 @@ class CargoejecutorController extends Controller
 
         return view('cargoejecutor.create');
     }
-
+//hola
     /**
      * Store a newly created resource in storage.
      *

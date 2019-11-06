@@ -49,6 +49,11 @@
                         </div>
 
                         <div class="form-group">
+                            <strong>Dirección</strong>
+                            <input type="text" autocomplete="off" name="direccion" value="{{ $bitacora->direccion }}" class="form-control" placeholder="Dirección">
+                        </div>
+
+                        <div class="form-group">
                             <strong>Asunto</strong>
                             <select name="asunto_id" id="asunto_id"  class="form-control selectpicker" data-live-search="true">
                                 

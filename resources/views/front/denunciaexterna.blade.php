@@ -19,6 +19,17 @@ Denuncia
     </div>
 @endif
 
+@if($errors->any())
+        <div class="col-md-6">
+            <div class="alert alert-danger" role="alert">
+                Ingrese  imagenes  con  formato  JPG,  JPEG,  BMP,  PNG.
+                <button type="button" class="close" data-dismiss="alert" alert-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+        @endif
+
     <!-- Container Section Start -->
     <div class="container">
             <!-- Contact form Section Start -->

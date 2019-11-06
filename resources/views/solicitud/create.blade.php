@@ -75,10 +75,7 @@
                             <input type="text" autocomplete="off" name="libro" class="form-control" placeholder="Libro">
                         </div>
 
-                        <div class="form-group">
-                            <strong>Número de catastral</strong>
-                            <input type="text" autocomplete="off" name="catastral" class="form-control" placeholder="Número de catastral">
-                        </div>
+                        
 
                         <div class="form-group">
                             <strong>Solvencia municipal</strong>

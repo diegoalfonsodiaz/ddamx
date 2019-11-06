@@ -32,6 +32,7 @@
                                 <th>#</th>
                                 <th>Descripción</th>
                                 <th>Fecha</th>
+                                <th>Dirección</th>
                                 <th>Usuario</th>
                                 <th>Licencia</th>
                                 
@@ -45,6 +46,7 @@
                                 <td>{{ ++$i }}</td>
                                 <td>{{$bitacoras->descripcion}}</td>
                                 <td>{{$bitacoras->fecha}}</td>
+                                <td>{{$bitacoras->direccion}}</td>
                                 <td>{{$bitacoras->user}}</td>
                                 <td>{{$bitacoras->nlicencia}}</td>
                                 <td>{{$bitacoras->asunto}}</td>

@@ -44,7 +44,7 @@ class DenunciaExternaController extends Controller
         $this->Validate($request,
 			[
                 'descripcion'=>'required',
-                'fecha'=>'required',
+                'foto' =>'required|mimes:jpg,jpeg,bmp,png',
                 'telefono'=>'required',
                 recaptchaFieldName() => recaptchaRuleName()
 			]
@@ -55,7 +55,8 @@ class DenunciaExternaController extends Controller
 			$file = $request->file('foto');
 			$name = time().$file->getClientOriginalName();
 			$file->move(public_path().'/images', $name);
-		}
+        }
+        
         
         $denuncia = new Denuncia;
 		$denuncia->descripcion = $request->input('descripcion');
