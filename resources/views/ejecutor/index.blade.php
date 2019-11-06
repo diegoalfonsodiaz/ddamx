@@ -41,7 +41,7 @@
             <td>{{ $ejecutors->ornato }}</td>
             <td>{{ $ejecutors->cargo }}</td>
             
-            @if($ejecutors->estado==1)
+                                @if($ejecutors->estado==1)
                                 <td ><p style="color:green;">Activo</p></td>
                               
                                 @else
@@ -71,9 +71,11 @@
                               
                                 @endif
             
+        </td>
         </tr>
-        </tbody>
         @endforeach
+        </tbody>
+        
     </table>
     </div>
 </div>
