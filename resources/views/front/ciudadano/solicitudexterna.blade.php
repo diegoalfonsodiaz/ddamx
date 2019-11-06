@@ -12,7 +12,7 @@
                 <h2>Tus datos personales:</h2>
 
                 <form role="form" method="POST" action="{{route('solicitudexterna.store')}}">
-                {{csrf_field()}}   
+                {{csrf_field()}}  {{ method_field('PUT')}} 
 
                       <div class="box-body">
                 @foreach($personas as $persona)
@@ -52,7 +52,7 @@
 
                 <div class="form-group">
                     <strong>Código de inmueble</strong>
-                    <input type="text" name="codigoinmueble" class="form-control input-lg " placeholder="Codigo Inmueble">
+                    <input type="text" name="codigoinmueble" class="form-control input-lg " placeholder="Código del  inmueble">
                 </div>
 
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
