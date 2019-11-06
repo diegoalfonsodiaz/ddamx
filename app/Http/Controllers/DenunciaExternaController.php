@@ -44,7 +44,7 @@ class DenunciaExternaController extends Controller
         $this->Validate($request,
 			[
                 'descripcion'=>'required',
-                'fecha'=>'required',
+                'foto' =>'required|mimes:jpg,jpeg,bmp,png',
                 'telefono'=>'required',
                 recaptchaFieldName() => recaptchaRuleName()
 			]
