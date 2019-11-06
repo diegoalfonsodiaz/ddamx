@@ -27,6 +27,7 @@
         }
         #partefinalcortomonto{
             line-height: 398%;
+            color: #FFFFFF;
         }
         #partefinalcortolibro{
             line-height: 125%;
@@ -99,93 +100,93 @@
     </p>-->
 @if($licencias->tipovia_id==1)
     <pre id="tipos" >
-                                X               {{ $licencias->longitud }}   
+                                 X              {{ $licencias->longitud }} Metros 
 
 
-                                                {{ $licencias->ancho }}                                                        
+                                                {{ $licencias->ancho }} Metros                                                        
 
 
-                                               {{ $licencias->profundidad }} 
+                                                {{ $licencias->profundidad }} Metros aprox.
 
 
-                                                            {{ $licencias->diametrotubo }}
+                                                            {{ $licencias->diametrotubo }} "PVC
 
 
-                                                            {{ $licencias->diametrocolector }}            
+                                                            {{ $licencias->diametrocolector }} "TC           
     </pre>
-@endif
 
 
-@if($licencias->tipovia_id==2)
+
+@elseif($licencias->tipovia_id==2)
     <pre id="tipos">
-                                                {{ $licencias->longitud }}   
+                                                {{ $licencias->longitud }} Metros  
 
 
-                                X               {{ $licencias->ancho }}                                                        
+                                 X               {{ $licencias->ancho }} Metros                                                       
 
 
-                                               {{ $licencias->profundidad }} 
+                                                {{ $licencias->profundidad }} Metros aprox.
 
 
-                                                            {{ $licencias->diametrotubo }}
+                                                            {{ $licencias->diametrotubo }} "PVC
 
 
-                                                            {{ $licencias->diametrocolector }}            
+                                                            {{ $licencias->diametrocolector }} "TC            
     </pre>
-@endif
 
 
-@if($licencias->tipovia_id==3)
+
+@elseif($licencias->tipovia_id==3)
     <pre id="tipos">
-                                                {{ $licencias->longitud }}   
+                                                {{ $licencias->longitud }} Metros   
 
 
-                                                {{ $licencias->ancho }}                                    
+                                                {{ $licencias->ancho }} Metros                                   
 
 
-                                  X                    {{ $licencias->profundidad }} 
+                                 X                  {{ $licencias->profundidad }} Metros aprox.
 
 
-                                                            {{ $licencias->diametrotubo }}
+                                                            {{ $licencias->diametrotubo }} "PVC
 
 
-                                                            {{ $licencias->diametrocolector }}            
+                                                            {{ $licencias->diametrocolector }} "TC            
     </pre>
-@endif
 
-@if($licencias->tipovia_id==4)
+
+@elseif($licencias->tipovia_id==4)
     <pre id="tipos">
-                                                {{ $licencias->longitud }}   
+                                                {{ $licencias->longitud }} Metros  
 
 
-                                                {{ $licencias->ancho }}                                                        
+                                                {{ $licencias->ancho }} Metros                                                       
 
 
-                                               {{ $licencias->profundidad }} 
+                                               {{ $licencias->profundidad }} Metros aprox. 
 
 
-                                  X                             {{ $licencias->diametrotubo }}
+                                 X                           {{ $licencias->diametrotubo }} "PVC
 
 
-                                                            {{ $licencias->diametrocolector }}            
+                                                            {{ $licencias->diametrocolector }} "TC            
     </pre>
-@endif
 
-@if($licencias->tipovia_id==5)
+
+@elseif($licencias->tipovia_id==5)
     <pre id="tipos">
-                                                {{ $licencias->longitud }}   
+                                                {{ $licencias->longitud }} Metros  
 
 
-                                                {{ $licencias->ancho }}                                
+                                                {{ $licencias->ancho }} Metros                                
 
 
-                                               {{ $licencias->profundidad }} 
+                                               {{ $licencias->profundidad }} Metros aprox. 
 
 
-                                                            {{ $licencias->diametrotubo }}
+                                                            {{ $licencias->diametrotubo }} "PVC
 
 
-                                X                              {{ $licencias->diametrocolector }}            
+                                 X                          {{ $licencias->diametrocolector }}"TC            
     </pre>
 @endif
 <!--fin de especifiaciones-->
@@ -214,19 +215,19 @@
         Q.{{ $licencias->monto }}
     </p>
     <pre id="partefinalcortolibro" style='text-indent: 0.5em'>
-            Q.{{ $licencias->derecho }}                            Q.{{ $licencias->remocion }}                    
+            Q.{{ $licencias->derecho }}                             {{ $licencias->remocion }}                    
     </pre>
 
     <pre id="partefinalcortocatastral" style='text-indent: 0.5em'>
-        Q.{{ $licencias->numerofinca }}                    Q.{{ $licencias->numerofolio }}                Q.{{ $licencias->libro }}     
+         {{ $licencias->numerofinca }}                       {{ $licencias->numerofolio }}                    {{ $licencias->libro }}     
     </pre >
     <pre id="espacio">
     </pre>
     <pre id="partecatastral1" style='text-indent: 0.5em'>
         {{ $licencias->catastral }}                                 {{ $licencias->solvenciamunicipal }}
     </pre>
-    <pre id="partecatastral2" style='text-indent: 0.8em'>
-                {{$licencias->fechaconexion }} 
+    <pre id="partecatastral2" style='text-indent: 0.5em'>
+                {{$licencias->fechaconexion }} con plazo de {{ $licencias->monto }} días
     </pre>
 
 @endforeach
