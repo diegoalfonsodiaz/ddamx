@@ -164,7 +164,7 @@ class LicenciaController extends Controller
         return $pdf->download($nombrepdf.'.pdf');
         //  return view('licencia.pdf.licencia',compact('licencia','datos'));
         }
-
+//hola
     /**
      * Show the form for editing the specified resource.
      *
