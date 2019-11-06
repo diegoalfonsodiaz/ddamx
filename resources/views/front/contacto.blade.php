@@ -65,7 +65,7 @@ Contacto
 
                     <div class="form-group">
                         <strong>Email<span style="color:red"> *</span></strong>
-                        <input type="text" name="email" class="form-control" placeholder="email">
+                        <input type="mail" name="email" class="form-control" placeholder="email">
                     </div>
                     <div class="form-group">
                         <strong>Descripción<span style="color:red"> *</span></strong>
