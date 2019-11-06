@@ -9,13 +9,19 @@ use Illuminate\Session\SessionManager;
 
 class ContactoController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $request->user()->autorizeRoles(['secretaria','operaciones','jefeoperaciones','admin']);
+
         $contacto = Contacto::orderBy('id', 'desc')->get();
         
         return view('contacto.index',compact('contacto'));
@@ -42,6 +48,7 @@ class ContactoController extends Controller
      */
     public function store(ContactoRequest $request, SessionManager $sessionManager)
     {
+        
         $this->validate($request,
             [
                 'nombre'=>'required',
