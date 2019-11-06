@@ -7,8 +7,14 @@ use DB;
 
 class DashboardController extends Controller
 {
+        public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function dashboard()
     {
+        $request->user()->autorizeRoles(['secretaria','operaciones','jefeoperaciones','admin']);
+
     $fecha_actual = date("Y-m-d");
 //resto 1 día
 $fecha=date("Y-m-d",strtotime($fecha_actual."- 1 days")); 
