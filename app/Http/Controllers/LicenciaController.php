@@ -61,7 +61,7 @@ class LicenciaController extends Controller
             
             
             $estadooperaciones=Estadolicencia::where('estado','=','1')
-            ->whereIn('id', [1, 2])
+            ->whereIn('id', [1])
             ->get();
  
         $solicitud=Solicitud::where('estadofactibilidad_id','=','2')->get();
