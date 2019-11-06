@@ -69,7 +69,7 @@ class EstadoFactibilidadExternoController extends Controller
                     $sessionManager->flash('mensaje11', '   Quetzaltenango, Quetzaltenango.');
                     return view('front.estado.estadofactibilidadexterno', ["solicitud"=>$solicitud])->with('i');             
                 }
-                elseif($cantidadfac < 1){
+                elseif($cantidadestado < 1){
                      return view('front.estado.estadofactibilidadexterno', ["solicitud"=>$solicitud])->with('i');             
                 }
 

@@ -87,6 +87,7 @@ class SolicitudExternaController extends Controller
        $persona->nombre=$request->nombre;
        $persona->apellido=$request->apellido;
        $persona->telefono=$request->telefono;
+       $persona->ornatos=$request->ornato;
        $persona->correo=$request->correo;
        $persona->save();
 
