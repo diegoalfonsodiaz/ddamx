@@ -11,7 +11,7 @@ class DashboardController extends Controller
     {
         $this->middleware('auth');
     }
-    public function dashboard()
+    public function dashboard(Request $request)
     {
         $request->user()->autorizeRoles(['secretaria','operaciones','jefeoperaciones','admin']);
 
