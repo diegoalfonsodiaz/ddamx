@@ -71,10 +71,10 @@
 
 
                       <td>
-                      @if( $den->estadodenuncia == 1 )
-                        <a href="{{ route('denuncia.edit',$den->id) }}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
-                      @elseif( $den->estadodenuncia == 2 )
-                        <a href="{{ route('denuncia.edit',$den->id) }}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
+                      @if( $den->estadodenuncia == 3 || $den->estadodenuncia == 4)
+
+                      @else
+                      <a href="{{ route('denuncia.edit',$den->id) }}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
                       @endif
                         <a class="btn btn-xs btn-success" href="{{ route('ticketdenuncia.index', $den->id) }}"> <i class="fa fa-long-arrow-right"></i></a>
                       </td>

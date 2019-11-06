@@ -28,7 +28,7 @@ class BitacoraController extends Controller
         //tipoobra
         ->leftjoin('licencias as l', 'b.licencia_id','=', 'l.id')
         //
-        ->select('b.direccion','b.id','b.fecha', 'u.name as user','l.numerolicencia as nlicencia','b.descripcion','a.nombre as asunto')
+        ->select('b.id','b.fecha', 'u.name as user','l.numerolicencia as nlicencia','b.descripcion','a.nombre as asunto')
         ->orderBy('b.id','desc')
         ->get();
         return view('bitacora.index', ["bitacora"=>$bitacora])->with('i');
