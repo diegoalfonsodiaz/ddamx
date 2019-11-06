@@ -393,7 +393,7 @@
             @endif
         </label>
         <label id="ptipoid7">
-            @if($solicitudes->tipo == 7)
+            @if($solicitudes->tipo >= 7)
                 X
             @endif
         </label>

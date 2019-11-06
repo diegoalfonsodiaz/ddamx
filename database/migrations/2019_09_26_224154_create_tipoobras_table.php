@@ -27,7 +27,6 @@ class CreateTipoobrasTable extends Migration
         DB::table('tipoobras')->insert(array('id'=>'4','nombre'=>'Multifamiliar','estado'=>'1','created_at'=>now(),'updated_at'=>now()));
         DB::table('tipoobras')->insert(array('id'=>'5','nombre'=>'Comercial','estado'=>'1','created_at'=>now(),'updated_at'=>now()));
         DB::table('tipoobras')->insert(array('id'=>'6','nombre'=>'Industrial','estado'=>'1','created_at'=>now(),'updated_at'=>now()));
-        DB::table('tipoobras')->insert(array('id'=>'7','nombre'=>'otros','estado'=>'1','created_at'=>now(),'updated_at'=>now()));
     }
 
     /**
