@@ -161,7 +161,7 @@ class LicenciaController extends Controller
             }  
            
         $pdf=PDF::loadView('licencia.pdf.licencia',compact('licencia','datos'));
-        return $pdf->download($nombrepdf.'.pdf');
+        return $pdf->stream($nombrepdf.'.pdf');
         //  return view('licencia.pdf.licencia',compact('licencia','datos'));
         }
 

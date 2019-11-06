@@ -42,7 +42,7 @@ class EjecutorController extends Controller
     {
         $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
         Ejecutor::create($request->all());
-        return redirect()->route('ejecutor.index');
+        return redirect()->route('ejecutor.index')->with('flash', 'Datos ingresados correctamente');
     }
 
 
@@ -66,7 +66,7 @@ class EjecutorController extends Controller
         $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
 
         Ejecutor::findOrFail($id)->update($request->all());
-         return redirect()->route('ejecutor.index');
+         return redirect()->route('ejecutor.index')->with('flash', 'Datos actualizados correctamente');
     }
 
 

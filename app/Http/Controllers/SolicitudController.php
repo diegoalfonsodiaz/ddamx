@@ -43,7 +43,7 @@ class SolicitudController extends Controller
 //$mes = date("m", $fechaEntera);
         
         $pdf = PDF::loadView('pdf.solicitud', ["fechaEntera"=>$fechaEntera], ["solicitud"=>$solicitud] )->setPaper($customPaper,'portrait');
-        return $pdf->download('solicitud.pdf');
+        return $pdf->stream('solicitud.pdf');
     }
     public function __construct()
     {
