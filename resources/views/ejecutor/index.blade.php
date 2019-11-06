@@ -40,6 +40,8 @@
                 <h3 class="box-title">Listado de ejecutores</h3>
 =======
             
+              <a href="{{route('ejecutor.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear ejecutor</a> 
+            
 
               <h3 class="box-title">Listado de Ejecutores</h3>
 >>>>>>> ac31fdd835c88fdf1d8b98b48a994b978ff844e0
