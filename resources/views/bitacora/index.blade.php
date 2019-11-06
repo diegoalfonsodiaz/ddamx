@@ -14,8 +14,14 @@
 @section('contenido')
 <div class="box box-primary">
             <div class="box-header">
-            
-        
+            @if (auth()->user()->hasRole(['admin']))
+            <a href="{{route('bitacora.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear bitácora</a>      
+                @elseif(auth()->user()->hasRole(['jefeoperaciones']))
+                <a href="{{route('bitacora.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear bitácora</a>    
+                @elseif(auth()->user()->hasRole(['operaciones']))
+                <a href="{{route('bitacora.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear bitácora</a>   
+            @endif
+           
               <h3 class="box-title">Listado de bitácoras</h3>
             </div>
             <div class="box-body">
