@@ -95,16 +95,11 @@
 
                         </div>
 
-                        <div class="form-group {{ $errors->has('fechaconexion') ? 'has-error': ''}}">
-                            <label for="direccion_fab">Fecha de conexión</label>
-                            <input type="date" name="fechaconexion" value="{{ $licencia->fechaconexion }}"  class="form-control" >
-                            {!! $errors->first('fechaconexion',' <span class="help-block">Campo obligatorio</span>')!!}
-
-                        </div>
+      
 
                         <div class="form-group {{ $errors->has('monto') ? 'has-error': ''}}">
-                            <strong>Días de procesamiento</strong>
-                            <input type="text" autocomplete="off" name="monto" value="{{ $licencia->monto }}"  class="form-control" placeholder="Días de procesamiento">
+                            <strong>Fecha de conexión y/o lo que compete</strong>
+                            <input type="text" autocomplete="off" name="monto" value="{{ $licencia->monto }}"  class="form-control" placeholder="Fecha de conexión y/o lo que compete">
                             {!! $errors->first('monto',' <span class="help-block">Campo obligatorio</span>')!!}
 
                         </div>

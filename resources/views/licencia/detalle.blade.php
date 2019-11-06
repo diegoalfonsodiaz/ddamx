@@ -35,18 +35,18 @@
 
                         <div class="form-group">
                             <strong>Número de licencia</strong>
-                            <input type="text" name="numerolicencia"  value="{{ $licencias->numerolicencia }}" class="form-control" placeholder="Número licencia" disabled>
+                            <input type="text" name="numerolicencia"  value="{{ $licencias->numerolicencia }}" class="form-control" placeholder="Número de licencia" disabled>
                         </div>
 
                         <div class="form-group">
                             <strong>Fecha de autorización</strong>
-                            <input type="text" name="fechaautorizacion"  value="{{ $licencias->fechaautorizacion }}" class="form-control" placeholder="Fecha Autorizacion" disabled>
+                            <input type="text" name="fechaautorizacion"  value="{{ $licencias->fechaautorizacion }}" class="form-control" placeholder="Fecha de Autorizacion" disabled>
                         </div>
 
                         
                         <div class="form-group">
                             <strong>Tipo de Vía</strong>
-                            <input type="text" name="tipovia"  value="{{ $licencias->tipovia }}" class="form-control" placeholder="Fecha Autorizacion" disabled>
+                            <input type="text" name="tipovia"  value="{{ $licencias->tipovia }}" class="form-control" placeholder="Tipo de vía" disabled>
                         </div>
 
                        
@@ -64,27 +64,24 @@
             <div class="box-body">
             <div class="form-group">
                             <strong>Número de recibo</strong>
-                            <input type="text" name="recibo"  value="{{ $licencias->recibo }}" class="form-control" placeholder="Fecha Autorizacion" disabled>
+                            <input type="text" name="recibo"  value="{{ $licencias->recibo }}" class="form-control" placeholder="Número de recibo" disabled>
                         </div>
 
                          <div class="form-group">
                             <strong>Derecho</strong>
-                            <input type="text" name="derecho"  value="{{ $licencias->derecho }}" class="form-control" placeholder="Fecha Autorizacion" disabled>
+                            <input type="text" name="derecho"  value="{{ $licencias->derecho }}" class="form-control" placeholder="Derecho" disabled>
                         </div>
                         
                          <div class="form-group">
-                            <strong>Remoción</strong>
-                            <input type="text" name="remocion"  value="{{ $licencias->remocion }}" class="form-control" placeholder="Fecha Autorizacion" disabled>
+                            <strong>Remosión</strong>
+                            <input type="text" name="remocion"  value="{{ $licencias->remocion }}" class="form-control" placeholder="Remosión" disabled>
                         </div>
 
-                        <div class="form-group">
-                            <strong>Fecha de conexión</strong>
-                            <input type="text" name="fechaconexion"  value="{{ $licencias->fechaconexion }}" class="form-control" placeholder="Fecha Autorizacion" disabled>
-                        </div>
+                        
 
                         <div class="form-group">
-                            <strong>Días de procesamiento</strong>
-                            <input type="text" name="monto"  value="{{ $licencias->monto }}" class="form-control" placeholder="Fecha Autorizacion" disabled>
+                            <strong>Fecha de conexión y/o lo que compete</strong>
+                            <input type="text" name="monto"  value="{{ $licencias->monto }}" class="form-control" placeholder="Fecha de conexión y/o lo que compete" disabled>
                         </div>
 
                         <div class="form-group">
