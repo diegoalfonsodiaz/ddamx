@@ -11,11 +11,25 @@
       </ol>
 @stop
 @section('contenido')
+
+<div class="box-header">
+    @if(session()->has('flash'))
+      <div class="col-md-6">
+          <div class="alert alert-success" role="alert">
+              {{ session('flash') }}
+              <button type="button" class="close" data-dismiss="alert" alert-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+        </div>
+      @endif
+  </div>
+
 <div class="box box-primary">
             <div class="box-header">
             
-              <!-- <a href="{{route('ejecutor.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear ejecutor</a>  -->
-                <h3 class="box-title">Listado de ejecutores</h3>
+
+              <h3 class="box-title">Listado de Ejecutores</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -32,8 +46,9 @@
             <th>Acciones</th>
         </tr>
         </thead>
-        @foreach ($ejecutor as $ejecutors)
+        
         <tbody>
+        @foreach ($ejecutor as $ejecutors)
         <tr>
             <td>{{ ++$i }}</td>
             <td>{{ $ejecutors->nombre }}</td>
@@ -71,12 +86,11 @@
                               
                                 @endif
             
-        </td>
-        </tr>
-        @endforeach
-        </tbody>
-        
-    </table>
+                    </td>
+              </tr>
+              @endforeach
+            </tbody>
+        </table>
     </div>
 </div>
             
