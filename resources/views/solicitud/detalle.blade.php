@@ -102,7 +102,7 @@
 
                         <div class="form-group">
                             <strong>Profundidad</strong>
-                            <input type="text" name="profundidad" value="{{ $solicitudes->profundidad }}"  class="form-control" placeholder="Profundidad" disabled>
+                            <input type="text" name="profundidad" value="{{ $solicitudes->profundidad }}"  class="form-control" placeholder="Profundidad Metros aprox." disabled>
                         </div>
 
                         <div class="form-group">
