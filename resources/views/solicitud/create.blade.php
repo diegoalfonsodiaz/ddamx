@@ -55,7 +55,7 @@
                             <input type="text" autocomplete="off" name="expedienteinterno" class="form-control" placeholder="Expediente interno">
                         </div>
 
-                        <div class="form-group" style="display: none">
+                        <div class="form-group" >
                             <label for="direccion_fab">Fecha</label>
                             <input type="date" autocomplete="off" name="fechasolicitud" value="<?php echo date("Y-m-d");?>" class="form-control"  >
                         </div>
