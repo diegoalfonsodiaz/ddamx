@@ -79,7 +79,7 @@
                             <strong>Descripción</strong>
                             <input type="text" autocomplete="off" name="descripcion" class="form-control" value="{{ old('descripcion')}}" placeholder="Descripción" >
 
-                            {!! $errors->first('descripcion',' <span class="help-block">Solo hasta 30 caracteres</span>')!!}
+                            {!! $errors->first('descripcion',' <span class="help-block">Solo hasta 60 caracteres</span>')!!}
                         </div>
 
                         <div class="form-group {{ $errors->has('remocion') ? 'has-error': ''}}">
