@@ -36,8 +36,8 @@
                         </div>
  
                         <div class="form-group">
-                            <strong>Dirección del propietario</strong>
-                            <input type="text" autocomplete="off" name="direccion"  value="{{ $solicitud->direccion }}" class="form-control" placeholder="Dirección del propietario">
+                            <strong>Dirección</strong>
+                            <input type="text" autocomplete="off" name="direccion"  value="{{ $solicitud->direccion }}" class="form-control" placeholder="Dirección">
                         </div>
 
                         <div class="form-group">

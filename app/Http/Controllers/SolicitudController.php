@@ -72,7 +72,7 @@ class SolicitudController extends Controller
         'solicituds.observacion','solicituds.longitud','solicituds.ancho',
         'solicituds.profundidad','solicituds.fechasolicitud',
         'solicituds.diametrotubo','solicituds.diametrocolector',
-        'solicituds.ejecutor_id','solicituds.persona_id',
+        'solicituds.ejecutor_id','solicituds.persona_id','solicituds.direccion',
         'solicituds.tipoobra_id','solicituds.estadofactibilidad_id','solicituds.id')
         ->orderBy('solicituds.id','desc')
         ->get();
@@ -122,7 +122,7 @@ class SolicitudController extends Controller
         'ejecutors.nombre as nombre_ejecutor','ejecutors.direccion as direccionejecutor','solicituds.direccionobra','solicituds.codigoinmueble',
         'solicituds.expediente','solicituds.expedienteinterno','solicituds.numerofinca',
         'solicituds.numerofolio',
-        'solicituds.libro','solicituds.catastral','solicituds.solvenciamunicipal',
+        'solicituds.libro','solicituds.catastral','solicituds.solvenciamunicipal','solicituds.direccion',
         'solicituds.observacion','solicituds.longitud','solicituds.ancho',
         'solicituds.profundidad','solicituds.fechasolicitud',
         'solicituds.diametrotubo','solicituds.diametrocolector',

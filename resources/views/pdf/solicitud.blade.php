@@ -311,7 +311,7 @@
         </label>
 
         <label id="pdireccion">
-            {{ $solicitudes->direccionobra }}
+            {{ $solicitudes->direccion }}
         </label>
 
         <label id="pdireccionobra">

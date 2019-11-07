@@ -8,6 +8,7 @@ return [
         'metadata' => 'En :audit_created_at, :user_name [:audit_ip_address] actualizó este registro a través de :audit_url',
         'modified' => [
             'persona_id'   => 'La Persona a sido modificado de <strong>:old</strong> a <strong>:new</strong>',
+            'direccion' => 'La Dirección a sido modificado de <strong>:old</strong> a <strong>:new</strong>',
             'direccionobra' => 'La Dirección de la obra a sido modificado de <strong>:old</strong> a <strong>:new</strong>',
             'codigoinmueble' => 'El código de inmueble a sido modificado de <strong>:old</strong> a <strong>:new</strong>',
             'expediente' => 'el expediente a sido modificado de <strong>:old</strong> a <strong>:new</strong>',
