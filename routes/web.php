@@ -221,8 +221,8 @@ Route::get('nosotros', 'FrontendController@indexnosotros');
 Route::get('preguntas', 'FrontendController@indexpreguntas');
 Route::get('buscarcodigo', 'FrontendController@indexcodigo');
 Route::put('solicitudcodigo','EstadoFactibilidadExternoController@solicitarcodigo')->name('solicitudcodigo.solicitarcodigo');
-
-
+Route::get('buscartelefono', 'FrontendController@indextelefono');
+Route::put('solicitudtelefono','EstadoDenunciaExternaController@solicitartelefono')->name('solicitudtelefono.solicitartelefono');
 //reportes
 Route::get('/reportelicencia','ReportesController@Reportelicencia')->name('reportelicencia.index');
 Route::get('/reportesolicitud','ReportesController@Reportesolicitud')->name('reportesolicitud.index');

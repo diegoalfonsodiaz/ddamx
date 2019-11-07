@@ -43,6 +43,12 @@ class FrontendController extends Controller
         //
     }
 
+    public function indextelefono()
+    {
+        return view('front.denuncia.buscartelefono');
+        //
+    }
+
     public function indexcodigo()
     {
         return view('front.licencia.buscarcodigo');
