@@ -30,7 +30,7 @@ class SolicitudController extends Controller
         'tipoobras.nombre as nombre_tipoobra','estadofactibilidads.nombre as nombre_estadofactibilidad',
         'ejecutors.nombre as nombre_ejecutor','ejecutors.direccion as direccionejecutor',
         'ejecutors.ornato as eornato', 'ejecutors.cargoejecutor_id as cargo',
-        'solicituds.direccionobra','solicituds.codigoinmueble',
+        'solicituds.direccionobra','solicituds.direccion','solicituds.codigoinmueble',
         'solicituds.expediente','solicituds.expedienteinterno','solicituds.numerofinca',
         'solicituds.numerofolio',
         'solicituds.libro','solicituds.catastral','solicituds.solvenciamunicipal',

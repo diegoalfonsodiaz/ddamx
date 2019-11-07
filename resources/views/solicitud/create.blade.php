@@ -35,7 +35,12 @@
                                 </select>
                             </div>
 
-                            <div class="form-group">
+                        <div class="form-group">
+                            <strong>Dirección del propietario</strong>
+                            <input type="text" autocomplete="off" name="direccion" class="form-control" placeholder="Dirección del propietario" required>
+                        </div>
+
+                        <div class="form-group">
                             <strong>Dirección de la obra</strong><label style="color:red;">*</label>
                             <input type="text" autocomplete="off" name="direccionobra" class="form-control" placeholder="Dirección de la obra" required>
                         </div>

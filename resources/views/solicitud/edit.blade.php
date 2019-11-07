@@ -35,6 +35,10 @@
                             </select>
                         </div>
  
+                        <div class="form-group">
+                            <strong>Dirección del propietario</strong>
+                            <input type="text" autocomplete="off" name="direccion"  value="{{ $solicitud->direccion }}" class="form-control" placeholder="Dirección del propietario">
+                        </div>
 
                         <div class="form-group">
                             <strong>Dirección de la obra</strong><label style="color:red;">*</label>

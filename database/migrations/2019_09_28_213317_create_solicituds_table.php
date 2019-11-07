@@ -16,6 +16,7 @@ class CreateSolicitudsTable extends Migration
         Schema::create('solicituds', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('persona_id');
+            $table->string('direccion')->nullable();
             $table->string('direccionobra');
             $table->string('codigoinmueble')->nullable();
             $table->string('expediente')->nullable();
