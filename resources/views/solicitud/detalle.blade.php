@@ -50,7 +50,7 @@
 
                         <div class="form-group">
                             <label for="direccion_fab">Fecha</label>
-                            <input type="date" name="fechasolicitud" value="{{ $solicitudes->fechasolicitud }}"  class="form-control" disabled >
+                            <input type="date" name="fechasolicitud" value="{{ $solicitudes->fechasolicitud }}"  class="form-control"  >
                         </div>
 
                         <div class="form-group">
