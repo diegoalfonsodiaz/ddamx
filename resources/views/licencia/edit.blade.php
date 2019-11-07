@@ -88,6 +88,14 @@
 
                         </div>
 
+
+                        <div class="form-group {{ $errors->has('descripcion') ? 'has-error': ''}}">
+                            <strong>Descripción</strong>
+                            <input type="text" autocomplete="off" name="descripcion" value="{{ $licencia->descripcion }}"  class="form-control" placeholder="Descripción">
+                            {!! $errors->first('descripcion',' <span class="help-block">Solo hasta 60 caracteres</span>')!!}
+
+                        </div>
+
                         <div class="form-group {{ $errors->has('remocion') ? 'has-error': ''}}">
                             <strong>Remosión Q.</strong>
                             <input type="text" autocomplete="off" name="remocion" value="{{ $licencia->remocion }}"  class="form-control" placeholder="Remocion">

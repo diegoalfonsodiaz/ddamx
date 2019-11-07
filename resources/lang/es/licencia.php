@@ -12,6 +12,7 @@ return [
             'recibo' => 'El número de recibo a sido modificado de <strong>:old</strong> a <strong>:new</strong>',
             'monto' => 'El monto a sido modificado de <strong>:old</strong> a <strong>:new</strong>',
             'derecho' => 'El derecho a sido modificado de <strong>:old</strong> a <strong>:new</strong>',
+            'descripcion' => 'La descripción a sido modificado de <strong>:old</strong> a <strong>:new</strong>',
             'remocion' => 'La remosión a sido modificado de <strong>:old</strong> a <strong>:new</strong>',
             'fechaconexion' => 'La fecha de conexión a sido modificado de <strong>:old</strong> a <strong>:new</strong>',
             'estadolicencia_id' => 'El estado de la licencia a sido modificado de <strong>:old</strong> a <strong>:new</strong>',

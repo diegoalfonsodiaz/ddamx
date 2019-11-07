@@ -72,6 +72,11 @@
                             <input type="text" name="derecho"  value="{{ $licencias->derecho }}" class="form-control" placeholder="Derecho" disabled>
                         </div>
                         
+                        <div class="form-group">
+                            <strong>Descripción</strong>
+                            <input type="text" name="descripcion"  value="{{ $licencias->descripcion }}" class="form-control" placeholder="Descripción" disabled>
+                        </div>
+
                          <div class="form-group">
                             <strong>Remosión</strong>
                             <input type="text" name="remocion"  value="{{ $licencias->remocion }}" class="form-control" placeholder="Remosión" disabled>

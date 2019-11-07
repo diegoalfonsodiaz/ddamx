@@ -75,6 +75,13 @@
                             {!! $errors->first('derecho',' <span class="help-block">Campo obligatorio</span>')!!}
                         </div>
 
+                        <div class="form-group {{ $errors->has('descripcion') ? 'has-error': ''}}">
+                            <strong>Descripción</strong>
+                            <input type="text" autocomplete="off" name="descripcion" class="form-control" value="{{ old('descripcion')}}" placeholder="Descripción" >
+
+                            {!! $errors->first('descripcion',' <span class="help-block">Solo hasta 30 caracteres</span>')!!}
+                        </div>
+
                         <div class="form-group {{ $errors->has('remocion') ? 'has-error': ''}}">
                             <strong>Remosión Q.</strong>
                             <input type="text" autocomplete="off" name="remocion" class="form-control" value="{{ old('remocion')}}" placeholder="Remosión">

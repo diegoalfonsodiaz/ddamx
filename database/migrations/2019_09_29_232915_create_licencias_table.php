@@ -19,6 +19,7 @@ class CreateLicenciasTable extends Migration
             $table->date('fechaautorizacion')->nullable();
             $table->string('recibo')->nullable();
             $table->string('monto')->nullable();
+            $table->string('descripcion')->nullable();
             $table->string('derecho');
             $table->string('remocion');
             $table->date('fechaconexion')->nullable();

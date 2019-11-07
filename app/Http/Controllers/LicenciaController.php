@@ -39,7 +39,7 @@ class LicenciaController extends Controller
         'licencias.recibo','licencias.monto','licencias.derecho','licencias.remocion','licencias.fechaconexion',
         'solicituds.codigoinmueble as inmueble','estadolicencias.nombre as estadolicencia',
         'licencias.estadolicencia_id','tipovias.nombre as tipovia','personas.nombre as nombre_persona',
-        'personas.apellido as apellido')
+        'personas.apellido as apellido','licencias.descripcion')
         ->orderBy('solicituds.id','desc')
         ->get();
        
@@ -90,6 +90,7 @@ class LicenciaController extends Controller
             'remocion' => 'required',
             'fechaconexion',
             'monto',
+            'descripcion' => 'digits_between:0,60',
             'estadolicencia_id' => 'required',
             
         ]);
@@ -112,7 +113,7 @@ class LicenciaController extends Controller
         ->leftjoin('tipovias','licencias.tipovia_id','=','tipovias.id')
         ->leftjoin('solicituds','licencias.solicitudfactibilidad_id','=','solicituds.id')
         ->select('licencias.numerolicencia as numerolicencia','licencias.fechaautorizacion as fechaautorizacion','licencias.recibo as recibo',
-        'licencias.monto as monto', 'licencias.derecho as derecho','licencias.remocion as remocion','licencias.fechaconexion as fechaconexion',
+        'licencias.monto as monto','licencias.descripcion', 'licencias.derecho as derecho','licencias.remocion as remocion','licencias.fechaconexion as fechaconexion',
         'estadolicencias.nombre as nombre','solicituds.codigoinmueble as codigoinmueble','tipovias.nombre as tipovia',
         'solicituds.id as idsolicitud')
         ->where('licencias.id','=',$id)
@@ -145,7 +146,7 @@ class LicenciaController extends Controller
             'licencias.derecho','licencias.remocion','licencias.fechaconexion',
             'licencias.fechaautorizacion','solicituds.codigoinmueble',
             'licencias.estadolicencia_id','solicituds.id as idsolicitud','solicituds.direccionobra',
-            'licencias.solicitudfactibilidad_id','solicituds.expediente',
+            'licencias.solicitudfactibilidad_id','solicituds.expediente','licencias.descripcion',
             'solicituds.longitud','solicituds.ancho','solicituds.profundidad',
             'solicituds.diametrotubo','solicituds.diametrocolector','solicituds.numerofinca',
             'solicituds.numerofolio','solicituds.libro','solicituds.catastral',
@@ -213,6 +214,7 @@ class LicenciaController extends Controller
             'remocion' => 'required',
             'fechaconexion',
             'monto',
+            'descripcion' => 'digits_between:0,60',
             'estadolicencia_id' => 'required',
             
         ]);
