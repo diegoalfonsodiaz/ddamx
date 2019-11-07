@@ -113,7 +113,7 @@
                             <td hidden= "true">{{$solicitudes->numerofinca}}</td>
                             <td hidden= "true">{{$solicitudes->numerofolio}}</td>
                             <td hidden= "true">{{$solicitudes->libro}}</td>
-                            <td hidden= "true">{{$solicitudes->catastral}}</td>
+                            <td hidden= "true">{{$solicitudes->codigoinmueble}}</td>
                             <td hidden= "true">{{$solicitudes->solvenciamunicipal}}</td>
                             <td hidden= "true">{{$solicitudes->observacion}}</td>
                             <td hidden= "true">{{$solicitudes->longitud}}</td>
