@@ -58,7 +58,7 @@
 
                         <div class="form-group">
                             <label for="direccion_fab">Fecha</label>
-                            <input type="date" autocomplete="off" name="fechasolicitud" value="{{ $solicitud->fechasolicitud }}"  class="form-control" disabled>
+                            <input type="date" autocomplete="off" name="fechasolicitud" value="{{ $solicitud->fechasolicitud }}"  class="form-control" >
                         </div>
 
                         <div class="form-group">
