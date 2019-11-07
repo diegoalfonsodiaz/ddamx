@@ -360,7 +360,7 @@
         </label>
 
         <label id="pcatastral">
-            {{ $solicitudes->catastral }}
+            {{ $solicitudes->codigoinmueble }}
         </label>
 
         <label id="psolvencia">
