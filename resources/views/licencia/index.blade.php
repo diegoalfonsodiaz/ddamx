@@ -37,7 +37,7 @@
                                 <th>Inmueble</th>
                                 <th>No. Recibo</th>  
                                 <th>Fecha de autorización</th>
-                                <th>Fecha de conexión</th>
+                             
                                 <th>Estado</th>
                                 <th>Acciones</th>
                             </tr>
@@ -51,7 +51,7 @@
                             <td>{{$licencias->inmueble}}</td>
                             <td>{{$licencias->recibo}}</td>
                             <td>{{$licencias->fechaautorizacion}}</td>
-                            <td>{{$licencias->fechaconexion}}</td>
+                            
                             <td>{{$licencias->estadolicencia}}</td>
 
                                 
