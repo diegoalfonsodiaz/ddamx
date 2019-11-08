@@ -83,7 +83,7 @@
                         </div>
 
                         <div class="form-group {{ $errors->has('remocion') ? 'has-error': ''}}">
-                            <strong>Remosión Q.</strong>
+                            <strong>Remosión</strong>
                             <input type="text" autocomplete="off" name="remocion" class="form-control" value="{{ old('remocion')}}" placeholder="Remosión">
 
                             {!! $errors->first('remocion',' <span class="help-block">Campo obligatorio</span>')!!}
