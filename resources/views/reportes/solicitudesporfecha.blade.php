@@ -75,6 +75,7 @@
                             <th># </th>
                                 <th>Propietario</th>
                                 <th>Apellidos </th>
+                                <th>Dirección</th>
                                 <th>Dirección de la obra</th>
                                 <th>Inmueble</th>
                                 <th>No. de expediente</th>  
@@ -104,8 +105,10 @@
                             <td>{{ ++$i }} </td>
                             <td >{{$solicitudes->nombre_persona}}</td>
                             <td>{{$solicitudes->apellido}}</td>
+                            <td>{{$solicitudes->direccion}}</td>
                             <td>{{$solicitudes->direccionobra}}</td>
                             <td>{{$solicitudes->codigoinmueble}}</td>
+                          
                             <td>{{$solicitudes->expediente}}</td>
                             <td>{{$solicitudes->expedienteinterno}}</td>
                             <td>{{$solicitudes->fechasolicitud}}</td>
@@ -113,7 +116,7 @@
                             <td hidden= "true">{{$solicitudes->numerofinca}}</td>
                             <td hidden= "true">{{$solicitudes->numerofolio}}</td>
                             <td hidden= "true">{{$solicitudes->libro}}</td>
-                            <td hidden= "true">{{$solicitudes->catastral}}</td>
+                            <td hidden= "true">{{$solicitudes->codigoinmueble}}</td>
                             <td hidden= "true">{{$solicitudes->solvenciamunicipal}}</td>
                             <td hidden= "true">{{$solicitudes->observacion}}</td>
                             <td hidden= "true">{{$solicitudes->longitud}}</td>

@@ -35,7 +35,12 @@
                                 </select>
                             </div>
 
-                            <div class="form-group">
+                        <div class="form-group">
+                            <strong>Dirección</strong>
+                            <input type="text" autocomplete="off" name="direccion" class="form-control" placeholder="Dirección">
+                        </div>
+
+                        <div class="form-group">
                             <strong>Dirección de la obra</strong><label style="color:red;">*</label>
                             <input type="text" autocomplete="off" name="direccionobra" class="form-control" placeholder="Dirección de la obra" required>
                         </div>
@@ -55,7 +60,7 @@
                             <input type="text" autocomplete="off" name="expedienteinterno" class="form-control" placeholder="Expediente interno">
                         </div>
 
-                        <div class="form-group" style="display: none">
+                        <div class="form-group" >
                             <label for="direccion_fab">Fecha</label>
                             <input type="date" autocomplete="off" name="fechasolicitud" value="<?php echo date("Y-m-d");?>" class="form-control"  >
                         </div>

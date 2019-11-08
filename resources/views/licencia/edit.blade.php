@@ -88,8 +88,16 @@
 
                         </div>
 
+
+                        <div class="form-group {{ $errors->has('descripcion') ? 'has-error': ''}}">
+                            <strong>Descripción</strong>
+                            <input type="text" autocomplete="off" name="descripcion" value="{{ $licencia->descripcion }}"  class="form-control" placeholder="Descripción máximo 60 caracteres">
+                            {!! $errors->first('descripcion',' <span class="help-block">Solo hasta 60 caracteres</span>')!!}
+
+                        </div>
+
                         <div class="form-group {{ $errors->has('remocion') ? 'has-error': ''}}">
-                            <strong>Remosión Q.</strong>
+                            <strong>Remosión</strong>
                             <input type="text" autocomplete="off" name="remocion" value="{{ $licencia->remocion }}"  class="form-control" placeholder="Remocion">
                             {!! $errors->first('remocion',' <span class="help-block">Campo obligatorio</span>')!!}
 
@@ -99,8 +107,8 @@
 
                         <div class="form-group {{ $errors->has('monto') ? 'has-error': ''}}">
                             <strong>Fecha de conexión y/o lo que compete</strong>
-                            <input type="text" autocomplete="off" name="monto" value="{{ $licencia->monto }}"  class="form-control" placeholder="Fecha de conexión y/o lo que compete">
-                            {!! $errors->first('monto',' <span class="help-block">Campo obligatorio</span>')!!}
+                            <input type="text" autocomplete="off" name="monto" value="{{ $licencia->monto }}"  class="form-control" placeholder="Fecha de conexión y/o lo que compete,máximo 61 caracteres">
+                            {!! $errors->first('monto',' <span class="help-block">Solo hasta 61 caracteres</span>')!!}
 
                         </div>
 

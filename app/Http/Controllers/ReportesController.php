@@ -37,7 +37,7 @@ class ReportesController extends Controller
         'licencias.recibo','licencias.monto','licencias.derecho','licencias.remocion','licencias.fechaconexion',
         'solicituds.codigoinmueble as inmueble','estadolicencias.nombre as estadolicencia',
         'licencias.estadolicencia_id','tipovias.nombre as tipovia','personas.nombre as nombre_persona',
-        'personas.apellido as apellido')
+        'personas.apellido as apellido','licencias.descripcion')
         ->whereBetween('licencias.fechaautorizacion', [$request->fechaautorizacion1,$request->fechaautorizacion2])
         ->get();
         $fecha1=$request->fechaautorizacion1;
@@ -66,7 +66,7 @@ class ReportesController extends Controller
         'solicituds.profundidad','solicituds.fechasolicitud',
         'solicituds.diametrotubo','solicituds.diametrocolector',
         'solicituds.ejecutor_id','solicituds.persona_id',
-        'solicituds.tipoobra_id','solicituds.estadofactibilidad_id')
+        'solicituds.tipoobra_id','solicituds.estadofactibilidad_id','solicituds.direccion')
         ->whereBetween('solicituds.fechasolicitud', [$request->fechaautorizacion1,$request->fechaautorizacion2])
         ->get();
         $fecha1=$request->fechaautorizacion1;

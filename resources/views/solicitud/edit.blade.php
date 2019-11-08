@@ -35,6 +35,10 @@
                             </select>
                         </div>
  
+                        <div class="form-group">
+                            <strong>Dirección</strong>
+                            <input type="text" autocomplete="off" name="direccion"  value="{{ $solicitud->direccion }}" class="form-control" placeholder="Dirección">
+                        </div>
 
                         <div class="form-group">
                             <strong>Dirección de la obra</strong><label style="color:red;">*</label>
@@ -58,7 +62,7 @@
 
                         <div class="form-group">
                             <label for="direccion_fab">Fecha</label>
-                            <input type="date" autocomplete="off" name="fechasolicitud" value="{{ $solicitud->fechasolicitud }}"  class="form-control" disabled>
+                            <input type="date" autocomplete="off" name="fechasolicitud" value="{{ $solicitud->fechasolicitud }}"  class="form-control" >
                         </div>
 
                         <div class="form-group">

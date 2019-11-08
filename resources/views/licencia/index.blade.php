@@ -37,7 +37,7 @@
                                 <th>Inmueble</th>
                                 <th>No. Recibo</th>  
                                 <th>Fecha de autorización</th>
-                                <th>Fecha de conexión</th>
+                             
                                 <th>Estado</th>
                                 <th>Acciones</th>
                             </tr>
@@ -51,7 +51,7 @@
                             <td>{{$licencias->inmueble}}</td>
                             <td>{{$licencias->recibo}}</td>
                             <td>{{$licencias->fechaautorizacion}}</td>
-                            <td>{{$licencias->fechaconexion}}</td>
+                            
                             <td>{{$licencias->estadolicencia}}</td>
 
                                 
@@ -77,7 +77,7 @@
 
                                 @endif
                                 <a class="btn btn-xs btn-warning" href="{{ route('licencia.show',$licencias->id) }}"><i class="fa fa-eye"></i></a>
-                                @if($licencias->estadolicencia_id==2)
+                                @if($licencias->estadolicencia_id>=2)
                                 <form method="POST" 
                                     action="{{ route('licencias.pdf',$licencias->id) }}"
                                     style="display:inline">

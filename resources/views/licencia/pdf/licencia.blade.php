@@ -27,7 +27,7 @@
         }
         #partefinalcortomonto{
             line-height: 398%;
-            color: #FFFFFF;
+            
         }
         #partefinalcortolibro{
             line-height: 125%;
@@ -211,8 +211,8 @@
         Recibo de tesorería No.{{ $licencias->recibo }}
     </p>
     
-    <p id="partefinalcortomonto" style='text-indent: 24em'>
-        Q.{{ $licencias->monto }}
+    <p id="partefinalcortomonto" style='text-indent: 18em'>
+        {{ $licencias->descripcion }}
     </p>
     <pre id="partefinalcortolibro" style='text-indent: 0.5em'>
             Q.{{ $licencias->derecho }}                             {{ $licencias->remocion }}                    

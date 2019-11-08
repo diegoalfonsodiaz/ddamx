@@ -12,6 +12,7 @@ class Solicitud extends Model implements Auditable
     
     protected $fillable = ['persona_id', 
                             'direccionobra', 
+                            'direccion',
                             'codigoinmueble', 
                             'expediente', 
                             'expedienteinterno', 

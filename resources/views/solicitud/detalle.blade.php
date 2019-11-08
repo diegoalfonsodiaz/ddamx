@@ -27,6 +27,10 @@
 
                         </div>
  
+                        <div class="form-group">
+                            <strong>Dirección</strong>
+                            <input type="text" name="direccion"  value="{{ $solicitudes->direccion }}" class="form-control" placeholder="Dirección" disabled>
+                        </div>
 
                         <div class="form-group">
                             <strong>Dirección de la obra</strong>

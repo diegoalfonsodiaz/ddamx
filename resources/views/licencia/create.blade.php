@@ -22,7 +22,7 @@
 
                         <!-- personas -->
                         <div class="form-group {{ $errors->has('solicitudfactibilidad_id') ? 'has-error': ''}}">
-                            <label for="select" class="">Licencia</label>
+                            <label for="select" class="">Solicitud de factibilidad (Ingrese el código de inmueble)</label>
                             <select name="solicitudfactibilidad_id" class="form-control"  id="solicitud" >
                                 <option value="0" disabled selected >=== Selecciona el código de inmueble ===</option>
                                 @foreach($solicitud as $carac)
@@ -75,8 +75,15 @@
                             {!! $errors->first('derecho',' <span class="help-block">Campo obligatorio</span>')!!}
                         </div>
 
+                        <div class="form-group {{ $errors->has('descripcion') ? 'has-error': ''}}">
+                            <strong>Descripción</strong>
+                            <input type="text" autocomplete="off" name="descripcion" class="form-control" value="{{ old('descripcion')}}" placeholder="Descripción máximo 60 caracteres" >
+
+                            {!! $errors->first('descripcion',' <span class="help-block">Solo hasta 60 caracteres</span>')!!}
+                        </div>
+
                         <div class="form-group {{ $errors->has('remocion') ? 'has-error': ''}}">
-                            <strong>Remosión Q.</strong>
+                            <strong>Remosión</strong>
                             <input type="text" autocomplete="off" name="remocion" class="form-control" value="{{ old('remocion')}}" placeholder="Remosión">
 
                             {!! $errors->first('remocion',' <span class="help-block">Campo obligatorio</span>')!!}
@@ -86,9 +93,9 @@
 
                         <div class="form-group {{ $errors->has('monto') ? 'has-error': ''}}">
                             <strong>Fecha de conexión y/o lo que compete</strong>
-                            <input type="text" autocomplete="off" name="monto" class="form-control" value="{{ old('monto')}}" placeholder="Fecha de conexión y/o lo que compete" >
+                            <input type="text" autocomplete="off" name="monto" class="form-control" value="{{ old('monto')}}" placeholder="Fecha de conexión y/o lo que compete, máximo 61 caracteres" >
 
-                            {!! $errors->first('monto',' <span class="help-block">Campo obligatorio</span>')!!}
+                            {!! $errors->first('monto',' <span class="help-block">Solo hasta 61 caracteres</span>')!!}
                         </div>
                         
 
