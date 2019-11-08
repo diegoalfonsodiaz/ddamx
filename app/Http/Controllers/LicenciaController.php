@@ -90,7 +90,7 @@ class LicenciaController extends Controller
             'remocion' => 'required',
             'fechaconexion',
             'monto' => 'min:0|max:61',
-            'descripcion' => 'min:0|max:10',
+            'descripcion' => 'min:0|max:60',
             'estadolicencia_id' => 'required',
             
         ]);
