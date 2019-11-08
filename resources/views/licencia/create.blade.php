@@ -22,7 +22,7 @@
 
                         <!-- personas -->
                         <div class="form-group {{ $errors->has('solicitudfactibilidad_id') ? 'has-error': ''}}">
-                            <label for="select" class="">Licencia</label>
+                            <label for="select" class="">Solicitud de factibilidad (Ingrese el código de inmueble)</label>
                             <select name="solicitudfactibilidad_id" class="form-control"  id="solicitud" >
                                 <option value="0" disabled selected >=== Selecciona el código de inmueble ===</option>
                                 @foreach($solicitud as $carac)
