@@ -80,11 +80,12 @@
                                 <th>Inmueble</th>
                                 <th>No. Recibo</th>  
                                 <th>Fecha de autorización</th>
-                                <th>Fecha de conexión</th>
+                                
                                 <th>Tipo de vía</th>
                                 <th>Derecho</th>
+                                <th>Descripción</th>
                                 <th>Remosión</th>
-                                <th>Días de procesamiento</th>
+                                <th>Fecha de conexión y/o lo que compete</th>
                                 <th>Estado</th>
                             
                             </tr>
@@ -99,9 +100,10 @@
                             <td>{{$licencias->inmueble}}</td>
                             <td>{{$licencias->recibo}}</td>
                             <td>{{$licencias->fechaautorizacion}}</td>
-                            <td>{{$licencias->fechaconexion}}</td>
+                          
                             <td>{{$licencias->tipovia}}</td>
                             <td>{{$licencias->derecho}}</td>
+                            <td>{{$licencias->descripcion}}</td>
                             <td>{{$licencias->remocion}}</td>
                             <td>{{$licencias->monto}}</td>
                             <td>{{$licencias->estadolicencia}}</td>
