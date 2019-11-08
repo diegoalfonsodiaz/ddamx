@@ -212,7 +212,7 @@
     </p>
     
     <p id="partefinalcortomonto" style='text-indent: 18em'>
-        Q.{{ $licencias->descripcion }}
+        {{ $licencias->descripcion }}
     </p>
     <pre id="partefinalcortolibro" style='text-indent: 0.5em'>
             Q.{{ $licencias->derecho }}                             {{ $licencias->remocion }}                    
