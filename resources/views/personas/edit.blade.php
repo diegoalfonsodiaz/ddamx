@@ -44,7 +44,7 @@
                 </div>
                 <div class="form-group {{ $errors->has('ornato') ? 'has-error': ''}}">
                   <label >Boleto de ornato</label>
-                  <input type="text" autocomplete="off" class="form-control input-lg" name="Boleto de ornato" value="{{old('ornato',$persona->ornato)}}" placeholder="Ornato">
+                  <input type="text" autocomplete="off" class="form-control input-lg" name="ornato" value="{{old('ornato',$persona->ornato)}}" placeholder="Ornato">
                   {!! $errors->first('ornato',' <span class="help-block">Verifique sus datos</span>')!!}
                 </div>
                 <div class="form-group {{ $errors->has('correo') ? 'has-error': ''}}">
