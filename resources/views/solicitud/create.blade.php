@@ -138,7 +138,7 @@
                         </div> -->
 
                         <div class="form-group">
-                                <label for="select" class="">Nombre del ejecutor</label><label style="color:red;">*</label>
+                                <label for="select" class="">Nombre del ejecutor</label>
                                 <select name="ejecutor_id" class="form-control" id="ejecutor" >}
                                     <option value="0" disabled selected >=== Seleccione nombre del ejecutor ===</option>
                                     @foreach($ejecutor as $ejecutores)

@@ -140,12 +140,14 @@
                         </div> -->
 
                         <div class="form-group">
-                            <label for="select" class="">Nombre del ejecutor</label><label style="color:red;">*</label>
+                            <label for="select" class="">Nombre del ejecutor</label>
                             <select name="ejecutor_id" class="form-control" id="ejecutor" >
                                 @foreach($ejecutor as $ejecutores)
                                 @if ($ejecutores->id==$solicitud->ejecutor_id)
-                                <option value="{{$ejecutores->id}}">{{$ejecutores->nombre}}</option>
-                                @endif
+                                <option value="{{$ejecutores->id}}" selected>{{$ejecutores->nombre}}</option>
+                                @else
+                                        <option value="{{$ejecutores->id}}">{{$ejecutores->nombre}}</option>
+                                        @endif
                                 @endforeach
                             </select>
                         </div>
