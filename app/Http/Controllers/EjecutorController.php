@@ -22,6 +22,7 @@ class EjecutorController extends Controller
         $ejecutor= DB::table('ejecutors as e')
         ->join('cargoejecutors as c', 'e.cargoejecutor_id','=', 'c.id')
         ->select('e.id', 'e.nombre', 'e.direccion', 'e.ornato', 'c.nombre as cargo','e.estado')
+        ->orderBy('e.id','desc')
         ->get();
         return view('ejecutor.index', ["ejecutor"=>$ejecutor])->with('i');
         
