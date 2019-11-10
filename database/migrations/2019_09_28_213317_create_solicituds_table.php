@@ -33,9 +33,9 @@ class CreateSolicitudsTable extends Migration
             $table->string('profundidad')->nullable();
             $table->string('diametrotubo')->nullable();
             $table->string('diametrocolector')->nullable();
-            $table->unsignedBigInteger('ejecutor_id')->nullable();
+            $table->unsignedBigInteger('ejecutor_id')->default(1)->nullable();
             $table->unsignedBigInteger('estadofactibilidad_id')->default(1);
-            $table->unsignedBigInteger('tipoobra_id')->nullable();
+            $table->unsignedBigInteger('tipoobra_id')->default(1)->nullable();
             $table->timestamps();
             $table->foreign('ejecutor_id')->references('id')->on('ejecutors');
             $table->foreign('estadofactibilidad_id')->references('id')->on('estadofactibilidads');

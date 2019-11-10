@@ -125,7 +125,7 @@
                             <input type="text" autocomplete="off" name="diametrocolector" value="{{ $solicitud->diametrocolector }}"  class="form-control" placeholder="Diámetro de colector">
                         </div>
 
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <strong>Nombre del ejecutor</strong>
                             <select name="ejecutor_id" id="ejecutor_id"  class="form-control selectpicker" data-live-search="true">
                                 
@@ -137,7 +137,21 @@
                                         @endif
                                     @endforeach
                             </select>
+                        </div> -->
+
+                        <div class="form-group">
+                            <label for="select" class="">Nombre del ejecutor</label>
+                            <select name="ejecutor_id" class="form-control" id="ejecutor" >
+                                @foreach($ejecutor as $ejecutores)
+                                @if ($ejecutores->id==$solicitud->ejecutor_id)
+                                <option value="{{$ejecutores->id}}" selected>{{$ejecutores->nombre}}</option>
+                                @else
+                                        <option value="{{$ejecutores->id}}">{{$ejecutores->nombre}}</option>
+                                        @endif
+                                @endforeach
+                            </select>
                         </div>
+
                         <div class="form-group">
                             <strong>Estado de factibilidad</strong>
                             <select name="estadofactibilidad_id" id="estadofactibilidad_id"  class="form-control selectpicker" data-live-search="true">
@@ -182,6 +196,12 @@
 
 <script >
 $('#persona').select2({
+  theme: "classic"
+});
+</script>
+
+<script >
+$('#ejecutor').select2({
   theme: "classic"
 });
 </script>
