@@ -14,7 +14,7 @@ class EjecutorController extends Controller
     {
         $this->middleware('auth');
     }
-//comentario
+
     public function index(Request $request)
     {
         $request->user()->autorizeRoles(['secretaria','operaciones','jefeoperaciones','admin']);
