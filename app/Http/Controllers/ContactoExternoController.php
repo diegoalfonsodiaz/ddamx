@@ -7,24 +7,15 @@ use Illuminate\Http\Request;
 use App\Http\Requests\ContactoRequest;
 use Illuminate\Session\SessionManager;
 
-class ContactoController extends Controller
+class ContactoExternoController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $request->user()->autorizeRoles(['secretaria','operaciones','jefeoperaciones','admin']);
-
-        $contacto = Contacto::orderBy('id', 'desc')->get();
-        
-        return view('contacto.index',compact('contacto'));
         //
     }
 
@@ -35,10 +26,9 @@ class ContactoController extends Controller
      */
     public function create()
     {
-        
+        return view('front.contacto');
         //
     }
-    
 
     /**
      * Store a newly created resource in storage.
@@ -48,18 +38,34 @@ class ContactoController extends Controller
      */
     public function store(ContactoRequest $request, SessionManager $sessionManager)
     {
-        
-       
-        //
+        $this->validate($request,
+        [
+            'nombre'=>'required',
+            'email'=>'required',
+            'descripcion'=>'required',
+            recaptchaFieldName() => recaptchaRuleName()
+        ]
+    );
+    $contacto = new Contacto();
+    $contacto->nombre = $request->input('nombre');
+    $contacto->email = $request->input('email');
+    $contacto->descripcion = $request->input('descripcion');
+    $contacto->save();
+
+    $sessionManager->flash('mensajetipo', '¡Gracias por comunicarte con nosotros!');
+    $sessionManager->flash('mensaje', 'Te enviaremos nuestra respuesta a tu correo electrónico.');
+
+    
+    return view('front.respuesta');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Contacto  $contacto
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Contacto $contacto)
+    public function show($id)
     {
         //
     }
@@ -67,10 +73,10 @@ class ContactoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Contacto  $contacto
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Contacto $contacto)
+    public function edit($id)
     {
         //
     }
@@ -79,10 +85,10 @@ class ContactoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Contacto  $contacto
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Contacto $contacto)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -90,10 +96,10 @@ class ContactoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Contacto  $contacto
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Contacto $contacto)
+    public function destroy($id)
     {
         //
     }

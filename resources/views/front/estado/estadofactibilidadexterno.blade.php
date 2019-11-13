@@ -3,6 +3,7 @@
 
 @section('content')
 <!-- Main content -->
+<div class="container">
 <section class="content paddingleft_right15">
  <h2>
                     Solicitudes de factibilidad registradas
@@ -109,5 +110,5 @@
         </div>
     </div>    <!-- row-->
 </section>
-
+</div> 
 @stop

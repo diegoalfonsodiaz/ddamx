@@ -62,7 +62,7 @@ Acerca de nosotros
                             <h4 class="border-warning"><span class="heading_border bg-warning">Misión</span></h4>
                         </div>
                     </div>
-                    <img src="{{ asset('front_end/images/mision.jpg') }}" alt="image_12" class="img-responsive">
+                    <img src="{{ asset('front_end/images/mision1.jpg') }}" alt="image_12" class="img-responsive">
                     <p>
                         Proporcionar soluciones integrales y sostenibles para el manejo de aguas residuales y pluviales, tanto en el área urbana como en el área rural del municipio de Quetzaltenango.
                         Las condiciones municipales promueven con énfasis la competitividad e inversiones para lograr un desarrollo eficaz en los servicios y todos los ciudadanos puedan beneficiarse.
@@ -76,7 +76,7 @@ Acerca de nosotros
                             <h4 class="border-success"><span class="heading_border bg-success">Visión</span></h4>
                         </div>
                     </div>
-                    <img src="{{ asset('front_end/images/vision.jpg') }}" alt="image_11" class="img-responsive">
+                    <img src="{{ asset('front_end/images/vision2.jpg') }}" alt="image_11" class="img-responsive">
                     <p>
                         Somos el servicio municipal de referencia en la región occidental para el manejo de aguas residuales y aguas pluviales, financieramente auto sostenible, administrativamente eficiente e integral en las soluciones que propone para la gestión de aguas residuales y pluviales en el área urbana y rural del municipio de Quetzaltenango.
                     </p>
@@ -188,7 +188,7 @@ o	¿las demás personas deben solicitar un nuevo servicio de drenaje domiciliar 
                                         <h4 class="panel-title">
                                             <a class="collapsed" data-toggle="collapse" data-parent="#faq" href="#question5">
                                                 <strong class="c-gray-light">5.</strong>
-                                                ¿Cómo es saber si es proyecto CARE o Municipal?
+                                                ¿Cómo saber si es proyecto Care o Municipal?
                                                 <span class="pull-right">
                                                     <i class="glyphicon glyphicon-plus"></i>
                                                 </span>
@@ -208,7 +208,7 @@ o	¿las demás personas deben solicitar un nuevo servicio de drenaje domiciliar 
                                         <h4 class="panel-title">
                                             <a class="collapsed" data-toggle="collapse" data-parent="#faq" href="#question6">
                                                 <strong class="c-gray-light">6.</strong>
-                                                ¿Si son lotificaciones privadas, puedo hacer si solicitud si soy dueño de un lote?
+                                                ¿Si son construcciones privadas y soy dueño de un lote ¿puedo hacer mi solicitud de drenaje?  
                                                 <span class="pull-right">
                                                     <i class="glyphicon glyphicon-plus"></i>
                                                 </span>
@@ -228,7 +228,7 @@ o	¿las demás personas deben solicitar un nuevo servicio de drenaje domiciliar 
                                         <h4 class="panel-title">
                                             <a class="collapsed" data-toggle="collapse" data-parent="#faq" href="#question7">
                                                 <strong class="c-gray-light">7.</strong>
-                                                ¿Puede solicitud algún condominio o lotificación mantenimiento de drenajes?
+                                                ¿Puede solicitar algún condominio o lotificación mantenimiento de drenajes a esta Municipalidad?
                                                 <span class="pull-right">
                                                     <i class="glyphicon glyphicon-plus"></i>
                                                 </span>

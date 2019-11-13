@@ -83,6 +83,10 @@ Denuncia
                     <label></label>
                     
                 </form>
+                <div class="box-footer">
+                        <input type ='button' class="btn btn-primary"  value = 'Seguimiento de la denuncia' onclick="location.href = '{{ url('/buscartelefono') }}'"/>
+                    </div>
+               
             </div>
             <!-- //Conatc Form Section End -->
         

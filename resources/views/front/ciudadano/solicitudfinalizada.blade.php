@@ -3,6 +3,7 @@
 
 @section('content')
 <!-- Main content -->
+<div class="container">
 <section class="content paddingleft_right15">
  <h2 style = "color: #0269c9;">
                     ¡Solicitud de factibilidad registrada exitosamente!
@@ -21,5 +22,6 @@
         </div>
     </div>    <!-- row-->
 </section>
+ </div>  
 
 @stop

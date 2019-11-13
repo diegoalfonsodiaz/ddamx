@@ -51,7 +51,7 @@ Contacto
     <!-- Container Section Start -->
     <div class="container">
 
-            <div class="col-md-6">
+            <div class="col-sm-4">
                 <h2>Formulario de contacto</h2>
                  <label><span style="color:red">* </span><span style="color:black">Campos obligatorios</span></label>
 
@@ -91,7 +91,7 @@ Contacto
             </div>
             <!-- //Conatc Form Section End -->
             <!-- Address Section Start -->
-            <div class="col-md-6 col-sm-6" id="address_margt">
+            <div class="col-sm-4">
                 <div class="media media-right">
                     <div class="media-left media-top">
                         <a href="#">
@@ -102,12 +102,15 @@ Contacto
                     </div>
                     <div class="media-body">
                         <h4 class="media-heading">Dirección:</h4>
-                        <div class="danger">DDAMXA</div>
+                        <div class="danger">DDAMX</div>
                         <address>
                             14 Avenida, 6--06 zona 3
-                            <br> 3340 Providence Drive #565
                             <br> Quetzaltenango, Quetzaltenango
                             <br> Guatemala
+                            <br>
+                            <br>
+                            <br>
+                            
                     </div>
                 </div>
                 <div class="media padleft10">
@@ -124,6 +127,41 @@ Contacto
                     </div>
                 </div>
             </div>
+
+            <div class="col-sm-4">
+                <div class="media media-right">
+                    <div class="media-left media-top">
+                        <a href="#">
+                            <div class="box-icon">
+                                <i class="livicon" data-name="home" data-size="22" data-loop="true" data-c="#fff" data-hc="#fff"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Dirección:</h4>
+                        <div class="danger">VENTANILLA MUNICIPAL DE ATENCIÓN AL PÚBLICO</div>
+                        <address>
+                            10ª. Avenida entre 6ª. Y 8ava calle zona 1
+                            <br> Centro Comercial Municipal "El Centro"
+                            <br> Quetzaltenango, Quetzaltenango
+                            <br> Guatemala
+                    </div>
+                </div>
+                <div class="media padleft10">
+                    <div class="media-left media-top">
+                        <a href="#">
+                            <div class="box-icon">
+                                <i class="livicon" data-name="phone" data-size="22" data-loop="true" data-c="#fff" data-hc="#fff"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="media-body padbtm2">
+                        <h4 class="media-heading">Teléfono:</h4> (502) 31599708
+                        <br /> Email: drenajes@munixela.gob.gt
+                    </div>
+                </div>
+            </div>
+            
     </div>
 </div>  
 @stop
