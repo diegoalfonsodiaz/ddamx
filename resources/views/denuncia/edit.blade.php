@@ -24,18 +24,19 @@
               
               <div class="box-body">
 
-                  <div class="form-group">
-                    <label for="estadodenuncia_id">Estado de la denuncia</label>
-                    <select class="form-control input-lg" name="estadodenuncia_id" id="estadodenuncia_id" class="form-control selectpicker" data-live-search="true">
-                      @foreach($estado as $e)
-                        @if ($e->id==$denuncia->id)
-                          <option value="{{$e->id}}" selected>{{$e->descripcion}}</option>
-                          @else
-                          <option value="{{$e->id}}">{{$e->descripcion}}</option>
-                        @endif
-                      @endforeach
+                <div class="form-group">
+                    <strong>Estado de la denuncia</strong>
+                    <select class="form-control input-lg" name="estadodenuncia_id" id="estadodenuncia_id"  class="form-control selectpicker" data-live-search="true">
+                        
+                            @foreach($estado as $e)
+                              @if ($e->id==$denuncia->estadodenuncia_id)
+                                <option value="{{$e->id}}" selected>{{$e->descripcion}}</option>
+                                @else
+                                <option value="{{$e->id}}">{{$e->descripcion}}</option>
+                                @endif
+                            @endforeach
                     </select>
-                  </div>
+                </div>
                   
                 
               </div>
