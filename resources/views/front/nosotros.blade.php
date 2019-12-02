@@ -32,7 +32,14 @@ Acerca de nosotros
             <div class="col-md-7 col-sm-12 wow bounceInLeft" data-wow-duration="5s">
                 <h2><label>Acerca de nosotros</label></h2>
                 <p>
-                    La municipalidad de Quetzaltenango funciona desde 1,806 en la cabecera departamental de Quetzaltenango de la República de Guatemala. Es una ciudad que continúa en expansión, conserva muchos aspectos de su estilo neoclásico que recuerdan detalles de Europa, el edificio del palacio municipal desde su fundación ha conservado jardines y esculturas.
+                    La Dirección Municipal de Drenajes y Alcantarillados fue creada en el año 2012a través del acuerdo con el Punto Octavo del
+                    Acta Número 159-2012.
+                </p>
+                <p>
+                    La Dirección es la dependencia encargada de administrar, operar y mantener el sistema de drenaje del municipio de Quetzaltenango. La 
+                    mayor parte del sistema es de drenaje combinado, por lo que el agua de lluvia y residual se conduce por una misma tubería hasta ser 
+                    descargada en el Río Seco y Xequijel. Actualmente el municipio posee más de 250 km de tuberías de distintos diámetros y más de 2,600 
+                    tragantes que recolectan el agua de lluvia de las calles.
                 </p>
             </div>
 
@@ -110,7 +117,8 @@ Acerca de nosotros
                                     <div id="question1" class="panel-collapse collapse">
                                         <div class="panel-body">
                                             <p>
-                                                Debe presentar la papelería completa que se solicita en requisitos para solicitud domiciliar y presentar los mismos en ventanilla municipal ubicada en 10 avenida entre 6ª. Y 8ª. Calle de la zona 1 Centro Comercial “El Centro”.
+                                                Debe presentar la papelería completa que se solicita en requisitos para solicitud domiciliar y presentar los mismos en 
+                                                ventanilla de atención al público ubicada en 10 avenida entre 6ª. Y 8ª. Calle de la zona 1 Centro Comercial “El Centro”.
                                             </p>
                                         </div>
                                     </div>

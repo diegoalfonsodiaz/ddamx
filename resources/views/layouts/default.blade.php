@@ -99,7 +99,7 @@
                     </li>
                     <li><a href="{{ url('/denunciaexterna') }}">Denuncia</a>
                     </li>
-                    <li><a href="{{ url('/nosotros') }}">DDAMX</a>
+                    <li><a href="{{ url('/nosotros') }}">acerca de nosotros</a>
                     </li>
                     <li><a href="{{ url('/contactoexterno') }}">contacto</a>
                     </li>
@@ -126,7 +126,14 @@
             <div class="col-sm-4">
                 <h4>Acerca de nosotros</h4>
                 <p>
-                    La municipalidad de Quetzaltenango funciona desde 1,806 en la cabecera departamental de Quetzaltenango de la República de Guatemala. Es una ciudad que continúa en expansión, conserva muchos aspectos de su estilo neoclásico que recuerdan detalles de Europa, el edificio del palacio municipal desde su fundación ha conservado jardines y esculturas.
+                    La Dirección Municipal de Drenajes y Alcantarillados fue creada en el año 2012a través del acuerdo con el Punto Octavo del
+                    Acta Número 159-2012.
+                </p>
+                <p>
+                    La Dirección es la dependencia encargada de administrar, operar y mantener el sistema de drenaje del municipio de Quetzaltenango. La 
+                    mayor parte del sistema es de drenaje combinado, por lo que el agua de lluvia y residual se conduce por una misma tubería hasta ser 
+                    descargada en el Río Seco y Xequijel. Actualmente el municipio posee más de 250 km de tuberías de distintos diámetros y más de 2,600 
+                    tragantes que recolectan el agua de lluvia de las calles.
                 </p>
                 
             </div>
@@ -135,7 +142,7 @@
             <div class="col-sm-4">
                 <h4>Contáctenos</h4>
                 <ul class="list-unstyled">
-                    <li>14 Avenida, 6--06 zona 3</li>
+                    <li>14 Avenida, 6-06 zona 3</li>
                     <li>Quetzaltenango, Quetzaltenango</li>
                     <li><i class="livicon icon4 icon3" data-name="cellphone" data-size="18" data-loop="true" data-c="#ccc" data-hc="#ccc"></i>Telefono:77672000 ext. 123</li>
                     <li><i class="livicon icon3" data-name="mail-alt" data-size="20" data-loop="true" data-c="#ccc" data-hc="#ccc"></i> Email: drenajes@munixela.gob.gt</li>
@@ -180,7 +187,7 @@
                     </div>
                     <div class="form-group">
                     <strong>Descripción</strong>
-                    <input type="text" name="descripcion" class="form-control" placeholder="Descripcion">
+                    <input type="text" name="descripcion" class="form-control" placeholder="Descripción">
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                     {!! htmlFormSnippet() !!}

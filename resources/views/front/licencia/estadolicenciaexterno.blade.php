@@ -23,7 +23,7 @@
                                 <th>Solicitud No.</th>
                                 <th>Nombres</th>
                                 <th>Apellidos</th>
-                                <th>DPI</th>
+                                <!-- <th>DPI</th> -->
                                 <th>Fecha de solicitud</th>
                                 <th>Dirección de la obra</th>
                                 <th>Inmueble</th>
@@ -37,7 +37,7 @@
                                 <td>{{$solicitudes->id}}</td>
                                 <td>{{$solicitudes->nombre}}</td>
                                 <td>{{$solicitudes->apellido}}</td>
-                                <td>{{$solicitudes->dpi}}</td>
+                                <!-- <td>{{$solicitudes->dpi}}</td> -->
                                 <td>{{$solicitudes->fechasolicitud}}</td>
                                 <td>{{$solicitudes->direccionobra}}</td>
                                 <td>{{$solicitudes->codigoinmueble}}</td>

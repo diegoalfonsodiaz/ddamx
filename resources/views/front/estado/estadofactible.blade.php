@@ -22,7 +22,7 @@
                                 <th>Solicitud No.</th>
                                 <th>Fecha de solicitud</th>
                                 <th>Dirección de la obra</th>
-                                <th>Inmueble</th>
+                                <!-- <th>Inmueble</th> -->
                                 <th>Estado factibilidad</th> 
                                 <th>Fecha de actualizacion de estado</th>                        
                             </tr>
@@ -33,7 +33,7 @@
                                 <td>{{$solicitudes->id}}</td>
                                 <td>{{$solicitudes->fechasolicitud}}</td>
                                 <td>{{$solicitudes->direccionobra}}</td>
-                                <td>{{$solicitudes->codigoinmueble}}</td>
+                                <!-- <td>{{$solicitudes->codigoinmueble}}</td> -->
                                 <td style="color:#0e70cc;"><b>{{$solicitudes->nombre_estadofactibilidad}}</b></td>
                                 <td>{{$solicitudes->updated_at}}
                             </tr>

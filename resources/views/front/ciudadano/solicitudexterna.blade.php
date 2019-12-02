@@ -46,7 +46,7 @@
                 </div>
                 <label><span style="color:red">* </span><span style="color:black">Campos obligatorios</span></label>
                 <div class="form-group">
-                    <strong>Dirección Obra<span style="color:red"> *</span></strong>
+                    <strong>Dirección de la Obra<span style="color:red"> *</span></strong>
                     <input type="text" name="direccionobra" class="form-control input-lg " placeholder="Dirección Obra">
                 </div>
 

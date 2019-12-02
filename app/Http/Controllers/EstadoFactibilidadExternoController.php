@@ -65,7 +65,7 @@ class EstadoFactibilidadExternoController extends Controller
                     $sessionManager->flash('mensaje4', '2. Presente el formulario de solicitud de licencia en la ventanilla de atención al público junto con la siguiente papelería:');
                     $sessionManager->flash('mensaje5', '   -Solvencia municipal original y reciente.');
                     $sessionManager->flash('mensaje6', '   -Formulario de acometida domiciliar (llenar datos a excepción del esquema), comprarlo en Banrural.');
-                    $sessionManager->flash('mensaje7', '   -Fotocopiad de DPI, NIT y Ornato del propietario, y DPI y Ornato del Ejecutor de la obra (ambos ornatos adquiridos en la Municipalidad de Quetzaltenango).');
+                    $sessionManager->flash('mensaje7', '   -Fotocopia de DPI, NIT y Ornato del propietario, y DPI y Ornato del Ejecutor de la obra (ambos ornatos adquiridos en la Municipalidad de Quetzaltenango).');
                     $sessionManager->flash('mensaje8', '   -Fotocopia de la licencia de construcción o certificación en original.');
                     $sessionManager->flash('mensaje9', 'Dirección de ventanilla de atención al público:');
                     $sessionManager->flash('mensaje10', '   10 Avenida entre 7 y 8 Calle Zona 1, Centro Comercial Municipal "El Centro".');

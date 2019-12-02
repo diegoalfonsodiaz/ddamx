@@ -50,8 +50,7 @@ Inicio
                     </div>
                     <div class="info">
                         <h3 class="success text-center">Consulte</h3>
-                        <p>Consulte si cuenta con licencia para poder instalar los servicios de drenaje.</p>
-                        <p></p>
+                        <p>Consulte su cuenta con licencia para su uso de los servicios municipales de drenajes</p>
                         <p></p>
                         <div class="text-right primary"><a href="{{ url('/buscarcodigo') }}">Consultar</a>
                         </div>
@@ -68,7 +67,8 @@ Inicio
                     </div>
                     <div class="info">
                         <h3 class="primary text-center">Solicite</h3>
-                        <p>En caso de no contar con la licencia de conexión de drenaje realize la solicitud de factibilidad para la conexión del servicio.</p>
+                        <p>Solicite dictamen de factibilidad para conocer si es posible recibir el servicio municipal de drenajes.</p>
+                        <p></p>
                         <div class="text-right primary"><a href="{{ url('/buscardpi') }}">Solicitar</a>
                         </div>
                     </div>
@@ -83,7 +83,7 @@ Inicio
                     </div>
                     <div class="info">
                         <h3 class="warning text-center">Denuncie</h3>
-                        <p>Reporte cualquier anomalía que vea, esto nos ayudara a ofrecer un mejor servicio para todos.</p>
+                        <p>Reporte cualquier anomalía que observe, esto nos ayuda a ofrecer un mejor servicio para todos.</p>
                         <p></p>
                         <div class="text-right primary"><a href="{{ url('/denunciaexterna') }}">Denunciar</a>
                         </div>
@@ -99,7 +99,7 @@ Inicio
                     </div>
                     <div class="info">
                         <h3 class="yellow text-center">Contáctenos</h3>
-                        <p>Comuníquese con nosotros para poder realizar cualquier trámite o hacernos saber cualquier duda que tenga.</p>
+                        <p>Comuníquese con nosotros para para cualquier trámite que desee realizar o hacernos saber de cualquier duda que tenga.</p>
                         <div class="text-right primary"><a href="{{ url('/contactoexterno') }}">Contáctenos</a>
                         </div>
                     </div>
@@ -115,7 +115,7 @@ Inicio
                 <div class="row">
 
                     <div class="col-md-7 col-sm-7 col-xs-12">
-                        <h1 class="purchae-hed">Realice su solicitud de Licencia desde el sitio web</h1></div>
+                        <h1 class="purchae-hed">Realice su solicitud de dictamen de factibilidad desde el sitio web</h1></div>
                     <div class="col-md-5 col-sm-5 col-xs-12"><a href="{{ url('/buscardpi') }}" class="btn btn-primary purchase-styl ">Solicite ahora</a></div>
                 </div>
             </div>

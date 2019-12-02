@@ -104,7 +104,7 @@ Contacto
                         <h4 class="media-heading">Dirección:</h4>
                         <div class="danger">DDAMX</div>
                         <address>
-                            14 Avenida, 6--06 zona 3
+                            14 Avenida, 6-06 zona 3
                             <br> Quetzaltenango, Quetzaltenango
                             <br> Guatemala
                             <br>
@@ -141,7 +141,7 @@ Contacto
                         <h4 class="media-heading">Dirección:</h4>
                         <div class="danger">VENTANILLA MUNICIPAL DE ATENCIÓN AL PÚBLICO</div>
                         <address>
-                            10ª. Avenida entre 6ª. Y 8ava calle zona 1
+                            10ª. Avenida entre 6ª. Y 8va calle zona 1
                             <br> Centro Comercial Municipal "El Centro"
                             <br> Quetzaltenango, Quetzaltenango
                             <br> Guatemala

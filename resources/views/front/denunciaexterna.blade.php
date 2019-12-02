@@ -46,12 +46,12 @@ Denuncia
                     </div>
 
                     <div class="form-group" style="display: none">
-                    <label for="direccion_fab">Fecha en que sucedio</label>
+                    <label for="direccion_fab">Fecha en que sucedió</label>
                     <input type="date" name="fecha" value="<?php echo date("Y-m-d");?>" class="form-control" required>
                     </div>
 
                     <div class="form-group">
-                    <strong for="exampleInputPassword1">Seleccione Imagen como prueba</strong>
+                    <strong for="exampleInputPassword1">Seleccione imagen como prueba</strong>
                     <input name="foto" type="file" class="form-control" id="exampleInputPassword1" placeholder="Seleccione una imagen">
                     </div>
 
@@ -61,7 +61,7 @@ Denuncia
                     </div>
 
                     <div class="form-group">
-                    <strong>Teléfono de la persona denunciante<span style="color:red"> *</span></strong>
+                    <strong>Teléfono del contacto<span style="color:red"> *</span></strong>
                     <input type="text" name="telefono" class="form-control" placeholder="teléfono" required>
                     </div>
 
