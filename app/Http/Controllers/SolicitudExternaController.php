@@ -68,13 +68,14 @@ class SolicitudExternaController extends Controller
    
        if($cantidad >= 1){
         $id_persona = DB::table('personas')->where('dpi', $request->dpi)->value('id');
-
+        $fecha_actual = date("Y-m-d");
        $solicitud= new Solicitud();
        $solicitud->persona_id = $id_persona;
        $solicitud->direccionobra = $request->input('direccionobra');
        $solicitud->codigoinmueble = $request->input('codigoinmueble');
        $solicitud->ejecutor_id = '1';
        $solicitud->tipoobra_id = '1';
+       $solicitud->fechasolicitud=($fecha_actual);
        
        $solicitud->save();
 
