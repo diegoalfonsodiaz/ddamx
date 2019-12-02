@@ -19,10 +19,10 @@
                             <tr>
                             
                                 <th>Denuncia No.</th>
-                                <th>Descripción</th>
+                                <th>Dirección y descripción de la denuncia</th>
                                 <th>Fecha</th>
                                 <th>Fotografía</th>
-                                <th>Dirección</th> 
+                                <th>Nombre del contacto</th> 
                                 <th>Estado de la denuncia</th>
                                 <th>Fecha de actualizacion de estado</th>           
                             </tr>

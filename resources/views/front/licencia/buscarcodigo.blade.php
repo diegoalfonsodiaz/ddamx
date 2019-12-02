@@ -9,9 +9,9 @@
         <div class="row">
             <!-- Contact form Section Start -->
             <div class="col-xs-12 col-sm-12 col-md-12">
-                <h2>Ingrese su código de inmueble</h2>
+                <h2>Ingrese su código* de inmueble</h2>
 
-                <form role="form" method="POST" action="{{route('solicitudcodigo.solicitarcodigo')}}">
+                <form autocomplete="off" role="form" method="POST" action="{{route('solicitudcodigo.solicitarcodigo')}}">
                 {{csrf_field()}}{{ method_field('PUT')}}
 
                     <div class="form-group">

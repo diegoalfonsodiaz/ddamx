@@ -149,8 +149,6 @@ Acerca de nosotros
                                             <a class="collapsed" data-toggle="collapse" data-parent="#faq" href="#question3">
                                                 <strong class="c-gray-light">3.</strong>
                                                 La finca matriz se desmembró y solo existe un servicio de drenaje, ¿la persona que es dueña de la finca matriz es dueña de dicho servicio?
-o	¿los servicios si pertenecen a la finca matriz?
-o	¿las demás personas deben solicitar un nuevo servicio de drenaje domiciliar cumpliendo con todos los requisitos de drenaje domiciliar?
 
                                                 <span class="pull-right">
                                                     <i class="glyphicon glyphicon-plus"></i>
@@ -186,7 +184,7 @@ o	¿las demás personas deben solicitar un nuevo servicio de drenaje domiciliar 
                                     <div id="question4" class="panel-collapse collapse">
                                         <div class="panel-body">
                                             <p>
-                                            Si cada local comercial tiene su propia nomenclatura si es necesario realizar la solicitud por cada local comercial.
+                                            Si cada local comercial tiene su propia nomenclatura, si es necesario realizar la solicitud por cada local comercial.
                                             </p>
                                         </div>
                                     </div>
@@ -206,7 +204,7 @@ o	¿las demás personas deben solicitar un nuevo servicio de drenaje domiciliar 
                                     <div id="question5" class="panel-collapse collapse">
                                         <div class="panel-body">
                                             <p>
-                                                En el momento de la inspección se le indica que tipo de proyecto. 
+                                                En el momento de la inspección se le indicará a que tipo de proyecto corresponde de acuerdo a su ubicación.
                                             </p>
                                         </div>
                                     </div>
@@ -216,7 +214,7 @@ o	¿las demás personas deben solicitar un nuevo servicio de drenaje domiciliar 
                                         <h4 class="panel-title">
                                             <a class="collapsed" data-toggle="collapse" data-parent="#faq" href="#question6">
                                                 <strong class="c-gray-light">6.</strong>
-                                                ¿Si son construcciones privadas y soy dueño de un lote ¿puedo hacer mi solicitud de drenaje?  
+                                                ¿Si mi construcción se encuentra dentro de un parcelamiento, puedo hacer mi solicitud de drenaje?
                                                 <span class="pull-right">
                                                     <i class="glyphicon glyphicon-plus"></i>
                                                 </span>
@@ -226,7 +224,7 @@ o	¿las demás personas deben solicitar un nuevo servicio de drenaje domiciliar 
                                     <div id="question6" class="panel-collapse collapse">
                                         <div class="panel-body">
                                             <p>
-                                                No se puede realizar, ya que el desarrollador debe realizar dicha solicitud. 
+                                            No es necesario ya que el desarrollador del parcelamiento debe gestionar la licencia de conexión previo a conectarse a la red Municipal.
                                             </p>
                                         </div>
                                     </div>
@@ -236,7 +234,7 @@ o	¿las demás personas deben solicitar un nuevo servicio de drenaje domiciliar 
                                         <h4 class="panel-title">
                                             <a class="collapsed" data-toggle="collapse" data-parent="#faq" href="#question7">
                                                 <strong class="c-gray-light">7.</strong>
-                                                ¿Puede solicitar algún condominio o lotificación mantenimiento de drenajes a esta Municipalidad?
+                                                ¿Puedo solicitar mantenimiento de sistema de drenaje si este se encuentra dentro de un parcelamiento privado?
                                                 <span class="pull-right">
                                                     <i class="glyphicon glyphicon-plus"></i>
                                                 </span>
@@ -246,7 +244,7 @@ o	¿las demás personas deben solicitar un nuevo servicio de drenaje domiciliar 
                                     <div id="question7" class="panel-collapse collapse">
                                         <div class="panel-body">
                                             <p>
-                                                Debe estar a nivel de proyecto aprobado por la Municipalidad y las calles deben estar donadas a la misma, ya que si las calles son privadas no pueda la Dirección de Drenajes realizar el mismo. 
+                                            Para poder dar mantenimiento es necesario que el parcelamiento esté aprobado a nivel de proyecto por la municipalidad de Quetzaltenango y las calles deben de estar donadas a la misma; ya que si las calles son privadas, la dirección de drenajes no puede atender la solicitud de mantenimiento.
                                             </p>
                                         </div>
                                     </div>
@@ -256,7 +254,7 @@ o	¿las demás personas deben solicitar un nuevo servicio de drenaje domiciliar 
                                         <h4 class="panel-title">
                                             <a class="collapsed" data-toggle="collapse" data-parent="#faq" href="#question8">
                                                 <strong class="c-gray-light">8.</strong>
-                                                ¿Cuánto tiempo se tarda el proceso de licencia?
+                                                ¿Cuánto tiempo se tarda el proceso de conexión?
                                                 <span class="pull-right">
                                                     <i class="glyphicon glyphicon-plus"></i>
                                                 </span>
@@ -267,10 +265,10 @@ o	¿las demás personas deben solicitar un nuevo servicio de drenaje domiciliar 
                                         <div class="panel-body">
                                             <ol>
                                                 <li>
-                                                    Normalmente 7 días hábiles.
+                                                Si hay que solicitar remoción de pavimento, adoquín, piedra o asfalto.
                                                 </li>
                                                 <li>
-                                                    Si hay que solicitar remoción de pavimento, adoquín, piedra o asfalto 10 días hábiles.
+                                                  Normalmente hasta 10 días hábiles.
                                                 </li>
                                             </ol>
                                         </div>
@@ -291,7 +289,7 @@ o	¿las demás personas deben solicitar un nuevo servicio de drenaje domiciliar 
                                     <div id="question9" class="panel-collapse collapse">
                                         <div class="panel-body">
                                             <p>
-                                                15 días hábiles. 
+                                            Normalmente 15 días hábiles. 
                                             </p>
                                         </div>
                                     </div>
@@ -302,7 +300,7 @@ o	¿las demás personas deben solicitar un nuevo servicio de drenaje domiciliar 
                                         <h4 class="panel-title">
                                             <a class="collapsed" data-toggle="collapse" data-parent="#faq" href="#question10">
                                                 <strong class="c-gray-light">10.</strong>
-                                                ¿Forma de pago para derecho de conexión?
+                                                ¿Cómo se paga el derecho de conexión?
                                                 <span class="pull-right">
                                                     <i class="glyphicon glyphicon-plus"></i>
                                                 </span>
@@ -312,7 +310,7 @@ o	¿las demás personas deben solicitar un nuevo servicio de drenaje domiciliar 
                                     <div id="question10" class="panel-collapse collapse">
                                         <div class="panel-body">
                                             <p>
-                                               Se paga un derecho de conexión, se emite al tener la papelería completa y se da un orden de pago que se realiza en BANRURAL, ningún pago se realiza a trabajadores de la municipalidad.  
+                                            El derecho de conexión se paga al momento de tener completa la papelería de licencia de conexión. Y se les dará una orden de pago que se realiza en el Banco Banrural de la municipalidad. NO SE DEBE REALIZAR PAGOS A TRABAJADORES DE LA MUNICIPALIDAD.  
                                             </p>
                                         </div>
                                     </div>

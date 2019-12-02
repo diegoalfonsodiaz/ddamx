@@ -90,7 +90,7 @@
             </div>
             <div class="collapse navbar-collapse" id="collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="{{ url('/') }}">Home</a>
+                    <li><a href="{{ url('/') }}">Inicio</a>
                     <li><a href="{{ url('/buscarcodigo') }}">Estado de licencia</a>      
                     </li>
                     <li><a href="{{ url('/buscardpiestado') }}">Estado de factibilidad</a>
@@ -99,7 +99,7 @@
                     </li>
                     <li><a href="{{ url('/denunciaexterna') }}">Denuncia</a>
                     </li>
-                    <li><a href="{{ url('/nosotros') }}">acerca de nosotros</a>
+                    <li><a href="{{ url('/nosotros') }}">Nosotros</a>
                     </li>
                     <li><a href="{{ url('/contactoexterno') }}">contacto</a>
                     </li>
@@ -173,17 +173,17 @@
             <div class="col-sm-4">
             <h4>Formulario de contacto</h4>
 
-                <form role="form" method="POST" action="{{route('contacto.store')}}" enctype="multipart/form-data">
+                <form  autocomplete="off" role="form" method="POST" action="{{route('contacto.store')}}" enctype="multipart/form-data">
                 {{csrf_field()}}   
 
                     <div class="form-group">
-                    <strong>Nombre y Apellido</strong>
+                    <strong>Nombre y apellido</strong>
                     <input type="text" name="nombre" class="form-control" placeholder="Nombre">
                     </div>
 
                     <div class="form-group">
                     <strong>Email</strong>
-                    <input type="text" name="email" class="form-control" placeholder="Email">
+                    <input type="email" name="email" class="form-control" placeholder="Email">
                     </div>
                     <div class="form-group">
                     <strong>Descripción</strong>

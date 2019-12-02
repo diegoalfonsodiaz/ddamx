@@ -31,13 +31,13 @@
                 <div class="box-body">
 
                     <div class="form-group">
-                        <strong>Descripción</strong>
-                        <textarea type="text" autocomplete="off" name="descripcion" class="form-control" rows="3" placeholder="Descripción" required></textarea>
+                        <strong>Dirección y descripcion de la denuncia</strong>
+                        <textarea type="text" autocomplete="off" name="descripcion" class="form-control" rows="3" placeholder="Dirección y descripcion de la denuncia" required></textarea>
                         <!-- <input type="text" name="descripcion" class="form-control" placeholder="Descripción"> -->
                     </div>
                     <div class="form-group">
-                                <strong>Dirección</strong>
-                                <input type="text" autocomplete="off" name="direccion" class="form-control" placeholder="Dirección">
+                                <strong>Nombre del contacto</strong>
+                                <input type="text" autocomplete="off" name="direccion" class="form-control" placeholder="Nombre del contacto">
                     </div>
                     <div class="form-group">
                                 <strong>Teléfono</strong>

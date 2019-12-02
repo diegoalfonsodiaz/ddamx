@@ -50,7 +50,7 @@ Inicio
                     </div>
                     <div class="info">
                         <h3 class="success text-center">Consulte</h3>
-                        <p>Consulte su cuenta con licencia para su uso de los servicios municipales de drenajes</p>
+                        <p>Consulte si cuenta con licencia para poder hacer uso de los servicios municipales de drenaje.</p>
                         <p></p>
                         <div class="text-right primary"><a href="{{ url('/buscarcodigo') }}">Consultar</a>
                         </div>
@@ -67,7 +67,7 @@ Inicio
                     </div>
                     <div class="info">
                         <h3 class="primary text-center">Solicite</h3>
-                        <p>Solicite dictamen de factibilidad para conocer si es posible recibir el servicio municipal de drenajes.</p>
+                        <p>Solicite dictamen de factibilidad para conocer si es posible recibir el servicio municipal de drenaje.</p>
                         <p></p>
                         <div class="text-right primary"><a href="{{ url('/buscardpi') }}">Solicitar</a>
                         </div>
@@ -83,7 +83,7 @@ Inicio
                     </div>
                     <div class="info">
                         <h3 class="warning text-center">Denuncie</h3>
-                        <p>Reporte cualquier anomalía que observe, esto nos ayuda a ofrecer un mejor servicio para todos.</p>
+                        <p>Reporte cualquier anomalía que observe, esto nos ayudará a ofrecer un mejor servicio para todos.</p>
                         <p></p>
                         <div class="text-right primary"><a href="{{ url('/denunciaexterna') }}">Denunciar</a>
                         </div>

@@ -11,7 +11,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <h2>Tus datos personales:</h2>
 
-                <form role="form" method="POST" action="{{route('solicitudexterna.store')}}">
+                <form autocomplete="off" role="form" method="POST" action="{{route('solicitudexterna.store')}}">
                 {{csrf_field()}}  {{ method_field('PUT')}} 
 
                       <div class="box-body">

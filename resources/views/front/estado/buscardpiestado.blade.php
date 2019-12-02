@@ -21,7 +21,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <h2>Ingrese su DPI</h2>
 
-                <form role="form" method="POST" action="{{route('solicituddpiestado.solicitardpiestado')}}">
+                <form autocomplete="off" role="form" method="POST" action="{{route('solicituddpiestado.solicitardpiestado')}}">
                 {{csrf_field()}}{{ method_field('PUT')}}
 
                     <div class="form-group">

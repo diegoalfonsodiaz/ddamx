@@ -23,7 +23,7 @@
                 <h2>Ingresa tus datos personales:</h2>
                 <label><span style="color:red">* </span><span style="color:black">Campos obligatorios</span></label>
 
-                <form role="form" method="POST" action="{{route('solicitudexterna.store')}}">
+                <form autocomplete="off" role="form" method="POST" action="{{route('solicitudexterna.store')}}">
                 {{csrf_field()}}   {{ method_field('PUT')}}
 
                     <div class="box-body">

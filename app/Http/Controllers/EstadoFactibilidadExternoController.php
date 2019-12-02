@@ -53,7 +53,7 @@ class EstadoFactibilidadExternoController extends Controller
                 $solicitud=DB::table('solicituds')
                 ->join('personas','personas.id','=','solicituds.persona_id')
                 ->join('estadofactibilidads','solicituds.estadofactibilidad_id','=','estadofactibilidads.id')
-                ->select('solicituds.id','solicituds.fechasolicitud','solicituds.direccionobra','solicituds.codigoinmueble','estadofactibilidads.nombre as nombre_estadofactibilidad','solicituds.updated_at')
+                ->select('solicituds.id','solicituds.fechasolicitud','solicituds.direccionobra','estadofactibilidads.nombre as nombre_estadofactibilidad','solicituds.updated_at')
                 ->where('personas.dpi','=', $request->dpi) 
                 ->get();
                 
@@ -76,7 +76,7 @@ class EstadoFactibilidadExternoController extends Controller
                     $solicitud=DB::table('solicituds')
                 ->join('personas','personas.id','=','solicituds.persona_id')
                 ->join('estadofactibilidads','solicituds.estadofactibilidad_id','=','estadofactibilidads.id')
-                ->select('solicituds.id','solicituds.fechasolicitud','solicituds.direccionobra','solicituds.codigoinmueble','estadofactibilidads.nombre as nombre_estadofactibilidad','solicituds.updated_at')
+                ->select('solicituds.id','solicituds.fechasolicitud','solicituds.direccionobra','estadofactibilidads.nombre as nombre_estadofactibilidad','solicituds.updated_at')
                 ->where('personas.dpi','=', $request->dpi) 
                 ->get();
                 
@@ -111,7 +111,9 @@ class EstadoFactibilidadExternoController extends Controller
             ->join('personas','personas.id','=','solicituds.persona_id')
             ->join('estadofactibilidads','solicituds.estadofactibilidad_id','=','estadofactibilidads.id')
             ->join('estadolicencias','estadolicencias.id','=','licencias.estadolicencia_id')
-            ->select('solicituds.id','personas.nombre','personas.apellido','personas.dpi','solicituds.fechasolicitud','solicituds.direccionobra','solicituds.codigoinmueble','estadofactibilidads.nombre as nombre_estadofactibilidad','estadolicencias.nombre as nombre_estadolicencia')
+            ->select('solicituds.id','personas.nombre','personas.apellido','solicituds.fechasolicitud',
+            'solicituds.direccionobra','solicituds.codigoinmueble','estadofactibilidads.nombre as nombre_estadofactibilidad',
+            'estadolicencias.nombre as nombre_estadolicencia')
             ->where('solicituds.codigoinmueble','=', $request->codigo) 
             ->get();
     
