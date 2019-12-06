@@ -8,48 +8,313 @@
         p{
             line-height: 70%;
         }
-        #p1{
-            line-height: 60%;
-        }
-        
-        #especificaciones{
-            line-height: 100%;
-        }
-        #via1{
-            width:321px;
-            height:204px;
-        }
-         #ejecutor{
-            line-height: 200%;
-        }
-        #partefinal{
-            line-height: 262%;
-        }
-        #partefinalcortomonto{
-            line-height: 398%;
+
+        #num_licencia{
+            background: #fff;
+            color: black;
+            height: 1px;
             
+            width: 100%;
+            left: 402;
+            top: 96;
+            position: fixed;
         }
-        #partefinalcortolibro{
-            line-height: 125%;
+
+        #num_expediente{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 402;
+            top: 116;
+            position: fixed;
         }
-        #partefinalcortocatastral{
-            line-height: 152%%;
+
+        #fecha{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 402;
+            top: 136;
+            position: fixed;
         }
-        #partecatastral1{
-            line-height: 179%%;
+
+        #nombre_propietario{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 138;
+            top: 155.5;
+            position: fixed;
         }
-        #partecatastral2{
-            line-height: 206%%;
+
+        #direccion{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 84;
+            top: 175;
+            position: fixed;
         }
-        #tipos{
-            line-height: 217%;
+
+        #tipo_tierra{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 237.5;
+            top: 249.5;
+            position: fixed;
         }
-        #espacio{
-            line-height: 20%;
+
+        #tipo_empedrado{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 237.5;
+            top: 272;
+            position: fixed;
         }
-        #espacio2{
-            line-height: 220%;
-            color: #FFFFFF;
+
+        #tipo_adoquin{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 237.5;
+            top: 294.5;
+            position: fixed;
+        }
+
+        #tipo_asfalto{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 237.5;
+            top: 317;
+            position: fixed;
+        }
+
+        #tipo_pavimento{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 237.5;
+            top: 339.5;
+            position: fixed;
+        }
+
+        #longitud{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 346;
+            top: 249.5;
+            position: fixed;
+        }
+
+        #ancho{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 346;
+            top: 272;
+            position: fixed;
+        }
+
+        #profundidad{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 346;
+            top: 294;
+            position: fixed;
+        }
+
+        #diam_tubo_conexion{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 433;
+            top: 317;
+            position: fixed;
+        }
+
+        #diam_colector{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 433;
+            top: 339;
+            position: fixed;
+        }
+
+        #ejecutor_obra{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 144;
+            top: 375;
+            position: fixed;
+        }
+
+        #direccion_ejecutor{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 132;
+            top: 410.5;
+            position: fixed;
+        }
+
+        #recibo{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 288;
+            top: 452;
+            position: fixed;
+        }
+
+        #descripcion{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 216;
+            top: 508;
+            position: fixed;
+        }
+
+        #derecho{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 87;
+            top: 540;
+            position: fixed;
+        }
+
+        #remosion{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 332;
+            top: 540;
+            position: fixed;
+        }
+
+        #numero_finca{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 65;
+            top: 567;
+            position: fixed;
+        }
+
+        #numero_folio{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 245;
+            top: 567;
+            position: fixed;
+        }
+
+        #libro{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 404;
+            top: 567;
+            position: fixed;
+        }
+
+        #numero_catastral{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 58;
+            top: 597.5;
+            position: fixed;
+        }
+
+        #solvencia{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 310;
+            top: 597.5;
+            position: fixed;
+        }
+
+        #solvencia{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 310;
+            top: 597.5;
+            position: fixed;
+        }
+
+        #fecha_conexion{
+            background: #fff;
+            color: black;
+            height: 1px;
+            
+            width: 100%;
+            left: 58.5;
+            top: 630;
+            position: fixed;
         }
         
    </style>
@@ -60,178 +325,153 @@
         <img src="/images/licencia.jpg" style="width: 21.59cm; height: 27.94cm;">
         </div>
 </div>-->
-<p id="espacio2">
+
+<!-- <p id="espacio2">
     hola
 </p>
 <p id="espacio2" >
     hola
-</p>
-@foreach($licencia as $licencias)
-    
-    <p style='text-indent: 33.5em'>
-    {{ $licencias->numerolicencia }}
-    </p>
+</p> -->
+
+<!-- /////////////////////////////////////////////////////////////////// -->
+    @foreach($licencia as $licencias)
+        <label id="num_licencia">
+            {{ $licencias->numerolicencia }}
+        </label>
+
+        <label id="num_expediente">
+            {{ $licencias->expediente }}
+        </label>
+
+        <label id="fecha">
+            {{ $licencias->fechaautorizacion }}
+        </label>
+    @endforeach
 
 
-     <p style='text-indent: 33.5em'>
-    {{ $licencias->expediente }}
-    </p>
-
-     <p style='text-indent: 33.5em'>
-    {{ $licencias->fechaautorizacion }}
-    </p>
-@endforeach
-
-@foreach($datos as $dato)
-  <p id="p1" style='text-indent: 11.5em'>
-    {{ $dato->nombre_persona }} {{ $dato->apellido }}
-    </p>
-@endforeach
-
-@foreach($licencia as $licencias)
-
-    <p id="p1" style='text-indent: 7em'>
-        {{ $licencias->direccionobra }}<br><br><br><br><br><br><br>
-    </p>
-<!--especificaciones-->
-
-   <!-- <p id="especificaciones" style='text-indent: 31.5em'>
-       x{{ $licencias->longitud }}
-    </p>-->
-@if($licencias->tipovia_id==1)
-    <pre id="tipos" >
-                                 X              {{ $licencias->longitud }} Metros 
+    @foreach($datos as $dato)
+        <label id="nombre_propietario">
+            {{ $dato->nombre_persona }} {{ $dato->apellido }}
+        </label>
+    @endforeach
 
 
-                                                {{ $licencias->ancho }} Metros                                                        
+    @foreach($licencia as $licencias)
+        <label id="direccion">
+            {{ $licencias->direccionobra }}
+        </label>
+
+        <!-- tipos de vias -->
+        <label id="tipo_tierra">
+            @if($licencias->tipovia_id == 1)
+                X
+            @endif
+        </label>
+
+        <label id="tipo_empedrado">
+            @if($licencias->tipovia_id == 2)
+                X
+            @endif
+        </label>
+
+        <label id="tipo_adoquin">
+            @if($licencias->tipovia_id == 3)
+                X
+            @endif
+        </label>
+
+        <label id="tipo_asfalto">
+            @if($licencias->tipovia_id == 4)
+                X
+            @endif
+        </label>
+
+        <label id="tipo_pavimento">
+            @if($licencias->tipovia_id == 5)
+                X
+            @endif
+        </label>
+        <!-- fin tipos de vías -->
+
+        <label id="longitud">
+            {{ $licencias->longitud }} Metros
+        </label>
+
+        <label id="ancho">
+            {{ $licencias->ancho }} Metros
+        </label>
+
+        <label id="profundidad">
+            {{ $licencias->profundidad }}
+        </label>
+
+        <label id="diam_tubo_conexion">
+            {{ $licencias->diametrotubo }} "PVC
+        </label>
+
+        <label id="diam_colector">
+            {{ $licencias->diametrocolector }} "TC
+        </label>
+    @endforeach
+
+    @foreach($datos as $dato)
+        <label id="ejecutor_obra">
+            {{ $dato->nombre_ejecutor }}
+        </label>
+
+        <label id="direccion_ejecutor">
+            {{ $dato->direccion_ejecutor}}
+        </label>
+    @endforeach
+
+    @foreach($licencia as $licencias)
+        <label id="recibo">
+            Recibo de tesorería No.{{ $licencias->recibo }}
+        </label>
+
+        <label id="descripcion">
+            {{ $licencias->descripcion }}
+        </label>
+
+        <label id="derecho">
+            Q.{{ $licencias->derecho }}
+        </label>
+
+        <label id="remosion">
+            {{ $licencias->remocion }}
+        </label>
+
+        <label id="numero_finca">
+            {{ $licencias->numerofinca }}
+        </label>
+
+        <label id="numero_finca">
+            {{ $licencias->numerofinca }}
+        </label>
+
+        <label id="numero_folio">
+            {{ $licencias->numerofolio }}
+        </label>
+
+        <label id="libro">
+            {{ $licencias->libro }}
+        </label>
+
+        <label id="numero_catastral">
+            {{ $licencias->codigoinmueble }}
+        </label>
+
+        <label id="solvencia">
+            {{ $licencias->solvenciamunicipal }}
+        </label>
+
+        <label id="fecha_conexion">
+            {{ $licencias->monto }}
+        </label>
+    @endforeach
 
 
-                                                {{ $licencias->profundidad }}
-
-
-                                                            {{ $licencias->diametrotubo }} "PVC
-
-
-                                                            {{ $licencias->diametrocolector }} "TC           
-    </pre>
-
-
-
-@elseif($licencias->tipovia_id==2)
-    <pre id="tipos">
-                                                {{ $licencias->longitud }} Metros  
-
-
-                                 X               {{ $licencias->ancho }} Metros                                                       
-
-
-                                                {{ $licencias->profundidad }}
-
-
-                                                            {{ $licencias->diametrotubo }} "PVC
-
-
-                                                            {{ $licencias->diametrocolector }} "TC            
-    </pre>
-
-
-
-@elseif($licencias->tipovia_id==3)
-    <pre id="tipos">
-                                                {{ $licencias->longitud }} Metros   
-
-
-                                                {{ $licencias->ancho }} Metros                                   
-
-
-                                 X               {{ $licencias->profundidad }}
-
-
-                                                            {{ $licencias->diametrotubo }} "PVC
-
-
-                                                            {{ $licencias->diametrocolector }} "TC            
-    </pre>
-
-
-@elseif($licencias->tipovia_id==4)
-    <pre id="tipos">
-                                                {{ $licencias->longitud }} Metros  
-
-
-                                                {{ $licencias->ancho }} Metros                                                       
-
-
-                                                {{ $licencias->profundidad }}
-
-
-                                 X                           {{ $licencias->diametrotubo }} "PVC
-
-
-                                                            {{ $licencias->diametrocolector }} "TC            
-    </pre>
-
-
-@elseif($licencias->tipovia_id==5)
-    <pre id="tipos">
-                                                {{ $licencias->longitud }} Metros  
-
-
-                                                {{ $licencias->ancho }} Metros                                
-
-
-                                                {{ $licencias->profundidad }}
-
-
-                                                            {{ $licencias->diametrotubo }} "PVC
-
-
-                                 X                          {{ $licencias->diametrocolector }}"TC            
-    </pre>
-@endif
-<!--fin de especifiaciones-->
-
-@endforeach
-<!--ejecutor-->
-@foreach($datos as $dato)
-    <p id="ejecutor" style='text-indent: 12em'>
-        {{ $dato->nombre_ejecutor }}
-    </p>
-
-    <p id="ejecutor" style='text-indent: 11em'>
-        {{ $dato->direccion_ejecutor}}
-    </p>
-@endforeach
-<!--fin de ejecutor-->
-
-<!--ultima parte-->
-
-@foreach($licencia as $licencias)
-    <p id="partefinal" style='text-indent: 24em'>
-        Recibo de tesorería No.{{ $licencias->recibo }}
-    </p>
-    
-    <p id="partefinalcortomonto" style='text-indent: 18em'>
-        {{ $licencias->descripcion }}
-    </p>
-    <pre id="partefinalcortolibro" style='text-indent: 0.5em'>
-            Q.{{ $licencias->derecho }}                             {{ $licencias->remocion }}                    
-    </pre>
-
-    <pre id="partefinalcortocatastral" style='text-indent: 0.5em'>
-         {{ $licencias->numerofinca }}                       {{ $licencias->numerofolio }}                    {{ $licencias->libro }}     
-    </pre >
-    <pre id="espacio">
-    </pre>
-    <pre id="partecatastral1" style='text-indent: 0.5em'>
-        {{ $licencias->codigoinmueble }}                              {{ $licencias->solvenciamunicipal }}
-    </pre>
-    <pre id="partecatastral2" style='text-indent: 0.5em'>
-        {{ $licencias->monto }}
-    </pre>
-
-@endforeach
-<!--ultima parte-->
+<!-- /////////////////////////////////////////////////////////////////// -->
 
 </body>
 
