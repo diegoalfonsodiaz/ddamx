@@ -97,7 +97,8 @@ class SolicitudController extends Controller
         $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
         $this->Validate($request, [
             'direccionobra' => 'required',
-            'persona_id' => 'required'
+            'persona_id' => 'required',
+            'fechasolicitud' => 'required'
             
         ]);
 
