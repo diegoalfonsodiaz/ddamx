@@ -35,7 +35,7 @@ class ContactoRequest extends FormRequest
         return [
             'nombre.required' => '¡AVISO!: El "Nombre y Apellido" de la persona es requerido',
             'nombre.max' => '¡AVISO!: La cadena de texto debe de ser menor a 191 caracteres',
-            'correo.required' => '¡AVISO!: El "Correo electrónico" de la persona es requerido',
+            'correo.required' => '¡AVISO!: El "Teléfono" de la persona es requerido',
             'correo.max' => 'La cadena de texto debe de ser menor a 191 caracteres',
             'descripcion.required' => '¡AVISO!: No ha llenado la "Descripción"',
             'descripcion.max' => '¡AVISO!: La "Descripción" debe ser menor a 191 caracteres',

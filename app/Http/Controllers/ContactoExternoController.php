@@ -53,7 +53,7 @@ class ContactoExternoController extends Controller
     $contacto->save();
 
     $sessionManager->flash('mensajetipo', '¡Gracias por comunicarte con nosotros!');
-    $sessionManager->flash('mensaje', 'Te enviaremos nuestra respuesta a tu correo electrónico.');
+    $sessionManager->flash('mensaje', 'Pronto estareamos en contacto con usted.');
 
     
     return view('front.respuesta');
