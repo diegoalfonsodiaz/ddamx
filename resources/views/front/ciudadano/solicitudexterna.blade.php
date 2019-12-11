@@ -29,7 +29,7 @@
                   <input type="text" name="apellido" class="form-control" readonly="readonly" value={{$persona->apellido}}>
                 </div>
                 <div class="form-group">
-                  <strong >Ornato</strong>
+                  <strong >Boleto de ornato</strong>
                   <input type="text" name="ornato" class="form-control" readonly="readonly" value={{$persona->ornato}}>
                 </div>
                 <div class="form-group">

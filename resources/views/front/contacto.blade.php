@@ -56,20 +56,20 @@ Contacto
                  <label><span style="color:red">* </span><span style="color:black">Campos obligatorios</span></label>
 
                 <!-- Notifications -->
-                <form class="contact" id="contact" action="{{route('contacto.store')}}" method="POST">
+                <form  autocomplete="off" class="contact" id="contact" action="{{route('contacto.store')}}" method="POST">
                     {{csrf_field()}}  
                     <div class="form-group">
                         <strong>Nombre y apellido<span style="color:red"> *</span></strong>
-                        <input type="text" name="nombre" class="form-control" placeholder="nombre">
+                        <input type="text" name="nombre" class="form-control" placeholder="Nombre y apellido">
                     </div>
 
                     <div class="form-group">
-                        <strong>Email<span style="color:red"> *</span></strong>
-                        <input type="mail" name="email" class="form-control" placeholder="email">
+                        <strong>Teléfono<span style="color:red"> *</span></strong>
+                        <input type="text" name="email" class="form-control" placeholder="Teléfono">
                     </div>
                     <div class="form-group">
                         <strong>Descripción<span style="color:red"> *</span></strong>
-                        <input type="text" name="descripcion" class="form-control" placeholder="descripción">
+                        <textarea type="text" autocomplete="off" name="descripcion" class="form-control" rows="3" placeholder="Descripción"></textarea>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                     {!! htmlFormSnippet() !!}

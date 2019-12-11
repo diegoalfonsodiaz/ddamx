@@ -36,7 +36,7 @@ class ContactoExternoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ContactoRequest $request, SessionManager $sessionManager)
+    public function store(Request $request, SessionManager $sessionManager)
     {
         $this->validate($request,
         [

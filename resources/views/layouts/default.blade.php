@@ -178,16 +178,17 @@
 
                     <div class="form-group">
                     <strong>Nombre y apellido</strong>
-                    <input type="text" name="nombre" class="form-control" placeholder="Nombre">
+                    <input type="text" name="nombre" class="form-control" placeholder="Nombre y apellido">
                     </div>
 
                     <div class="form-group">
-                    <strong>Email</strong>
-                    <input type="email" name="email" class="form-control" placeholder="Email">
+                    <strong>Teléfono</strong>
+                    <input type="text" name="email" class="form-control" placeholder="Teléfono">
                     </div>
                     <div class="form-group">
                     <strong>Descripción</strong>
-                    <input type="text" name="descripcion" class="form-control" placeholder="Descripción">
+                    <textarea type="text" autocomplete="off" name="descripcion" class="form-control" rows="3" placeholder="Descripción"></textarea>
+
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                     {!! htmlFormSnippet() !!}

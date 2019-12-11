@@ -40,8 +40,8 @@
                       <input type="text" class="form-control input-lg" name="apellido" placeholder="Apellidos" required>
                       </div>
                       <div class="form-group">
-                      <strong >Ornato<span style="color:red"> *</span></strong>
-                      <input type="text" class="form-control input-lg" name="ornato" placeholder="Ornato" required>
+                      <strong >Boleto de ornato<span style="color:red"> *</span></strong>
+                      <input type="text" class="form-control input-lg" name="ornato" placeholder="Boleto de ornato" required>
                       </div>
                       <div class="form-group">
                       <strong >Teléfono<span style="color:red"> *</span></strong>
