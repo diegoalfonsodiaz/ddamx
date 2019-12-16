@@ -24,14 +24,14 @@
                 <tr>
                   <th width="50px"># </th>
                   <th width="400px">Nombre</th>
-                  <th width="120px">Correo electrónico</th>
+                  <th width="120px">Teléfono</th>
                   <th width="220px">Descripción</th>
                   </tr>
             </thead>
             <tbody>
                 @foreach ($contacto as $con)
                     <tr>
-                      <td>{{ ++$con->id }} </td>
+                      <td>{{ $con->id }} </td>
                       <td><h5>{{ $con->nombre }}</h5></td>
                       <td>{{ $con->email }}</td>
                       <td><h5>{{ $con->descripcion }}</h5></td>

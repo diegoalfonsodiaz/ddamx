@@ -91,7 +91,8 @@
 
                         <div class="form-group">
                             <strong>Observación</strong>
-                            <input Type="text" name="observacion" value="{{ $solicitudes->observacion }}"  class="form-control" placeholder="Observación" disabled>
+                            <textarea type="text" autocomplete="off" name="observacion"  class="form-control" rows="3" placeholder="Observación" disabled>{{ $solicitudes->observacion }}</textarea>
+
                         </div>
 
                         <div class="form-group">

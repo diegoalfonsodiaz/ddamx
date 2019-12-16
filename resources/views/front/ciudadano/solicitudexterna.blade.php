@@ -18,23 +18,23 @@
                 @foreach($personas as $persona)
                 <div class="form-group">
                   <strong >DPI</strong>
-                  <input type="text" name="dpi" class="form-control" readonly="readonly" value={{$persona->dpi}}>
+                  <input type="text" name="dpi" class="form-control" readonly="readonly" value="{{$persona->dpi}}">
                 </div>
                 <div class="form-group">
                   <strong >Nombres</strong>
-                  <input type="text"  name="nombre" class="form-control" readonly="readonly" value={{$persona->nombre}}>
+                  <input type="text"  name="nombre" class="form-control" readonly="readonly" value="{{$persona->nombre}}">
                 </div>
                 <div class="form-group">
                   <strong >Apellidos</strong>
-                  <input type="text" name="apellido" class="form-control" readonly="readonly" value={{$persona->apellido}}>
+                  <input type="text" name="apellido" class="form-control" readonly="readonly" value="{{$persona->apellido}}">
                 </div>
                 <div class="form-group">
-                  <strong >Ornato</strong>
-                  <input type="text" name="ornato" class="form-control" readonly="readonly" value={{$persona->ornato}}>
+                  <strong >Boleto de ornato</strong>
+                  <input type="text" name="ornato" class="form-control" readonly="readonly" value="{{$persona->ornato}}">
                 </div>
                 <div class="form-group">
                   <strong >Teléfono</strong>
-                  <input type="text" name="telefono" class="form-control" readonly="readonly" value={{$persona->telefono}}>
+                  <input type="text" name="telefono" class="form-control" readonly="readonly" value="{{$persona->telefono}}">
                 </div>
                 <div class="form-group">
                   <strong >Correo electrónico</strong>
