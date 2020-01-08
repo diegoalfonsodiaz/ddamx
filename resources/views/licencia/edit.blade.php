@@ -107,8 +107,8 @@
 
                         <div class="form-group {{ $errors->has('monto') ? 'has-error': ''}}">
                             <strong>Fecha de conexión y/o lo que compete</strong>
-                            <input type="text" autocomplete="off" name="monto" value="{{ $licencia->monto }}"  class="form-control" placeholder="Fecha de conexión y/o lo que compete,máximo 61 caracteres">
-                            {!! $errors->first('monto',' <span class="help-block">Solo hasta 61 caracteres</span>')!!}
+                            <input type="text" autocomplete="off" name="monto" value="{{ $licencia->monto }}"  class="form-control" placeholder="Fecha de conexión y/o lo que compete, máximo 90 caracteres">
+                            {!! $errors->first('monto',' <span class="help-block">Solo hasta 90 caracteres</span>')!!}
 
                         </div>
 
