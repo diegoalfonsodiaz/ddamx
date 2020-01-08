@@ -50,7 +50,7 @@
             <tbody>
                 @foreach ($denuncia as $den)
                     <tr>
-                      <td>{{ ++$i }} </td>
+                      <td>{{ $den->id }} </td>
                       <td><h5>{{ $den->descripcion }}</h5></td>
                       <td>{{ $den->fecha }}</td>
                       <td>

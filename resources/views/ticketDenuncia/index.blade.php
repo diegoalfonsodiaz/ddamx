@@ -22,6 +22,7 @@
                   <th># </th>
                   <th>Ticket ID</th>
                   <th>Descripción</th>
+                  <th>Fotografía de solución</th>
                   <th>Fecha de seguimiento</th>
                 </tr>
             </thead>
@@ -31,6 +32,18 @@
             <td>{{ ++$i }}</td>
             <td>Ticket:  #  {{ $tickets->denuncia }} Asunto: {{ $tickets->descripcion }} </td>
             <td>{{ $tickets->detalle }}</td>
+            <td>
+            @if($tickets->fotografia == "Sin fotografía")
+            
+              {{ $tickets->fotografia }}
+            
+            @else
+              <div class="center">
+                <img style="width:150px;height:100px;" src="/images/{{ $tickets->fotografia }}" class="card-img-top" alt="Sin Fotografía" />
+                <a target="_blank" href="/images/{{ $tickets->fotografia }}">Abrir</a>
+              </div>
+            @endif
+            </td>
             <td>{{ $tickets->fechamodificacion }}</td>
             <td>
             </td>

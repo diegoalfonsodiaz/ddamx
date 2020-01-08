@@ -20,6 +20,7 @@ class CreateTicketDenunciasTable extends Migration
             $table->unsignedBigInteger('denuncia_id');
             $table->date('fecha')->default(now());
             $table->timestamps();
+            $table->string('fotografia', 200);
 
             
             $table->foreign('denuncia_id')->references('id')->on('denuncias');

@@ -21,7 +21,7 @@ class TicketDenunciaController extends Controller
         //denuncias
         ->leftjoin('denuncias as d', 'td.denuncia_id','=', 'd.id')
         //
-        ->select('td.id','d.id as denuncia','td.fecha','td.user','td.detalle','d.descripcion','td.updated_at as fechamodificacion')
+        ->select('td.id','d.id as denuncia','td.fecha','td.user','td.detalle','d.descripcion','td.updated_at as fechamodificacion','td.fotografia')
         ->where('td.denuncia_id','=', $id)
         ->get();
         return view('ticketDenuncia.index', ["ticket"=>$ticket])->with('i');
@@ -41,9 +41,26 @@ class TicketDenunciaController extends Controller
     {        
         $request->user()->autorizeRoles(['operaciones','jefeoperaciones','admin']);
 
+        $validate = $request->validate([
+            'fotografia' =>'mimes:jpg,jpeg,bmp,png'
+        ]);
+
+        if ($request->hasFile('fotografia')) {
+		 	# code...
+		 	$file = $request->file('fotografia');
+		 	$name = time().$file->getClientOriginalName();
+		 	$file->move(public_path().'/images', $name);
+        }
+        else
+        {
+            $name = 'Sin fotografía';
+        }
+        
+        
         $ticket = new ticketDenuncia;
         $ticket->denuncia_id = $request->input('denuncia_id');
         $ticket->detalle = $request->input('detalle');
+        $ticket->fotografia = $name;
         $ticket->user = "ciudadano";
         $ticket->save();
         return redirect()->route('denuncia.index')->with('info', 'Se registro Corectamente');

@@ -29,7 +29,7 @@ class DenunciaController extends Controller
          'd.direccion', 'd.telefono','d.estadodenuncia_id as estadodenuncia')
          ->orderBy('d.id','desc')
         ->get();
-        return view('denuncia.index', ["denuncia"=>$denuncia])->with('i');
+        return view('denuncia.index', ["denuncia"=>$denuncia]);
     }
 
     /**
