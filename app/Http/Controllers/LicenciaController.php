@@ -40,13 +40,15 @@ class LicenciaController extends Controller
         'solicituds.codigoinmueble as inmueble','estadolicencias.nombre as estadolicencia',
         'licencias.estadolicencia_id','tipovias.nombre as tipovia','personas.nombre as nombre_persona',
         'personas.apellido as apellido','licencias.descripcion')
-        ->orderBy('solicituds.id','desc')
+        ->orderBy('licencias.fechaautorizacion','desc')
         ->get();
        
            
           
         //return view('licencia.index', ["licencia"=>$licencia])->with('i');
         return view('licencia.index',compact('licencia'));
+
+
     }
 
     /**
@@ -63,8 +65,18 @@ class LicenciaController extends Controller
             $estadooperaciones=Estadolicencia::where('estado','=','1')
             ->whereIn('id', [1])
             ->get();
- 
-        $solicitud=Solicitud::where('estadofactibilidad_id','=','2')->get();
+
+            $solicitud= DB::table('solicituds')
+            ->leftjoin('personas', 'solicituds.persona_id','=', 'personas.id')
+        
+            
+            ->select('solicituds.id','personas.nombre as nombre_persona',
+            'personas.apellido as apellido','solicituds.codigoinmueble')
+           
+            ->where('estadofactibilidad_id','=','2')->get();
+
+
+        //$solicitud=Solicitud::where('estadofactibilidad_id','=','2')->get();
         $estado=Estadolicencia::where('estado','=','1')->get();
         $tipovia=Tipovia::where('estado','=','1')->get();
         return view('licencia.create',compact('solicitud','estado','tipovia','estadooperaciones'));

@@ -74,7 +74,7 @@ class SolicitudController extends Controller
         'solicituds.diametrotubo','solicituds.diametrocolector',
         'solicituds.ejecutor_id','solicituds.persona_id','solicituds.direccion',
         'solicituds.tipoobra_id','solicituds.estadofactibilidad_id','solicituds.id')
-        ->orderBy('solicituds.id','desc')
+        ->orderBy('solicituds.fechasolicitud','desc')
         ->get();
         return view('solicitud.index', ["solicitud"=>$solicitud])->with('i');
     }

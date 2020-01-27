@@ -26,7 +26,7 @@
                             <select name="solicitudfactibilidad_id" class="form-control"  id="solicitud" >
                                 <option value="0" disabled selected >=== Selecciona el código de inmueble ===</option>
                                 @foreach($solicitud as $carac)
-                                <option value="{{$carac->id}}" >{{$carac->codigoinmueble}}</option>
+                                <option value="{{$carac->id}}" >{{$carac->codigoinmueble}}, {{$carac->nombre_persona}} {{$carac->apellido}}</option>
                                 @endforeach
                             </select>
                             {!! $errors->first('solicitudfactibilidad_id',' <span class="help-block">Debe seleccionar un código de inmueble ó esta intentando ingresar un inmueble ya existente</span>')!!}
